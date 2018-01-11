@@ -1,0 +1,15 @@
+@media screen and (max-width: 768px) {
+  .outer {
+    width:100%;
+    min-width:350px;
+  }
+  .outer > .middle {
+    width: 100%;
+  }
+  .outer > .middle > .inner {
+    text-align: center;
+    width: initial;
+    display:block;
+    padding:10px;
+  }
+}

@@ -1,0 +1,39 @@
+@media screen and (max-width: 980px) {
+  .results > .body > .left .result,
+  .results > .body > .left .result.active {
+    background:white;
+  }
+}
+@media screen and (max-width: 768px) {
+  .results {
+
+  }
+  .results > .header > .left {
+    display:block;
+  }
+  .results > .header > .right {
+    display:block;
+    width:100%;
+  }
+  .results > .header > .left  > .logo {
+    margin-bottom:10px;
+    font-size:25px;
+    transition: all .5s;
+  }
+  .results > .header > .right > .links > a.priority-low {
+    display:none;
+  }
+  .results > .body > .left {
+    float:initial;
+    width:100%;
+    padding:10px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .results > .header > .right > .search-bar {
+    display:none;
+  }
+  .results > .header > .right > .links > a {
+    padding-top:10px;
+  }
+}

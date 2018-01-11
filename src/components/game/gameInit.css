@@ -1,0 +1,81 @@
+.game > .init {
+  width:1px;
+  height:1px;
+  overflow:visible;
+  padding:0px;
+  margin:0px;
+}
+.game > .init > .init-thumb {
+  width: 70px;
+  height:1000px;
+  position:absolute;
+  transition: top 1s, left 1s;
+  border-radius:50px;
+  background:#ff7f7f;
+  top:1000px;
+}
+.game > .init > .init-thumb.init-1 {
+  left:70px;
+  background:#9400D3;
+  top:70px;
+  z-index:7;
+}
+.game > .init > .init-thumb.init-2 {
+  left:90px;
+  background:#4B0082;
+  top:40px;
+  z-index:8;
+}
+
+.game:not(.ready):not(.play) > .init > .init-thumb.init-middle {
+  top:10px;
+}
+.game > .init > .init-middle,
+.game.ready > .init > .init-middle,
+.game.play > .init > .init-middle {
+  left:164px;
+  background:#00FF00;
+  top:2000px;
+  z-index:10;
+}
+.game:not(.ready):not(.play) .init >  .init-middle::before {
+  content:':)';
+  color:white;
+  position:absolute;
+  width:100%;
+  text-align:center;
+  left:5px;
+  top:10px;
+  font-size:50px;
+  -ms-transform: rotate(90deg);     /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+  transform: rotate(90deg);
+  transition: font-size .5s;
+}
+.game > .init > .init-thumb.init-3 {
+  left:120px;
+  background:#0000FF;
+  top:20px;
+  z-index:9;
+}
+.game > .init > .init-thumb.init-4 {
+  left:initial;
+  right:120px;
+  background:#FFFF00;
+  top:20px;
+  z-index:9;
+}
+.game > .init > .init-thumb.init-5 {
+  left:initial;
+  right:90px;
+  background:#FF7F00;
+  top:40px;
+  z-index:8;
+}
+.game > .init > .init-thumb.init-6 {
+  left:initial;
+  right:70px;
+  background:#FF0000;
+  top:70px;
+  z-index:7;
+}

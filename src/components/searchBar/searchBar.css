@@ -1,0 +1,49 @@
+.search-bar {
+  text-align:right;
+  width:90%;
+  font-size:15px;
+  position:relative;
+  margin:auto;
+  overflow:hidden;
+}
+.search-bar > .search {
+  min-height:12px;
+  display:block;
+  text-align:left;
+  border:1px solid #DDD;
+  box-shadow: 2px 2px 3px #CCC;
+  padding:12px;
+
+  padding-right:30px;
+  color:black;
+  height:14px;
+  white-space:nowrap;
+  background:white;
+  overflow:hidden;
+}
+.search-bar > .buttons {
+  position: absolute;
+  right:1px;
+  top: 12px;
+  background:white;
+  padding:0 10px;
+}
+.search-bar > .buttons > .search-mic {
+  color: #BBB;
+  position:relative;
+  font-size: 17px;
+  cursor:default;
+  height:20px;
+  vertical-align:bottom;
+}
+.search-bar > .buttons > .search-magnifier {
+  color:#4885ed;
+  margin-left:20px;
+  position:relative;
+  top:-2px;
+  font-size: 20px;
+  cursor:default;
+  display:none;
+  height:20px;
+  vertical-align:bottom;
+}

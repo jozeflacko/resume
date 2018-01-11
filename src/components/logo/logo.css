@@ -1,0 +1,35 @@
+.logo {
+  font-size:5em;
+  margin-bottom:30px;
+  position:relative;
+  display:inline-block;
+  text-decoration:none;
+}
+.logo .one{
+  color:#4885ed;
+}
+.logo .two{
+  color:#db3236;
+}
+.logo .tree{
+  color:#f4c20d;
+}
+.logo .four{
+  color:#4885ed;
+}
+.logo .five{
+  color:#3cba54;
+}
+.logo .six{
+  color:#db3236;
+}
+.logo .postfix {
+  position: absolute;
+  color: #d46900;
+  bottom: -11px;
+  right: 4px;
+  font-size: 14px;
+  -ms-transform: rotate(-7deg);
+  -webkit-transform: rotate(-7deg);
+  transform: rotate(-7deg);
+}

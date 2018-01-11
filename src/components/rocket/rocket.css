@@ -1,0 +1,58 @@
+.my-rocket {
+  position:absolute;
+  top:108px;
+  left:20px;
+  vertical-align:middle;
+  white-space:nowrap;
+}
+.my-rocket {
+  -webkit-animation: fly 10s infinite; /* Safari 4.0 - 8.0 */
+  animation: fly 10s infinite;
+}
+
+.my-rocket > .rocket {
+  font-size:30px;
+  color:black;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Safari 3-8 */
+  transform: rotate(45deg);
+  vertical-align:middle;
+}
+
+.my-rocket > .tint {
+  vertical-align:middle;
+  content:"\f06d";
+  color:red;
+  font-size:20px;
+  position:relative;
+  top:1px;
+  left:0px;
+  -ms-transform: rotate(-90deg); /* IE 9 */
+  -webkit-transform: rotate(-90deg); /* Safari 3-8 */
+  transform: rotate(-90deg);
+  -webkit-animation: burn 1s infinite; /* Safari 4.0 - 8.0 */
+  animation: burn 1s infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@keyframes fly {
+  0%   { left:-5%; opacity: 0; }
+  30%  { left:20px; opacity: 1; }
+  100% { left: 150%; opacity: 1; }
+}
+@-webkit-keyframes fly {
+  0%   { left:-5%; opacity: 0; }
+  30%  { left:20px; opacity: 1; }
+  100% { left: 150%; opacity: 1; }
+}
+/* Safari 4.0 - 8.0 */
+@keyframes burn {
+  0%    { left:0px;  color: red;    }
+  50%   { left:-4px; color: orange; }
+  100%  { left: 0px; color:red;  }
+}
+@-webkit-keyframes burn {
+  0%    { left:0px;  color: red;    }
+  50%   { left:-4px; color: orange; }
+  100%  { left: 0px; color: red;    }
+}

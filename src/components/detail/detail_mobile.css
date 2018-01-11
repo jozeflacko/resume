@@ -1,0 +1,104 @@
+@media screen and (max-width: 980px) {
+  .detail {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    overflow-x:hidden;
+    overflow-y:auto;
+    margin:0px;
+    z-index:990;
+    background:white;
+
+    display:none;
+  }
+
+  .detail.active {
+    display:block;
+  }
+  .detail.active .back-button {
+    display:block;
+  }
+  .detail > .content > .bottom-photo {
+    display:none;
+  }
+
+}
+@media screen and (max-width: 500px) {
+  .detail.active {
+
+  }
+  .detail.active .back-button {
+    right:-5px;
+    top:-5px;
+    font-size:30px;
+  }
+  .detail .back-button:hover:after {
+    top:-90px;
+  }
+  .detail > .content {
+    padding:10px;
+  }
+  .detail > .content > .photo {
+
+  }
+  .detail > .content > .items {
+    padding:0px;
+  }
+  .detail > .content > .items > .item > .logos {
+    position:initial;
+    margin-bottom:10px;
+  }
+  .detail > .content > .items > .item > .logos:empty {
+    display:none;
+  }
+  .detail > .content > .bulletgroups > .title {
+    text-align:center;
+  }
+  .detail > .content > .bulletgroups > .groups > .group {
+    padding:0px;
+  }
+  .detail > .content > .bulletgroups > .groups > .group > .subtitle {
+      text-align:center;
+  }
+  .detail > .content > .bulletgroups > .groups > .group > .description {
+    text-align:center;
+    margin-bottom:0px;
+  }
+  .detail > .content > .bulletgroups > .groups > .group > .bullets {
+    margin-top:0px;
+  }
+  .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet {
+    text-align:center;
+    margin-bottom: 5px;
+    padding: 0px 0px;
+    background:#fbfbfb;
+  }
+  .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet > .bubbles {
+    margin-bottom:40px;
+    background:white;
+  }
+  .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet > .label {
+    display:block;
+    padding-top:5px;
+  }
+  .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet > .label > .icon,
+    .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet > .label > .my-photo {
+    display:block;
+    margin:auto;
+    margin-bottom:10px;
+    position:initial;
+  }
+  .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet > .label > .icon:after {
+
+  }
+  .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet > .label > .icon {
+
+  }
+  .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet > .value {
+    display:block;
+    padding-bottom:10px;
+
+  }
+}

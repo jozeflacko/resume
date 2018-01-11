@@ -1,0 +1,49 @@
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow:hidden;
+    color:#636363;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.outer >.middle {
+  position:relative;
+  top:-50px;
+}
+.outer > .middle > .inner {
+    text-align: center;
+    width: 500px;
+}
+.outer > .middle > .inner > .buttons {
+  margin-top:30px;
+}
+.outer > .middle > .inner > .buttons > .button {
+
+  display:inline-block;
+  border:1px solid #EEE;
+  background:#EEE;
+  text-decoration:none;
+  margin:0px 4px;
+  padding:8px;
+  color:#636363;
+}
+.outer > .middle > .inner > .buttons > .button.active {
+  border:1px solid #4885ed;
+  color: #4885ed;
+  background:#ebf3ff;
+  transition: all .4s;
+}
+.outer > .middle > .inner > .buttons > .button.active:hover {
+  color:green;
+  border:1px solid green;
+}
+
+.outer > .middle > .inner > .text {
+  margin-top:50px;
+}
+.outer > .middle > .inner > .text > span {
+  color:#4885ed;
+}

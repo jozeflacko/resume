@@ -1,0 +1,44 @@
+.result {
+  margin-bottom:15px;
+  /*margin-right:40px;*/
+  cursor:pointer;
+  padding:5px;
+  min-height:60px;
+  position:relative;
+}
+
+.result > .title {
+  font-size:20px;
+}
+.result.active::before {
+  content:"";
+  position:absolute;
+  left:-50px;
+  height:100%;
+  width:50px;
+  top:0px;
+  background:inherit;
+}
+.result.active::after {
+    content: "";
+    position: absolute;
+    right: -900px;
+    height: 100%;
+    width: 900px;
+    top: 0px;
+    background: inherit;
+}
+
+.result:hover > .title {
+  text-decoration:underline;
+}
+.result > .subtitle {
+  font-size:15px;
+  color:green;
+}
+.result > .description {
+  font-size:12px;
+  color:#1b1b1b;
+  padding-right:10px;
+  padding-top:3px;
+}
