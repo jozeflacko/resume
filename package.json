@@ -2,6 +2,7 @@
   "name": "jlacko-google-cv",
   "version": "0.1.0",
   "private": true,
+  "main": "build/index",
   "dependencies": {
     "@types/react-fontawesome": "^1.6.1",
     "@types/react-redux": "^5.0.13",
