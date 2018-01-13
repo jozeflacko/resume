@@ -43,7 +43,9 @@
 
 .outer > .middle > .inner > .text {
   margin-top:50px;
+  cursor:default;
 }
 .outer > .middle > .inner > .text > span {
   color:#4885ed;
+  font-size:25px;
 }

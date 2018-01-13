@@ -31,7 +31,7 @@ const introDetail = {
               { label:'Full name', icon:"user", value:'Jozef Lacko' },
               { label:'Education', icon:"graduation-cap", value:'Master’s degree in Business Informatics' },
               { label:'Current address', icon:"map-marker", value:'Vienna, Austria' },
-              { label:'Born', icon:"thumbs-up", value:'27 January 1989' },
+              { label:'Born', icon:"birthday-cake", value:'27 January 1989' },
               { label:'Nationality', icon:"globe", value:'Slovak, EU' },
               { label:'Marital status', icon:"smile-o", value:'Engaged' },
             ]

@@ -1,4 +1,9 @@
 @media screen and (max-width: 768px) {
+  .logo {
+    position:initial;
+    top:auto;
+    left:auto;
+  }
   .logo .postfix {
     margin-left:5px;
     position:relative;

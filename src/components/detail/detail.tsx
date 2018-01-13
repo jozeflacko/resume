@@ -97,9 +97,10 @@ export default class Detail extends React.Component<Props, {}> {
       );
     } else if(bullet.label || bullet.icon) {
       const icon = bullet.icon || "circle-thin";
+      const className = bullet.className && bullet.className != '' ? 'icon cblue '+bullet.className : 'icon cblue';
       return (
         <label className="label">
-          <FontAwesome name={icon} className={'icon cblue '+bullet.className||''}/>
+          <FontAwesome name={icon} className={className}/>
           {bullet.label}
         </label>
       );

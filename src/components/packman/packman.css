@@ -6,6 +6,7 @@
   padding-right:20px;
   display:block;
   position:relative;
+  margin-bottom:10px;
 }
 .packman-component > .text {
   font-size:1.4em;
@@ -13,7 +14,6 @@
   margin-bottom:10px;
   position:relative;
   display:block;
-  width:450px;
   text-decoration:none;
   text-align:center;
 }
@@ -26,7 +26,7 @@
 .packman-component > .text > .character.small {
   font-size: .7em;
   position: relative;
-  color: #777;
+  color:#db3236;
   padding-right: 5px;
   top: 1px;
 }
@@ -53,7 +53,7 @@
 }
 .packman-component > .object {
   position:absolute;
-  top:7px;
+  top:9px;
   -webkit-animation: packman 40s infinite;
   animation: packman 40s infinite;
 }
@@ -123,7 +123,7 @@
   position:absolute;
   width:300px;
   left:-280px;
-  background:white;
+  background: #f9f9f9;
 }
 .packman-component > .object > .white-block:before {
   content:"";
@@ -134,7 +134,7 @@
   position:relative;
   left:-250px;
   background: #f9f9f9; /* For browsers that do not support gradients */
-  background: linear-gradient(to right, transparent, white); /* Standard syntax (must be last) */
+  background: linear-gradient(to right, transparent, #f9f9f9); /* Standard syntax (must be last) */
 }
 
 @keyframes packman {

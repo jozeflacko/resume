@@ -12,7 +12,7 @@ export const Links: Array<ILink> = [
     title:'Look below to get to know me better',
   },
   {
-    name:'Gallery on Drive',
+    name:'Galery',
     url:'https://drive.google.com/open?id=1yxqAIUM_dQu4XY7D4tUk9mZfP426lSUG',
     title:'Want to see cool pictures?',
 
@@ -36,9 +36,8 @@ export const Links: Array<ILink> = [
     priority: 'low',
   },
   {
-    name:'Resume to print',
+    name:'Docs to print',
     url:'https://docs.google.com/document/d/1_w972PQnwHwLr0fVTI3d4FHgWQlOS3dY6IM-i2dthyQ/edit?usp=sharing',
     title:'Resume on Drive with possibility to print',
-
   }
 ];

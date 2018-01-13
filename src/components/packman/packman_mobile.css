@@ -1,0 +1,15 @@
+@media screen and (max-width: 768px) {
+  .packman-component {
+    padding-left:0px;
+    padding-right:0px;
+  }
+  .packman-component > .text {
+    font-size:1em;
+  }
+  .packman-component > .text > .character {
+    min-width:15px;
+  }
+  .packman-component > .object {
+    top:5px;
+  }
+}

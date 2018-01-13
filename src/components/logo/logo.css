@@ -4,6 +4,12 @@
   position:relative;
   display:inline-block;
   text-decoration:none;
+  z-index:20;
+
+  /* remove when u do not want it fixed */
+  position:fixed;
+  top:15px;
+  left:10px;
 }
 .logo .one{
   color:#4885ed;

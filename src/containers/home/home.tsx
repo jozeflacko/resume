@@ -36,10 +36,12 @@ class Home extends React.Component<Props, {}> {
                 <Link
                   to={'/results'}
                   className="button"
+                  title="Click here to get to know me better!"
                 >
                   Google Search
                 </Link>
                 <Link
+                  title="Click here to get to know me better!"
                   to={'/results'}
                   className="button i-feel-lucky active"
                 >
@@ -48,8 +50,8 @@ class Home extends React.Component<Props, {}> {
               </div>
               <div className="text">
                 Jozef Lacko <span>
-                <FontAwesome name="heart" />
-                </span> Resume, 2018
+                <FontAwesome name="hand-peace-o" />
+                </span> Vienna, 2018
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@
   .game.ready,
   .game.play {
     width:320px;
-    height:300px;
+    height:500px;
     margin-left:-160px;
   }
 }
@@ -10,7 +10,7 @@
   .game.ready,
   .game.play {
     width:452px;
-    height:300px;
+    height:500px;
     margin-left:-226px;
   }
 }

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './packman.css';
+import './packman_mobile.css';
 
 class Packman extends React.Component {
 

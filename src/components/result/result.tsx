@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './result.css';
+import './result_mobile.css';
 import IResult from '../../interfaces/IResult';
 
 interface Props extends React.Props<any> {

@@ -110,7 +110,7 @@
   right:10px;
   font-size:30px;
   font-weight:20px;
-  color:#DDD;
+  color:red;
   z-index:1020;
 }
 .game.ready  > .stop-btn,
@@ -121,7 +121,9 @@
 .game.play > .stop-btn:hover  {
   color:red;
 }
-.game .thumb {
+.game .thumb,
+.game .thumb:active ,
+.game .thumb:focus  {
   width: 70px;
   height:1000px;
   position:absolute;
@@ -129,6 +131,17 @@
   border-radius:50px;
   background:#ff7f7f;
   top:1000px;
+
+  /* disable selection touch affect */
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .game .thumb::before {
   content:':(';

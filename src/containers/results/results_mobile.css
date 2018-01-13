@@ -8,6 +8,9 @@
   .results {
 
   }
+  .results > .header {
+    padding-top:5px;
+  }
   .results > .header > .left {
     display:block;
   }
