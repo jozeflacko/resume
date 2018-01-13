@@ -3,9 +3,9 @@ import detail from './intro_detail';
 
 export class Intro implements IResult {
 
-  private title: string = "About me";
-  private subtitle: string = "Some quick introduction";
-  private description: string = "Who am I, what I like etc...";
+  private title: string = "Jozef Lacko";
+  private subtitle: string = "About me";
+  private description: string = "Some quick introduction";
 
   public getTitle(): string {
     return this.title;
