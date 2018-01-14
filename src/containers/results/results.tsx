@@ -141,7 +141,8 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
   render() {
     return (
       <div className="results">
-        <div className="header">
+        <div className="header">            
+
           <div className="left" onClick={ ()=> { this.props.turnOffAnimation(); } } >
             <Logo game={false}/>
           </div>

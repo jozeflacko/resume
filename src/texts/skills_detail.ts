@@ -3,7 +3,7 @@ const detail = {
   description: [
     `I consider learning as a awesome hobbie which keeps me bussy quite a lot. I can start
     anywhere, anytime and that feeling when things starts to get easy is always fulfilling and that
-    is pushing me forward :)`,
+    is pushing me forward.`,
   ],
   bulletgroups: [
     {

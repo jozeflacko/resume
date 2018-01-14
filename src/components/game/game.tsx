@@ -14,6 +14,7 @@ export default class Game extends React.Component {
   MAX_RANDOM_NUMBER = 1000;
 
   private gameNode: any;
+  private hintNode: any;
   private playing = false;
   private playerClicks = 0;
   private score = 0;
@@ -32,9 +33,15 @@ export default class Game extends React.Component {
     return this.gameNode.getElementsByClassName(THUMB_INIT_CLASS);
   }
 
+  showHint(show:boolean) {
+    const defaultC= "hint-text blightyellow";
+    this.hintNode.className = (show) ? defaultC + " show-hint" : defaultC;
+  }
+
   readyGame() {
     this.playing = true; // must be before moveThumb
     this.gameNode.className = "game ready";
+    this.showHint(false);
     this.insertThumb(true);
     this.hideAllInitThumbs();
     this.clickEvent.install();
@@ -42,6 +49,7 @@ export default class Game extends React.Component {
   }
   playGame() {
     this.gameNode.className="game play";
+    this.showHint(true);
 
     setTimeout( () => {
       const mainThumb = this.getMainThumb();
@@ -51,6 +59,7 @@ export default class Game extends React.Component {
           this.timer.start();
       }
     }, 2000);
+
   }
 
   stopGame() {
@@ -60,12 +69,14 @@ export default class Game extends React.Component {
     this.renderInitThumbs();
     this.timer.stop(false);
     this.gameNode.className = "game ready show-score";
+    this.showHint(false);
   }
 
   finishGame() {
     this.stopGame();
     this.gameNode.className = "game";
-    this.gameNode.querySelector('.score').innerHTML = "Score " + (this.score = 0);
+    this.showHint(false);
+    this.gameNode.querySelector('.score').innerHTML = "Your Score " + (this.score = 0);
     this.clickEvent.remove();
     this.playerClicks = 0;
   }
@@ -78,7 +89,7 @@ export default class Game extends React.Component {
 
     if(main) {
       thumb.id =MAIN_THUMB_ID;
-      this.addMessage("Click on me as many times you can!");
+      this.addMessage("Hi, I am Happy Thumb!");
        // will be started manually after first click
     } else if(move) {
       this.moveThumb(thumb);
@@ -131,7 +142,7 @@ export default class Game extends React.Component {
   })();
 
   addPoint(thumb: any) {
-    this.gameNode.querySelector('.score').innerHTML = "Score " + (++this.score);
+    this.gameNode.querySelector('.score').innerHTML = "Your Score " + (++this.score);
   }
 
   removeAllThumbs(): void {
@@ -210,35 +221,45 @@ export default class Game extends React.Component {
 
   render() {
     return (
-      <div className="game" ref={ (el) => { this.gameNode = el; } } >
-          <span className="score">Score 0</span>
-          <span className="timer">
-            Time left <span id="countdown">{this.countdown}</span>s
-          </span>
-          <FontAwesome
-            name="play-circle"
-            className="play-btn"
-            title="Start the Game"
-            onClick={ (e:any)=> {
-              this.readyGame();
-            }}
-          />
-          <FontAwesome
-            name="times-circle"
-            className="stop-btn"
-            onClick={ ()=> {
-              this.finishGame();
-            }}
-          />
-          <div className="init">
-            <div className="init-thumb init-1"></div>
-            <div className="init-thumb init-2"></div>
-            <div className="init-thumb init-3"></div>
-            <div className="init-thumb init-middle"></div>
-            <div className="init-thumb init-4"></div>
-            <div className="init-thumb init-5"></div>
-            <div className="init-thumb init-6"></div>
-          </div>
+      <div className="game-container">
+        <div className="hint-text" ref={ (el) => { this.hintNode = el; } }>
+          <p className="title">Hint:</p>
+          <p className="main">Click on the Happy Thumb as many times you can!</p>
+          <p>But be aware that Sad Thumbs dont want to be disturbed!
+          It will be not so easy, because place will get crowded.</p>
+        </div>
+
+        <div className="game" ref={ (el) => { this.gameNode = el; } } >
+
+            <span className="score">Your Score 0</span>
+            <span className="timer">
+              Time left <span id="countdown">{this.countdown}</span>s
+            </span>
+            <FontAwesome
+              name="play-circle"
+              className="play-btn"
+              title="Start the Game"
+              onClick={ (e:any)=> {
+                this.readyGame();
+              }}
+            />
+            <FontAwesome
+              name="times-circle"
+              className="stop-btn"
+              onClick={ ()=> {
+                this.finishGame();
+              }}
+            />
+            <div className="init">
+              <div className="init-thumb init-1"></div>
+              <div className="init-thumb init-2"></div>
+              <div className="init-thumb init-3"></div>
+              <div className="init-thumb init-middle"></div>
+              <div className="init-thumb init-4"></div>
+              <div className="init-thumb init-5"></div>
+              <div className="init-thumb init-6"></div>
+            </div>
+        </div>
       </div>
     );
   }

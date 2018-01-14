@@ -11,16 +11,20 @@ const introDetail = {
       responsive web apps and even I used to built gadgets with Arduino boards. When
       I look back in time, I see a pattern behind me. I prefer simple and
       clean solutions and the usefulness of the product is always my number
-      one priority`,
+      one priority.`,
 
       `Among my personality traits, there is one, that I consider very special.
       It is a passion, or let me say some ability to ignite myself for a good
       idea. It is that one which truly pushes me forward. I believe that
       everything is learnable and possible, but it will never be awesome
-      without one's spark`,
+      without one's spark.`,
 
       `I consider myself as a very happy and active person. I love life,
-      people, and especially my family and I absolutely admire honesty`
+      people, and especially my family and I absolutely admire honesty.`,
+
+      `At the end, I would like mention that work in Google was always my dream
+      and I would be super happy if you would give me a chance to proove my
+      professional and personal qualities.`
     ],
     bulletgroups: [
       {

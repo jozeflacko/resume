@@ -1,11 +1,11 @@
-.game > .init {
+.game-container > .game > .init {
   width:1px;
   height:1px;
   overflow:visible;
   padding:0px;
   margin:0px;
 }
-.game > .init > .init-thumb {
+.game-container > .game > .init > .init-thumb {
   width: 70px;
   height:1000px;
   position:absolute;
@@ -14,31 +14,31 @@
   background:#ff7f7f;
   top:1000px;
 }
-.game > .init > .init-thumb.init-1 {
+.game-container > .game > .init > .init-thumb.init-1 {
   left:70px;
   background:#9400D3;
   top:70px;
   z-index:7;
 }
-.game > .init > .init-thumb.init-2 {
+.game-container > .game > .init > .init-thumb.init-2 {
   left:90px;
   background:#4B0082;
   top:40px;
   z-index:8;
 }
 
-.game:not(.ready):not(.play) > .init > .init-thumb.init-middle {
+.game-container > .game:not(.ready):not(.play) > .init > .init-thumb.init-middle {
   top:10px;
 }
-.game > .init > .init-middle,
-.game.ready > .init > .init-middle,
-.game.play > .init > .init-middle {
+.game-container > .game > .init > .init-middle,
+.game-container > .game.ready > .init > .init-middle,
+.game-container > .game.play > .init > .init-middle {
   left:164px;
   background:#00FF00;
   top:2000px;
   z-index:10;
 }
-.game:not(.ready):not(.play) .init >  .init-middle::before {
+.game-container > .game:not(.ready):not(.play) .init >  .init-middle::before {
   content:':)';
   color:white;
   position:absolute;
@@ -52,27 +52,27 @@
   transform: rotate(90deg);
   transition: font-size .5s;
 }
-.game > .init > .init-thumb.init-3 {
+.game-container > .game > .init > .init-thumb.init-3 {
   left:120px;
   background:#0000FF;
   top:20px;
   z-index:9;
 }
-.game > .init > .init-thumb.init-4 {
+.game-container > .game > .init > .init-thumb.init-4 {
   left:initial;
   right:120px;
   background:#FFFF00;
   top:20px;
   z-index:9;
 }
-.game > .init > .init-thumb.init-5 {
+.game-container > .game > .init > .init-thumb.init-5 {
   left:initial;
   right:90px;
   background:#FF7F00;
   top:40px;
   z-index:8;
 }
-.game > .init > .init-thumb.init-6 {
+.game-container > .game > .init > .init-thumb.init-6 {
   left:initial;
   right:70px;
   background:#FF0000;

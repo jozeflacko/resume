@@ -107,3 +107,50 @@ background:url(http://i.imgur.com/2T5M8.png?1);
   85.71%{ left:80px}
 
 }
+
+/* --------------------- */
+
+
+.box-wave {
+  position: relative;
+  transform: translate3d(0, 0, 0);
+}
+.box-wave .wave {
+  opacity: .4;
+  position: absolute;
+  top: -5%;
+  z-index: 0;
+  left: -5%;
+  background: #0af;
+  width: 110%;
+  height: 110%;
+  -webkit-transform-origin: 50% 48%;
+  -ms-transform-origin: 50% 48%;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  -webkit-animation: drift-box 3000ms infinite linear;
+  animation: drift-box 3000ms infinite linear
+}
+.box-wave .wave.-three {
+  animation: drift-box 5000ms infinite linear;
+}
+.box-wave .wave.-two {
+  animation: drift-box 7000ms infinite linear;
+  opacity: .1;
+  background: yellow;
+}
+.box-wave .box:after {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+@keyframes drift-box {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}

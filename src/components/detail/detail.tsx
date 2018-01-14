@@ -36,7 +36,12 @@ export default class Detail extends React.Component<Props, {}> {
   }
 
   processPhoto(photo: string, className = 'my-photo') {
-    return photo ? <img src={photo} key={photo} alt="Smiley face" className={className}></img> : "";
+    if (! photo)
+      return "";
+
+    return (
+        <img src={photo} key={photo} alt="Smiley face" className={className}></img>
+    );
   }
 
   processLogos(logos: Array<string>) {
@@ -178,7 +183,7 @@ export default class Detail extends React.Component<Props, {}> {
       return "";
 
     const myClassName = "general " + this.props.detail.getBackground();
-    const containerClass = this.props.isActive ? "detail active" : "detail";
+    const containerClass = this.props.isActive ? "detail active " : "detail";
 
     return (
       <div className={containerClass}>

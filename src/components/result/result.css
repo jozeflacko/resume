@@ -13,18 +13,18 @@
 .result.active::before {
   content:"";
   position:absolute;
-  left:-50px;
+  left:-1000px;
   height:100%;
-  width:50px;
+  width:1000px;
   top:0px;
   background:inherit;
 }
 .result.active::after {
     content: "";
     position: absolute;
-    right: -900px;
+    right: -2000px;
     height: 100%;
-    width: 900px;
+    width: 2000px;
     top: 0px;
     background: inherit;
 }

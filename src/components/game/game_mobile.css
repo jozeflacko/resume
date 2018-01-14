@@ -1,29 +1,32 @@
 @media screen and (max-width: 470px) {
-  .game.ready,
-  .game.play {
+  .game-container > .game.ready,
+  .game-container > .game.play {
     width:320px;
     height:500px;
     margin-left:-160px;
   }
+  .game-container > .hint-text {
+    display:none;
+  }
 }
 @media screen and (min-width: 470px) and (max-width: 650px){
-  .game.ready,
-  .game.play {
+  .game-container > .game.ready,
+  .game-container > .game.play {
     width:452px;
     height:500px;
     margin-left:-226px;
   }
 }
 @media screen and (min-width: 650px) and (max-width: 850px){
-  .game.ready,
-  .game.play {
+  .game-container > .game.ready,
+  .game-container > .game.play {
     width:600px;
     height:500px;
     margin-left:-300px;
   }
 }
 @media screen and (max-width: 850px) {
-  .game.show-score > .score {
+  .game-container > .game.show-score > .score {
     font-size:70px;
   }
 }
