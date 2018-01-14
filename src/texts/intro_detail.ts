@@ -22,7 +22,7 @@ const introDetail = {
       `I consider myself as a very happy and active person. I love life,
       people, and especially my family and I absolutely admire honesty.`,
 
-      `At the end, I would like mention that work in Google was always my dream
+      `At the end, I would like to mention, that work in Google was always my dream
       and I would be super happy if you would give me a chance to proove my
       professional and personal qualities.`
     ],
