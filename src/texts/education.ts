@@ -4,7 +4,7 @@ import detail from './education_detail';
 export class Education implements IResult {
 
   private title: string = "Education";
-  private subtitle: string = "I studied at Technical University of Kosice";
+  private subtitle: string = "Master of Business Informatics";
   private description: string = `I sucessfully completed second level of university studies in the study programme of Business Informatics`;
 
   public getTitle(): string {

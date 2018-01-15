@@ -1,0 +1,42 @@
+.coolLine-container {
+  position:relative;
+  width: 100%;
+  height: 2px;
+  background: lighten(#f0f4c3, 10%);
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.coolLine-container > .wave {
+  opacity: .4;
+  position: absolute;
+  top: -2950px;
+  left: -1000px;
+  background: #0af;
+  width: 3000px;
+  height: 3000px;
+  -webkit-transform-origin: 50% 48%;
+  -ms-transform-origin: 50% 48%;
+  transform-origin: 50% 48%;
+  border-radius: 43%;
+  -webkit-animation: driftWave 13000ms infinite linear;
+  animation: driftWaveLine 13000ms infinite linear;
+}
+.coolLine-container > .wave.-three {
+  -webkit-animation: driftWave 15000ms infinite linear;
+  animation: driftWaveLine 15000ms infinite linear;
+}
+.coolLine-container > .wave.-two {
+  -webkit-animation: driftWave 17000ms infinite linear;
+  animation: driftWaveLine 17000ms infinite linear;
+  opacity: .1;
+  background: yellow;
+}
+.coolLine-container > .icon > .fa {
+  padding:0px;
+  margin:0px;
+}
+@keyframes driftWaveLine {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}

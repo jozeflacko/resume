@@ -1,0 +1,15 @@
+.coolIcon-container {
+  position:relative;
+  background: white;
+  padding:0px;
+  margin:0px;
+}
+.coolIcon-container > .icon {
+  line-height: 70px;
+  text-align: center;
+  font-size: 70px;
+  text-shadow: 3px 2px #a3e0e5;
+}
+.coolIcon-container > .icon > .fa {
+  color:#62caef;
+}

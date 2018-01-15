@@ -1,5 +1,6 @@
 .results {
-  overflow:hidden;
+  overflow-x:hidden;
+  overflow-y:auto; 
   min-height:100%;
   position:relative;
 }
@@ -51,7 +52,8 @@
 .results > .body {
   padding:10px 0px 100px 0px;
   width:100%;
-  overflow:hidden;
+  overflow-x:hidden;
+  overflow-y:auto;
   min-height:90%;
 }
 .results > .body > .left {

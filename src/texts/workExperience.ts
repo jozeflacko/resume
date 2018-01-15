@@ -4,7 +4,7 @@ export class WorkExperience implements IResult {
 
   private title: string = "Work experience";
   private subtitle: string = "Step by step";
-  private description: string = "Take a look into what I have benn working on last years";
+  private description: string = "Take a look into what I have been working on last years";
   private detail: any;
 
   constructor() {

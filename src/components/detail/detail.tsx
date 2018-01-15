@@ -6,6 +6,8 @@ import * as FontAwesome from 'react-fontawesome';
 import Sentence from '../sentence/sentence';
 //import SkillsTetris from '../../components/skillsTetris/skillsTetris';
 import Rocket from '../rocket/rocket';
+/*import CoolIcon from '../coolIcon/coolIcon';*/
+/*import CoolLine from '../coolLine/coolLine';*/
 
 interface Props extends React.Props<any> {
   detail: any;
@@ -140,8 +142,10 @@ export default class Detail extends React.Component<Props, {}> {
             <div className="from"       >{this.printValue(from)}        </div>
             <div className="to"         >{this.printValue(to)}          </div>
           </div>
+
           <div className="myHead">
             <div className="name cblue" >{this.printValue(name)}        </div>
+
             <div className="subname"    >{this.printValue(subname)}     </div>
             <div className="place"      >{this.printValue(place)}       </div>
           </div>
@@ -194,7 +198,6 @@ export default class Detail extends React.Component<Props, {}> {
         />
         <div  className={myClassName}>
           <div className="title">
-            {this.renderIcon(this.props.detail.getDetail().icon)}
             {this.props.detail.title}
           </div>
           <div className="subtitle">{this.props.detail.subtitle}</div>

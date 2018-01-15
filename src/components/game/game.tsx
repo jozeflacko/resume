@@ -18,7 +18,7 @@ export default class Game extends React.Component {
   private playing = false;
   private playerClicks = 0;
   private score = 0;
-  private countdown = 10;
+  private countdown = 15;
   private timer: Timer = new Timer(this.countdown, () => { this.stopGame(); }, 'countdown');
 
   getMainThumb() {
