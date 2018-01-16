@@ -2,6 +2,7 @@ import * as React from 'react';
 import './result.css';
 import './result_mobile.css';
 import IResult from '../../interfaces/IResult';
+import CoolLine from '../coolLine/coolLine';
 
 interface Props extends React.Props<any> {
   result: IResult;
@@ -11,6 +12,13 @@ interface Props extends React.Props<any> {
 }
 
 export default class Result extends React.Component<Props, {}> {
+
+  processOnActiveCoolLine() {
+    if(this.props.isActive)
+      return <CoolLine />
+    else return "";
+  }
+
   render() {
     if( ! this.props.result )
     return "Loading ...";
@@ -19,11 +27,12 @@ export default class Result extends React.Component<Props, {}> {
     const myClassName = this.props.isActive ?  "result active " + this.props.onActiveClassName :  "result";
 
     return (
-      <div className={myClassName} onClick={() => { this.props.onClick(); }} >
-        <div className="title cblue">{result.getTitle()}</div>
-        <div className="subtitle">{result.getSubtitle()}</div>
-        <div className="description">{result.getDescription()}</div>
-      </div>
+        <div className={myClassName} onClick={() => { this.props.onClick(); }} >
+          <div className="title cblue">{result.getTitle()}</div>
+          <div className="subtitle">{result.getSubtitle()}</div>
+          <div className="description">{result.getDescription()}</div>
+          { this.processOnActiveCoolLine() }
+        </div>
     );
   }
 }

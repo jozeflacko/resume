@@ -19,9 +19,6 @@
   z-index:1000;
   display:none;
 }
-.detail > .coolLine-container {
-  top:-5px;
-}
 
 .detail .back-button:after {
   content:"Close detail";

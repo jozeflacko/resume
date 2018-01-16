@@ -25,6 +25,11 @@ export default class Logo extends React.Component<Props, {}> {
         <span className="l five">l</span>
         <span className="e six">e</span>
         <span className="postfix">Resume</span>
+
+        <span className="left-eye two"></span>
+        <span className="right-eye tree"></span>
+        <span className="smile">)</span>
+
       </Link>
     );
 

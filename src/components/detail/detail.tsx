@@ -7,7 +7,7 @@ import Sentence from '../sentence/sentence';
 //import SkillsTetris from '../../components/skillsTetris/skillsTetris';
 import Rocket from '../rocket/rocket';
 /*import CoolIcon from '../coolIcon/coolIcon';*/
-/*import CoolLine from '../coolLine/coolLine';*/
+import CoolLine from '../coolLine/coolLine';
 
 interface Props extends React.Props<any> {
   detail: any;
@@ -202,6 +202,7 @@ export default class Detail extends React.Component<Props, {}> {
           </div>
           <div className="subtitle">{this.props.detail.subtitle}</div>
         </div>
+        <CoolLine/>
         {this.processDetail()}
       </div>
     );

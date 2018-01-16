@@ -1,7 +1,6 @@
 import * as React from 'react';
 import './sentence.css';
 
-
 class Sentence extends React.Component<{
   image:string,
   startSentence:string,
