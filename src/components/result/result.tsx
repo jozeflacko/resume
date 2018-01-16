@@ -15,7 +15,7 @@ export default class Result extends React.Component<Props, {}> {
 
   processOnActiveCoolLine() {
     if(this.props.isActive)
-      return <CoolLine />
+      return <CoolLine animated={true} />
     else return "";
   }
 

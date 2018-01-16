@@ -6,6 +6,7 @@ import * as FontAwesome from 'react-fontawesome';
 import Sentence from '../sentence/sentence';
 //import SkillsTetris from '../../components/skillsTetris/skillsTetris';
 import Rocket from '../rocket/rocket';
+import Hero from '../hero/hero';
 /*import CoolIcon from '../coolIcon/coolIcon';*/
 import CoolLine from '../coolLine/coolLine';
 
@@ -20,6 +21,7 @@ export default class Detail extends React.Component<Props, {}> {
     const { photo, animation, sentence, bottomPhoto, description, items, bulletgroups } = this.props.detail.getDetail();
     return (
       <div className="content">
+        {this.processHero(photo)}
         <div className="photo">{this.processPhoto(photo)}</div>
         {this.processSentence(sentence)}
         <div className="description">{this.processDescription(description)}</div>
@@ -44,6 +46,12 @@ export default class Detail extends React.Component<Props, {}> {
     return (
         <img src={photo} key={photo} alt="Smiley face" className={className}></img>
     );
+  }
+
+  processHero(photo: string) {
+    if (! photo)
+      return "";
+    return (<Hero photo={photo}/>);
   }
 
   processLogos(logos: Array<string>) {
@@ -202,7 +210,7 @@ export default class Detail extends React.Component<Props, {}> {
           </div>
           <div className="subtitle">{this.props.detail.subtitle}</div>
         </div>
-        <CoolLine/>
+        <CoolLine animated={false} />
         {this.processDetail()}
       </div>
     );

@@ -6,8 +6,16 @@
   overflow: hidden;
   transform: translate3d(0, 0, 0);
 }
+.coolLine-container:not(.animated) {
+  background: #7fd0f9;
+}
 
 .coolLine-container > .wave {
+  display:none;
+}
+
+.coolLine-container.animated > .wave {
+  display:block;
   opacity: .4;
   position: absolute;
   top: -2950px;
@@ -22,20 +30,17 @@
   -webkit-animation: driftWave 13000ms infinite linear;
   animation: driftWaveLine 13000ms infinite linear;
 }
-.coolLine-container > .wave.-three {
+.coolLine-container.animated > .wave.-three {
   -webkit-animation: driftWave 15000ms infinite linear;
   animation: driftWaveLine 15000ms infinite linear;
 }
-.coolLine-container > .wave.-two {
+.coolLine-container.animated > .wave.-two {
   -webkit-animation: driftWave 17000ms infinite linear;
   animation: driftWaveLine 17000ms infinite linear;
   opacity: .1;
   background: yellow;
 }
-.coolLine-container > .icon > .fa {
-  padding:0px;
-  margin:0px;
-}
+
 @keyframes driftWaveLine {
   from { transform: rotate(0deg); }
   from { transform: rotate(360deg); }

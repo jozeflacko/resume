@@ -1,0 +1,111 @@
+.hero-container {
+  text-align:center;
+}
+
+.hero-container .hero {
+  display:block;
+}
+
+.hero-container .hero > .head {
+  height:120px;
+  width:120px;
+  display:block;
+  margin:auto;
+  margin-bottom:-25px;
+}
+.hero-container > .hero > .head >  img {
+  width:100%;
+  height:100%;
+  position:relative;
+}
+.hero-container > .hero > .torso {
+  display:block;
+  margin:auto;
+  height:0px;
+  width:120px;
+  border-top:100px solid black;
+  border-left:25px solid transparent;
+  border-right:25px solid transparent;
+  border-radius: 100px 100px 40px 40px;
+  position:relative;
+}
+.hero-container > .hero > .torso > .left,
+.hero-container .hero > .torso > .right {
+  width: 67px;
+  height: 45px;
+  background: #040404;
+  border: 2px solid white;
+  position: absolute;
+  z-index: 1;
+  border-radius: 26px;
+  z-index:11;
+  overflow:visible;
+}
+.hero-container > .hero > .torso > .left > .hand,
+.hero-container > .hero > .torso > .right > .hand {
+  position:absolute;
+  right:0px;
+  border:2px solid white;
+  width:20px;
+  height:30px;
+  border-radius:50%;
+  z-index:10;
+  background:black;
+}
+
+.hero-container .hero > .torso > .left {
+  -ms-transform: rotate(-35deg);
+  -webkit-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+  left: -37px;
+  top: -47px;
+}
+.hero-container > .hero > .torso > .left > .hand {
+
+}
+.hero-container .hero > .torso > .right {
+  -ms-transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+  right: -37px;
+  top: -47px;
+}
+.hero-container > .hero > .torso > .right > .hand {
+  right:initial;
+  left:-30px;
+
+}
+
+
+.hero-container > .hero > .torso-bottom {
+  width:100px;
+  height:50px;
+  background:black;
+  border-radius: 0px 0px 10px 10px;
+  display:block;
+  margin:auto;
+}
+
+.hero-container .foot {
+  border: 15px solid #999;
+  border-radius:40px;
+  height:40px;
+  width: 40px;
+  background: #ccc;
+  position:relative;
+  left:110px;
+  top:-10px;
+  z-index:-1;
+}
+
+
+.hero-container .toLeft {
+  -ms-transform: rotate(-90deg); /* IE 9 */
+  -webkit-transform: rotate(-90deg); /* Safari 3-8 */
+  transform: rotate(-90deg);
+}
+.hero-container .toRight {
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Safari 3-8 */
+  transform: rotate(90deg);
+}

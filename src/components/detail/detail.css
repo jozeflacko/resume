@@ -312,6 +312,9 @@
   font-size:20px;
   padding:9px;
   z-index:97;
+  -ms-transform: rotate(-3deg); /* IE 9 */
+  -webkit-transform: rotate(-3deg); /* Safari 3-8 */
+  transform: rotate(-3deg);
 }
 .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet  > .bubbles > .bubble.size-5 {
   border:1px solid #DDD;
