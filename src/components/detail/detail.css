@@ -283,7 +283,7 @@
 .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet  > .bubbles > .bubble.heart {
   border-radius:0px;
   border:none;
-  outline:3px solid #db3236;
+  outline:3px solid #dd7375;
   outline-offset: -9px;
   font-size:35px;
   padding:8px 15px;
@@ -291,7 +291,7 @@
   -webkit-transform: rotate(-4deg); /* Safari 3-8 */
   transform: rotate(-4deg);
   position:relative;
-  color:#db3236;
+  color:#dd7375;
   z-index:100;
   background:transparent;
 }
@@ -300,8 +300,8 @@
 .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet  > .bubbles > .bubble.heart > .leftTop,
 .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet  > .bubbles > .bubble.heart > .rightTop {
   position:absolute;
-  background:#db3236;
-  color:#db3236;
+  background:#dd7375;
+  color:#dd7375;
   height: 33px;
   width: 70px;
   border-top-left-radius: 70px;
@@ -323,7 +323,7 @@
   width:0px;
 
   bottom:-23px;
-  border-top:30px solid #db3236;
+  border-top:30px solid #dd7375;
   border-bottom:none;
   border-left:38px solid transparent;
   border-right:38px solid transparent;
