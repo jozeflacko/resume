@@ -7,6 +7,7 @@ import Sentence from '../sentence/sentence';
 //import SkillsTetris from '../../components/skillsTetris/skillsTetris';
 import Rocket from '../rocket/rocket';
 import Hero from '../hero/hero';
+import Baloon from '../baloon/baloon'
 /*import CoolIcon from '../coolIcon/coolIcon';*/
 import CoolLine from '../coolLine/coolLine';
 
@@ -128,19 +129,15 @@ export default class Detail extends React.Component<Props, {}> {
 
     const printBubbles = () => {
       return bubbles.map((bubble, index) => {
-        if(bubble.size ===0) {
+        if(bubble.size === 0) {
+          const className = 'bubble no-style';
           return (
-            <div key={index.toString()} className={'bubble alive heart size-'+bubble.size}>
-              {bubble.value}
-              <div className="leftTop"></div>
-              <div className="rightTop"></div>
-              <div className="bottomMiddle"></div>
+            <div key={'heart-'+index.toString()} className={className}>
+              <Baloon name={bubble.value}/>
             </div>
-          );
+          )
         }
-        return (
-          <div key={index.toString()} className={'bubble size-'+bubble.size}>{bubble.value}</div>
-        );
+        return <div key={index.toString()} className={'bubble size-'+bubble.size}>{bubble.value}</div>;
       });
     }
 

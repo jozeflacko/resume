@@ -1,0 +1,70 @@
+.baloon-container {
+  position:relative;
+  padding:0px;
+  border:0px;
+  background:transparent;
+  top:20px;
+  /* we have to set size of the container for the heart */
+   width:200px;
+   height:70px;
+}
+
+.baloon-container > .heart {
+  position:absolute;
+  border-radius:0px;
+  border:none;
+  outline:3px solid #dd7375;
+  outline-offset: -9px;
+  font-size:35px;
+  padding:8px 15px;
+  color:#dd7375;
+  z-index:100;
+  background:white;
+}
+.baloon-container > .heart > .leftTop,
+.baloon-container > .heart > .rightTop {
+  position:absolute;
+  background:#dd7375;
+  color:#dd7375;
+  height: 33px;
+  width: 70px;
+  border-top-left-radius: 70px;
+  border-top-right-radius: 70px;
+  top:-25px;
+}
+.baloon-container > .heart > .leftTop {
+  left:35px;
+}
+.baloon-container > .heart > .rightTop {
+  right:35px;
+}
+.baloon-container > .heart > .bottomMiddle {
+  position:absolute;
+  left:50%;
+  margin-left:-38px;
+  height:0px;
+  width:0px;
+  bottom:-23px;
+  border-top:30px solid #dd7375;
+  border-bottom:none;
+  border-left:38px solid transparent;
+  border-right:38px solid transparent;
+}
+.baloon-container > .heart > .bottomMiddle:after {
+  border:10px solid #dd7375;
+  border-top:none;
+  content:"";
+  position:absolute;
+  border-left-color:transparent;
+  border-right-color:transparent;
+  margin-left:-10px;
+  left:50%;
+}
+
+.baloon-container > .line {
+  position:absolute;
+  width:2px;
+  margin-top:-1px;
+  background-color:#DDD;
+  z-index:1000;
+}
