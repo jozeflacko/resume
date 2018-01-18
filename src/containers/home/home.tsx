@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchSearchMessage, turnOffAnimation } from '../../actions';
 import RISearch from "../../reducers/interfaces/RISearch";
-import * as FontAwesome from 'react-fontawesome';
 
 interface Props extends React.Props<any> {
   fetchSearchMessage: any; // from redux
@@ -49,9 +48,9 @@ class Home extends React.Component<Props, {}> {
                 </Link>
               </div>
               <div className="text">
-                Jozef Lacko <span>
-                <FontAwesome name="hand-peace-o" />
-                </span> Vienna, 2018
+                  <span className="left">Jozef Lacko</span>
+                  <span className="middle"><Logo game={false} onSmallMovePostfix={false} followMouse={false}/></span>
+                  <span className="right">Vienna, 2018</span>
               </div>
             </div>
           </div>

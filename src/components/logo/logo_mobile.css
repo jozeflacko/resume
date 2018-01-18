@@ -4,7 +4,7 @@
     top:auto;
     left:auto;
   }
-  .logo .postfix {
+  .logo.onSmallMovePostfix .postfix {
     margin-left:5px;
     position:relative;
     left:initial;

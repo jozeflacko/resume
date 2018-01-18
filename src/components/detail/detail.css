@@ -280,6 +280,55 @@
 
 }
 
+.detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet  > .bubbles > .bubble.heart {
+  border-radius:0px;
+  border:none;
+  outline:3px solid #db3236;
+  outline-offset: -9px;
+  font-size:35px;
+  padding:8px 15px;
+  -ms-transform: rotate(-4deg); /* IE 9 */
+  -webkit-transform: rotate(-4deg); /* Safari 3-8 */
+  transform: rotate(-4deg);
+  position:relative;
+  color:#db3236;
+  z-index:100;
+  background:transparent;
+}
+
+
+.detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet  > .bubbles > .bubble.heart > .leftTop,
+.detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet  > .bubbles > .bubble.heart > .rightTop {
+  position:absolute;
+  background:#db3236;
+  color:#db3236;
+  height: 33px;
+  width: 70px;
+  border-top-left-radius: 70px;
+  border-top-right-radius: 70px;
+  top:-25px;
+}
+
+.detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet  > .bubbles > .bubble.heart > .leftTop {
+  left:35px;
+}
+.detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet  > .bubbles > .bubble.heart > .rightTop {
+  right:35px;
+}
+.detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet  > .bubbles > .bubble.heart > .bottomMiddle {
+  position:absolute;
+  left:50%;
+  margin-left:-38px;
+  height:0px;
+  width:0px;
+
+  bottom:-23px;
+  border-top:30px solid #db3236;
+  border-bottom:none;
+  border-left:38px solid transparent;
+  border-right:38px solid transparent;
+}
+
 .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet  > .bubbles > .bubble.size-1 {
   border:5px solid #DDD;
   font-size:35px;

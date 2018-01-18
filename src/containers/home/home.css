@@ -46,6 +46,23 @@
   cursor:default;
 }
 .outer > .middle > .inner > .text > span {
-  color:#4885ed;
-  font-size:25px;
+  display:inline-block;
+  white-space:nowrap;
+}
+.outer > .middle > .inner > .text > span.left {
+  text-align:left;
+  width:90px;
+}
+.outer > .middle > .inner > .text > span.middle {
+  text-align:center;
+  width:140px;
+}
+.outer > .middle > .inner > .text > span.middle > .logo {
+  position:relative; /* default is fixed */
+  left:initial;
+  top:initial;
+}
+.outer > .middle > .inner > .text > span.right {
+  text-align:left;
+  width:90px;
 }

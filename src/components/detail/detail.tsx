@@ -128,6 +128,16 @@ export default class Detail extends React.Component<Props, {}> {
 
     const printBubbles = () => {
       return bubbles.map((bubble, index) => {
+        if(bubble.size ===0) {
+          return (
+            <div key={index.toString()} className={'bubble alive heart size-'+bubble.size}>
+              {bubble.value}
+              <div className="leftTop"></div>
+              <div className="rightTop"></div>
+              <div className="bottomMiddle"></div>
+            </div>
+          );
+        }
         return (
           <div key={index.toString()} className={'bubble size-'+bubble.size}>{bubble.value}</div>
         );
