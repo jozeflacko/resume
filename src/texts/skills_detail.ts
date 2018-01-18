@@ -50,7 +50,7 @@ const detail = {
           ]
         },
         {
-          subtitle:'Solf skills',
+          subtitle:'Soft skills',
           description:`These are my soft skills that I was born with`,
           bullets:[
             { key:'sskil1', label:'', icon:'users', value:'Team player' },
