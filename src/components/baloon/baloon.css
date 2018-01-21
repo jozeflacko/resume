@@ -20,6 +20,8 @@
   color:#dd7375;
   z-index:100;
   background:white;
+  transition:2s;
+  cursor:pointer;
 }
 .baloon-container > .heart > .leftTop,
 .baloon-container > .heart > .rightTop {
@@ -67,4 +69,5 @@
   margin-top:-1px;
   background-color:#DDD;
   z-index:1000;
+  transition:2s;
 }

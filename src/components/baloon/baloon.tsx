@@ -13,11 +13,10 @@ export default class Baloon extends React.Component<{
   kid:any;
   lowerLineOnTop = 55;
   baloonTimeout:any;
-  TIMEOUT = 1 * 100; //ms
 
   componentDidMount() {
-    this.adjustBaloonLine();
     this.flyBaloon(this.baloon, this.line, this.kid);
+    this.setpositionKid(this.baloon, this.line, this.kid);
   }
 
   componentWillMount() {
@@ -25,6 +24,7 @@ export default class Baloon extends React.Component<{
       return;
     }
     this.stopFlyBaloon();
+
   }
 
   stopFlyBaloon = () => {
@@ -32,62 +32,120 @@ export default class Baloon extends React.Component<{
       clearTimeout(this.baloonTimeout);
   }
 
+  flyBaloonAway = () => {
+    this.stopFlyBaloon();
+    let index =  100;
+    const whenToStartWink = index - 1;
+    const whenToStartSad = index - 70;
+    this.baloonTimeout = setInterval(()=> {
+      if(index-- <= 1)
+        this.stopFlyBaloon();
+
+      if(!this.baloon)
+        return;
+
+      this.baloon.style.top =  this.getNewNegativePosition(this.baloon.style.top);
+      this.baloon.style.left = this.getNewNegativePosition(this.baloon.style.left);
+      this.baloon.style.opacity = index / 100;
+      if(index === whenToStartWink) {
+        this.line.style.display = 'none';
+        this.kid.className = this.kid.className + ' waveHand';
+      }
+      if(index === whenToStartSad) {
+        this.kid.className = this.kid.className + ' sad';
+      }
+    }, 100);
+
+  }
+
   flyBaloon = (baloon:any, line:any, kid:any) => {
 
-    this.baloonTimeout = setInterval(()=> {
+    const originalTop = baloon.style.top;
+    const originalLeft = baloon.style.left;
+    const LIMIT = 200;
+    const boundaries = {
+        topMin:  this.getNumPositionValue(originalTop)  - LIMIT,
+        topMax:  this.getNumPositionValue(originalTop)  + LIMIT,
+        leftMin: this.getNumPositionValue(originalLeft) - LIMIT,
+        leftMax: this.getNumPositionValue(originalLeft) + LIMIT,
+    };
+
+    const fly = () => {
       if(baloon === undefined || line === undefined || kid === undefined) {
         return;
       }
-      const top =  this.getNewRandomPosition(baloon.style.top, 1, 1);
-      const left = this.getNewRandomPosition(baloon.style.left, 1, 1);
-      baloon.style.top = top;
-      baloon.style.left = left;
-      this.adjustBaloonLine();
+      const BALOON_MOVEMENT = 20; //px
 
+      let top =  this.getNewRandomPosition(baloon.style.top, BALOON_MOVEMENT);
+      let left = this.getNewRandomPosition(baloon.style.left, BALOON_MOVEMENT);
 
-    }, this.TIMEOUT);
+      top   = boundaries.topMax   < top   ? boundaries.topMin   : top;
+      top   = boundaries.topMin   > top   ? boundaries.topMax   : top;
+      left  = boundaries.leftMax  < left  ? boundaries.leftMin  : left;
+      left  = boundaries.leftMin  > left  ? boundaries.leftMax  : left;
 
+      baloon.style.top = top + 'px';
+      baloon.style.left = left + 'px';
+
+      this.adjustBaloonLine([
+        ( top  + (baloon.offsetHeight / 2) ),
+        ( left + (baloon.offsetWidth  / 2) )
+      ]);
+    };
+    this.baloonTimeout = setInterval( ()=> { fly() }, 100);
   };
 
-  getNewRandomPosition(currentNumber:string, pxLess:number, pxMore:number):string {
+  setpositionKid(baloon:any, line:any, kid:any) {
+    if(baloon === undefined || line === undefined || kid === undefined) {
+      return;
+    }
+    const left = baloon.parentElement.offsetWidth - ( (baloon.offsetWidth/2) + baloon.offsetLeft);
+    kid.style.left = left + 'px';
+  }
+
+  getNumPositionValue(stringValue: string): number {
+    let value = parseInt(stringValue,10);
+    return isNaN(value) ? 0 : value;
+  }
+
+  getNewNegativePosition(currentNumber:string):string {
     let current:number = parseInt(currentNumber,10);
-        current = current >= 0 ? current : 0;
-    const randomNumber = this.randomIntFromInterval(current-pxLess, current+pxMore);
-    return randomNumber >= 0 ? randomNumber+'px' : current+'px';
+    const r = isNaN(current) ? '0px' : (current - 10)+'px';
+    console.log(r);
+    return r;
+  }
+
+  getNewRandomPosition(currentNumber:string, tolerance:number):number {
+    const current = this.getNumPositionValue(currentNumber);
+    const randomNumber = this.randomIntFromInterval(current-tolerance, current+tolerance);
+    return randomNumber >= 0 ? randomNumber : current;
   }
   randomIntFromInterval(min:number, max:number):number {
     return Math.floor(Math.random()*(max-min+1)+min);
   }
 
-  adjustBaloonLine() {
+  adjustBaloonLine(setThisPositions: [number, number]) {
     if(!this.line || !this.baloon || !this.kid) {
       return;
     }
-    this.adjustLine(this.baloon, this.kid, this.line, this.lowerLineOnTop);
+    this.adjustLine(this.baloon, this.kid, this.line, this.lowerLineOnTop, setThisPositions);
   }
-  adjustLine(from:any, to:any, line:any, lowerLineOnTop:number) {
-  	var fT = from.offsetTop  + from.offsetHeight/2;
-    var tT = to.offsetTop 	 + to.offsetHeight/2;
-    var fL = from.offsetLeft + from.offsetWidth/2;
-    var tL = to.offsetLeft 	 + to.offsetWidth/2;
 
-    var CA   = Math.abs(tT - fT);
-    var CO   = Math.abs(tL - fL);
-    var H    = Math.sqrt(CA*CA + CO*CO);
-    var ANG  = 180 / Math.PI * Math.acos( CA/H );
+  adjustLine(from:any, to:any, line:any, lowerLineOnTop:number, setThisPositions:[number, number]) {
 
-    if(tT > fT){
-        var top  = (tT-fT)/2 + fT;
-    }else{
-        var top  = (fT-tT)/2 + tT;
-    }
-    if(tL > fL){
-        var left = (tL-fL)/2 + fL;
-    }else{
-        var left = (fL-tL)/2 + tL;
-    }
+    const  fT = setThisPositions[0];
+    const  fL = setThisPositions[1]
+    const  tT = to.offsetTop 	 + to.offsetHeight/2;
+    const  tL = to.offsetLeft 	 + to.offsetWidth/2;
 
-    if(( fT < tT && fL < tL) || ( tT < fT && tL < fL) || (fT > tT && fL > tL) || (tT > fT && tL > fL)){
+    const CA   = Math.abs(tT - fT);
+    const CO   = Math.abs(tL - fL);
+    const H    = Math.sqrt(CA*CA + CO*CO);
+    let ANG  = 180 / Math.PI * Math.acos( CA/H );
+    let top = (tT > fT) ? (tT-fT)/2 + fT : (fT-tT)/2 + tT;
+    let left = (tL > fL) ? (tL-fL)/2 + fL : (fL-tL)/2 + tL;
+
+    if(( fT < tT && fL < tL) || ( tT < fT && tL < fL) || (fT > tT && fL > tL) || (tT > fT && tL > fL)) {
       ANG *= -1;
     }
     top-= H/2;
@@ -102,10 +160,6 @@ export default class Baloon extends React.Component<{
     line.style.height = (H) + 'px';
   }
 
-  printKid() {
-
-  }
-
   render() {
     if(! this.props.name || this.props.name==="") {
         return "";
@@ -114,7 +168,7 @@ export default class Baloon extends React.Component<{
       <div className="baloon-container">
           <div className="line"  ref={(elem) => {this.line  = elem}} ></div>
 
-          <div className='heart baloon' ref={(elem) => {this.baloon = elem}} >
+          <div className='heart baloon' ref={(elem) => {this.baloon = elem}} onClick={()=>{ this.flyBaloonAway() }}>
             {this.props.name}
             <div className="leftTop"></div>
             <div className="rightTop"></div>
@@ -123,15 +177,17 @@ export default class Baloon extends React.Component<{
 
           <div className="kid" ref={(elem) => {this.kid   = elem}}>
               <div className="group">
-                <div className="hair"></div>
-                <div className="ear"></div>
-                <div className="ear right"></div>
-                <div className="fringe"></div>
-                <div className="face"></div>
-                <div className="eyebrow"></div>
-                <div className="eye"></div>
-                <div className="mouth">
-                  <div className="tongue"></div>
+                <div className="head">
+                  <div className="hair"></div>
+                  <div className="ear"></div>
+                  <div className="ear right"></div>
+                  <div className="fringe"></div>
+                  <div className="face"></div>
+                  <div className="eyebrow"></div>
+                  <div className="eye"></div>
+                  <div className="mouth">
+                    <div className="tongue"></div>
+                  </div>
                 </div>
 
                 <div className="neck"></div>

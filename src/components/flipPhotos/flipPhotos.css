@@ -1,0 +1,111 @@
+.flipPhotos-container {
+
+}
+.flipPhotos-container .spin-container {
+  width:300px;
+  height:300px;
+  padding:0px;
+  margin:auto;
+  position:relative;
+  box-shadow: 3px 3px 15px #a2a2a2;
+}
+.flipPhotos-container .spin-container > img {
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+.flipPhotos-container .spin-container .spin-row {
+  width:100%;
+  box-sizing: border-box;
+  position:relative;
+}
+/*
+.flipPhotos-container:hover .spin-container > .spin-row:first-child {
+  height:100% !important;
+}
+.flipPhotos-container:hover .spin-container > .spin-row:not(:first-child) {
+  display:none;
+}
+.flipPhotos-container:hover .spin-container > .spin-row > .card > div > img {
+  top:0px !important;
+  -webkit-filter:none !important;
+  filter:none !important;
+}
+*/
+.flipPhotos-container .spin-container .spin-row .card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transition: -webkit-transform 1s;
+    -moz-transition: -moz-transform 1s;
+    -o-transition: -o-transform 1s;
+    transition: transform 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50%;
+    border:1px solid white;
+}
+.flipPhotos-container .spin-container .spin-row:nth-child(3n+0) .card {
+  transform:rotate(2deg);
+}
+.flipPhotos-container .spin-container .spin-row:nth-child(4n+0) .card {
+
+}
+.flipPhotos-container .spin-container .spin-row:nth-child(2n+0) .card {
+  transform:rotate(2deg);
+}
+.flipPhotos-container .spin-container .spin-row .card > div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background:#DDD;
+    /*
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    */
+    overflow:hidden;
+}
+.flipPhotos-container .spin-container > .spin-row > .card > .front{
+
+}
+.flipPhotos-container .spin-container > .spin-row > .card > .back {
+    -webkit-transform: rotateX( 180deg );
+    -moz-transform: rotateX( 180deg );
+    -o-transform: rotateX( 180deg );
+    transform: rotateX( 180deg );
+}
+.flipPhotos-container .spin-container > .spin-row > .card.flipped {
+  -webkit-transform: rotateX( 180deg );
+    -moz-transform: rotateX( 180deg );
+    -o-transform: rotateX( 180deg );
+    transform: rotateX( 180deg );
+
+}
+.flipPhotos-container .spin-container > .spin-row > .card > div > img {
+    position:relative;
+    background-repeat: no-repeat;
+    background-position: center top;
+    /* via js
+    height:300px;
+    background-size: 100% 300%;
+    */
+}
+.flipPhotos-container .spin-container > .spin-row > .card > div > img.blur {-webkit-filter: blur(4px);filter: blur(4px);}
+.flipPhotos-container .spin-container > .spin-row > .card > div > img.brightness {-webkit-filter: brightness(250%);filter: brightness(250%);}
+.flipPhotos-container .spin-container > .spin-row > .card > div > img.contrast {-webkit-filter: contrast(180%);filter: contrast(180%);}
+.flipPhotos-container .spin-container > .spin-row > .card > div > img.grayscale {-webkit-filter: grayscale(100%);filter: grayscale(100%);}
+.flipPhotos-container .spin-container > .spin-row > .card > div > img.huerotate {-webkit-filter: hue-rotate(180deg);filter: hue-rotate(180deg);}
+.flipPhotos-container .spin-container > .spin-row > .card > div > img.invert {-webkit-filter: invert(100%);filter: invert(100%);}
+.flipPhotos-container .spin-container > .spin-row > .card > div > img.opacity {-webkit-filter: opacity(50%);filter: opacity(50%);}
+.flipPhotos-container .spin-container > .spin-row > .card > div > img.saturate {-webkit-filter: saturate(7); filter: saturate(7);}
+.flipPhotos-container .spin-container > .spin-row > .card > div > img.sepia {-webkit-filter: sepia(100%);filter: sepia(100%);}
+.flipPhotos-container .spin-container > .spin-row > .card > div > img.shadow {-webkit-filter: drop-shadow(8px 8px 10px green);filter: drop-shadow(8px 8px 10px green);}

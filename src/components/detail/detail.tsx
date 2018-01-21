@@ -10,6 +10,7 @@ import Hero from '../hero/hero';
 import Baloon from '../baloon/baloon'
 /*import CoolIcon from '../coolIcon/coolIcon';*/
 import CoolLine from '../coolLine/coolLine';
+import FlipPhotos from '../flipPhotos/flipPhotos';
 
 interface Props extends React.Props<any> {
   detail: any;
@@ -19,10 +20,11 @@ interface Props extends React.Props<any> {
 
 export default class Detail extends React.Component<Props, {}> {
   processDetail() {
-    const { photo, animation, sentence, bottomPhoto, description, items, bulletgroups } = this.props.detail.getDetail();
+    const { photo, flipPhotos, animation, sentence, bottomPhoto, description, items, bulletgroups } = this.props.detail.getDetail();
     return (
       <div className="content">
         {this.processHero(photo)}
+        {this.processFlipPhotos(flipPhotos)}
         <div className="photo">{this.processPhoto(photo)}</div>
         {this.processSentence(sentence)}
         <div className="description">{this.processDescription(description)}</div>
@@ -38,6 +40,10 @@ export default class Detail extends React.Component<Props, {}> {
     if(animation === 'rocket')
       return <Rocket/>
     return "";
+  }
+
+  processFlipPhotos(flipPhotos:Array<string>){
+    return <FlipPhotos flipPhotos={flipPhotos} numberOfRows={5}/>;
   }
 
   processPhoto(photo: string, className = 'my-photo') {
