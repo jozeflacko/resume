@@ -100,38 +100,38 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
       <div>
         <Result
           result={intro}
-          isActive={ this.props.information.detail === this.props.information.intro }
-          onClick={() => { this.props.setDetail(intro);  this.setActiveDetail();     }}
+          isActive={this.props.information.detail === this.props.information.intro}
+          onClick={() => {this.props.setDetail(intro);  this.setActiveDetail();}}
           onActiveClassName="blightblue"
         />
         <Result
           result={experience}
-          isActive={ this.props.information.detail === this.props.information.experience }
-          onClick={() => { this.props.setDetail(experience); this.setActiveDetail(); }}
+          isActive={this.props.information.detail === this.props.information.experience}
+          onClick={() => {this.props.setDetail(experience); this.setActiveDetail();}}
           onActiveClassName="blightred"
         />
         <Result
           result={education}
-          isActive={ this.props.information.detail === this.props.information.education }
-          onClick={() => { this.props.setDetail(education); this.setActiveDetail();  }}
+          isActive={this.props.information.detail === this.props.information.education}
+          onClick={() => {this.props.setDetail(education); this.setActiveDetail();}}
           onActiveClassName="blightyellow"
         />
         <Result
           result={skills}
-          isActive={ this.props.information.detail === this.props.information.skills }
-          onClick={() => { this.props.setDetail(skills); this.setActiveDetail();  }}
+          isActive={this.props.information.detail === this.props.information.skills}
+          onClick={() => {this.props.setDetail(skills); this.setActiveDetail();}}
           onActiveClassName="blightblue"
         />
         <Result
           result={contact}
-          isActive={ this.props.information.detail === this.props.information.contact }
-          onClick={() => { this.props.setDetail(contact);  this.setActiveDetail();  }}
+          isActive={this.props.information.detail === this.props.information.contact}
+          onClick={() => {this.props.setDetail(contact);  this.setActiveDetail();}}
           onActiveClassName="blightyellow"
         />
         <Result
           result={freeTime}
-          isActive={ this.props.information.detail === this.props.information.freeTime }
-          onClick={() => { this.props.setDetail(freeTime);  this.setActiveDetail();  }}
+          isActive={this.props.information.detail === this.props.information.freeTime}
+          onClick={() => {this.props.setDetail(freeTime);  this.setActiveDetail();}}
           onActiveClassName="blightgreen"
         />
       </div>
@@ -141,9 +141,9 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
   render() {
     return (
       <div className="results">
-        <div className="header">            
+        <div className="header">
 
-          <div className="left" onClick={ ()=> { this.props.turnOffAnimation(); } } >
+          <div className="left" onClick={()=> {this.props.turnOffAnimation();}} >
             <Logo game={false}/>
           </div>
           <div className="right">
@@ -157,9 +157,9 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
             {this.createMyLife()}
           </div>
           <div className="right">
-            <Detail detail={this.props.information.detail} isActive={ this.state.isActive } setUnactiveDetail={ () => {this.setUnactiveDetail()} }/>
+            <Detail detail={this.props.information.detail} isActive={this.state.isActive} setUnactiveDetail={() => {this.setUnactiveDetail()}} />
           </div>
-          <div className="clear"></div>
+          <div className="clear"/>
         </div>
         <div className="footer">
           <Packman/>

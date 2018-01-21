@@ -136,15 +136,15 @@ export default class FlipPhotos extends React.Component<{
     return filters[this.getRandomInt(0,filters.length)];
   }
 
-  renderRows(numberOfRows:number) {
-    let rows = [];
+  renderRows(numberOfRows:number):any {
+    let rows:any = [];
     for (var i = 0; i < numberOfRows; i++) {
         rows.push(this.renderRow(i));
     }
     return rows;
   }
 
-  renderRow(numberOfRow:number) {
+  renderRow(numberOfRow:number):any {
     return (
       <div className={`spin-row row${numberOfRow}`} key={'row-'+numberOfRow}>
         <div className="card">
@@ -164,10 +164,8 @@ export default class FlipPhotos extends React.Component<{
     }
     return (
       <div className="flipPhotos-container" >
-        <div id="spin-container" className="spin-container" ref={ (element)=>{ this.containerNode = element}}>
-          {
-            this.renderRows(this.props.numberOfRows)
-          }
+        <div id="spin-container" className="spin-container" ref={(element)=>{this.containerNode = element}}>
+          {this.renderRows(this.props.numberOfRows)}
         </div>
       </div>
     );

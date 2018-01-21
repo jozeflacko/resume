@@ -27,11 +27,11 @@ class Packman extends React.Component {
           <span className="character six small"><label>.com</label>   </span>
         </div>
         <div className="object">
-          <span className="white-block"></span>
+          <span className="white-block"/>
           <div className="pacman">
-            <div className="pacman-top"></div>
-            <div className="pacman-bottom"></div>
-            <div className="feed"></div>
+            <div className="pacman-top"/>
+            <div className="pacman-bottom"/>
+            <div className="feed"/>
           </div>
         </div>
       </div>

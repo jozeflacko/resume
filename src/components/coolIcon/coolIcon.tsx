@@ -13,7 +13,7 @@ export default class CoolIcon extends React.Component<{
 
     return (
       <div className="coolIcon-container">
-      
+
         <div className="icon">
           <FontAwesome name={this.props.name} className="cool-icon"/>
         </div>

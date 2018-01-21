@@ -31,7 +31,7 @@ class Home extends React.Component<Props, {}> {
             <div className="inner">
               <Logo game={true} />
               <SearchBar search={this.props.search} />
-              <div className="buttons" onClick={ ()=> { this.props.turnOffAnimation(); } } >
+              <div className="buttons" onClick={()=> {this.props.turnOffAnimation();}} >
                 <Link
                   to={'/results'}
                   className="button"

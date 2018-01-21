@@ -10,9 +10,9 @@ export default class CoolLine extends React.Component<{
 
     return (
       <div className={className}>
-        <div className='wave -one'></div>
-        <div className='wave -two'></div>
-        <div className='wave -three'></div>
+        <div className='wave -one'/>
+        <div className='wave -two'/>
+        <div className='wave -three'/>
       </div>
     );
   }

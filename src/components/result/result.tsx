@@ -31,7 +31,7 @@ export default class Result extends React.Component<Props, {}> {
           <div className="title cblue">{result.getTitle()}</div>
           <div className="subtitle">{result.getSubtitle()}</div>
           <div className="description">{result.getDescription()}</div>
-          { this.processOnActiveCoolLine() }
+          {this.processOnActiveCoolLine()}
         </div>
     );
   }

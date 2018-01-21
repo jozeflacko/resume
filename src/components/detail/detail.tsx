@@ -51,7 +51,7 @@ export default class Detail extends React.Component<Props, {}> {
       return "";
 
     return (
-        <img src={photo} key={photo} alt="Smiley face" className={className}></img>
+        <img src={photo} key={photo} alt="Smiley face" className={className}/>
     );
   }
 
@@ -103,7 +103,7 @@ export default class Detail extends React.Component<Props, {}> {
         <div key={key} className="bullet">
           {this.processIconAndLabel(bullet)}
           <span className="value">{bullet.value}</span>
-          { this.processBubbless(bullet.bubbles)}
+          {this.processBubbless(bullet.bubbles)}
         </div>
       );
     });
@@ -190,7 +190,7 @@ export default class Detail extends React.Component<Props, {}> {
     if(iconName === undefined)
       return "";
     else
-      return <FontAwesome name={this.props.detail.getDetail().icon } />
+      return <FontAwesome name={this.props.detail.getDetail().icon} />
   }
 
   processSentence(sentence:{
@@ -215,9 +215,9 @@ export default class Detail extends React.Component<Props, {}> {
         <FontAwesome
           name="times-circle"
           className="back-button cred"
-          onClick={ ()=>{ this.props.setUnactiveDetail() } }
+          onClick={()=>{this.props.setUnactiveDetail()}}
         />
-        <div  className={myClassName}>
+        <div className={myClassName}>
           <div className="title">
             {this.props.detail.title}
           </div>

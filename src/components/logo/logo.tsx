@@ -93,9 +93,8 @@ export default class Logo extends React.Component<Props, {}> {
         <span className="l five">l</span>
         <span className="e six">e</span>
         <span className="postfix">Resume</span>
-
-        <span className="left-eye two" ref={ (el) => { this.leftEyeNode = el; } }></span>
-        <span className="right-eye tree" ref={ (el) => { this.rightEyeNode = el; } }></span>
+        <span className="left-eye two" ref={(el) => {this.leftEyeNode = el;}} />
+        <span className="right-eye tree" ref={(el) => {this.rightEyeNode = el;}} />
         <span className="smile">)</span>
 
       </Link>

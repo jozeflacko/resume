@@ -15,7 +15,7 @@ class Sentence extends React.Component<{
   TIMEOUT_SECONDS = 1.7;
 
   componentDidMount() {
-    if(this.startSentence && this.endSentence){
+    if(this.startSentence && this.endSentence) {
       this.start();
     }
   }
@@ -42,11 +42,11 @@ class Sentence extends React.Component<{
   render() {
     return (
       <div className="sentence-container">
-        <div className="sentence" ref={(el)=>{this.sentenceContainer = el;}}></div>
+        <div className="sentence" ref={(el)=>{this.sentenceContainer = el;}}/>
         <div className="text-container">
            <div className="center">
-             <p className="startSentence" ref={ (el) => { this.startSentence = el; } }></p>
-             <p className="endSentence" ref={ (el) => { this.endSentence = el; } }></p>
+             <p className="startSentence" ref={(el) => {this.startSentence = el;}}/>
+             <p className="endSentence" ref={(el) => {this.endSentence = el;}}/>
            </div>
         </div>
       </div>

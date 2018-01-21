@@ -34,7 +34,7 @@ export function turnOffAnimation() {
   };
 }
 
-export function fetchLinks(payload: any) {
+export function fetchLinks(payload: {}) {
   return {
     type: FETCH_LINKS,
     payload: Links,
@@ -83,7 +83,7 @@ export function fetchContact() {
   };
 }
 
-export function setDetail(payload: any) {
+export function setDetail(payload: {}) {
   return {
     type: SET_DETAIL,
     payload: payload,

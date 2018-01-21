@@ -16,7 +16,6 @@ export default class Game extends React.Component {
   private gameNode: any;
   private hintNode: any;
   private playing = false;
-  private playerClicks = 0;
   private score = 0;
   private countdown = 15;
   private timer: Timer = new Timer(this.countdown, () => { this.stopGame(); }, 'countdown');
@@ -78,7 +77,6 @@ export default class Game extends React.Component {
     this.showHint(false);
     this.gameNode.querySelector('.score').innerHTML = "Your Score " + (this.score = 0);
     this.clickEvent.remove();
-    this.playerClicks = 0;
   }
 
   insertThumb(main:boolean = false, move:boolean = true) {
@@ -222,14 +220,14 @@ export default class Game extends React.Component {
   render() {
     return (
       <div className="game-container">
-        <div className="hint-text" ref={ (el) => { this.hintNode = el; } }>
+        <div className="hint-text" ref={(el) => {this.hintNode = el;}}>
           <p className="title">Hint:</p>
           <p className="main">Click on the Happy Thumb as many times you can!</p>
           <p>But be aware that Sad Thumbs dont want to be disturbed!
           It will be not so easy, because place will get crowded.</p>
         </div>
 
-        <div className="game" ref={ (el) => { this.gameNode = el; } } >
+        <div className="game" ref={(el) => {this.gameNode = el;}} >
 
             <span className="score">Your Score 0</span>
             <span className="timer">
@@ -239,25 +237,25 @@ export default class Game extends React.Component {
               name="play-circle"
               className="play-btn"
               title="Start the Game"
-              onClick={ (e:any)=> {
+              onClick={(e:any) => {
                 this.readyGame();
               }}
             />
             <FontAwesome
               name="times-circle"
               className="stop-btn"
-              onClick={ ()=> {
+              onClick={() => {
                 this.finishGame();
               }}
             />
             <div className="init">
-              <div className="init-thumb init-1"></div>
-              <div className="init-thumb init-2"></div>
-              <div className="init-thumb init-3"></div>
-              <div className="init-thumb init-middle"></div>
-              <div className="init-thumb init-4"></div>
-              <div className="init-thumb init-5"></div>
-              <div className="init-thumb init-6"></div>
+              <div className="init-thumb init-1"/>
+              <div className="init-thumb init-2"/>
+              <div className="init-thumb init-3"/>
+              <div className="init-thumb init-middle"/>
+              <div className="init-thumb init-4"/>
+              <div className="init-thumb init-5"/>
+              <div className="init-thumb init-6"/>
             </div>
         </div>
       </div>

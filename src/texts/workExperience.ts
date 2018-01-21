@@ -1,37 +1,5 @@
 import IResult from '../interfaces/IResult';
 
-export class WorkExperience implements IResult {
-
-  private title: string = "Work experience";
-  private subtitle: string = "Step by step";
-  private description: string = "Take a look into what I have been working on last years";
-  private detail: any;
-
-  constructor() {
-    this.detail = Detail;
-  }
-
-  public getTitle(): string {
-    return this.title;
-  }
-
-  public getSubtitle(): string {
-    return this.subtitle;
-  }
-
-  public getDescription(): string {
-    return this.description;
-  }
-
-  public getDetail() {
-    return this.detail;
-  }
-
-  public getBackground() {
-    return "blightred";
-  }
-}
-
 const Detail = {
     icon:'smile-o',
     items: [
@@ -137,3 +105,35 @@ const Detail = {
       }
     ]
 };
+
+export class WorkExperience implements IResult {
+
+  private title: string = "Work experience";
+  private subtitle: string = "Step by step";
+  private description: string = "Take a look into what I have been working on last years";
+  private detail: any;
+
+  constructor() {
+    this.detail = Detail;
+  }
+
+  public getTitle(): string {
+    return this.title;
+  }
+
+  public getSubtitle(): string {
+    return this.subtitle;
+  }
+
+  public getDescription(): string {
+    return this.description;
+  }
+
+  public getDetail() {
+    return this.detail;
+  }
+
+  public getBackground() {
+    return "blightred";
+  }
+}

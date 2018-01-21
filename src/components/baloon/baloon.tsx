@@ -3,16 +3,15 @@ import './baloon.css';
 import './baloon_mobile.css';
 import './kid.css';
 
-
 export default class Baloon extends React.Component<{
-  name:string;
+  name: string;
 }, {}> {
 
-  baloon:any;
-  line:any;
+  baloon: HTMLElement;
+  line:HTMLElement;
   kid:any;
   lowerLineOnTop = 55;
-  baloonTimeout:any;
+  baloonTimeout: any;
 
   componentDidMount() {
     this.flyBaloon(this.baloon, this.line, this.kid);
@@ -28,8 +27,10 @@ export default class Baloon extends React.Component<{
   }
 
   stopFlyBaloon = () => {
-    if(!!this.baloonTimeout)
+    if(!!this.baloonTimeout) {
+
       clearTimeout(this.baloonTimeout);
+    }
   }
 
   flyBaloonAway = () => {
@@ -38,15 +39,19 @@ export default class Baloon extends React.Component<{
     const whenToStartWink = index - 1;
     const whenToStartSad = index - 70;
     this.baloonTimeout = setInterval(()=> {
-      if(index-- <= 1)
-        this.stopFlyBaloon();
+      if(index-- <= 1) {
 
-      if(!this.baloon)
+        this.stopFlyBaloon();
+      }
+
+      if(!this.baloon) {
+
         return;
+      }
 
       this.baloon.style.top =  this.getNewNegativePosition(this.baloon.style.top);
       this.baloon.style.left = this.getNewNegativePosition(this.baloon.style.left);
-      this.baloon.style.opacity = index / 100;
+      this.baloon.style.opacity = (index / 100).toString();
       if(index === whenToStartWink) {
         this.line.style.display = 'none';
         this.kid.className = this.kid.className + ' waveHand';
@@ -74,7 +79,7 @@ export default class Baloon extends React.Component<{
       if(baloon === undefined || line === undefined || kid === undefined) {
         return;
       }
-      const BALOON_MOVEMENT = 20; //px
+      const BALOON_MOVEMENT = 20; // px
 
       let top =  this.getNewRandomPosition(baloon.style.top, BALOON_MOVEMENT);
       let left = this.getNewRandomPosition(baloon.style.left, BALOON_MOVEMENT);
@@ -92,8 +97,8 @@ export default class Baloon extends React.Component<{
         ( left + (baloon.offsetWidth  / 2) )
       ]);
     };
-    this.baloonTimeout = setInterval( ()=> { fly() }, 100);
-  };
+    this.baloonTimeout = setInterval( ()=> { fly(); }, 100);
+  }
 
   setpositionKid(baloon:any, line:any, kid:any) {
     if(baloon === undefined || line === undefined || kid === undefined) {
@@ -108,7 +113,11 @@ export default class Baloon extends React.Component<{
     return isNaN(value) ? 0 : value;
   }
 
-  getNewNegativePosition(currentNumber:string):string {
+  getNewNegativePosition(currentNumber:string|null):string {
+    if(currentNumber === null) {
+
+      return '';
+    }
     let current:number = parseInt(currentNumber,10);
     const r = isNaN(current) ? '0px' : (current - 10)+'px';
     console.log(r);
@@ -150,54 +159,53 @@ export default class Baloon extends React.Component<{
     }
     top-= H/2;
 
-    line.style["-webkit-transform"] = 'rotate('+ ANG +'deg)';
-    line.style["-moz-transform"] = 'rotate('+ ANG +'deg)';
-    line.style["-ms-transform"] = 'rotate('+ ANG +'deg)';
-    line.style["-o-transform"] = 'rotate('+ ANG +'deg)';
-    line.style["-transform"] = 'rotate('+ ANG +'deg)';
+    line.style['-webkit-transform'] = 'rotate('+ ANG +'deg)';
+    line.style['-moz-transform'] = 'rotate('+ ANG +'deg)';
+    line.style['-ms-transform'] = 'rotate('+ ANG +'deg)';
+    line.style['-o-transform'] = 'rotate('+ ANG +'deg)';
+    line.style['-transform'] = 'rotate('+ ANG +'deg)';
     line.style.top    = (top+lowerLineOnTop)+'px';
     line.style.left   = left+'px';
     line.style.height = (H) + 'px';
   }
 
   render() {
-    if(! this.props.name || this.props.name==="") {
-        return "";
+    if(! this.props.name || this.props.name==='') {
+        return '';
     }
     return (
       <div className="baloon-container">
-          <div className="line"  ref={(elem) => {this.line  = elem}} ></div>
-
-          <div className='heart baloon' ref={(elem) => {this.baloon = elem}} onClick={()=>{ this.flyBaloonAway() }}>
+          <div className="line"  ref={(elem) => {this.line  = elem}} />
+          <div className="heart baloon" ref={(elem) => {this.baloon = elem}} onClick={()=>{ this.flyBaloonAway() }}>
             {this.props.name}
-            <div className="leftTop"></div>
-            <div className="rightTop"></div>
-            <div className="bottomMiddle"></div>
+            <div className="leftTop"/>
+            <div className="rightTop"/>
+            <div className="bottomMiddle"/>
           </div>
 
           <div className="kid" ref={(elem) => {this.kid   = elem}}>
               <div className="group">
                 <div className="head">
-                  <div className="hair"></div>
-                  <div className="ear"></div>
-                  <div className="ear right"></div>
-                  <div className="fringe"></div>
-                  <div className="face"></div>
-                  <div className="eyebrow"></div>
-                  <div className="eye"></div>
+                  <div className="hair"/>
+                  <div className="ear"/>
+                  <div className="ear right"/>
+                  <div className="fringe"/>
+                  <div className="face"/>
+                  <div className="eyebrow"/>
+                  <div className="eye"/>
                   <div className="mouth">
-                    <div className="tongue"></div>
+                    <div className="tongue"/>
                   </div>
                 </div>
 
-                <div className="neck"></div>
-                <div className="body"></div>
-                <div className="lefthand"></div>
-                <div className="righthand"></div>
-                <div className="belt"></div>
-                <div className="leftleg"></div>
-                <div className="rightleg"></div>
-                <div className="earth"></div>
+                <div className="neck"/>
+                <div className="body"/>
+                <div className="lefthand"/>
+                <div className="righthand"/>
+                <div className="belt"/>
+                <div className="leftleg"/>
+                <div className="rightleg"/>
+                <div className="earth"/>
               </div>
           </div>
         </div>
