@@ -1,7 +1,7 @@
 class PreloadImages {
 
   private srcs = [
-    './assets/flipPhotos/0.JPG',
+    './assets/flipPhotos/body.JPG',
     './assets/flipPhotos/1.JPG',
     './assets/flipPhotos/2.JPG',
     './assets/flipPhotos/3.JPG',
