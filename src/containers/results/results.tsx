@@ -22,6 +22,7 @@ import Result from '../../components/result/result';
 import Detail from '../../components/detail/detail';
 import { ILink } from '../../texts/links';
 import RISearch from "../../reducers/interfaces/RISearch";
+import PreloadImages from '../../tools/preloadImages';
 
 
 interface Props extends React.Props<any> {
@@ -51,6 +52,8 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
       isActive: false
     };
   }
+
+  preloadImages = new PreloadImages();
 
   componentDidMount() {
     this.props.fetchLinks();

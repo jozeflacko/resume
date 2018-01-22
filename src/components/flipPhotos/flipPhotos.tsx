@@ -1,8 +1,10 @@
 import * as React from 'react';
 import './flipPhotos.css';
+import './flipPhotos_mobile.css';
 
 
 export default class FlipPhotos extends React.Component<{
+  flipPhotosBottom?:string,
   flipPhotos:Array<string>;
   numberOfRows:number;
 }, {}> {
@@ -130,8 +132,10 @@ export default class FlipPhotos extends React.Component<{
       'grayscale',
       'sepia',
       'shadow',
-      'opacity',
-      '' /* nothing */
+    /*  'opacity',
+      'hueblue',
+      'huered', */
+      ''
     ];
     return filters[this.getRandomInt(0,filters.length)];
   }
@@ -142,6 +146,13 @@ export default class FlipPhotos extends React.Component<{
         rows.push(this.renderRow(i));
     }
     return rows;
+  }
+
+  addBottomPhoto() {
+    if(this.props.flipPhotosBottom)
+      return <div className="bottom-background"><img src={this.props.flipPhotosBottom} /></div>;
+    else
+      return "";
   }
 
   renderRow(numberOfRow:number):any {
@@ -167,6 +178,7 @@ export default class FlipPhotos extends React.Component<{
         <div id="spin-container" className="spin-container" ref={(element)=>{this.containerNode = element}}>
           {this.renderRows(this.props.numberOfRows)}
         </div>
+        {this.addBottomPhoto()}
       </div>
     );
   }

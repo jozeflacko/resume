@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchSearchMessage, turnOffAnimation } from '../../actions';
 import RISearch from "../../reducers/interfaces/RISearch";
+import PreloadImages from '../../tools/preloadImages';
 
 interface Props extends React.Props<any> {
   fetchSearchMessage: any; // from redux
@@ -20,6 +21,10 @@ export type HistoryContext = {
 }
 
 class Home extends React.Component<Props, {}> {
+
+  /* preload images for other part of the app,
+   * to have smooth experience */
+  preloadedImages = new PreloadImages();
 
   componentDidMount() {
     this.props.fetchSearchMessage();

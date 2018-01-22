@@ -1,16 +1,25 @@
-.kid {
+.kid-container {
+  border:1px solid blue;
+  outline-offset: 1px;
+  position:relative;
+  width:200px;
+  height:350px;
+  z-index:1000;
+}
+.kid-container > .kid {
   position: absolute;
   right:initial;
-  top:280px;
+  width:200px;
+  height:350px;
 }
 
-.kid .group {
+.kid-container > .kid .group {
   left: -25px;
   top: -37px;
   position: relative;
 }
 
-.kid .head {
+.kid-container > .kid .head {
   position: absolute;
   -webkit-transform: rotate(20deg);
   -ms-transform: rotate(20deg);
@@ -19,11 +28,11 @@
   z-index: 100;
   transition:all 1s;
 }
-.kid.sad .head {
+.kid-container > .kid.sad .head {
   transform:rotate(0deg);
 }
 
-.kid .face {
+.kid-container > .kid .face {
   border-radius: 100px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
@@ -36,7 +45,7 @@
   position: absolute;
 }
 
-.kid .hair {
+.kid-container > .kid .hair {
   z-index: 3;
       top: 34px;
       left: 66px;
@@ -47,13 +56,13 @@
       position: absolute;
       transform: rotate(25deg);
 }
-.kid .hair:before, .hair:after {
+.kid-container > .kid .hair:before, .hair:after {
   position: absolute;
   content: '';
   position: absolute;
 }
 
-.kid .ear {
+.kid-container > .kid .ear {
   z-index: 4;
   top: 86px;
   left: 61px;
@@ -66,7 +75,7 @@
   display: none;
   position: absolute;
 }
-.kid .ear:before {
+.kid-container > .kid .ear:before {
   position: absolute;
   top: 5px;
   left: 4px;
@@ -79,12 +88,12 @@
   background: #ED8A80;
 }
 
-.kid .ear.right {
+.kid-container > .kid .ear.right {
   left: 130px;
   position: absolute;
 }
 
-.kid .fringe {
+.kid-container > .kid .fringe {
   z-index: 99;
   top: 53px;
   left: 95px;
@@ -95,7 +104,7 @@
   transform: rotate(30deg);
   position: absolute;
 }
-.kid .fringe:before {
+.kid-container > .kid .fringe:before {
   position: absolute;
   content: '';
   top: 5px;
@@ -111,7 +120,7 @@
   transform: rotate(10deg);
 }
 
-.kid .eyebrow {
+.kid-container > .kid .eyebrow {
   z-index: 300;
   top: 86px;
   left: 74px;
@@ -126,7 +135,7 @@
   transition-delay: 8s;
   transition: all 1s;
 }
-.kid .eyebrow:before {
+.kid-container > .kid .eyebrow:before {
   position: absolute;
       content: '';
       left: 44px;
@@ -139,7 +148,7 @@
       -moz-border-radius: 3px;
 }
 
-.kid .eye {
+.kid-container > .kid .eye {
   z-index: 30;
       top: 93px;
       left: 75px;
@@ -153,7 +162,7 @@
       transition-delay: 8s;
       transition: all 1s;
 }
-.kid .eye:before {
+.kid-container > .kid .eye:before {
   position: absolute;
   content: '';
   left: 45px;
@@ -164,7 +173,7 @@
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
 }
-.kid .mouth {
+.kid-container > .kid .mouth {
   z-index: 20;
   top: 120px;
   left: 97px;
@@ -177,27 +186,27 @@
   transition-delay: 8s;
   transition: all 1s;
 }
-.kid.sad .eye {
+.kid-container > .kid.sad .eye {
   left: 87px;
 }
-.kid.sad .eye:before {
+.kid-container > .kid.sad .eye:before {
   left: 43px;
 }
-.kid.sad .eyebrow {
+.kid-container > .kid.sad .eyebrow {
   left: 85px;
   transform: rotate(-20deg);
 }
-.kid.sad .mouth {
+.kid-container > .kid.sad .mouth {
   border-radius: 100px 100px 0 0;
   top:111px;
 }
-.kid.sad .eyebrow:before {
+.kid-container > .kid.sad .eyebrow:before {
   transform: rotate(38deg);
   top: 15px;
   left: 42px;
 }
 
-.kid .tongue {
+.kid-container > .kid .tongue {
   top: 5px;
   left: 8px;
   width: 30px;
@@ -209,7 +218,7 @@
   position: absolute;
 }
 
-.kid .neck {
+.kid-container > .kid .neck {
   z-index: 13;
   width: 30px;
   height: 30px;
@@ -222,7 +231,7 @@
   position: absolute;
 }
 
-.kid .body {
+.kid-container > .kid .body {
   z-index: 10;
   top: 128px;
   left: 70px;
@@ -234,7 +243,7 @@
   -moz-border-radius: 100px;
   position: absolute;
 }
-.kid .lefthand {
+.kid-container > .kid .lefthand {
   z-index: 10;
   top: 56px;
   left: 69px;
@@ -253,12 +262,12 @@
   transform-origin: 56% 95%;
   transition: background .5s;
 }
-.kid.sad.waveHand .lefthand {
+.kid-container > .kid.sad.waveHand .lefthand {
   z-index: 9;
   background: #80c7ea;
 }
 
-.kid.waveHand .lefthand {
+.kid-container > .kid.waveHand .lefthand {
   background: #7fd0f9;
   -webkit-animation: waveHand 6s normal forwards; /* Safari 4+ */
   -moz-animation:    waveHand 6s normal forwards; /* Fx 5+ */
@@ -268,7 +277,7 @@
   animation-timing-function: ease;
 }
 
-.kid .lefthand:after {
+.kid-container > .kid .lefthand:after {
   z-index: 50;
   content: "";
   display: block;
@@ -286,7 +295,7 @@
   position: absolute;
 }
 
-.kid .righthand {
+.kid-container > .kid .righthand {
   z-index: 1;
   top: 134px;
   transform: rotate(-15deg);
@@ -299,7 +308,7 @@
   -moz-border-radius: 100px;
   position: absolute;
 }
-.kid .righthand:after {
+.kid-container > .kid .righthand:after {
   z-index: 0;
   content: "";
   display: block;
@@ -314,7 +323,7 @@
   -moz-border-radius: 100px;
   position: absolute;
 }
-.kid .cape {
+.kid-container > .kid .cape {
   z-index: 4;
   top: 148px;
   left: 43px;
@@ -324,7 +333,7 @@
   border-radius: 60px 60px 0 0;
   position: absolute;
 }
-.kid .belt {
+.kid-container > .kid .belt {
   position: absolute;
   height: 11px;
   width: 82px;
@@ -334,7 +343,7 @@
   background: black;
   z-index: 10;
 }
-.kid .leftleg {
+.kid-container > .kid .leftleg {
   position: absolute;
   height: 100px;
   width: 45px;
@@ -345,7 +354,7 @@
   background: #1b5877;
   z-index: 1;
 }
-.kid .leftleg:after {
+.kid-container > .kid .leftleg:after {
   position: absolute;
   height: 20px;
   width: 55px;
@@ -358,7 +367,7 @@
   content:"";
 }
 
-.kid .rightleg {
+.kid-container > .kid .rightleg {
   position: absolute;
   height: 100px;
   width: 45px;
@@ -369,7 +378,7 @@
   background: #1b5877;
   z-index: 0;
 }
-.kid .rightleg:after {
+.kid-container > .kid .rightleg:after {
   position: absolute;
   height: 20px;
   width: 55px;
@@ -381,13 +390,13 @@
   z-index: 0;
   content:"";
 }
-.kid .earth {
+.kid-container > .kid .earth {
   position: absolute;
   height: 4px;
-  width: 257px;
+  width:180px;
   z-index: 100;
   bottom: -346px;
-  left: -49px;
+  left: 20px;
   background: #7d6464;
   box-shadow: 5px 5px 15px #b3b3b3;
 }

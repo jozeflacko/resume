@@ -1,5 +1,17 @@
 .flipPhotos-container {
-
+  position:relative;
+  margin:auto;
+  z-index:0;
+}
+.flipPhotos-container .bottom-background {
+  width:500px;
+  overflow:visible;
+  margin:auto;
+  position:relative;
+  top:-5px;
+}
+.flipPhotos-container .bottom-background > img {
+  width:500px;
 }
 .flipPhotos-container .spin-container {
   width:300px;
@@ -8,6 +20,8 @@
   margin:auto;
   position:relative;
   box-shadow: 3px 3px 15px #a2a2a2;
+  z-index:1;
+
 }
 .flipPhotos-container .spin-container > img {
   position:absolute;
@@ -52,13 +66,12 @@
     border:1px solid white;
 }
 .flipPhotos-container .spin-container .spin-row:nth-child(3n+0) .card {
-  transform:rotate(2deg);
+  transform:rotate(1deg);
+  left:-1px;
 }
 .flipPhotos-container .spin-container .spin-row:nth-child(4n+0) .card {
-
-}
-.flipPhotos-container .spin-container .spin-row:nth-child(2n+0) .card {
-  transform:rotate(2deg);
+  transform:rotate(-1deg);
+  left:1px;
 }
 .flipPhotos-container .spin-container .spin-row .card > div {
     display: block;
@@ -99,6 +112,9 @@
     background-size: 100% 300%;
     */
 }
+
+
+
 .flipPhotos-container .spin-container > .spin-row > .card > div > img.blur {-webkit-filter: blur(4px);filter: blur(4px);}
 .flipPhotos-container .spin-container > .spin-row > .card > div > img.brightness {-webkit-filter: brightness(250%);filter: brightness(250%);}
 .flipPhotos-container .spin-container > .spin-row > .card > div > img.contrast {-webkit-filter: contrast(180%);filter: contrast(180%);}
@@ -109,3 +125,5 @@
 .flipPhotos-container .spin-container > .spin-row > .card > div > img.saturate {-webkit-filter: saturate(7); filter: saturate(7);}
 .flipPhotos-container .spin-container > .spin-row > .card > div > img.sepia {-webkit-filter: sepia(100%);filter: sepia(100%);}
 .flipPhotos-container .spin-container > .spin-row > .card > div > img.shadow {-webkit-filter: drop-shadow(8px 8px 10px green);filter: drop-shadow(8px 8px 10px green);}
+.flipPhotos-container .spin-container > .spin-row > .card > div > img.hueblue {-webkit-filter: hue-rotate(-157deg); filter: hue-rotate(-157deg); }
+.flipPhotos-container .spin-container > .spin-row > .card > div > img.huered {-webkit-filter: hue-rotate(-46deg); filter: hue-rotate(-46deg); }

@@ -7,7 +7,7 @@ import Sentence from '../sentence/sentence';
 //import SkillsTetris from '../../components/skillsTetris/skillsTetris';
 import Rocket from '../rocket/rocket';
 import Hero from '../hero/hero';
-import Baloon from '../baloon/baloon'
+import Baloon from '../baloon/baloon';
 /*import CoolIcon from '../coolIcon/coolIcon';*/
 import CoolLine from '../coolLine/coolLine';
 import FlipPhotos from '../flipPhotos/flipPhotos';
@@ -20,11 +20,11 @@ interface Props extends React.Props<any> {
 
 export default class Detail extends React.Component<Props, {}> {
   processDetail() {
-    const { photo, flipPhotos, animation, sentence, bottomPhoto, description, items, bulletgroups } = this.props.detail.getDetail();
+    const { photo, flipPhotos, flipPhotosBottom, animation, sentence, bottomPhoto, description, items, bulletgroups } = this.props.detail.getDetail();
     return (
       <div className="content">
         {this.processHero(photo)}
-        {this.processFlipPhotos(flipPhotos)}
+        {this.processFlipPhotos(flipPhotos, flipPhotosBottom)}
         <div className="photo">{this.processPhoto(photo)}</div>
         {this.processSentence(sentence)}
         <div className="description">{this.processDescription(description)}</div>
@@ -42,8 +42,8 @@ export default class Detail extends React.Component<Props, {}> {
     return "";
   }
 
-  processFlipPhotos(flipPhotos:Array<string>){
-    return <FlipPhotos flipPhotos={flipPhotos} numberOfRows={4}/>;
+  processFlipPhotos(flipPhotos:Array<string>, flipPhotosBottom:string){
+    return <FlipPhotos flipPhotos={flipPhotos} flipPhotosBottom={flipPhotosBottom} numberOfRows={4}/>;
   }
 
   processPhoto(photo: string, className = 'my-photo') {
