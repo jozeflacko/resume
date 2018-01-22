@@ -7,7 +7,7 @@ export default class FlipPhotos extends React.Component<{
   numberOfRows:number;
 }, {}> {
 
-  MOVE_PHOTO_LOWER = 25;
+  MOVE_PHOTO_LOWER = 45;
   CARD_ELEMENT_CSS = 'card';
   containerNode:any;
   flipInterval: any;

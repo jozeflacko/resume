@@ -43,7 +43,7 @@ export default class Detail extends React.Component<Props, {}> {
   }
 
   processFlipPhotos(flipPhotos:Array<string>){
-    return <FlipPhotos flipPhotos={flipPhotos} numberOfRows={5}/>;
+    return <FlipPhotos flipPhotos={flipPhotos} numberOfRows={4}/>;
   }
 
   processPhoto(photo: string, className = 'my-photo') {

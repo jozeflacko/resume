@@ -6,7 +6,6 @@ const introDetail = {
       './assets/flipPhotos/4.JPG',
       './assets/flipPhotos/5.JPG',
       './assets/flipPhotos/6.JPG',
-      './assets/flipPhotos/7.JPG',
     ],
     description: [
       `As a software developer, my heart definitely belongs to JavaScript.
