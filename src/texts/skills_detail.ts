@@ -1,9 +1,9 @@
 const detail = {
   icon:'bolt',
   description: [
-    `I consider learning as a awesome hobbie which keeps me bussy quite a lot. I can start
-    anywhere, anytime and that feeling when things starts to get easy is always fulfilling and that
-    is pushing me forward.`,
+    `I consider learning an awesome hobby which keeps me occupied a lot.
+    Anywhere and anytime I can start. That feeling when things start to get
+    easy is always fulfilling and pushing me forward.`,
   ],
   bulletgroups: [
     {
@@ -12,7 +12,7 @@ const detail = {
       bullets: [
         {
           subtitle:'Hard skills',
-          description:`These are my hard software skills what I learnt or still learning`,
+          description:`These are my hard software skills what I learnt or am still learning`,
           bullets:[
             {
               key:'JS',

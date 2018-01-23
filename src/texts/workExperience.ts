@@ -101,7 +101,7 @@ const Detail = {
         validate JavaScript calculations, XML documents and document all found
         issues. I was collaborating with a team of 10 people.`,
 
-        notes: `ECMAScript 5, XML`
+        notes: `Technologies: ECMAScript 5, XML`
       }
     ]
 };
@@ -109,8 +109,8 @@ const Detail = {
 export class WorkExperience implements IResult {
 
   private title: string = "Work experience";
-  private subtitle: string = "Step by step";
-  private description: string = "Take a look into what I have been working on last years";
+  private subtitle: string = "Step by Step";
+  private description: string = "What has been going on in the last years";
   private detail: any;
 
   constructor() {

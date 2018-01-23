@@ -13,4 +13,10 @@
     display:inline;
     font-size: 14px;
   }
+
+  .logo .left-eye,
+  .logo .right-eye,
+  .logo .smile {
+    display:none;
+  }
 }

@@ -81,6 +81,7 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
           href={link.url}
           title={link.title}
           className={className}
+          target={index === 0 ? "": "_blank"}
         >
           {link.name}
         </a>
