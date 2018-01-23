@@ -21,7 +21,9 @@ export default class Kid extends React.Component {
                 </div>
 
                 <div className="neck"/>
-                <div className="body"/>
+                <div className="body">
+                  <div className="brand-name">CSS</div>
+                </div>
                 <div className="lefthand"/>
                 <div className="righthand"/>
                 <div className="belt"/>

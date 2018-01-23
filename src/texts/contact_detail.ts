@@ -1,6 +1,5 @@
 const detail = {
   icon:'thumb-tack',
-  photo:'./assets/me.jpg',
   bottomPhoto:'./assets/hands.jpg',
   bulletgroups: [
     {

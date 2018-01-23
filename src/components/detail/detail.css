@@ -267,6 +267,7 @@
   text-align:center;
   margin-left:-20px;
   margin-right:-20px;
+  position:relative;
 }
 .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet  > .bubbles > .bubble {
   border:1px solid #DDD;

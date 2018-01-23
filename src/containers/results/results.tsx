@@ -11,7 +11,7 @@ import {
   fetchSearchMessage,
   fetchSkills,
   fetchFreeTime,
-  fetchContact,
+/*  fetchContact, */
   turnOffAnimation,
   setDetail
 }  from '../../actions';
@@ -35,7 +35,7 @@ interface Props extends React.Props<any> {
   fetchSearchMessage: any;
   fetchSkills: any;
   fetchFreeTime: any;
-  fetchContact: any;
+/*  fetchContact: any; */
   turnOffAnimation: any;
   setDetail: any;
 
@@ -63,7 +63,7 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
     this.props.fetchSearchMessage();
     this.props.fetchSkills();
     this.props.fetchFreeTime();
-    this.props.fetchContact();
+  /*  this.props.fetchContact(); */
     this.props.turnOffAnimation(); // we never want here animation
   }
 
@@ -97,7 +97,7 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
   }
 
   createMyLife() {
-    const { experience, education, intro, skills, freeTime, contact } = this.props.information;
+    const { experience, education, intro, skills, freeTime /*, contact */} = this.props.information;
 
     return (
       <div>
@@ -126,12 +126,6 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
           onActiveClassName="blightblue"
         />
         <Result
-          result={contact}
-          isActive={this.props.information.detail === this.props.information.contact}
-          onClick={() => {this.props.setDetail(contact);  this.setActiveDetail();}}
-          onActiveClassName="blightyellow"
-        />
-        <Result
           result={freeTime}
           isActive={this.props.information.detail === this.props.information.freeTime}
           onClick={() => {this.props.setDetail(freeTime);  this.setActiveDetail();}}
@@ -140,6 +134,15 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
       </div>
     );
   }
+
+  /*
+  <Result
+    result={contact}
+    isActive={this.props.information.detail === this.props.information.contact}
+    onClick={() => {this.props.setDetail(contact);  this.setActiveDetail();}}
+    onActiveClassName="blightyellow"
+  />
+  */
 
   render() {
     return (
@@ -188,7 +191,7 @@ function mapDispatchToProps(dispatch: any) {
     fetchSearchMessage,
     fetchSkills,
     fetchFreeTime,
-    fetchContact,
+  /*  fetchContact, */
     turnOffAnimation,
     setDetail,
   }, dispatch );

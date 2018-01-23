@@ -1,10 +1,10 @@
 .kid-container {
-  border:1px solid blue;
   outline-offset: 1px;
   position:relative;
   width:200px;
   height:350px;
   z-index:1000;
+  top:-50px;
 }
 .kid-container > .kid {
   position: absolute;
@@ -28,7 +28,7 @@
   z-index: 100;
   transition:all 1s;
 }
-.kid-container > .kid.sad .head {
+.sad .kid-container > .kid .head {
   transform:rotate(0deg);
 }
 
@@ -186,21 +186,21 @@
   transition-delay: 8s;
   transition: all 1s;
 }
-.kid-container > .kid.sad .eye {
+.sad .kid-container > .kid .eye {
   left: 87px;
 }
-.kid-container > .kid.sad .eye:before {
+.sad .kid-container > .kid .eye:before {
   left: 43px;
 }
-.kid-container > .kid.sad .eyebrow {
+.sad .kid-container > .kid .eyebrow {
   left: 85px;
   transform: rotate(-20deg);
 }
-.kid-container > .kid.sad .mouth {
+.sad .kid-container > .kid .mouth {
   border-radius: 100px 100px 0 0;
   top:111px;
 }
-.kid-container > .kid.sad .eyebrow:before {
+.sad .kid-container > .kid .eyebrow:before {
   transform: rotate(38deg);
   top: 15px;
   left: 42px;
@@ -243,6 +243,15 @@
   -moz-border-radius: 100px;
   position: absolute;
 }
+.kid-container > .kid .body > .brand-name {
+  position:relative;
+  color:white;
+  font-weight:800;
+  font-size:12px;
+  font-family:cursive;
+  top:20px;
+  left:20px;
+}
 .kid-container > .kid .lefthand {
   z-index: 10;
   top: 56px;
@@ -262,12 +271,12 @@
   transform-origin: 56% 95%;
   transition: background .5s;
 }
-.kid-container > .kid.sad.waveHand .lefthand {
+.sad.waveHand .kid-container > .kid .lefthand {
   z-index: 9;
   background: #80c7ea;
 }
 
-.kid-container > .kid.waveHand .lefthand {
+.waveHand .kid-container > .kid .lefthand {
   background: #7fd0f9;
   -webkit-animation: waveHand 6s normal forwards; /* Safari 4+ */
   -moz-animation:    waveHand 6s normal forwards; /* Fx 5+ */
@@ -392,13 +401,14 @@
 }
 .kid-container > .kid .earth {
   position: absolute;
-  height: 4px;
-  width:180px;
+  height: 2px;
+  width: 300px;
   z-index: 100;
-  bottom: -346px;
-  left: 20px;
-  background: #7d6464;
-  box-shadow: 5px 5px 15px #b3b3b3;
+  bottom: -344px;
+  left: -100px;
+  background: #AAA;
+  -webkit-box-shadow: 10px 10px 10px black;
+  box-shadow: 10px 5px 27px #929292;
 }
 
 /* Chrome, Safari, Opera */

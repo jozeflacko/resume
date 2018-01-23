@@ -1,9 +1,9 @@
 import * as React from 'react';
-import './baloon.css';
-import './baloon_mobile.css';
+import './kidWithABaloon.css';
+import './kidWithABaloon_mobile.css';
 import Kid from './kid';
 
-export default class Baloon extends React.Component<{
+export default class KidWithABaloon extends React.Component<{
   name: string;
 }, {}> {
 
@@ -12,23 +12,49 @@ export default class Baloon extends React.Component<{
   kidPlaceholder:HTMLElement;
   baloonTimeout: any;
 
-  componentDidMount() {
-
-    this.flyBaloon(this.baloon, this.line, this.kidPlaceholder);
-    this.setpositionKid(this.baloon, this.line, this.kidPlaceholder);
+  resizeListener: any;
+  resizeCallback = (event) => {
+    this.calculatePositionForAKid(this.baloon, this.kidPlaceholder);
+    console.log('resize event');
   }
 
-  componentWillMount() {
-    if(!this.baloonTimeout) {
+  componentDidMount() {
+    this.flyBaloon(this.baloon, this.line, this.kidPlaceholder);
+    this.calculatePositionForAKid(this.baloon, this.kidPlaceholder);
+    this.resizeListener = this.installResizeListener( this.resizeCallback);
+  }
+
+  componentWillUnmount() {
+    this.stopFlyBaloon();
+    this.resizeListener = this.removeResizeListener(this.resizeCallback, this.resizeCallback);
+  }
+
+  calculatePositionForAKid(baloon:any, kid:any) {
+    if(baloon === undefined || kid === undefined) {
       return;
     }
-    this.stopFlyBaloon();
 
+    const bubbleNode = this.findAncestor(baloon, 'bubble');
+    const bubblesNode = this.findAncestor(baloon, 'bubbles'); /* must have position relative ! */
+
+    // fix kid 20px from right edge
+    const bubbleLeft = bubbleNode.offsetLeft;
+    const bubblesWidth = bubblesNode.offsetWidth;
+    const kidWidth = kid.childNodes[0].offsetWidth; /* must take child, because kid is just a placeholder with size 1x1px and inside is real kid */
+    const PUSH_KID_FROM_RIGHT_SIDE = 20;
+    const kidLeft = bubblesWidth - bubbleLeft - kidWidth - PUSH_KID_FROM_RIGHT_SIDE; /* we want to be 100 px from right */
+    kid.style.left = kidLeft + 'px';
+
+    // fix kid 20px below bubbles
+    const bubbleTop = bubbleNode.offsetTop;
+    const bubblesHeight = bubblesNode.offsetHeight;
+    const PUSH_KID_FROM_TOP_SIDE = 150;
+    const kidTop = bubblesHeight - bubbleTop + PUSH_KID_FROM_TOP_SIDE; /* we want to be 100 px from right */
+    kid.style.top = kidTop + 'px';
   }
 
   stopFlyBaloon = () => {
     if(!!this.baloonTimeout) {
-
       clearTimeout(this.baloonTimeout);
     }
   }
@@ -42,12 +68,9 @@ export default class Baloon extends React.Component<{
       if(index-- <= 1) {
         this.stopFlyBaloon();
       }
-
       if(!this.baloon) {
-
         return;
       }
-
       this.baloon.style.top =  this.getNewNegativePosition(this.baloon.style.top);
       this.baloon.style.left = this.getNewNegativePosition(this.baloon.style.left);
       this.baloon.style.opacity = (index / 100).toString();
@@ -59,39 +82,60 @@ export default class Baloon extends React.Component<{
         this.kidPlaceholder.className = this.kidPlaceholder.className + ' sad';
       }
     }, 100);
-
   }
 
   flyBaloon = (baloon:any, line:any, kid:any) => {
+    let TIMEOUT = 4 * 100; // minimum 100 ms
     const fly = () => {
       if(baloon === undefined || line === undefined || kid === undefined) {
         return;
       }
-      const BALOON_MOVEMENT = 20;
+      const BALOON_MOVEMENT = 1; /* if you want to use more have to set transition for line and baloon */
       let left = this.getNewRandomPosition(baloon.style.left, BALOON_MOVEMENT);
       let  top = this.getNewRandomPosition(baloon.style.top, BALOON_MOVEMENT);
-      /*left  = boundaries.leftMax  < left  ? boundaries.leftMin  : left;
-      left  = boundaries.leftMin  > left  ? boundaries.leftMax  : left;
-      top   = boundaries.topMin   < top   ? boundaries.topMin  : top;
-      top   = boundaries.topMax   > top   ? boundaries.topMax  : top;*/
-      baloon.style.left = left + 'px';
-      baloon.style.top = top + 'px';
 
-      const bottomForLine = this.getNumValue(top + baloon.offsetHeight);
-      const leftForLine =  this.getNumValue( (left + (baloon.offsetWidth  / 2)).toString() );
-      this.adjustBaloonLine([ bottomForLine, leftForLine ]);
+      const repeatMovement:number = TIMEOUT/100 - 1;
+      const SUBTIMEOUT = TIMEOUT/(repeatMovement+1);
+      const addTop = this.getRandomBoolean();
+      const addLeft = this.getRandomBoolean();
+      for(let i=0; i<repeatMovement;i++) {
+        // set position and repeat X times
+        if(!!this.baloonTimeout) {
+          this.setBaloonAndLinePosition(baloon, top, left, repeatMovement, BALOON_MOVEMENT, addTop, addLeft, SUBTIMEOUT);
+        }
+      }
     };
-
-    this.baloonTimeout = setInterval( ()=> { fly();}, 100);
-    //this.stopFlyBaloon();
+    this.baloonTimeout = setInterval( ()=> { fly();}, TIMEOUT);
   }
 
-  setpositionKid(baloon:any, line:any, kid:any) {
-    if(baloon === undefined || line === undefined || kid === undefined) {
+
+
+  setBaloonAndLinePosition(baloon:any, top:number, left:number, repeat:number|undefined, step?:number, addTop?:boolean, addLeft?:boolean, timeout?:number) {
+    if(!this.baloonTimeout)
       return;
+
+    baloon.style.left = left + 'px';
+    baloon.style.top = top + 'px';
+    const bottomForLine = this.getNumValue(top + baloon.offsetHeight);
+    const leftForLine =  this.getNumValue( (left + (baloon.offsetWidth  / 2)).toString() );
+    this.adjustBaloonLine([ bottomForLine, leftForLine ]);
+
+    if(repeat === undefined)
+      return;
+
+    if(repeat > 0) {
+      setTimeout(() => {
+        top   = addTop  ? top   + step   : top - step;
+        left  = addLeft ? left  + step   : left - step;
+        repeat = repeat -1;
+        this.setBaloonAndLinePosition(baloon, top, left, repeat, step, addTop, addLeft, timeout);
+      }, timeout);
     }
-    const left = baloon.parentElement.offsetWidth - ( (baloon.offsetWidth/2) + baloon.offsetLeft);
-    kid.style.left = left + 'px';
+  }
+
+  findAncestor(element: HTMLElement, classOnAncestor:string) {
+    while ((element = element.parentElement) && !element.classList.contains(classOnAncestor));
+    return element;
   }
 
   getNumValue(stringValue: string): number {
@@ -153,6 +197,18 @@ export default class Baloon extends React.Component<{
     line.style.top    = this.getNumValue(top)+'px';
     line.style.left   = this.getNumValue(left)+'px';
     line.style.height = (H) + 'px';
+  }
+
+  getRandomBoolean(): boolean {
+    return Math.random() >= 0.5;
+  }
+
+  installResizeListener(callback:any): void {
+    return window.addEventListener("resize", callback);
+  }
+  removeResizeListener(resizeListener: any, callback: any):null {
+    window.removeEventListener("resize", callback);
+    return null;
   }
 
   render() {

@@ -1,0 +1,15 @@
+@media screen and (max-width: 550px) {
+  .baloon-container {
+    height:80px !important;
+  }
+  .baloon-container > .baloon,
+  .baloon-container > .baloon > .heart-container {
+    position:static !important;
+  }
+  .baloon-container > .line,
+  .baloon-container > .kid-placeholder,
+  .baloon-container > .baloon > .heart-container .heart:after,
+  .baloon-container > .baloon > .heart-container .bottomMiddle:after {
+    display:none;
+  }
+}
