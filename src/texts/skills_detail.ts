@@ -19,9 +19,10 @@ const detail = {
               bubbles: [
                 { value: "MVP", size: 5 },
                 { value: "MVC", size: 5 },
+                { value: "TSLint", size: 5 },
                 { value: "Node.js", size: 4 },
                 { value: "Atom", size: 4 },
-                { value: "Redux", size: 4 },
+                { value: "Redux", size: 4 },                
                 { value: "Ajax", size: 3 },
                 { value: "REST", size: 3 },
                 { value: "Bootstrap", size: 3 },
@@ -45,6 +46,7 @@ const detail = {
                 { value: "Maven", size: 5 },
                 { value: "Arduino", size: 5 },
                 { value: "C", size: 5 },
+                { value: "SVG", size: 5 },
               ]
             },
           ]

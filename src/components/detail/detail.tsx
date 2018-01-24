@@ -20,7 +20,7 @@ interface Props extends React.Props<any> {
 
 export default class Detail extends React.Component<Props, {}> {
   processDetail() {
-    const { photo, flipPhotos, flipPhotosBottom, animation, sentence, bottomPhoto, description, items, bulletgroups } = this.props.detail.getDetail();
+    const { photo, flipPhotos, flipPhotosBottom, animation, sentence, bottomPhoto, description, items, itemsFunny, bulletgroups } = this.props.detail.getDetail();
     return (
       <div className="content">
         {this.processHero(photo)}
@@ -28,7 +28,10 @@ export default class Detail extends React.Component<Props, {}> {
         <div className="photo">{this.processPhoto(photo)}</div>
         {this.processSentence(sentence)}
         <div className="description">{this.processDescription(description)}</div>
-        <div className="items">{this.processItems(items)}</div>
+        <div className="items">
+          {this.processItemsFunny(itemsFunny)}
+          {this.processItems(items)}
+        </div>
         {this.processBulletsgroups(bulletgroups)}
         {this.processPhoto(bottomPhoto, 'bottom-photo')}
         {this.processAnimation(animation)}
@@ -154,11 +157,17 @@ export default class Detail extends React.Component<Props, {}> {
     );
   }
 
-  processItems(items: any) {
+  processItemsFunny(itemsFunny:any):void {
+    return this.processItems(itemsFunny, "funny");
+  }
+
+  processItems(items: any, addClassName?:string) {
+    const className = addClassName === undefined ? "item" : addClassName + " item";
+
     return items ? items.map((item: any, index: number) => {
       const { name, subname, place, from, to, description, notes, logos } = item;
       return (
-        <div className="item" key={"key"+index}>
+        <div className={className} key={"key"+index}>
           <div className="timerange">
             <div className="from"       >{this.printValue(from)}        </div>
             <div className="to"         >{this.printValue(to)}          </div>

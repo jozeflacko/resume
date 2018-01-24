@@ -194,15 +194,12 @@
 }
 .sad .kid-container > .kid .eyebrow {
   left: 85px;
-  transform: rotate(-20deg);
 }
 .sad .kid-container > .kid .mouth {
-  border-radius: 100px 100px 0 0;
+  /*border-radius: 100px 100px 0 0;*/
   top:111px;
 }
 .sad .kid-container > .kid .eyebrow:before {
-  transform: rotate(38deg);
-  top: 15px;
   left: 42px;
 }
 

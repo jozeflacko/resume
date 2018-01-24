@@ -7,29 +7,85 @@ export default class KidWithABaloon extends React.Component<{
   name: string;
 }, {}> {
 
+  SCROLL_KID = false;
+
   baloon: HTMLElement;
   line:HTMLElement;
   kidPlaceholder:HTMLElement;
   baloonTimeout: any;
 
+  isResizing = false;
+  resizeTimer:any;
   resizeListener: any;
   resizeCallback = (event) => {
-    this.calculatePositionForAKid(this.baloon, this.kidPlaceholder);
+    this.setBaloonAndLinePosition(this.baloon, 0, 0, null);
+
+    if(this.SCROLL_KID === true) {
+      const pushDown = this.getScrollPositionOfKidWhenMoreThanScrolLimit();
+      this.calculatePositionForAKid(this.baloon, this.kidPlaceholder, pushDown === -1 ? 0 : pushDown);
+    } else {
+      this.calculatePositionForAKid(this.baloon, this.kidPlaceholder);
+    }
+
     console.log('resize event');
+
+    // on end of resize
+    this.isResizing = true;
+    clearTimeout(this.resizeTimer);
+    this.resizeTimer = setTimeout(() => {
+      this.isResizing = false;
+    }, 250);
+  }
+
+  isScrolling = false;
+  scrollListener: any;
+  scrollCallback = (event) => {
+
+    const pushDown = this.getScrollPositionOfKidWhenMoreThanScrolLimit();
+    if(pushDown !== -1)
+      this.calculatePositionForAKid(this.baloon, this.kidPlaceholder, pushDown);
+
+    // on end of scroll
+    this.isScrolling = true;
+    clearTimeout(this.resizeTimer);
+    this.resizeTimer = setTimeout(() => {
+      this.isScrolling = false;
+    }, 250);
+  }
+
+  getScrollPositionOfKidWhenMoreThanScrolLimit():number {
+    const SCROLL_MIN_LIMIT = 200;
+
+    const scrollTop = this.getWindowScrollTopPosition();
+    if(scrollTop > SCROLL_MIN_LIMIT) {
+        return scrollTop - SCROLL_MIN_LIMIT;
+    } else
+      return -1;
+  }
+
+  getWindowScrollTopPosition():number {
+    const doc = document.documentElement;
+    return (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
   }
 
   componentDidMount() {
     this.flyBaloon(this.baloon, this.line, this.kidPlaceholder);
     this.calculatePositionForAKid(this.baloon, this.kidPlaceholder);
     this.resizeListener = this.installResizeListener( this.resizeCallback);
+
+    if(this.SCROLL_KID === true)
+      this.scrollListener = this.installScrollListener( this.scrollCallback);
   }
 
   componentWillUnmount() {
     this.stopFlyBaloon();
-    this.resizeListener = this.removeResizeListener(this.resizeCallback, this.resizeCallback);
+    this.resizeListener = this.removeResizeListener(this.resizeCallback);
+
+    if(this.SCROLL_KID === true)
+      this.scrollListener = this.removeScrollListener(this.scrollCallback);
   }
 
-  calculatePositionForAKid(baloon:any, kid:any) {
+  calculatePositionForAKid(baloon:any, kid:any, pushDown:number = 0) {
     if(baloon === undefined || kid === undefined) {
       return;
     }
@@ -45,12 +101,20 @@ export default class KidWithABaloon extends React.Component<{
     const kidLeft = bubblesWidth - bubbleLeft - kidWidth - PUSH_KID_FROM_RIGHT_SIDE; /* we want to be 100 px from right */
     kid.style.left = kidLeft + 'px';
 
-    // fix kid 20px below bubbles
+    this.setTopPositionOfKid(baloon, kid, pushDown);
+  }
+
+  setTopPositionOfKid(baloon:any, kid:any, pushDown:number) {
+    const bubbleNode = this.findAncestor(baloon, 'bubble');
+    const bubblesNode = this.findAncestor(baloon, 'bubbles'); /* must have position relative ! */
+
+    // fix kid 150px below container of bubbles
     const bubbleTop = bubbleNode.offsetTop;
     const bubblesHeight = bubblesNode.offsetHeight;
-    const PUSH_KID_FROM_TOP_SIDE = 150;
-    const kidTop = bubblesHeight - bubbleTop + PUSH_KID_FROM_TOP_SIDE; /* we want to be 100 px from right */
+    const PUSH_KID_FROM_TOP_SIDE = 85;
+    const kidTop = bubblesHeight - bubbleTop + PUSH_KID_FROM_TOP_SIDE + pushDown; /* we want to be 100 px from right */
     kid.style.top = kidTop + 'px';
+    this.setBaloonAndLinePosition(baloon, this.getNumValue(baloon.style.top), this.getNumValue(baloon.style.left), null);
   }
 
   stopFlyBaloon = () => {
@@ -105,12 +169,16 @@ export default class KidWithABaloon extends React.Component<{
         }
       }
     };
-    this.baloonTimeout = setInterval( ()=> { fly();}, TIMEOUT);
+    this.baloonTimeout = setInterval( ()=> {
+      if(this.isResizing === false && this.isScrolling === false) {
+        fly();
+      }
+    }, TIMEOUT);
   }
 
 
 
-  setBaloonAndLinePosition(baloon:any, top:number, left:number, repeat:number|undefined, step?:number, addTop?:boolean, addLeft?:boolean, timeout?:number) {
+  setBaloonAndLinePosition(baloon:any, top:number, left:number, repeat:number|null, step?:number, addTop?:boolean, addLeft?:boolean, timeout?:number) {
     if(!this.baloonTimeout)
       return;
 
@@ -120,7 +188,7 @@ export default class KidWithABaloon extends React.Component<{
     const leftForLine =  this.getNumValue( (left + (baloon.offsetWidth  / 2)).toString() );
     this.adjustBaloonLine([ bottomForLine, leftForLine ]);
 
-    if(repeat === undefined)
+    if(repeat === null)
       return;
 
     if(repeat > 0) {
@@ -206,9 +274,24 @@ export default class KidWithABaloon extends React.Component<{
   installResizeListener(callback:any): void {
     return window.addEventListener("resize", callback);
   }
-  removeResizeListener(resizeListener: any, callback: any):null {
+  removeResizeListener(callback: any):null {
     window.removeEventListener("resize", callback);
     return null;
+  }
+
+  installScrollListener(callback:any): void {
+    return window.addEventListener("scroll", callback);
+  }
+  removeScrollListener(callback: any):null {
+    window.removeEventListener("scroll", callback);
+    return null;
+  }
+
+  offsetRelativeToDocument(el: HTMLElement): { top:number, left:number } {
+    var rect = el.getBoundingClientRect(),
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
   }
 
   render() {

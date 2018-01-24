@@ -54,7 +54,7 @@ class Home extends React.Component<Props, {}> {
               </div>
               <div className="text">
                   <span className="left">Jozef Lacko</span>
-                  <span className="middle"><Logo game={false} onSmallMovePostfix={false} followMouse={false}/></span>
+                  <span className="middle"><Logo game={false} onSmallMovePostfix={false}/></span>
                   <span className="right">Vienna, 2018</span>
               </div>
             </div>

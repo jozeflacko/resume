@@ -2,6 +2,20 @@ const detail = {
     icon:'graduation-cap',
 
     /*animation:'rocket',*/
+    itemsFunny: [
+      {
+        name: 'Self development',
+        subname: 'At home',
+        from: '...long time ago',
+        to: 'Present',
+        description: `TODO My engineer degree study programme was focused on the
+        acquirement of theoretical and practical knowledge in the field of
+        design and development business enterprise systems and on database
+        systems analysis.`,
+
+        notes: `Tools: Google, Udemy, Codeacademy, Youtube...`
+      }
+    ],
     items: [
       {
         name: 'Master of Business Informatics',

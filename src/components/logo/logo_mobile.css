@@ -3,6 +3,7 @@
     position:initial;
     top:auto;
     left:auto;
+    margin-bottom:0px;
   }
   .logo.onSmallMovePostfix .postfix {
     margin-left:5px;
@@ -17,6 +18,6 @@
   .logo .left-eye,
   .logo .right-eye,
   .logo .smile {
-    display:none;
+
   }
 }
