@@ -76,7 +76,9 @@ export default class FlipPhotos extends React.Component<{
   }
 
   setImage(elementClass:string, elements:any, srcs:Array<string>) {
-    this.row = this.getRandomInt(0, elements.length);
+    let row = this.getRandomInt(0, elements.length);
+    this.row = row !== elements.length-1 ? row : this.getRandomInt(0, elements.length);
+
     var element = elements[this.row];
     var side = '';
     if(element.className===elementClass) {
@@ -132,9 +134,9 @@ export default class FlipPhotos extends React.Component<{
       'grayscale',
       'sepia',
       'shadow',
-    /*  'opacity',
-      'hueblue',
-      'huered', */
+      'opacity',
+      /*  'art',
+       'huered',*/
       ''
     ];
     return filters[this.getRandomInt(0,filters.length)];

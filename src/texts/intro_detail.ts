@@ -3,9 +3,7 @@ const introDetail = {
       './assets/flipPhotos/1.JPG',
       './assets/flipPhotos/2.JPG',
       './assets/flipPhotos/3.JPG',
-      './assets/flipPhotos/4.JPG',
-      './assets/flipPhotos/5.JPG',
-      './assets/flipPhotos/6.JPG',
+      './assets/flipPhotos/4.JPG'
     ],
     flipPhotosBottom:'./assets/flipPhotos/body.JPG',
     description: [

@@ -50,7 +50,7 @@
   white-space:nowrap;
 }
 .outer > .middle > .inner > .text > span.left {
-  text-align:left;
+  text-align:right;
   width:90px;
 }
 .outer > .middle > .inner > .text > span.middle {

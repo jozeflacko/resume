@@ -114,7 +114,7 @@
 }
 
 
-
+.flipPhotos-container .spin-container > .spin-row > .card > div > img.art {-webkit-filter: contrast(20); opacity:.4; filter: contrast(20); }
 .flipPhotos-container .spin-container > .spin-row > .card > div > img.blur {-webkit-filter: blur(4px);filter: blur(4px);}
 .flipPhotos-container .spin-container > .spin-row > .card > div > img.brightness {-webkit-filter: brightness(250%);filter: brightness(250%);}
 .flipPhotos-container .spin-container > .spin-row > .card > div > img.contrast {-webkit-filter: contrast(180%);filter: contrast(180%);}

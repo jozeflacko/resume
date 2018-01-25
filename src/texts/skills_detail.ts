@@ -8,7 +8,7 @@ const detail = {
   bulletgroups: [
     {
       key:'skillsAndProf',
-      title:'Skill and Proficiency',
+      title:'',
       bullets: [
         {
           subtitle:'Hard skills',
@@ -22,7 +22,7 @@ const detail = {
                 { value: "TSLint", size: 5 },
                 { value: "Node.js", size: 4 },
                 { value: "Atom", size: 4 },
-                { value: "Redux", size: 4 },                
+                { value: "Redux", size: 4 },
                 { value: "Ajax", size: 3 },
                 { value: "REST", size: 3 },
                 { value: "Bootstrap", size: 3 },
@@ -73,7 +73,7 @@ const detail = {
           description:`I know few languages`,
           bullets:[
             { picture:'./assets/flags/Slovakia.png', label:'Slovak', value:'Native' },
-            { picture:'./assets/flags/United-Kingdom.png', label:'English', value:'Professional' },
+            { picture:'./assets/flags/United-Kingdom.png', label:'English', value:'Advanced' },
             { picture:'./assets/flags/Czech.png', label:'Czech', value:'Advanced' },
             { picture:'./assets/flags/Hungary.png', label:'Hungarian', value:'Advanced' },
             { picture:'./assets/flags/Germany.png', label:'German', value:'Intermediate' },

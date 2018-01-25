@@ -399,13 +399,15 @@
 .kid-container > .kid .earth {
   position: absolute;
   height: 2px;
-  width: 300px;
+  width: 500px;
   z-index: 100;
   bottom: -344px;
-  left: -100px;
+  left: -200px;
   background: #AAA;
   -webkit-box-shadow: 10px 10px 10px black;
   box-shadow: 10px 5px 27px #929292;
+
+  display:none;
 }
 
 /* Chrome, Safari, Opera */

@@ -34,7 +34,7 @@ export default class KidWithABaloon extends React.Component<{
     clearTimeout(this.resizeTimer);
     this.resizeTimer = setTimeout(() => {
       this.isResizing = false;
-    }, 250);
+    }, 100);
   }
 
   isScrolling = false;
@@ -50,7 +50,7 @@ export default class KidWithABaloon extends React.Component<{
     clearTimeout(this.resizeTimer);
     this.resizeTimer = setTimeout(() => {
       this.isScrolling = false;
-    }, 250);
+    }, 100);
   }
 
   getScrollPositionOfKidWhenMoreThanScrolLimit():number {
@@ -97,7 +97,7 @@ export default class KidWithABaloon extends React.Component<{
     const bubbleLeft = bubbleNode.offsetLeft;
     const bubblesWidth = bubblesNode.offsetWidth;
     const kidWidth = kid.childNodes[0].offsetWidth; /* must take child, because kid is just a placeholder with size 1x1px and inside is real kid */
-    const PUSH_KID_FROM_RIGHT_SIDE = 20;
+    const PUSH_KID_FROM_RIGHT_SIDE = 10;
     const kidLeft = bubblesWidth - bubbleLeft - kidWidth - PUSH_KID_FROM_RIGHT_SIDE; /* we want to be 100 px from right */
     kid.style.left = kidLeft + 'px';
 
@@ -111,14 +111,16 @@ export default class KidWithABaloon extends React.Component<{
     // fix kid 150px below container of bubbles
     const bubbleTop = bubbleNode.offsetTop;
     const bubblesHeight = bubblesNode.offsetHeight;
-    const PUSH_KID_FROM_TOP_SIDE = 85;
+    const PUSH_KID_FROM_TOP_SIDE = 135;
     const kidTop = bubblesHeight - bubbleTop + PUSH_KID_FROM_TOP_SIDE + pushDown; /* we want to be 100 px from right */
     kid.style.top = kidTop + 'px';
     this.setBaloonAndLinePosition(baloon, this.getNumValue(baloon.style.top), this.getNumValue(baloon.style.left), null);
   }
 
+  canFly = true;
   stopFlyBaloon = () => {
     if(!!this.baloonTimeout) {
+      this.canFly = false;
       clearTimeout(this.baloonTimeout);
     }
   }
@@ -170,7 +172,7 @@ export default class KidWithABaloon extends React.Component<{
       }
     };
     this.baloonTimeout = setInterval( ()=> {
-      if(this.isResizing === false && this.isScrolling === false) {
+      if(this.canFly === true && this.isResizing === false && this.isScrolling === false) {
         fly();
       }
     }, TIMEOUT);

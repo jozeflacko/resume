@@ -135,6 +135,10 @@
 .detail > .content > .items > .item > .timerange > .to {
   display:inline-block;
 }
+.detail > .content > .items > .item.funny .from,
+.detail > .content > .items > .item.funny .to {
+  display:none;
+}
 .detail > .content > .items > .item > .myHead {
   text-align: right;
   margin-bottom: 10px;
@@ -170,9 +174,16 @@
   font-style: italic;
 }
 .detail > .content > .bulletgroups {
-  margin-bottom:50px;
   /*padding-bottom:30px;
   border:1px solid #EEE;*/
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.detail > .content > .bulletgroups:last-child {
+  border-bottom: none;
+  padding-bottom: 20px;
+  margin-bottom: 0px;
 }
 .detail > .content > .bulletgroups:empty {
   display:none;
@@ -203,16 +214,13 @@
 .detail > .content > .bulletgroups > .groups > .group > .description {
   font-weight: bold;
   font-size: 15px;
-  border-bottom: 1px solid #ececec;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
 }
 .detail > .content > .bulletgroups > .groups > .group > .description:empty {
   display:none;
 }
 
 .detail > .content > .bulletgroups > .groups > .group > .bullets  {
-  margin-top:10px;
+  margin-top:0px;
 }
 .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet {
   margin-bottom:10px;
@@ -282,7 +290,7 @@
   padding:10px;
   display:inline-block;
   border-radius:40px;
-  background:white;
+  background:#f9f9f9;
 }
 .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet  > .bubbles > .bubble.no-style {
   padding:0px!important;

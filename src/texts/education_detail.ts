@@ -1,19 +1,13 @@
 const detail = {
     icon:'graduation-cap',
-
     /*animation:'rocket',*/
     itemsFunny: [
       {
-        name: 'Self development',
-        subname: 'At home',
-        from: '...long time ago',
-        to: 'Present',
-        description: `TODO My engineer degree study programme was focused on the
-        acquirement of theoretical and practical knowledge in the field of
-        design and development business enterprise systems and on database
-        systems analysis.`,
-
-        notes: `Tools: Google, Udemy, Codeacademy, Youtube...`
+        name: 'Development at home',
+        subname: '',
+        description: `I am an active user of udemy.com learning platform, where I finished in last
+        few months online courses about Maven Framework, React and currently starting with Angular 5 :)`,
+        notes: ``
       }
     ],
     items: [
@@ -43,7 +37,11 @@ const detail = {
         description: `My bachelor degree study programme was focused on the
         acquirement of knowledge in the field of computer network management,
         data analysis, business economy, design of business enterprise systems
-        and programming.`
+        and programming.`,
+
+        notes: `Master Thesis: "Design and realization of Music Box". The main aim
+        of the bachelor thesis was to create a musical machine based on a set
+        of liquid-filled bottles controlled by a computer LabJack interface.`
       }
     ]
 };

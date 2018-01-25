@@ -24,7 +24,7 @@ const Detail = {
 
         notes: `Technologies: JavaScript, Ajax, Jquery library,
         HTML, CSS, XSLT, Java, Maven, Spring framework, JUnit Test Framework,
-        Eclipse IDE, SVN, Vue, Git`
+        Eclipse IDE, SVN, Vue, Git, TypeScript`
       },
       {
         name: 'Software Developer Internship',
@@ -41,8 +41,8 @@ const Detail = {
         for application menu, responsive tables, trees, forms, dialogs and
         etc.`,
 
-        notes: `Technologies: JavaScript ECMAScript 5, Ajax, Jquery library,
-        HTML, CSS, XSLT, Java, Spring framework, JUnit Test Framework,
+        notes: `Technologies: JavaScript, Ajax, Jquery,
+        HTML, CSS, XSLT, Java, Maven, Spring framework, JUnit Test Framework,
         Eclipse IDE`
       },
       {
@@ -62,10 +62,10 @@ const Detail = {
         to inform them of our work progress by engaging them in weekly meetings.
         My main responsibility in this project was front-end development.
 
-        Both projects were successfully finished and given to the client on time
+        Both projects were successfully finished and given to the client on time.
         `,
 
-        notes: `Technologies: JavaScript ECMAScript 5, Ajax, Jquery library,
+        notes: `Technologies: JavaScript, Ajax, Jquery library,
         HTML, CSS, C#, ASP.NET Razor markup language, Visual Studio IDE`
       },
       {
@@ -86,7 +86,7 @@ const Detail = {
         abroad and a great opportunity to experience other cultures,
         for which I am absolutely thankful.`,
 
-        notes: `Technologies: C, Fortran 77`
+        notes: `Technologies: C, Fortran 77, Eclipse IDE`
       },
       {
         name: 'Computer systems tester',
@@ -101,7 +101,7 @@ const Detail = {
         validate JavaScript calculations, XML documents and document all found
         issues. I was collaborating with a team of 10 people.`,
 
-        notes: `Technologies: ECMAScript 5, XML`
+        notes: `Technologies: JavaScript, XML`
       }
     ]
 };
@@ -109,8 +109,8 @@ const Detail = {
 export class WorkExperience implements IResult {
 
   private title: string = "Work experience";
-  private subtitle: string = "Step by Step";
-  private description: string = "What has been going on in the last years";
+  private subtitle: string = "What has been going on in the last years";
+  private description: string = "";
   private detail: any;
 
   constructor() {

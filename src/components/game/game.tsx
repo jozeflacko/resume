@@ -17,7 +17,7 @@ export default class Game extends React.Component {
   private hintNode: any;
   private playing = false;
   private score = 0;
-  private countdown = 15;
+  private countdown = 20;
   private timer: Timer = new Timer(this.countdown, () => { this.stopGame(); }, 'countdown');
 
   getMainThumb() {
@@ -45,11 +45,12 @@ export default class Game extends React.Component {
     this.hideAllInitThumbs();
     this.clickEvent.install();
     this.playGame();
+    this.countdown = 20;
   }
   playGame() {
     this.gameNode.className="game play";
     this.showHint(true);
-
+    this.countdown = 20;
     setTimeout( () => {
       const mainThumb = this.getMainThumb();
       // must ask because we can close game prematurely
@@ -68,14 +69,16 @@ export default class Game extends React.Component {
     this.renderInitThumbs();
     this.timer.stop(false);
     this.gameNode.className = "game ready show-score";
+    this.gameNode.querySelector('.score').innerHTML = "Your score is " + (this.score);
     this.showHint(false);
+    this.countdown = 20;
   }
 
   finishGame() {
     this.stopGame();
     this.gameNode.className = "game";
     this.showHint(false);
-    this.gameNode.querySelector('.score').innerHTML = "Your Score " + (this.score = 0);
+    this.gameNode.querySelector('.score').innerHTML = "Score " + (this.score = 0);
     this.clickEvent.remove();
   }
 
@@ -223,13 +226,13 @@ export default class Game extends React.Component {
         <div className="hint-text" ref={(el) => {this.hintNode = el;}}>
           <p className="title">Hint:</p>
           <p className="main">Click on the Happy Thumb as many times you can!</p>
-          <p>But be aware that Sad Thumbs dont want to be disturbed!
-          It will be not so easy, because place will get crowded.</p>
+          <p>But be aware that Sad Thumbs do not want to be disturbed!<br/>
+          It will be not easy, because place will get crowded.</p>
         </div>
 
         <div className="game" ref={(el) => {this.gameNode = el;}} >
 
-            <span className="score">Your Score 0</span>
+            <span className="score"/>
             <span className="timer">
               Time left <span id="countdown">{this.countdown}</span>s
             </span>

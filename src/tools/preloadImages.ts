@@ -6,8 +6,6 @@ class PreloadImages {
     './assets/flipPhotos/2.JPG',
     './assets/flipPhotos/3.JPG',
     './assets/flipPhotos/4.JPG',
-    './assets/flipPhotos/5.JPG',
-    './assets/flipPhotos/6.JPG',
     './assets/happy.jpeg',
   ];
 
