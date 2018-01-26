@@ -1,24 +1,25 @@
 export default class Timer {
-
-  private maxWaitTime: number;
+  private initTime: number;
+  private onResetTime: number;
   private countdown: number = 0;
   private refreshIntervalId: any = null;
   private callback: any;
   private triggerCallback:boolean = true;
   private nodeIdWhereToPrintCountdown: any;
 
-  constructor (maxWaitTime: number, callback: any, nodeIdWhereToPrintCountdown: any) {
-    if(!maxWaitTime || !callback)
+  constructor (initTime:number, onResetTime: number, callback: any, nodeIdWhereToPrintCountdown: any) {
+    if(initTime < 0 || onResetTime < 0 || !callback)
       return;
 
-    this.maxWaitTime = maxWaitTime;
+    this.initTime = initTime+1;
+    this.onResetTime = onResetTime+1;
     this.callback = callback;
     this.nodeIdWhereToPrintCountdown = nodeIdWhereToPrintCountdown;
   }
 
   public start() {
     this.stop();
-    this.countdown = this.maxWaitTime;
+    this.countdown = this.initTime;
     this.refreshMessage();
     this.refreshIntervalId = setInterval(() => { this.refreshMessage(); }, 1000);
   }
@@ -39,8 +40,14 @@ export default class Timer {
      this.triggerCallback = triggerCallback;
    }
 
+   public setInit() {
+     this.countdown = this.initTime;
+     this.refreshMessage();
+   }
+
    public reset() {
-    	this.countdown = this.maxWaitTime;
+    	this.countdown = this.onResetTime;
+      this.refreshMessage(); 
    }
 
    private getCountdown() {
@@ -53,7 +60,7 @@ export default class Timer {
         if(this.triggerCallback)
           this.callback();
       } else {
-        this.countdown = this.countdown - 1;      
+        this.countdown = this.countdown - 1;
       }
       this.processCountdown();
     }

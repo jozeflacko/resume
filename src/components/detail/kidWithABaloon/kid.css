@@ -19,6 +19,7 @@
   position: relative;
 }
 
+.waveHand .kid-container > .kid .head,
 .kid-container > .kid .head {
   position: absolute;
   -webkit-transform: rotate(20deg);
@@ -27,7 +28,9 @@
   transform-origin: 113px 83px;
   z-index: 100;
   transition:all 1s;
+
 }
+.kid-placeholder:not(.waveHand) .kid-container:hover > .kid .head,
 .sad .kid-container > .kid .head {
   transform:rotate(0deg);
 }
@@ -150,17 +153,17 @@
 
 .kid-container > .kid .eye {
   z-index: 30;
-      top: 93px;
-      left: 75px;
-      width: 6px;
-      height: 6px;
-      background: #306dab;
-      border-radius: 100%;
-      -webkit-border-radius: 100%;
-      -moz-border-radius: 100%;
-      position: absolute;
-      transition-delay: 8s;
-      transition: all 1s;
+  top: 93px;
+  left: 75px;
+  width: 6px;
+  height: 6px;
+  background: #306dab;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  position: absolute;
+  transition-delay: 8s;
+  transition: all 1s;
 }
 .kid-container > .kid .eye:before {
   position: absolute;
@@ -172,10 +175,12 @@
   border-radius: 100%;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
+  transition-delay: 8s;
+  transition: all 1s;
 }
 .kid-container > .kid .mouth {
   z-index: 20;
-  top: 120px;
+  top:114px;
   left: 97px;
   width: 30px;
   height: 15px;
@@ -186,19 +191,31 @@
   transition-delay: 8s;
   transition: all 1s;
 }
+.kid-placeholder:not(.waveHand) .kid-container:hover > .kid .eye ,
 .sad .kid-container > .kid .eye {
   left: 87px;
 }
+.kid-placeholder:not(.waveHand) .kid-container:hover > .kid .eye:before,
 .sad .kid-container > .kid .eye:before {
   left: 43px;
 }
+
+
+.kid-placeholder:not(.waveHand) .kid-container:hover > .kid .eyebrow,
 .sad .kid-container > .kid .eyebrow {
   left: 85px;
 }
-.sad .kid-container > .kid .mouth {
-  /*border-radius: 100px 100px 0 0;*/
+.kid-placeholder:not(.waveHand) .kid-container:hover > .kid .mouth {
+
+}
+.kid-placeholder.waveHand .kid-container > .kid .mouth {
+  border-radius: 100px 100px 0px 0px;
+}
+.sad.kid-placeholder .kid-container > .kid .mouth {
+  border-radius: 100px 100px 0px 0px;
   top:111px;
 }
+.kid-placeholder:not(.waveHand) .kid-container:hover > .kid .eyebrow:before
 .sad .kid-container > .kid .eyebrow:before {
   left: 42px;
 }
@@ -268,6 +285,7 @@
   transform-origin: 56% 95%;
   transition: background .5s;
 }
+.kid-placeholder:not(.waveHand) .kid-container:hover > .kid .lefthand
 .sad.waveHand .kid-container > .kid .lefthand {
   z-index: 9;
   background: #80c7ea;
@@ -403,10 +421,7 @@
   z-index: 100;
   bottom: -344px;
   left: -200px;
-  background: #AAA;
-  -webkit-box-shadow: 10px 10px 10px black;
-  box-shadow: 10px 5px 27px #929292;
-
+  box-shadow: 10px 5px 27px green;
   display:none;
 }
 

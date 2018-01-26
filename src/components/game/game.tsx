@@ -12,13 +12,17 @@ const THUMB_INIT_CLASS = 'init-thumb';
 export default class Game extends React.Component {
 
   MAX_RANDOM_NUMBER = 1000;
+  INIT_COUNTDOWN = 20;
+  ON_GAME_RESET_COUNTDOWN = 20;
+  INIT_SCORE = 0;
+  YOUR_SCORE = "Your score is ";
 
   private gameNode: any;
   private hintNode: any;
   private playing = false;
-  private score = 0;
-  private countdown = 20;
-  private timer: Timer = new Timer(this.countdown, () => { this.stopGame(); }, 'countdown');
+  private score = this.INIT_SCORE;
+  private countdown = this.INIT_COUNTDOWN;
+  private timer: Timer = new Timer(this.INIT_COUNTDOWN, this.ON_GAME_RESET_COUNTDOWN, () => { this.stopGame(); }, 'countdown');
 
   getMainThumb() {
     return document.getElementById(MAIN_THUMB_ID);
@@ -45,12 +49,11 @@ export default class Game extends React.Component {
     this.hideAllInitThumbs();
     this.clickEvent.install();
     this.playGame();
-    this.countdown = 20;
   }
   playGame() {
     this.gameNode.className="game play";
+    this.resetCounters();
     this.showHint(true);
-    this.countdown = 20;
     setTimeout( () => {
       const mainThumb = this.getMainThumb();
       // must ask because we can close game prematurely
@@ -59,7 +62,6 @@ export default class Game extends React.Component {
           this.timer.start();
       }
     }, 2000);
-
   }
 
   stopGame() {
@@ -69,17 +71,25 @@ export default class Game extends React.Component {
     this.renderInitThumbs();
     this.timer.stop(false);
     this.gameNode.className = "game ready show-score";
-    this.gameNode.querySelector('.score').innerHTML = "Your score is " + (this.score);
+    this.gameNode.querySelector('.score').innerHTML = this.YOUR_SCORE + (this.score);
     this.showHint(false);
-    this.countdown = 20;
   }
 
   finishGame() {
     this.stopGame();
     this.gameNode.className = "game";
     this.showHint(false);
-    this.gameNode.querySelector('.score').innerHTML = "Score " + (this.score = 0);
+    this.gameNode.querySelector('.score').innerHTML = this.YOUR_SCORE + (this.score);
     this.clickEvent.remove();
+  }
+
+  resetCounters() {
+    this.countdown = this.INIT_COUNTDOWN;
+    //this.gameNode.querySelector('#countdown').innerHTML = this.countdown.toString();
+    this.timer.setInit();
+
+    this.score = this.INIT_SCORE;
+    this.gameNode.querySelector('.score').innerHTML = ""; // erase score counter!
   }
 
   insertThumb(main:boolean = false, move:boolean = true) {
@@ -143,7 +153,7 @@ export default class Game extends React.Component {
   })();
 
   addPoint(thumb: any) {
-    this.gameNode.querySelector('.score').innerHTML = "Your Score " + (++this.score);
+    this.gameNode.querySelector('.score').innerHTML = this.YOUR_SCORE + (++this.score);
   }
 
   removeAllThumbs(): void {

@@ -20,6 +20,10 @@
   /*border:1px solid red;*/
   box-sizing: border-box;
 }
+.baloon-container > .baloon.flyAway {
+  transition: all 7s;
+}
+
 .baloon-container > .baloon > .heart-container {
   position:relative;
   width:100%;

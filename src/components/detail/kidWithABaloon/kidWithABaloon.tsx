@@ -127,27 +127,22 @@ export default class KidWithABaloon extends React.Component<{
 
   flyBaloonAway = () => {
     this.stopFlyBaloon();
-    let index =  100;
-    const whenToStartWink = index - 1;
-    const whenToStartSad = index - 70;
-    this.baloonTimeout = setInterval(()=> {
-      if(index-- <= 1) {
-        this.stopFlyBaloon();
-      }
-      if(!this.baloon) {
-        return;
-      }
-      this.baloon.style.top =  this.getNewNegativePosition(this.baloon.style.top);
-      this.baloon.style.left = this.getNewNegativePosition(this.baloon.style.left);
-      this.baloon.style.opacity = (index / 100).toString();
-      if(index === whenToStartWink) {
-        this.line.style.display = 'none';
-        this.kidPlaceholder.className = this.kidPlaceholder.className + ' waveHand';
-      }
-      if(index === whenToStartSad) {
-        this.kidPlaceholder.className = this.kidPlaceholder.className + ' sad';
-      }
-    }, 100);
+    if(!this.baloon) {
+      return;
+    }
+    this.line.style.display = 'none';
+    setTimeout( ()=> {
+      this.baloon.className = this.baloon.className + ' flyAway';
+      this.kidPlaceholder.className = this.kidPlaceholder.className + ' waveHand';
+      this.baloon.style.top =  '-500px';
+      this.baloon.style.left = '-500px';
+      this.baloon.style.opacity = '0';
+      setTimeout( ()=> {
+          if(this.kidPlaceholder !== null) {
+            this.kidPlaceholder.className = this.kidPlaceholder.className + ' sad';
+          }
+      },5000);
+    },300);
   }
 
   flyBaloon = (baloon:any, line:any, kid:any) => {
