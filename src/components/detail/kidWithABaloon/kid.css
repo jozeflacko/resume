@@ -322,6 +322,8 @@
 .kid-container > .kid .righthand {
   z-index: 1;
   top: 134px;
+  -webkit-transform: rotate(-15deg);
+  -ms-transform: rotate(-15deg);
   transform: rotate(-15deg);
   left: 138px;
   width: 27px;
@@ -374,6 +376,8 @@
   border-radius: 0px 0px 0px 0px;
   top: 228px;
   left: 68px;
+  -webkit-transform: rotate(7deg);
+  -ms-transform: rotate(7deg);
   transform: rotate(7deg);
   background: #1b5877;
   z-index: 1;
@@ -385,6 +389,8 @@
   border-radius: 20px 0px 5px 5px;
   bottom: -15px;
   left: -9px;
+  -webkit-transform: rotate(-7deg);
+  -ms-transform: rotate(-7deg);
   transform: rotate(-7deg);
   background: black;
   z-index: 0;
@@ -398,6 +404,8 @@
   border-radius: 0px 0px 0px 0px;
   top: 228px;
   left: 115px;
+  -webkit-transform: rotate(-7deg);
+  -ms-transform: rotate(-7deg);
   transform: rotate(-7deg);
   background: #1b5877;
   z-index: 0;
@@ -409,6 +417,8 @@
   border-radius: 0px 20px 5px 5px;
   bottom: -15px;
   left: -1px;
+  -webkit-transform: rotate(7deg);
+  -ms-transform: rotate(7deg);
   transform: rotate(7deg);
   background: black;
   z-index: 0;

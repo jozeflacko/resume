@@ -96,7 +96,7 @@
 }
 
 .detail > .content > .description > p:first-child {
-    text-indent: 50px;
+    /*text-indent: 50px;*/
 }
 .detail > .content > .description > p {
 
@@ -158,7 +158,7 @@
   top:30px;
 }
 .detail > .content > .items > .item > .logos > img {
-  height:30px;
+  height:50px;
   padding-right:10px;
 }
 .detail > .content > .items > .item > .myBody {
@@ -166,7 +166,7 @@
 }
 .detail > .content > .items > .item > .myBody > .description {
   text-align: justify;
-  text-indent: 50px;
+  /*text-indent: 50px;*/
 }
 .detail > .content > .items > .item > .myBody > .notes {
   margin-top: 10px;
@@ -283,6 +283,7 @@
   margin-left:-20px;
   margin-right:-20px;
   position:relative;
+  margin-top:10px;
 }
 .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet  > .bubbles > .bubble {
   border:1px solid #DDD;

@@ -42,11 +42,13 @@ const detail = {
                 { value: "Spring framework", size: 4 },
                 { value: "XML", size: 4 },
                 { value: "UML", size: 4 },
+                { value: "GIT", size: 4 },
                 { value: "XSL", size: 5 },
                 { value: "Maven", size: 5 },
                 { value: "Arduino", size: 5 },
-                { value: "C", size: 5 },
                 { value: "SVG", size: 5 },
+
+                { value: "C", size: 5 },
               ]
             },
           ]

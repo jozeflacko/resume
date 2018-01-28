@@ -17,22 +17,22 @@ export const Links: Array<ILink> = [
     title:'Want to see cool pictures?',
 
   },
-  {
+  /*{
     name:'Github',
     url:'https://github.com/opam',
     title:'I use my Github only for study',
+    priority: 'low',
+  },*/
+  {
+    name:'LinkedIn',
+    url:'https://www.linkedin.com/in/jozeflacko/',
+    title:'LinkedIn',
     priority: 'low',
   },
   {
     name:'Facebook',
     url:'https://www.facebook.com/jozef.lacko.33',
     title:'Facebook',
-    priority: 'low',
-  },
-  {
-    name:'LinkedIn',
-    url:'https://www.linkedin.com/in/jozeflacko/',
-    title:'LinkedIn',
     priority: 'low',
   },
   {

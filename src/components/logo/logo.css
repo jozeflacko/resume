@@ -50,8 +50,13 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-duration: 25s;
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
   transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
+
   padding:0px;
 }
 .logo .postfix > .spin > span {
@@ -66,10 +71,14 @@
 }
 .logo .postfix > .spin > span.front {
   z-index: 2;
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
   transform: rotateY(0deg);
 }
 .logo .postfix > .spin > span.back {
   z-index: 1;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
   transform: rotateY(180deg);
   color:red;
 }

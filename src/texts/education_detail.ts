@@ -6,7 +6,7 @@ const detail = {
         name: 'Development at home',
         subname: '',
         description: `I am an active user of udemy.com learning platform, where I finished in last
-        few months online courses about Maven Framework, React and currently starting with Angular 5 :)`,
+        few months online courses about Maven Framework, React and currently searching for something new :)`,
         notes: ``
       }
     ],
