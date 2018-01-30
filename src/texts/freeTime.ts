@@ -5,7 +5,7 @@ export class FreeTime implements IResult {
 
   private title: string = "Last but not least!";
   private subtitle: string = "Hey, just something small at the end";
-  private description: string = `I stay positive, because I don’t know what tomorrow is going to bring… maybe a sunny day :)`;
+  private description: string = `I am optimistic, because I don’t know what tomorrow is going to bring… maybe a sunny day :)`;
 
   public getTitle(): string {
     return this.title;

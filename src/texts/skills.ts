@@ -5,7 +5,7 @@ export class Skills implements IResult {
 
   private title: string = "Skill and Proficiency";
   private subtitle: string = "In love with JavaScript";
-  private description: string = "My strongest skills are being assertive, a teamplayer and to be myself";
+  private description: string = "Assertive, Teamplayer, Friendly";
 
   public getTitle(): string {
     return this.title;

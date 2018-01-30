@@ -3,10 +3,10 @@ const detail = {
     /*animation:'rocket',*/
     itemsFunny: [
       {
-        name: 'Development at home',
+        name: 'Development at Home',
         subname: '',
         description: `I consider learning an awesome hobby which keeps me occupied a lot.
-        I am an active user of udemy.com learning platform, where I finished in last
+        I am an active user of UDEMY's learning platform, where I finished in last
         few months online courses for Maven Framework, React and currently searching for something new :)`,
         notes: `What did you learn yesterday?`
       }

@@ -15,7 +15,7 @@ export default class Game extends React.Component {
   INIT_COUNTDOWN = 20;
   ON_GAME_RESET_COUNTDOWN = 20;
   INIT_SCORE = 0;
-  YOUR_SCORE = "Your score is ";
+  YOUR_SCORE = "Your score is: ";
 
   private gameNode: any;
   private hintNode: any;
@@ -237,14 +237,14 @@ export default class Game extends React.Component {
           <p className="title">Hint:</p>
           <p className="main">Click on the Happy Thumb as many times you can!</p>
           <p>But be aware that Sad Thumbs do not want to be disturbed!<br/>
-          It will be not easy, because place will get crowded.</p>
+          It will not be easy, because it will get crowded.</p>
         </div>
 
         <div className="game" ref={(el) => {this.gameNode = el;}} >
 
             <span className="score"/>
             <span className="timer">
-              Time left <span id="countdown">{this.countdown}</span>s
+              Remaining time: <span id="countdown">{this.countdown}</span>sec
             </span>
             <FontAwesome
               name="play-circle"

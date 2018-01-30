@@ -38,6 +38,6 @@ export const Links: Array<ILink> = [
   {
     name:'Docs to Print',
     url:'https://docs.google.com/document/d/1_w972PQnwHwLr0fVTI3d4FHgWQlOS3dY6IM-i2dthyQ/edit?usp=sharing',
-    title:'Resume on Drive with possibility to print',
+    title:'Preview my resume',
   }
 ];

@@ -9,7 +9,7 @@ const detail = {
     /* I am */  'always doing my best',
     /* I am */  'hard worker',
     /* I am */  'a dreamer',
-    /* I am */  'curious what will come tomorrow',
+    /* I am */  'curious about tomorrow',
     /* I am */  'a guitar player',
     ]
   },
