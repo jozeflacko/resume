@@ -4,8 +4,8 @@ import detail from './skills_detail';
 export class Skills implements IResult {
 
   private title: string = "Skill and Proficiency";
-  private subtitle: string = "Everything is learnable";
-  private description: string = "Qustion is how much you want to know it?";
+  private subtitle: string = "In love with JavaScript";
+  private description: string = "My strongest skills are being assertive, a teamplayer and to be myself";
 
   public getTitle(): string {
     return this.title;

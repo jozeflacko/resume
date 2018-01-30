@@ -5,9 +5,10 @@ const detail = {
       {
         name: 'Development at home',
         subname: '',
-        description: `I am an active user of udemy.com learning platform, where I finished in last
-        few months online courses about Maven Framework, React and currently searching for something new :)`,
-        notes: ``
+        description: `I consider learning an awesome hobby which keeps me occupied a lot.
+        I am an active user of udemy.com learning platform, where I finished in last
+        few months online courses for Maven Framework, React and currently searching for something new :)`,
+        notes: `What did you learn yesterday?`
       }
     ],
     items: [

@@ -189,9 +189,9 @@
   display:none;
 }
 .detail > .content > .bulletgroups > .title {
-  padding:20px;
-  font-weight:bold;
-  font-size:30px;
+  padding: 0px 20px;
+  font-weight: bold;
+  font-size: 30px;
 }
 .detail > .content > .bulletgroups > .title:empty {
   display:none;
@@ -214,6 +214,8 @@
 .detail > .content > .bulletgroups > .groups > .group > .description {
   font-weight: bold;
   font-size: 15px;
+  margin-top:5px;
+  margin-bottom:5px;
 }
 .detail > .content > .bulletgroups > .groups > .group > .description:empty {
   display:none;

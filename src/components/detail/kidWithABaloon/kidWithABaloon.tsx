@@ -111,7 +111,7 @@ export default class KidWithABaloon extends React.Component<{
     // fix kid 150px below container of bubbles
     const bubbleTop = bubbleNode.offsetTop;
     const bubblesHeight = bubblesNode.offsetHeight;
-    const PUSH_KID_FROM_TOP_SIDE = 135;
+    const PUSH_KID_FROM_TOP_SIDE = 145;
     const kidTop = bubblesHeight - bubbleTop + PUSH_KID_FROM_TOP_SIDE + pushDown; /* we want to be 100 px from right */
     kid.style.top = kidTop + 'px';
     this.setBaloonAndLinePosition(baloon, this.getNumValue(baloon.style.top), this.getNumValue(baloon.style.left), null);
@@ -151,6 +151,7 @@ export default class KidWithABaloon extends React.Component<{
       if(baloon === undefined || line === undefined || kid === undefined) {
         return;
       }
+
       const BALOON_MOVEMENT = 1; /* if you want to use more have to set transition for line and baloon */
       let left = this.getNewRandomPosition(baloon.style.left, BALOON_MOVEMENT);
       let  top = this.getNewRandomPosition(baloon.style.top, BALOON_MOVEMENT);
@@ -168,7 +169,7 @@ export default class KidWithABaloon extends React.Component<{
     };
     this.baloonTimeout = setInterval( ()=> {
       if(this.canFly === true && this.isResizing === false && this.isScrolling === false) {
-        fly();
+      fly();
       }
     }, TIMEOUT);
   }

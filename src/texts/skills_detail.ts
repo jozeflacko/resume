@@ -1,10 +1,5 @@
 const detail = {
   icon:'bolt',
-  description: [
-    `I consider learning an awesome hobby which keeps me occupied a lot.
-    Anywhere and anytime I can start. That feeling when things start to get
-    easy is always fulfilling and pushing me forward.`,
-  ],
   bulletgroups: [
     {
       key:'skillsAndProf',

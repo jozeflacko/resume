@@ -110,7 +110,7 @@ export class WorkExperience implements IResult {
 
   private title: string = "Work experience";
   private subtitle: string = "What has been going on in the last years";
-  private description: string = "";
+  private description: string = "It was always interesting";
   private detail: any;
 
   constructor() {

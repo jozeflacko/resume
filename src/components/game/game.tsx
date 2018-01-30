@@ -100,7 +100,7 @@ export default class Game extends React.Component {
 
     if(main) {
       thumb.id =MAIN_THUMB_ID;
-      this.addMessage("Hi, I am Happy Thumb!");
+      this.addMessage("Hi, click on me!");
        // will be started manually after first click
     } else if(move) {
       this.moveThumb(thumb);
@@ -109,9 +109,9 @@ export default class Game extends React.Component {
 
   processScore() {
     switch(this.score) {
-      case 5: this.addMessage("Sad thumbs dont want to be disturbed!");
+      case 5: this.addMessage("My friends do not like clicks!");
         break;
-      case 10: this.addMessage("Good job! But try harder");
+      case 10: this.addMessage("Can you do 100?");
         break;
       default:
         break;

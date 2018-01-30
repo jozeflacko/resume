@@ -67,10 +67,14 @@
 }
 .flipPhotos-container .spin-container .spin-row:nth-child(3n+0) .card {
   transform:rotate(1deg);
+  -webkit-transform:rotate(1deg);
+  -moz-transform:rotate(1deg);
   left:-1px;
 }
 .flipPhotos-container .spin-container .spin-row:nth-child(4n+0) .card {
   transform:rotate(-1deg);
+  -webkit-transform:rotate(-1deg);
+  -moz-transform:rotate(-1deg);
   left:1px;
 }
 .flipPhotos-container .spin-container .spin-row .card > div {
@@ -79,30 +83,30 @@
     width: 100%;
     position: absolute;
     background:#DDD;
-    /*
+
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -o-backface-visibility: hidden;
     backface-visibility: hidden;
-    */
+
     overflow:hidden;
 }
-.flipPhotos-container .spin-container > .spin-row > .card > .front{
+.flipPhotos-container .spin-container > .spin-row > .card.flipped {
+    -webkit-transform: rotateX(0.5turn);
+    -moz-transform: rotateX(0.5turn);
+    -o-transform: rotateX(0.5turn);
+    transform: rotateX(0.5turn);
+}
+.flipPhotos-container .spin-container > .spin-row > .card > .front {
 
 }
 .flipPhotos-container .spin-container > .spin-row > .card > .back {
-    -webkit-transform: rotateX( 180deg );
-    -moz-transform: rotateX( 180deg );
-    -o-transform: rotateX( 180deg );
-    transform: rotateX( 180deg );
+    -webkit-transform: rotateX(0.5turn);
+    -moz-transform: rotateX(0.5turn);
+    -o-transform: rotateX(0.5turn);
+    transform: rotateX(0.5turn);
 }
-.flipPhotos-container .spin-container > .spin-row > .card.flipped {
-  -webkit-transform: rotateX( 180deg );
-    -moz-transform: rotateX( 180deg );
-    -o-transform: rotateX( 180deg );
-    transform: rotateX( 180deg );
 
-}
 .flipPhotos-container .spin-container > .spin-row > .card > div > img {
     position:relative;
     background-repeat: no-repeat;
