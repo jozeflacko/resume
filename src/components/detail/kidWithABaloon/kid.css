@@ -258,13 +258,15 @@
   position: absolute;
 }
 .kid-container > .kid .body > .brand-name {
-  position:relative;
-  color:white;
-  font-weight:800;
-  font-size:12px;
-  font-family:cursive;
-  top:20px;
-  left:20px;
+  position: relative;
+  display:block;
+  color: red;
+  /* font-weight: 800; */
+  font-size: 13px;
+  font-family: cursive;
+  top: 20px;
+  left: 15px;
+  /* text-shadow: 1px 1px 1px white; */
 }
 .kid-container > .kid .lefthand {
   z-index: 10;
