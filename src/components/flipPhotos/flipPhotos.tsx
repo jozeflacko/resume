@@ -15,7 +15,6 @@ export default class FlipPhotos extends React.Component<{
   CARD_ELEMENT_CSS = 'card';
   containerNode:any;
   flipInterval: any;
-  row = 0;
 
   componentDidMount() {
     this.startAll();
@@ -46,10 +45,9 @@ export default class FlipPhotos extends React.Component<{
     const cards = container.querySelectorAll('.'+this.CARD_ELEMENT_CSS);
     const miliseconfsTimeout = ((1000 / cards.length)*12);
 
-    setTimeout(()=>{
-      // initial flipPhotos
-      this.flipRandomImage();
-    }, (miliseconfsTimeout/2).toFixed());
+
+    // initial flipPhotos
+    this.flipRandomImage(true);  
 
     this.flipInterval = setInterval(() => {
       // loop flip
@@ -64,7 +62,7 @@ export default class FlipPhotos extends React.Component<{
         return;
 
       if(this.props.flipPhotos) {
-        this.setImage(this.CARD_ELEMENT_CSS, cards, this.props.flipPhotos, flipAll);
+        this.setRandomImage(this.CARD_ELEMENT_CSS, cards, this.props.flipPhotos, flipAll);
       }
     }
   }
@@ -91,11 +89,29 @@ export default class FlipPhotos extends React.Component<{
     }
   }
 
-  setImage(elementClass:string, elements:any, srcs:Array<string>, flipAll = false) {
+  setRandomImage(elementClass:string, elements:any, srcs:Array<string>, flipAll = false) {
     let row = this.getRandomInt(0, elements.length);
-    this.row = row !== elements.length-1 ? row : this.getRandomInt(0, elements.length);
+    const randomImageIndex = this.getRandomIntOtherThan(0, srcs.length, row);
+    const src = srcs[randomImageIndex];
 
-    var element = elements[this.row];
+    if(flipAll === false) {
+      this.setImage(elementClass, elements, src, row);
+
+      // FLIP SEVERAL AT ONCE
+      if (this.getRandomInt(0, 10) > 7 && flipAll === false) {
+        this.setRandomImage(elementClass, elements, srcs); // call once again
+      }
+    } else {
+      console.log('flip all rows');
+      for(let index = 0; index < elements.length;  index++) {
+        this.setImage(elementClass, elements, src, index);
+        console.log(index);
+      }
+    }
+  }
+
+  setImage(elementClass:string, elements:any, src:string, row:number) {
+    var element = elements[row];
     var side = '';
     if(element.className===elementClass) {
       element.className=elementClass+ " applyflip";
@@ -104,18 +120,11 @@ export default class FlipPhotos extends React.Component<{
       element.className=elementClass;
       side = '.cardFront';
     }
-    var randomImageIndex = this.getRandomIntOtherThan(0, srcs.length, this.row);
-    var src = srcs[randomImageIndex];
     const image = element.querySelector('.content '+side+ ' > img');
 
     image.setAttribute('src', src);
     image.className = "partial-image " + this.getRandomFilterClass();
-    console.log('spin row:'+this.row+' with image:'+src);
-
-    // FLIP SEVERAL AT ONCE
-    if (this.getRandomInt(0, 10) > 7 && flipAll === false) {
-      this.setImage(elementClass, elements, srcs); // call once again
-    }
+    console.log('spin row:'+row+' with image:'+src);
   }
 
   getRandomImage() {
@@ -223,7 +232,7 @@ export default class FlipPhotos extends React.Component<{
         <div>
           <div
             className="flipButton"
-            onClick={()=> { this.flipRandomImage() }}
+            onClick={()=> { this.flipRandomImage(true) }}
           >
             Flip
           </div>
