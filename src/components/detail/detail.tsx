@@ -20,11 +20,11 @@ interface Props extends React.Props<any> {
 
 export default class Detail extends React.Component<Props, {}> {
   processDetail() {
-    const { photo, flipPhotos, flipPhotosBottom, animation, sentence, bottomPhoto, description, items, itemsFunny, bulletgroups } = this.props.detail.getDetail();
+    const { photo, flipPhotos, flipPhotosBackground, flipPhotosBottom, animation, sentence, bottomPhoto, description, items, itemsFunny, bulletgroups } = this.props.detail.getDetail();
     return (
       <div className="content">
         {this.processHero(photo)}
-        {this.processFlipPhotos(flipPhotos, flipPhotosBottom)}
+        {this.processFlipPhotos(flipPhotos, flipPhotosBackground, flipPhotosBottom)}
         <div className="photo">{this.processPhoto(photo)}</div>
         {this.processSentence(sentence)}
         <div className="description">{this.processDescription(description)}</div>
@@ -45,8 +45,8 @@ export default class Detail extends React.Component<Props, {}> {
     return "";
   }
 
-  processFlipPhotos(flipPhotos:Array<string>, flipPhotosBottom:string){
-    return <FlipPhotos flipPhotos={flipPhotos} flipPhotosBottom={flipPhotosBottom} numberOfRows={4}/>;
+  processFlipPhotos(flipPhotos:Array<string>, flipPhotosBackground:string, flipPhotosBottom:string){
+    return <FlipPhotos flipPhotos={flipPhotos} flipPhotosBackground={flipPhotosBackground} flipPhotosBottom={flipPhotosBottom} numberOfRows={4}/>;
   }
 
   processPhoto(photo: string, className = 'my-photo') {
