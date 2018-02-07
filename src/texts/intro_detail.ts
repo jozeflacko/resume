@@ -1,12 +1,12 @@
 const introDetail = {
     flipPhotos:[
-      './assets/flipPhotos/1.JPG',
-      './assets/flipPhotos/2.JPG',
-      './assets/flipPhotos/3.JPG',
-      './assets/flipPhotos/4.JPG'
+      '../assets/flipPhotos/1.JPG',
+      '../assets/flipPhotos/2.JPG',
+      '../assets/flipPhotos/3.JPG',
+      '../assets/flipPhotos/4.JPG'
     ],
-    flipPhotosBackground:'./assets/flipPhotos/head.JPG',
-    flipPhotosBottom:'./assets/flipPhotos/body.JPG',
+    flipPhotosBackground:'../assets/flipPhotos/head.JPG',
+    flipPhotosBottom:'../assets/flipPhotos/body.JPG',
     description: [
       `As a software developer, my heart definitely belongs to JavaScript.
       This language kept me aspiring every day, for more than 4 years.`,

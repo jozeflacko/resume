@@ -38,7 +38,7 @@ class Home extends React.Component<Props, {}> {
               <SearchBar search={this.props.search} />
               <div className="buttons" onClick={()=> {this.props.turnOffAnimation();}} >
                 <Link
-                  to={'/results'}
+                  to={'/resumeforgoogle/details'}
                   className="button"
                   title="Click here to get to know me better!"
                 >
@@ -46,7 +46,7 @@ class Home extends React.Component<Props, {}> {
                 </Link>
                 <Link
                   title="Click here to get to know me better!"
-                  to={'/results'}
+                  to={'/resumeforgoogle/details'}
                   className="button i-feel-lucky active"
                 >
                   I am feeling lucky

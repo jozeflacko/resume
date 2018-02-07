@@ -9,7 +9,7 @@ const Detail = {
         place: 'Vienna, Austria',
         from: 'May 2016',
         to: 'Present',
-        logos:['./assets/logos/workflow.png'],
+        logos:['../assets/logos/workflow.png'],
         description: `I work as a developer on an enterprise web application,
         focusing mostly on time management, travel management, and personnel
         management. My main responsibilities are implementing responsive skin
@@ -32,7 +32,7 @@ const Detail = {
         place: 'Vienna, Austria',
         from: 'June 2015',
         to: 'April 2016',
-        logos:['./assets/logos/workflow.png'],
+        logos:['../assets/logos/workflow.png'],
         description: `As a trainee, I was a full-valued team member developing
         a Java enterprise web application. After a short introduction period,
         I was implementing new Java services, jobs, JUnit tests, and new
@@ -51,7 +51,7 @@ const Detail = {
         place: 'Slovakia',
         from: 'June 2014',
         to: 'June 2015',
-        logos:['./assets/logos/tu.png','./assets/logos/uss.png'],
+        logos:['../assets/logos/tu.png','../assets/logos/uss.png'],
         description: `During my university studies, I was working on 3rd party
         projects at my Alma mater. Our client was one of the subsidiaries of
         the United States Steel Corporation placed in Slovakia. In a team of
@@ -74,7 +74,7 @@ const Detail = {
         place: 'Japan',
         from: 'June 2015',
         to: 'April 2016',
-        logos:['./assets/logos/unitokyo.jpg'],
+        logos:['../assets/logos/unitokyo.jpg'],
         description: `With the help of IAESTE (International Association for
         the Exchange of Students for Technical Experience), I was successfully
         accepted for a 10 weeks internship at University of Tokyo, Japan.
@@ -94,7 +94,7 @@ const Detail = {
         place: 'Kosice, Slovakia',
         from: 'January 2014',
         to: 'March 2014',
-        logos:['./assets/logos/icos.png'],
+        logos:['../assets/logos/icos.png'],
         description: `As a tester, I was participating on a final development
         stage of a national project about electronic documents for tax returns
         lasting 3 months. My main responsibilities were to test web tax forms,

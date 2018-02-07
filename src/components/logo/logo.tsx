@@ -19,7 +19,7 @@ export default class Logo extends React.Component<Props, {}> {
     const className = this.props.onSmallMovePostfix === false ? "logo" : "logo onSmallMovePostfix";
     return (
       <Link
-        to={'/'}
+        to={'/resumeforgoogle'}
         className={className}
       >
         <span className="g one">G</span>
