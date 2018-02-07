@@ -2,6 +2,7 @@ import * as React from 'react';
 import './flipPhotos.css';
 import './flipping.css';
 import './flipPhotos_mobile.css';
+import * as FontAwesome from 'react-fontawesome';
 
 
 export default class FlipPhotos extends React.Component<{
@@ -47,7 +48,7 @@ export default class FlipPhotos extends React.Component<{
 
 
     // initial flipPhotos
-    this.flipRandomImage(true);  
+    this.flipRandomImage(true);
 
     this.flipInterval = setInterval(() => {
       // loop flip
@@ -227,16 +228,14 @@ export default class FlipPhotos extends React.Component<{
         {this.addBackgroundPhoto()}
         <div id="spin-container" className="spin-container" ref={(element)=>{this.containerNode = element}}>
           {this.renderRows(this.props.numberOfRows)}
+          <FontAwesome
+            name="retweet"
+            className="flipButton"
+            title="Click to Flip!"
+            onClick={()=> { this.flipRandomImage(true) }}
+          />
         </div>
         {this.addBottomPhoto()}
-        <div>
-          <div
-            className="flipButton"
-            onClick={()=> { this.flipRandomImage(true) }}
-          >
-            Flip
-          </div>
-        </div>
       </div>
     );
   }
