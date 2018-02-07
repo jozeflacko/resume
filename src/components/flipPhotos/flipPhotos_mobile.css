@@ -3,3 +3,8 @@
     display:none;
   }
 }
+@media screen and (max-width: 450px) {
+  .flipPhotos-container .flipButton {
+    display:none !important;
+  }
+}
