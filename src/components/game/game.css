@@ -16,10 +16,11 @@
   text-align:left;
   text-align: justify;
   text-justify: inter-word;
+  z-index:10000;
 }
 .game-container > .hint-text.show-hint {
   opacity:1;
-  top:-120px;
+  top:-60px;
 }
 .game-container > .hint-text > p {
   padding:0px 10px;

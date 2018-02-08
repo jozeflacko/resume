@@ -4,47 +4,64 @@ import './index.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-interface Props extends React.Props<any> {
+class Index extends React.Component<{}, {
+  value:string;
+}> {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-}
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
 
-export type HistoryContext = {
+  handleSubmit(event) {
+    let searchFor:string = this.state.value;
 
-}
+    if(searchFor && searchFor !== '') {
 
-class Index extends React.Component<Props, {}> {
-  componentDidMount() {
-
+      searchFor = searchFor.toLowerCase();
+      searchFor = searchFor.trim();
+      while(searchFor.indexOf(' ') > -1) {
+        searchFor = searchFor.replace(' ', '');
+      }
+      if(searchFor && searchFor !== '') {
+          window.open('/'+searchFor,"_self");
+          this.setState({value: ''});
+      }
+    }
+    event.preventDefault();
   }
   render() {
-    const divStyle = {
-      /*backgroundImage: 'url("../assets/flipPhotos/1_nie.JPG")',
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: '300px'*/
-    };
 
     return (
       <div className="index">
-        <div className='box' style={divStyle}/>
-        <div className="text">
-          <div className='title'>JOZEF LACKO</div>
-          <div className='subtitle'>jlacko27@gmail.com</div>
-        </div>
+        <form onSubmit={this.handleSubmit} >
+          <h2>Hi!<br/>This is <b>Jozef Lacko's</b><br/> web page.</h2>
+          <label>
+            <input
+              type="text"
+              value={this.state.value}
+              onChange={this.handleChange}
+              placeholder="Please insert project name"
+            />
+          </label>
+          <input type="submit" value="Go" />
+        </form>
       </div>
     );
   }
 }
 
-function mapStateToProps( state:Props, ownProps: any = {} ) {
-  return {
-
-  };
+function mapStateToProps( state:{}, ownProps: any = {} ) {
+  return {};
 }
 
 function mapDispatchToProps(dispatch: any) {
-  return bindActionCreators({
-
-  }, dispatch);
+  return bindActionCreators({}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Index);

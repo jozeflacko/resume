@@ -1,71 +1,51 @@
-/*.index {
-  display:fixed;
+.index {
+  width:100%;
   height:100%;
-  width:100%;
-    background:white;
+  overflow:hidden;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
+.index,
+.index * {
+    box-sizing: border-box;
+}
+.index > form {
+  display:inline-block;
 
-.index > .box {
-  margin-top:-30px;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  box-shadow: 0 2px 30px rgba(black, .2);
-  position: relative;
-  overflow: hidden;
-  transform: translate3d(0, 0, 0);
-  position:relative;
-    display:none;
 }
-
-
-.index > .box:after {
-  content: '';
-  display: block;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
-  z-index: 11;
-  transform: translate3d(0, 0, 0);
+.index > form > h2 {
+  font-size:28px;
+  color:#777;
+  text-shadow:3px 3px 3px #EEE;
 }
-.index > .text {
-  position:absolute;
-  width:100%;
-  height:0px;
-  overflow:visible;
+.index > form > h2 > b {
+  color:red;
 }
-.index > .text > * {
-  width: 100%;
-  z-index: 1;
-  font-size: 24px;
-  text-align: center;
-  transform: translate3d(0, 0, 0);
-  color: black;
-
-  font-size: 24px;
-  text-indent: .3em;
-  position:relative;
-  color:black;
-  top:120px;
+.index > form > label {
+  white-space:nowrap;
 }
-.index > .text > .title {
-  font-weight:bold;
-  color:#407dbb;
-  letter-spacing: .4em;
+.index > form > label > input {
+  border-radius:5px 0px 0px 5px;
+  border:1px solid #DDD;
+  border-right:none;
+  padding:8px;
 }
-.index > .text > .subtitle {
-  color:black;
-  margin-top:5px;
-  font-size:18px;
-  letter-spacing: .2em;
+.index > form > input {
+  border-radius:0px 5px 5px 0px;
+  border:1px solid #DDD;
+  border-left:none;
+  background:#DDD;
+  padding:8px 10px;
 }
-@keyframes driftMe {
-  from { transform: rotate(0deg); }
-  from { transform: rotate(360deg); }
+.index > form > input:hover {
+  background:#CCC;
 }
-*/
+.index > form > label > input,
+.index > form > input {
+  font-size:20px;
+  line-height:20px;
+  vertical-align:top;
+  height:35px;
+  box-shadow:3px 3px 3px #EEE;
+}

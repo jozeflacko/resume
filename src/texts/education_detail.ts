@@ -18,7 +18,7 @@ const detail = {
         place: 'Slovakia',
         from: 'September 2014',
         to: 'June 2015',
-        logos:['./assets/logos/tu.png'],
+        logos:['../assets/logos/tu.png'],
         description: `My engineer degree study programme was focused on the
         acquirement of theoretical and practical knowledge in the field of
         design and development business enterprise systems and on database
@@ -34,7 +34,7 @@ const detail = {
         place: 'Slovakia',
         from: 'September 2010',
         to: 'June 2014',
-        logos:['./assets/logos/tu.png'],
+        logos:['../assets/logos/tu.png'],
         description: `My bachelor degree study programme was focused on the
         acquirement of knowledge in the field of computer network management,
         data analysis, business economy, design of business enterprise systems

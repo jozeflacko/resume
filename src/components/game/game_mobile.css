@@ -2,7 +2,7 @@
   .game-container > .game.ready,
   .game-container > .game.play {
     width:320px;
-    height:500px;
+    height:400px;
     margin-left:-160px;
   }
   .game-container > .hint-text {
@@ -13,7 +13,7 @@
   .game-container > .game.ready,
   .game-container > .game.play {
     width:452px;
-    height:500px;
+    height:400px;
     margin-left:-226px;
   }
 }
@@ -21,12 +21,15 @@
   .game-container > .game.ready,
   .game-container > .game.play {
     width:600px;
-    height:500px;
+    height:400px;
     margin-left:-300px;
   }
 }
 @media screen and (max-width: 850px) {
   .game-container > .game.show-score > .score {
     font-size:70px;
+  }
+  .game-container > .hint-text.show-hint {
+    display:none;
   }
 }

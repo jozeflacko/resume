@@ -4,7 +4,10 @@
     top:auto;
     left:auto;
     margin-bottom:0px;
-    width:100%;
+  }
+  .logo.onSmallMovePostfix {
+    height:20px;
+    margin-bottom:0px !important;
   }
   .logo.onSmallMovePostfix .postfix {
     margin-left:5px;

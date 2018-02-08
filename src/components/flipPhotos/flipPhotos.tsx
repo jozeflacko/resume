@@ -18,20 +18,24 @@ export default class FlipPhotos extends React.Component<{
   flipInterval: any;
 
   componentDidMount() {
-    this.startAll();
+    this.processAll();
   }
   componentDidUpdate() {
-    this.startAll();
+    this.processAll();
   }
-
   componentWillUnmount() {
-    this.stopFlip();
+    this.processAll();
   }
 
-  startAll() {
+  processAll() {
     if(this.containerNode) {
       this.setDimensions(this.containerNode);
       this.startFlip(this.containerNode);
+      this.resizeListener = this.removeResizeListener(this.resizeCallback);
+      this.resizeListener = this.installResizeListener(this.resizeCallback);
+    } else {
+      this.stopFlip();
+      this.resizeListener = this.removeResizeListener(this.resizeCallback);
     }
   }
 
@@ -68,7 +72,36 @@ export default class FlipPhotos extends React.Component<{
     }
   }
 
+  isResizing = false;
+  resizeTimer:any;
+  resizeListener: any;
+  resizeCallback = (event) => {
+    if(this.isResizing === false) {
+      if(this.containerNode)
+        console.log('resize event triggered');
+        this.setDimensions(this.containerNode);
+    }
+    // on end of resize
+    this.isResizing = true;
+    clearTimeout(this.resizeTimer);
+    this.resizeTimer = setTimeout(() => {
+      this.isResizing = false;
+    }, 100);
+  }
+  installResizeListener(callback:any): void {
+    console.log('INSTALL resize listener');
+    return window.addEventListener("resize", callback);
+  }
+  removeResizeListener(callback: any):null {
+    console.log('REMOVE resize listener');
+    window.removeEventListener("resize", callback);
+    return null;
+  }
+
   setDimensions(container:any) {
+    if(container === null)
+      return;
+
     const containerHeight = parseInt(container.offsetHeight,10);
     const containerWidth = parseInt(container.offsetWidth,10);
     const numberOfRows = container.querySelectorAll('.'+this.CARD_ELEMENT_CSS).length;
@@ -80,7 +113,7 @@ export default class FlipPhotos extends React.Component<{
       image.style.top = (((rowNumber*height)+this.MOVE_PHOTO_LOWER)*-1)+'px';
       image.style.backgroundSize = '100% '+numberOfRows*100+'%';
       //image.style.height = containerHeight+'px';
-      image.style.width = containerWidth+'px';
+      image.style.width = containerWidth+'px'; //when comming from mobile to desktop
     }
 
     const spinRows = container.querySelectorAll('.spin-row');

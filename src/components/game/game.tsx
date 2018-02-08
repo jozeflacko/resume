@@ -234,7 +234,6 @@ export default class Game extends React.Component {
     return (
       <div className="game-container">
         <div className="hint-text" ref={(el) => {this.hintNode = el;}}>
-          <p className="title">Hint:</p>
           <p className="main">Click on the Happy Thumb as many times you can!</p>
           <p>But be aware that Sad Thumbs do not want to be disturbed!<br/>
           It will not be easy, because it will get crowded.</p>
