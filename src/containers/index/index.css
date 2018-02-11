@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: white;
 }
 .index,
 .index * {
@@ -22,30 +23,50 @@
 .index > form > h2 > b {
   color:red;
 }
-.index > form > label {
+.index > form > div.search > label {
   white-space:nowrap;
 }
-.index > form > label > input {
+.index > form > div.search > label > input {
   border-radius:5px 0px 0px 5px;
   border:1px solid #DDD;
   border-right:none;
   padding:8px;
 }
-.index > form > input {
+.index > form > div.search > input {
   border-radius:0px 5px 5px 0px;
   border:1px solid #DDD;
   border-left:none;
   background:#DDD;
   padding:8px 10px;
 }
-.index > form > input:hover {
+.index > form > div.search > input:hover {
   background:#CCC;
 }
-.index > form > label > input,
-.index > form > input {
+.index > form > div.search > label > input,
+.index > form > div.search > input {
   font-size:20px;
   line-height:20px;
   vertical-align:top;
   height:35px;
   box-shadow:3px 3px 3px #EEE;
+}
+.index > form > div.error {
+  color:red;
+  white-space:nowrap;
+  font-size:12px;
+  display:none;
+  margin-top:5px;
+  font-style: italic;
+}
+.index > form > div.error.show {
+  display:block;
+}
+.index > form > h4 {
+  font-size:17px;
+  color:#8c8c8c;
+  font-weight:normal;
+  text-shadow:3px 3px 3px #EEE;
+}
+.index > form > h4 > b {
+  color:black;
 }

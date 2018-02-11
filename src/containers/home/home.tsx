@@ -53,7 +53,7 @@ class Home extends React.Component<Props, {}> {
                 </Link>
               </div>
               <div className="text">
-                  <span className="left">OK</span>
+                  <span className="left">Ok</span>
                   <span className="middle"><Logo game={false} onSmallMovePostfix={false}/></span>
                   <span className="right"> let's have fun!</span>
               </div>

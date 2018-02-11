@@ -52,7 +52,10 @@ export default class FlipPhotos extends React.Component<{
 
 
     // initial flipPhotos
-    this.flipRandomImage(true);
+    /*this.flipRandomImage(true);*/
+    setTimeout(()=>{
+        this.flipRandomImage();
+    }, 500);
 
     this.flipInterval = setInterval(() => {
       // loop flip
@@ -78,7 +81,6 @@ export default class FlipPhotos extends React.Component<{
   resizeCallback = (event) => {
     if(this.isResizing === false) {
       if(this.containerNode)
-        console.log('resize event triggered');
         this.setDimensions(this.containerNode);
     }
     // on end of resize
@@ -89,11 +91,9 @@ export default class FlipPhotos extends React.Component<{
     }, 100);
   }
   installResizeListener(callback:any): void {
-    console.log('INSTALL resize listener');
     return window.addEventListener("resize", callback);
   }
   removeResizeListener(callback: any):null {
-    console.log('REMOVE resize listener');
     window.removeEventListener("resize", callback);
     return null;
   }
@@ -136,10 +136,8 @@ export default class FlipPhotos extends React.Component<{
         this.setRandomImage(elementClass, elements, srcs); // call once again
       }
     } else {
-      console.log('flip all rows');
       for(let index = 0; index < elements.length;  index++) {
         this.setImage(elementClass, elements, src, index);
-        console.log(index);
       }
     }
   }
@@ -158,7 +156,6 @@ export default class FlipPhotos extends React.Component<{
 
     image.setAttribute('src', src);
     image.className = "partial-image " + this.getRandomFilterClass();
-    console.log('spin row:'+row+' with image:'+src);
   }
 
   getRandomImage() {

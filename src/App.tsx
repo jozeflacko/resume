@@ -9,6 +9,8 @@ import MyIndex from './containers/index/index';
 import Home from './containers/home/home';
 import Results from './containers/results/results';
 
+import Links from './links/links';
+
 const createReduxStoreWithMiddleware = applyMiddleware(promiseMiddleware)(createStore);
 
 class App extends React.Component {
@@ -18,9 +20,9 @@ class App extends React.Component {
         <BrowserRouter>
           <div>
             <Switch>
-              <Route path="/resumeforgoogle/details" component={Results} />
-              <Route path="/resumeforgoogle" component={Home} />
-              <Route path="/" component={MyIndex} />
+              <Route path={Links.RESUME_FOR_GOOGLE_DETAILS} component={Results} />
+              <Route path={Links.RESUME_FOR_GOOGLE} component={Home} />
+              <Route path={Links.INDEX} component={MyIndex} />
             </Switch>
           </div>
         </BrowserRouter>

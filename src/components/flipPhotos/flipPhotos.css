@@ -89,6 +89,8 @@
   -webkit-box-shadow: 3px 3px 3px #e4e4e4;
   box-shadow: 3px 3px 3px #e4e4e4;
   transition:all .4s;
+
+  display:none;
 }
 .flipPhotos-container .flipButton:hover {
   background: white;
