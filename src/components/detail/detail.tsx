@@ -161,18 +161,28 @@ export default class Detail extends React.Component<Props, {}> {
     return this.processItems(itemsFunny, "funny");
   }
 
+  generateTimeRange(from:string, to:string){
+    if(from !== undefined && to !== undefined){
+      return(
+        <div className="timerange">
+          <div className="from"       >{this.printValue(from)}        </div>
+          <div className="to"         >{this.printValue(to)}          </div>
+        </div>
+      )
+    } else {
+      return "";
+    }
+  }
+
   processItems(items: any, addClassName?:string) {
     const className = addClassName === undefined ? "item" : addClassName + " item";
 
     return items ? items.map((item: any, index: number) => {
-      const { name, subname, place, from, to, description, notes, logos } = item;
+      const { name, subname, place, from, to, from2, to2, description, notes, logos } = item;
       return (
         <div className={className} key={"key"+index}>
-          <div className="timerange">
-            <div className="from"       >{this.printValue(from)}        </div>
-            <div className="to"         >{this.printValue(to)}          </div>
-          </div>
-
+          {this.generateTimeRange(from, to)}
+          {this.generateTimeRange(from2, to2)}
           <div className="myHead">
             <div className="name cblue" >{this.printValue(name)}        </div>
 

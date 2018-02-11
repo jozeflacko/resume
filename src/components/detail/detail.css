@@ -125,6 +125,10 @@
 .detail > .content > .items > .item > .timerange {
   font-weight: bold;
 }
+.detail > .content > .items > .item > .timerange + .timerange {
+  position:absolute;
+  top:-17px;
+}
 .detail > .content > .items > .item > .timerange > .from {
   display: inline-block;
 }

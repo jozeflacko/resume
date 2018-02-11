@@ -70,7 +70,9 @@ const Detail = {
         subname: 'Technical University of Kosice',
         place: 'Slovakia',
         from: 'July 2014',
-        to: 'May 2015',
+        to: 'November 2014',
+        from2: 'April 2015',
+        to2: 'May  2015',
         logos:['../assets/logos/tu.png','../assets/logos/uss.png'],
         description: `During my university studies, I was working on 3rd party
         projects at my Alma mater. Our client was one of the subsidiaries of
@@ -78,7 +80,7 @@ const Detail = {
         7 people, we implemented 2 ASP.Net Razor enterprise web applications
         responsible for managing production of an iron ore.
 
-        We were fully responsible for any communications with the client, including
+        We were fully responsible for communication with the client, including
         to inform them of our work progress by engaging them in weekly meetings.
         My main responsibility in this project was front-end development.
 
