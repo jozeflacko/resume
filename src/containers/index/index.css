@@ -38,6 +38,7 @@
   border-left:none;
   background:#DDD;
   padding:8px 10px;
+  cursor:pointer;
 }
 .index > form > div.search > input:hover {
   background:#CCC;
