@@ -16,8 +16,8 @@ const detail = {
         name: 'Master of Business Informatics',
         subname: 'Technical University of Kosice',
         place: 'Slovakia',
-        from: 'September 2014',
-        to: 'June 2015',
+        from: 'September 2013',
+        to: 'May 2015',
         logos:['../assets/logos/tu.png'],
         description: `My engineer degree study programme was focused on the
         acquirement of theoretical and practical knowledge in the field of
@@ -33,7 +33,7 @@ const detail = {
         subname: 'Technical University of Kosice',
         place: 'Slovakia',
         from: 'September 2010',
-        to: 'June 2014',
+        to: 'June 2013',
         logos:['../assets/logos/tu.png'],
         description: `My bachelor degree study programme was focused on the
         acquirement of knowledge in the field of computer network management,

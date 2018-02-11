@@ -46,34 +46,11 @@ const Detail = {
         Eclipse IDE`
       },
       {
-        name: 'ASP.NET Developer',
-        subname: 'Technical University of Kosice',
-        place: 'Slovakia',
-        from: 'June 2014',
-        to: 'June 2015',
-        logos:['../assets/logos/tu.png','../assets/logos/uss.png'],
-        description: `During my university studies, I was working on 3rd party
-        projects at my Alma mater. Our client was one of the subsidiaries of
-        the United States Steel Corporation placed in Slovakia. In a team of
-        7 people, we implemented 2 ASP.Net Razor enterprise web applications
-        responsible for managing production of an iron ore.
-
-        We were fully responsible for any communications with the client, including
-        to inform them of our work progress by engaging them in weekly meetings.
-        My main responsibility in this project was front-end development.
-
-        Both projects were successfully finished and given to the client on time.
-        `,
-
-        notes: `Technologies: JavaScript, Ajax, Jquery library,
-        HTML, CSS, C#, ASP.NET Razor markup language, Visual Studio IDE`
-      },
-      {
         name: 'Software Developer Internship',
         subname: 'University of Tokyo',
         place: 'Japan',
-        from: 'September 2015',
-        to: 'October 2015',
+        from: 'September 2014',
+        to: 'October 2014',
         logos:['../assets/logos/unitokyo.jpg'],
         description: `With the help of IAESTE (International Association for
         the Exchange of Students for Technical Experience), I was successfully
@@ -87,6 +64,28 @@ const Detail = {
         for which I am absolutely thankful.`,
 
         notes: `Technologies: C, Fortran 77, Eclipse IDE`
+      },
+      {
+        name: 'ASP.NET Developer',
+        subname: 'Technical University of Kosice',
+        place: 'Slovakia',
+        from: 'July 2014',
+        to: 'May 2015',
+        logos:['../assets/logos/tu.png','../assets/logos/uss.png'],
+        description: `During my university studies, I was working on 3rd party
+        projects at my Alma mater. Our client was one of the subsidiaries of
+        the United States Steel Corporation placed in Slovakia. In a team of
+        7 people, we implemented 2 ASP.Net Razor enterprise web applications
+        responsible for managing production of an iron ore.
+
+        We were fully responsible for any communications with the client, including
+        to inform them of our work progress by engaging them in weekly meetings.
+        My main responsibility in this project was front-end development.
+
+        Both projects were successfully finished and given to the client on time.
+        `,
+        notes: `Technologies: JavaScript, Ajax, Jquery library,
+        HTML, CSS, C#, ASP.NET Razor markup language, Visual Studio IDE`
       },
       {
         name: 'Computer systems tester',
