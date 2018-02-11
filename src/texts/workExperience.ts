@@ -72,8 +72,8 @@ const Detail = {
         name: 'Software Developer Internship',
         subname: 'University of Tokyo',
         place: 'Japan',
-        from: 'June 2015',
-        to: 'April 2016',
+        from: 'September 2015',
+        to: 'October 2015',
         logos:['../assets/logos/unitokyo.jpg'],
         description: `With the help of IAESTE (International Association for
         the Exchange of Students for Technical Experience), I was successfully
