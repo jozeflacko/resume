@@ -17,6 +17,11 @@ export const Links: Array<ILink> = [
     title:'Want to see cool pictures?',
 
   },
+  {
+    name:'Docs to Print',
+    url:'https://docs.google.com/document/d/1_w972PQnwHwLr0fVTI3d4FHgWQlOS3dY6IM-i2dthyQ/edit?usp=sharing',
+    title:'Preview my resume',
+  },
   /*{
     name:'Github',
     url:'https://github.com/opam',
@@ -34,10 +39,5 @@ export const Links: Array<ILink> = [
     url:'https://www.facebook.com/jozef.lacko.33',
     title:'Facebook',
     priority: 'low',
-  },
-  {
-    name:'Docs to Print',
-    url:'https://docs.google.com/document/d/1_w972PQnwHwLr0fVTI3d4FHgWQlOS3dY6IM-i2dthyQ/edit?usp=sharing',
-    title:'Preview my resume',
   }
 ];
