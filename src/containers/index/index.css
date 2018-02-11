@@ -45,8 +45,6 @@
 }
 .index > form > div.search > label > input,
 .index > form > div.search > input {
-  font-size:20px;
-  line-height:20px;
   vertical-align:top;
   height:35px;
   box-shadow:3px 3px 3px #EEE;
