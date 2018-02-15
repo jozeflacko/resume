@@ -172,6 +172,32 @@
   text-align: justify;
   /*text-indent: 50px;*/
 }
+.detail > .content > .items > .item > .myBody > ul.simple-list {
+
+}
+.detail > .content > .items > .item > .myBody > ul.simple-list > li {
+  list-style-type: none;
+}
+.detail > .content > .items > .item > .myBody > ul.simple-list > li > a,
+.detail > .content > .items > .item > .myBody > ul.simple-list > li > a:hover,
+.detail > .content > .items > .item > .myBody > ul.simple-list > li > a:active {
+  color:#484848;
+  text-decoration:none;
+  cursor:pointer;
+}
+.detail > .content > .items > .item > .myBody > ul.simple-list > li > a:hover {
+  text-decoration:underline;
+  color:black;
+}
+.detail > .content > .items > .item > .myBody > ul.simple-list > li > a > .fa {
+  margin-right:10px;
+  font-size:larger;
+  color:#2fa746;
+}
+.detail > .content > .items > .item > .myBody > ul.simple-list > li > a > .name {
+
+}
+
 .detail > .content > .items > .item > .myBody > .notes {
   margin-top: 10px;
   color: #555;

@@ -194,11 +194,35 @@ export default class Detail extends React.Component<Props, {}> {
           </div>
           <div className="myBody">
             <div className="description">{this.printValue(description)} </div>
-            <div className="notes"      >{this.printValue(notes)}       </div>
+            {this.processSimpleList(item.list)}
+            <div className="notes">{this.printValue(notes)}</div>
           </div>
         </div>
       );
     }) : "";
+  }
+
+  processSimpleList(list:Array<{ name:string, link:string }>) {
+    if(list === undefined || list.length <1)
+      return "";
+    return <ul className="simple-list">{printLi()}</ul>;
+
+    function printLi() {
+      return list.map((elem:{name:string, link:string}, index)=>{
+        return (
+          <li key={elem.name}>
+            <a
+              href={elem.link}
+              title={'Click here to see certificate for '+elem.name}
+              target="_blank"
+            >
+              <FontAwesome name="check" />
+              <span className="name">{elem.name}</span>
+            </a>
+          </li>
+        );
+      })
+    }
   }
 
   printValue(value:string|undefined) {

@@ -7,8 +7,27 @@ const detail = {
         subname: '',
         description: `I consider learning an awesome hobby which keeps me occupied a lot.
         I am an active user of UDEMY's learning platform, where I finished in last
-        few months online courses for Maven Framework, React, Webpack and currently searching for something new :)`,
-        notes: `What did you learn yesterday?`
+        few months online courses:`,
+        notes: `What did you learn yesterday?`,
+        list:[
+          {
+            name:'Maven',
+            link:'../assets/certificates/maven.pdf'
+          },
+          {
+            name:'React',
+            link:'../assets/certificates/react.pdf'
+          },
+          {
+            name:'Git',
+            link:'../assets/certificates/git.pdf'
+          },
+          {
+            name:'Webpack',
+            link:'../assets/certificates/webpack.pdf'
+          },
+
+        ]
       }
     ],
     items: [
