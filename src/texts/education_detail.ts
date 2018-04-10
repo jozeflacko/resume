@@ -11,6 +11,14 @@ const detail = {
         notes: `What did you learn yesterday?`,
         list:[
           {
+            name:'Vue',
+            link:'../assets/certificates/vue.pdf'
+          },
+          {
+            name:'Advanced JavaSript',
+            link:'../assets/certificates/javascript.pdf'
+          },
+          {
             name:'Maven',
             link:'../assets/certificates/maven.pdf'
           },

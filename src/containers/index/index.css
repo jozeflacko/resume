@@ -69,3 +69,40 @@
 .index > form > h4 > b {
   color:black;
 }
+
+.projects-container {
+    margin-top:30px;
+    width:100%; 
+    min-height:200px;
+    display:block;  
+}
+.projects-container > h4 {
+  margin-bottom:0px;
+  padding:0px;
+  color:red;
+}
+.projects-container > .project {
+  border:1px solid #DDD;
+  padding:8px;
+  margin:10px 0px;
+  background:white;
+
+  cursor:pointer;
+  text-align:left;
+  box-shadow:3px 3px 3px #EEE;
+  border-radius:4px;
+}
+.projects-container > .project:hover {
+  background:#f9f9f9;
+}
+.projects-container > .project > label {
+  font-weight:bold;
+  margin-bottom:5px;
+  font-size:15px;
+  color:black;
+}
+.projects-container > .project > .description {
+  font-weight:normal;
+  font-size:12px;
+  color:#777;
+}

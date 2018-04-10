@@ -20,6 +20,27 @@ class Index extends React.Component<{}, {
     this.setState({value: event.target.value, showErrorMessage: false});
   }
 
+  renderPublicProjects() {    
+    return (
+      <div className="projects-container">
+        <h4>or choose something from here:</h4>
+        { Links.getAllProject().map((item:{ name:string, link:string, description:string } )=>{
+           return this.renderPublicProject(item);
+        })}
+      </div>
+    );
+  }
+  renderPublicProject( project:{ name:string, link:string, description:string } ) {
+    return (
+        <div key={project.link} className="project" onClick={()=> window.open(project.link)}>
+          <label>{project.name}</label>
+          <div className="description">
+            {project.description}
+          </div>
+        </div>
+    );
+  }
+
   handleSubmit(event) {
     let searchFor:string = this.state.value;
 
@@ -44,6 +65,7 @@ class Index extends React.Component<{}, {
 
   render() {
     return (
+           
       <div className="index">
         <form onSubmit={this.handleSubmit} >
           <h2>Hi!<br/>This is <b>Jozef Lacko's</b><br/> workspace.</h2>
@@ -61,7 +83,8 @@ class Index extends React.Component<{}, {
           <div className={this.state.showErrorMessage ? 'error show' : 'error'}>
             Project not found!
           </div>
-        </form>
+          {this.renderPublicProjects()}
+        </form>   
       </div>
     );
   }
