@@ -15,7 +15,7 @@ const detail = {
             link:'../assets/certificates/vue.pdf'
           },
           {
-            name:'Advanced JavaSript',
+            name:'Advanced JavaScript',
             link:'../assets/certificates/javascript.pdf'
           },
           {
