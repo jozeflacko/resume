@@ -4,6 +4,7 @@ import './results_mobile.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
+  set4ReduxTypeOfResume,
   fetchLinks,
   fetchIntro,
   fetchWorkExperience,
@@ -26,7 +27,7 @@ import PreloadImages from '../../tools/preloadImages';
 
 
 interface Props extends React.Props<any> {
-
+  set4ReduxTypeOfResume: any; // from redux
   fetchLinks: any;
   fetchIntro: any;
   fetchWorkExperience: any;
@@ -42,6 +43,8 @@ interface Props extends React.Props<any> {
   search: RISearch;   // from redux
   information: any; // from redux
   detail: any; // from redux
+
+  type: any;
 }
 
 class Results extends React.Component<Props, { isActive:boolean }>  {
@@ -53,9 +56,32 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
     };
   }
 
+  resumeType:string|null = null;
+  getTypeOfResume() {
+    return this.resumeType;
+  }
+  setTypeOfResume() {
+    if(this.resumeType === null) {
+
+      if(this.props.type.typeOfResume === "GOOGLE" || this.props.type.typeOfResume === "NORMAL") {
+        // is already set        
+        this.resumeType = this.props.type.typeOfResume;
+      } else {
+        this.resumeType = (window.location.pathname).indexOf("resumeforgoogle") > -1 ? "GOOGLE" : "NORMAL";
+        console.log('TYPE OF RESUME: '+ this.resumeType );
+        this.props.set4ReduxTypeOfResume( this.resumeType ); // MUST BE FIRST !!! because other redux states will depend on it
+      }
+    }
+  }
+  isForGoogle() {
+    return this.getTypeOfResume() === 'GOOGLE';
+  }
+
   preloadImages = new PreloadImages();
 
   componentDidMount() {
+    this.setTypeOfResume();
+    
     this.props.fetchLinks();
     this.props.fetchIntro();
     this.props.fetchWorkExperience();
@@ -74,6 +100,14 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
     return this.props.information.links.map( (link: ILink, index: number) => {
       const priority = link.priority  ? 'priority-' + link.priority  : 'priority-high';
       const className = index === 0 ? priority +' active' : priority ; // only first can be active, other are external links
+
+      if(link.type === undefined) {
+        /* is ok show */
+      } else if(link.type !== undefined && link.type === "GOOGLE" && this.isForGoogle() === false) {
+        return ""; // content only for GOOGLE but this is a general page
+      } else if(link.type !== undefined && link.type === "NORMAL" && this.isForGoogle() === true) {
+        return ""; // content for general page
+      }  
 
       return (
         <a
@@ -151,7 +185,7 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
         <div className="header">
 
           <div className="left" onClick={()=> {this.props.turnOffAnimation();}} >
-            <Logo game={false}/>
+            <Logo game={false} isForGoogle={this.isForGoogle()}/>
           </div>
           <div className="right">
             <SearchBar search={this.props.search} />
@@ -164,7 +198,7 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
             {this.createMyLife()}
           </div>
           <div className="right">
-            <Detail detail={this.props.information.detail} isActive={this.state.isActive} setUnactiveDetail={() => {this.setUnactiveDetail()}} />
+            <Detail detail={this.props.information.detail} isActive={this.state.isActive} setUnactiveDetail={() => {this.setUnactiveDetail()}} isForGoogle={this.isForGoogle()}/>
           </div>
           <div className="clear"/>
         </div>
@@ -179,7 +213,8 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
 function mapStateToProps(state: Props) {
   return {
     information: state.information,
-    search: state.search
+    search: state.search,
+    type: state.type
   };
 }
 
@@ -195,6 +230,7 @@ function mapDispatchToProps(dispatch: any) {
   /*  fetchContact, */
     turnOffAnimation,
     setDetail,
+    set4ReduxTypeOfResume,
   }, dispatch );
 }
 

@@ -5,6 +5,8 @@ export default function (state = {}, action: ActionI) {
 
   switch (action.type) {
     case FETCH_LINKS:
+    return {...state, links: action.payload };
+    case FETCH_LINKS:
       return {...state, links: action.payload };
     case FETCH_INTRO:
       return {...state, intro: action.payload, detail: action.payload };

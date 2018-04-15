@@ -1,3 +1,4 @@
+export const GET_TYPE_OF_RESUME = 'type_of_resume';
 export const FETCH_SEARCH_MESSAGE = 'search_message';
 export const TURN_OFF_ANIMATION = 'turn_off_animation';
 export const FETCH_LINKS = 'fetch_links';
@@ -20,10 +21,16 @@ import Search from '../texts/search';
 /** On initial load will fetch message which will be inserted into
  *  the search bar.
  */
-export function fetchSearchMessage() {
+export function fetchSearchMessage(isForGoogle:boolean) {
   return {
     type: FETCH_SEARCH_MESSAGE,
-    payload: new Search(),
+    payload: new Search(isForGoogle),
+  };
+}
+export function set4ReduxTypeOfResume(typeOfResume) {
+  return {
+    type: GET_TYPE_OF_RESUME,
+    payload: typeOfResume,
   };
 }
 

@@ -3,6 +3,7 @@ export interface ILink {
   url:string;
   title:string;
   priority?:string,
+  type?:string
 }
 
 export const Links: Array<ILink> = [
@@ -21,6 +22,13 @@ export const Links: Array<ILink> = [
     name:'Docs to Print',
     url:'https://docs.google.com/document/d/1_w972PQnwHwLr0fVTI3d4FHgWQlOS3dY6IM-i2dthyQ/edit?usp=sharing',
     title:'Preview my resume',
+    type:"GOOGLE"
+  },
+  {
+    name:'Docs to Print',
+    url:'https://docs.google.com/document/d/1ziyzLe4hYWHTWB0FO-tyUCO03MHA_l2HxIR3RPoARcM/edit?usp=sharing',
+    title:'Preview my resume',
+    type:"NORMAL"
   },
   /*{
     name:'Github',

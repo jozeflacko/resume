@@ -44,6 +44,13 @@
   margin-top:50px;
   cursor:default;
 }
+.outer > .middle > .inner > .text.general {
+    font-size:15px;
+    font-weight:bold;
+    color:#777;
+    font-style: italic;
+    text-shadow:3px 3px 3px #EEE;
+}
 .outer > .middle > .inner > .text > span {
   display:inline-block;
   white-space:nowrap;
@@ -67,4 +74,13 @@
 }
 .outer > .middle > .inner .postfix {
   display:none;
+}
+
+
+/* GENRAL BUTTON */
+.outer > .middle > .inner > .buttons.general {
+  
+}
+.outer > .middle > .inner > .buttons.general > .button {
+
 }

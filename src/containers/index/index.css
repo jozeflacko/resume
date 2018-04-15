@@ -1,20 +1,21 @@
 .index {
-  width:100%;
-  height:100%;
-  overflow:hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
+  padding:50px 10px;
+  text-align:center;
+}
+.index > form{
+  max-width:1600px;
+  margin:auto;
 }
 .index,
 .index * {
     box-sizing: border-box;
 }
-.index > form {
-  display:inline-block;
-
+.index > form > div > img {
+  width:100%;
+  display:none;
 }
+
+
 .index > form > h2 {
   font-size:28px;
   color:#777;
@@ -23,14 +24,22 @@
 .index > form > h2 > b {
   color:red;
 }
+.index > form > div.search {
+  margin:auto;
+  position:relative;
+  max-width:400px;
+}
 .index > form > div.search > label {
   white-space:nowrap;
 }
 .index > form > div.search > label > input {
-  border-radius:5px 0px 0px 5px;
+  border-radius:5px 5px 5px 5px;
   border:1px solid #DDD;
   border-right:none;
+  font-size:20px;
   padding:8px;
+  width:100%;
+
 }
 .index > form > div.search > input {
   border-radius:0px 5px 5px 0px;
@@ -39,6 +48,12 @@
   background:#DDD;
   padding:8px 10px;
   cursor:pointer;
+  position:absolute;
+  right:0px;
+  top:0px;
+  font-size:20px;
+  border:1px solid #DDD;
+
 }
 .index > form > div.search > input:hover {
   background:#CCC;
@@ -46,7 +61,7 @@
 .index > form > div.search > label > input,
 .index > form > div.search > input {
   vertical-align:top;
-  height:35px;
+  height:40px;
   box-shadow:3px 3px 3px #EEE;
 }
 .index > form > div.error {
@@ -71,37 +86,49 @@
 }
 
 .projects-container {
-    margin-top:30px;
     width:100%; 
     min-height:200px;
     display:block;  
+    margin-top:70px;
 }
 .projects-container > h4 {
   margin-bottom:0px;
   padding:0px;
-  color:red;
+  color:#777;
 }
 .projects-container > .project {
   border:1px solid #DDD;
   padding:8px;
-  margin:10px 0px;
-  background:white;
-
+  margin:10px 10px 0px 0px;
+  overflow:hidden;
   cursor:pointer;
   text-align:left;
   box-shadow:3px 3px 3px #EEE;
   border-radius:4px;
+  width:500px;
+  display:inline-block;
 }
 .projects-container > .project:hover {
-  background:#f9f9f9;
+  border:1px solid #777;
 }
 .projects-container > .project > label {
   font-weight:bold;
   margin-bottom:5px;
-  font-size:15px;
+  font-size:20px;
   color:black;
+
 }
 .projects-container > .project > .description {
+  font-weight:bold;
+  font-size:17px;
+  color:#777;
+}
+.projects-container > .project > .technology {
+  font-weight:normal;
+  font-size:15px;
+  color:#777;
+}
+.projects-container > .project > .date {
   font-weight:normal;
   font-size:12px;
   color:#777;

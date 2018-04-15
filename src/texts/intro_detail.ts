@@ -27,7 +27,8 @@ const introDetail = {
 
       `I consider myself as a very happy and active person. I love life,
       people, and especially my family and I absolutely admire honesty.`,
-
+    ],
+    descriptionExtension: [
       `At the end, I would like to mention, that working in Google was always my dream.
       I would be delighted to join this huge family to prove my
       personal and professional qualities.`

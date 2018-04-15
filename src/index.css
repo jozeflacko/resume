@@ -70,44 +70,6 @@ div.crazy {
   border-radius:50px 50px 50px 50px;
 }
 
-/* sparkle  */
-
-
-.bla {
-position:relative;
-background:url(http://i.imgur.com/2T5M8.png?1);
- -webkit-animation:
- 	sparkle .5s infinite ,
- 	movetop 2.5s infinite ,
- 	moveleft 3.5s infinite
-}
-
-@keyframes sparkle {
-  0%, 100%{background-position:0px 0}
-  20%{background-position:20px 0}
-  40%{background-position:40px 0}
-  60%{background-position:60px 0}
-  80%{background-position:80px 0}
-}
-@keyframes movetop {
-  0%, 100%{top:0;}
-  20%{top:75px;}
-  40%{top:30px;}
-  60%{top:100px;}
-  80%{top:10px}
-}
-
-@keyframes moveleft {
-  0%, 100%{left:50px}
-  14.28%{ left:10px}
-  28.57%{ left:90px}
-  42.85%{ left:35px}
-  57.14%{ left:20px}
-  71.42%{ left:60px}
-  85.71%{ left:80px}
-
-}
-
 /* --------------------- */
 
 

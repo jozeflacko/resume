@@ -1,23 +1,107 @@
-@-webkit-keyframes spaceboots {
-	0% { -webkit-transform: translate(20px, 1px) rotate(0deg); }
-	10% { -webkit-transform: translate(-1px, -2px) rotate(-10deg); }
-	20% { -webkit-transform: translate(-30px, 0px) rotate(1deg); }
-	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
-	40% { -webkit-transform: translate(10px, -1px) rotate(10deg); }
-	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
-	60% { -webkit-transform: translate(-30px, 1px) rotate(0deg); }
-	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
-	80% { -webkit-transform: translate(-10px, -1px) rotate(1deg); }
-	90% { -webkit-transform: translate(2px, 2px) rotate(10deg); }
-	100% { -webkit-transform: translate(20px, 1px) rotate(0deg); }
+.blink {
+	box-shadow:0px 0px 0px #4885ed;
+	animation: blink-animation 2s steps(50, start) infinite;
+	-webkit-animation: blink-animation 2s steps(50, start) infinite;
+    -webkit-animation-delay: 3s; /* Safari 4.0 - 8.0 */
+    animation-delay: 3s;
+  }
+
+.no-delay {
+	-webkit-animation-delay: 0s !important; /* Safari 4.0 - 8.0 */
+    animation-delay: 0s !important;
 }
+
+  @keyframes blink-animation {
+	to {
+		box-shadow:0px 0px 30px #4885ed;
+	}
+  }
+  @-webkit-keyframes blink-animation {
+	to {
+		box-shadow:0px 0px 30px #4885ed;
+	}
+  }
+
+.zoom {
+	transform: scale(0.7); 
+	opacity:0;
+	animation: zoom 1s forwards;
+	-webkit-animation: zoom 1s forwards;
+    -webkit-animation-delay: 1s; 
+	animation-delay: 1s;
+}
+@keyframes zoom {
+	to {
+		transform: scale(1); 
+		opacity:1;
+	}
+}
+@-webkit-keyframes zoom {
+	to {
+		transform: scale(1); 
+		opacity:1;
+	}
+}
+
 
 .shake {
   position:relative;
-  top:30px;
+  top:0px;
 	-webkit-animation-name: spaceboots;
 	-webkit-animation-duration: 10s;
 	-webkit-transform-origin:50% 50%;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-timing-function: linear;
 }
+
+@-webkit-keyframes spaceboots {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-10deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(10deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(10deg); }
+	100% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+}
+
+/* sparkle  */
+
+
+.sparkle {
+	position:relative;
+	background:url(http://i.imgur.com/2T5M8.png?1);
+	 -webkit-animation:
+		 sparkle .5s infinite ,
+		 movetop 2.5s infinite ,
+		 moveleft 3.5s infinite
+	}
+	
+	@keyframes sparkle {
+	  0%, 100%{background-position:0px 0}
+	  20%{background-position:20px 0}
+	  40%{background-position:40px 0}
+	  60%{background-position:60px 0}
+	  80%{background-position:80px 0}
+	}
+	@keyframes movetop {
+	  0%, 100%{top:0;}
+	  20%{top:75px;}
+	  40%{top:30px;}
+	  60%{top:100px;}
+	  80%{top:10px}
+	}
+	
+	@keyframes moveleft {
+	  0%, 100%{left:50px}
+	  14.28%{ left:10px}
+	  28.57%{ left:90px}
+	  42.85%{ left:35px}
+	  57.14%{ left:20px}
+	  71.42%{ left:60px}
+	  85.71%{ left:80px}
+	
+	}

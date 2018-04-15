@@ -186,3 +186,46 @@
   99% { transform: rotate3d(0, 1, 0, 360deg); }
   100% { transform: rotate3d(0, 1, 0, 360deg); }
 }
+
+.jl-logo {
+  display:inline-block;
+  color:white;
+  text-decoration:none;
+  border-radius:5px;
+  padding:0px 20px 0px 5px;
+  height:30px;
+  line-height:30px;
+  text-align:center;
+  background:white;
+  font-weight:bold;
+  position:relative;
+  border-radius:0px;
+  left:8px;
+  margin-bottom:10px;
+  margin-top:5px;
+  cursor:pointer;
+  transition:.4s;
+}
+.jl-logo:before {
+  position: absolute;
+  left: -10px;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent !important;
+  border-bottom: 15px solid transparent !important;
+  border-right: 10px solid #4885ed;
+}
+.jl-logo:after {
+  position: absolute;
+  right: 0px;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent !important;
+  border-bottom: 15px solid transparent !important;
+  border-right: 10px solid #f9f9f9 !important;
+}
+.jl-logo:hover {
+  left:0px;
+}

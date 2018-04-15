@@ -1,5 +1,6 @@
 import * as React from 'react';
 import './index.css';
+import './index_mobile.css';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -23,19 +24,25 @@ class Index extends React.Component<{}, {
   renderPublicProjects() {    
     return (
       <div className="projects-container">
-        <h4>or choose something from here:</h4>
-        { Links.getAllProject().map((item:{ name:string, link:string, description:string } )=>{
+        <h4>You can also choose some project from here</h4>
+        { Links.getAllProject().map((item:{ name:string, link:string, description:string, technology: string, date:string, background?:string } )=>{
            return this.renderPublicProject(item);
         })}
       </div>
     );
   }
-  renderPublicProject( project:{ name:string, link:string, description:string } ) {
+  renderPublicProject( project:{ name:string, link:string, description:string, technology: string, date:string, background?:string } ) {
     return (
-        <div key={project.link} className="project" onClick={()=> window.open(project.link)}>
+        <div key={project.link} className={project.background !== undefined ? 'project '+project.background : 'project'} onClick={()=> window.open(project.link)}>
           <label>{project.name}</label>
           <div className="description">
             {project.description}
+          </div>
+          <div className="technology">
+            {project.technology}
+          </div>
+          <div className="date">
+            {project.date}
           </div>
         </div>
     );
@@ -66,23 +73,27 @@ class Index extends React.Component<{}, {
   render() {
     return (
            
-      <div className="index">
+      <div className="index zoom no-delay">
         <form onSubmit={this.handleSubmit} >
-          <h2>Hi!<br/>This is <b>Jozef Lacko's</b><br/> workspace.</h2>
+          <div>
+            <img src='../assets/index.jpg' alt="Smiley face" className="indexPhoto" />
+           </div> 
+          <h2>Hi! This is <b>Jozef Lacko's</b> workspace.</h2>
           <div className="search">
             <label>
               <input
                 type="text"
                 value={this.state.value}
                 onChange={this.handleChange}
-                placeholder="Enter Project Name"
+                placeholder="Please enter Project Name"
               />
             </label>
-            <input type="submit" value="Go" />
+            <input type="submit" value="Find" />
           </div>
           <div className={this.state.showErrorMessage ? 'error show' : 'error'}>
             Project not found!
           </div>
+  
           {this.renderPublicProjects()}
         </form>   
       </div>

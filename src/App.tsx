@@ -21,7 +21,11 @@ class App extends React.Component {
           <div>
             <Switch>
               <Route path={Links.RESUME_FOR_GOOGLE_DETAILS} component={Results} />
-              <Route path={Links.RESUME_FOR_GOOGLE} component={Home} />
+              <Route path={Links.RESUME_FOR_GOOGLE} component={Home}/>
+              
+              <Route path={Links.RESUME_DETAILS} component={Results}/>
+              <Route path={Links.RESUME} component={Home} />
+              
               <Route path={Links.INDEX} component={MyIndex} />
             </Switch>
           </div>

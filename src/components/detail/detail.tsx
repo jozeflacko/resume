@@ -16,18 +16,19 @@ interface Props extends React.Props<any> {
   detail: any;
   isActive: boolean;
   setUnactiveDetail: any;
+  isForGoogle:any;
 }
 
 export default class Detail extends React.Component<Props, {}> {
   processDetail() {
-    const { photo, flipPhotos, flipPhotosBackground, flipPhotosBottom, animation, sentence, bottomPhoto, description, items, itemsFunny, bulletgroups } = this.props.detail.getDetail();
+    const { photo, flipPhotos, flipPhotosBackground, flipPhotosBottom, animation, sentence, bottomPhoto, description, descriptionExtension, items, itemsFunny, bulletgroups } = this.props.detail.getDetail();
     return (
       <div className="content">
         {this.processHero(photo)}
         {this.processFlipPhotos(flipPhotos, flipPhotosBackground, flipPhotosBottom)}
         <div className="photo">{this.processPhoto(photo)}</div>
         {this.processSentence(sentence)}
-        <div className="description">{this.processDescription(description)}</div>
+        <div className="description">{this.processDescription(description)} {this.processDescriptionExtension(descriptionExtension)}</div>
         <div className="items">
           {this.processItemsFunny(itemsFunny)}
           {this.processItems(items)}
@@ -54,7 +55,7 @@ export default class Detail extends React.Component<Props, {}> {
       return "";
 
     return (
-        <img src={photo} key={photo} alt="Smiley face" className={className}/>
+        <img src={photo} key={photo} className={className}/>
     );
   }
 
@@ -74,6 +75,12 @@ export default class Detail extends React.Component<Props, {}> {
     return description ? description.map((paragraf:string, index:number) => {
       return (<p key={"key"+index}>{paragraf}</p>);
     }) : "";
+  }
+
+  processDescriptionExtension(descriptionExtension?: Array<String>) {  
+      return descriptionExtension && this.props.isForGoogle === true ? descriptionExtension.map((paragraf:string, index:number) => {
+        return (<p key={"key_extension_"+index}>{paragraf}</p>);
+      }) : "";
   }
 
   processBulletsgroups(bulletgroups: any) {
@@ -239,11 +246,12 @@ export default class Detail extends React.Component<Props, {}> {
   processSentence(sentence:{
     image:string,
     startSentence:string,
-    endSentences:Array<string>
+    endSentences:Array<string>,
+    endSentencesGoogle:Array<string>,
   }) {
     if(sentence === undefined)
       return "";
-    return (<Sentence image={sentence.image} startSentence={sentence.startSentence} endSentences={sentence.endSentences} />);
+    return (<Sentence image={sentence.image} startSentence={sentence.startSentence} endSentences={this.props.isForGoogle ? sentence.endSentencesGoogle : sentence.endSentences} />);
   }
 
   render() {
