@@ -76,7 +76,7 @@ class Index extends React.Component<{}, {
       <div className="index zoom no-delay">
         <form onSubmit={this.handleSubmit} >
           <div>
-            <img src='../assets/index.jpg' alt="Smiley face" className="indexPhoto" />
+            <img src='../assets/me.jpg' alt="Smiley face" className="indexPhoto" />
            </div> 
           <h2>Hi! This is <b>Jozef Lacko's</b> workspace.</h2>
           <div className="search">
@@ -93,7 +93,6 @@ class Index extends React.Component<{}, {
           <div className={this.state.showErrorMessage ? 'error show' : 'error'}>
             Project not found!
           </div>
-  
           {this.renderPublicProjects()}
         </form>   
       </div>

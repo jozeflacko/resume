@@ -11,10 +11,14 @@
     box-sizing: border-box;
 }
 .index > form > div > img {
-  width:100%;
-  display:none;
+  margin:auto;
+  border-radius:50%;
+  width:170px;
 }
-
+.index hr {
+  background:#DDD;
+  margin:50px 0px;
+}
 
 .index > form > h2 {
   font-size:28px;
