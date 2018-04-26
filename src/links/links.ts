@@ -64,7 +64,7 @@ class Links {
       },
       {
         name: 'Password Manager',
-        link: 'https://passwordmanager.jozeflacko.com',
+        link: 'https://jlpasswordmanager.herokuapp.com/',
         description: '(in progress) App may sleep. First load could take up to 10 seconds',
         technology:'Vue, Firebase',
         date:'2018'
