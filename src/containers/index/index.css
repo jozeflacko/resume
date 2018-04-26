@@ -111,6 +111,7 @@
   border-radius:4px;
   width:500px;
   display:inline-block;
+  min-height:120px;
 }
 .projects-container > .project:hover {
   border:1px solid #777;

@@ -46,20 +46,27 @@ class Links {
         link: 'https://rawgit.com/opam/CssPicture/master/index.html',
         description: 'Small funny animation :)',
         technology:'Css',
-        date:'2018',
+        date:'2017',
       },
       {
         name: 'Snake game',
         link: 'https://cdn.rawgit.com/opam/JavascriptSnakeGame/2aec356c/snakegame.html',
         description: 'JavaScript game :)',
         technology:'Javascript',
-        date:'2018'
+        date:'2017'
       },
       {
         name: 'Web App Layout',
         link: 'https://rawgit.com/opam/BaseApp/master/index.html',
         description: 'Simple Web App Demo Layout using Jquery',
         technology:'Javascript - Jquery',
+        date:'2017'
+      },
+      {
+        name: 'Password Manager',
+        link: 'https://passwordmanager.jozeflacko.com',
+        description: '(in progress) App may sleep. First load could take up to 10 seconds',
+        technology:'Vue, Firebase',
         date:'2018'
       },
       /*{
