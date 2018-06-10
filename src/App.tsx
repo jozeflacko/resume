@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import * as promiseMiddleware from 'redux-promise';
 import reducers from './reducers';
 
-import MyIndex from './containers/index/index';
+//import MyIndex from './containers/index/index';
 import Home from './containers/home/home';
 import Results from './containers/results/results';
 
@@ -26,7 +26,7 @@ class App extends React.Component {
               <Route path={Links.RESUME_DETAILS} component={Results}/>
               <Route path={Links.RESUME} component={Home} />
               
-              <Route path={Links.INDEX} component={MyIndex} />
+              <Route path={Links.INDEX} component={Home} />
             </Switch>
           </div>
         </BrowserRouter>

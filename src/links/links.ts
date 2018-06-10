@@ -2,7 +2,8 @@ class Links {
 
   private static SLASH: string = "/";
 
-  public static INDEX: string = Links.SLASH;
+  public static INDEX: string = Links.SLASH;  
+  
   public static RESUME: string = Links.INDEX + "resume";
   public static RESUME_DETAILS: string = Links.RESUME + Links.SLASH + "details";
 

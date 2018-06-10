@@ -11,6 +11,14 @@ const detail = {
         notes: `What did you learn yesterday?`,
         list:[
           {
+            name:'Typescript Masterclass',
+            link:'../assets/certificates/typescript.pdf'
+          },
+          {
+            name:'Master Microsoft PowerShell',
+            link:'../assets/certificates/powershell.pdf'
+          },
+          {
             name:'Vue',
             link:'../assets/certificates/vue.pdf'
           },

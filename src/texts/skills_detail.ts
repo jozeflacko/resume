@@ -33,6 +33,8 @@ const detail = {
                 { value: "OOP", size: 4 },
                 { value: "Java", size: 4 },
                 { value: "Eclipse", size: 4 },
+                { value: "Powershell", size: 4 },
+                { value: "Docker", size: 4 },
                 { value: "SQL and NoSQL", size: 4 },
                 { value: "Spring framework", size: 4 },
                 { value: "XML", size: 4 },
@@ -42,7 +44,6 @@ const detail = {
                 { value: "Maven", size: 5 },
                 { value: "Arduino", size: 5 },
                 { value: "SVG", size: 5 },
-
                 { value: "C", size: 5 },
               ]
             },
