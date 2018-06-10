@@ -73,13 +73,13 @@ class Home extends React.Component<Props, { forGoogle:true }> {
     if(this.isForGoogle() === false) {
       return (
         <div className="buttons general" onClick={()=> {this.props.turnOffAnimation();}} >
-          <Link
-            title="Go back to the Overview"
-            to="/"
+          <a
+            href="https://docs.google.com/document/d/1ziyzLe4hYWHTWB0FO-tyUCO03MHA_l2HxIR3RPoARcM/edit?usp=sharing"            
             className="button i-feel-lucky"
+            target="_blank"
           >
-            Back to Overview
-          </Link>
+            Show Docs Resume
+          </a>
           <Link
             to={this.getDetailsLink()}
             className="button active blink"
