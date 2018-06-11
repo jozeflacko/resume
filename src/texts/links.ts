@@ -30,12 +30,12 @@ export const Links: Array<ILink> = [
     title:'Preview my resume',
     type:"NORMAL"
   },
-  /*{
+  {
     name:'Github',
     url:'https://github.com/opam',
-    title:'I use my Github only for study',
+    title:'git push origin master',
     priority: 'low',
-  },*/
+  },
   {
     name:'LinkedIn',
     url:'https://www.linkedin.com/in/jozeflacko/',
