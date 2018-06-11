@@ -4,4 +4,4 @@
 
 It contains a simle game and a all information about me.
 
-You can see my page here: <a href="www.jozeflacko.com" target="_blank">www.jozeflacko.com</a>
+You can see my page here: <a href="https://www.jozeflacko.com/">www.jozeflacko.com</a>
