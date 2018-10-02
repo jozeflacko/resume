@@ -4,7 +4,7 @@ const Detail = {
     icon:'smile-o',
     items: [
       {
-        name: 'Java / Javascript Software Developer',
+        name: 'Software Developer',
         subname: 'Workflow EDV GmbH',
         place: 'Vienna, Austria',
         from: 'May 2016',
@@ -66,7 +66,7 @@ const Detail = {
         notes: `Technologies: C, Fortran 77, Eclipse IDE`
       },
       {
-        name: 'ASP.NET Developer',
+        name: 'Software Developer',
         subname: 'Technical University of Kosice',
         place: 'Slovakia',
         from: 'July 2014',

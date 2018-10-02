@@ -3,7 +3,7 @@ const detail = {
     /*animation:'rocket',*/
     itemsFunny: [
       {
-        name: 'Development at Home',
+        name: 'UDEMY\'s learning platform',
         subname: '',
         description: `I consider learning an awesome hobby which keeps me occupied a lot.
         I am an active user of UDEMY's learning platform, where I finished in last

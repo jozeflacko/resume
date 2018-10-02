@@ -22,16 +22,17 @@ const detail = {
                 { value: "REST", size: 3 },
                 { value: "Bootstrap", size: 3 },
                 { value: "JQuery", size: 3 },
+                { value: "Vue", size: 3 },
                 { value: "React", size: 2 },
                 { value: "Typescript", size: 2 },
                 { value: "JavaScript", size: 0 },
                 { value: "ECMAScript 6", size: 1 },
+                { value: "Java", size: 2 },
                 { value: "HTML", size: 2 },
                 { value: "CSS", size: 2 },
                 { value: "Webpack", size: 3 },
                 { value: "Angular", size: 3 },
                 { value: "OOP", size: 4 },
-                { value: "Java", size: 4 },
                 { value: "Eclipse", size: 4 },
                 { value: "Powershell", size: 4 },
                 { value: "Docker", size: 4 },
@@ -44,6 +45,7 @@ const detail = {
                 { value: "Maven", size: 5 },
                 { value: "Arduino", size: 5 },
                 { value: "SVG", size: 5 },
+                { value: "Docker", size: 5 },
                 { value: "C", size: 5 },
               ]
             },
@@ -73,8 +75,8 @@ const detail = {
             { picture:'../assets/flags/Slovakia.png', label:'Slovak', value:'Native' },
             { picture:'../assets/flags/United-Kingdom.png', label:'English', value:'Advanced' },
             { picture:'../assets/flags/Czech.png', label:'Czech', value:'Advanced' },
-            { picture:'../assets/flags/Hungary.png', label:'Hungarian', value:'Advanced' },
             { picture:'../assets/flags/Germany.png', label:'German', value:'Intermediate' },
+            { picture:'../assets/flags/Hungary.png', label:'Hungarian', value:'Intermediate' },
             { picture:'../assets/flags/Russia.png', label:'Russian', value:'Beginner' }
           ]
         }
