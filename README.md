@@ -1,4 +1,4 @@
-# personal-page-written-with-react-and-typescript
+# resume
 
 ## My personal Web Resume written in Javascript using React, Typescript, Redux 
 
