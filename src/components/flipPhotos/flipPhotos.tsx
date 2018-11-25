@@ -10,12 +10,25 @@ export default class FlipPhotos extends React.Component<{
   flipPhotosBottom?:string,
   flipPhotos:Array<string>;
   numberOfRows:number;
-}, {}> {
+}, {
+  numberOfRows: number;
+}> {
 
   MOVE_PHOTO_LOWER = 45;
   CARD_ELEMENT_CSS = 'card';
   containerNode:any;
   flipInterval: any;
+  
+  maxNumberOfRows = 10;
+  minNumberOfRows = 2;
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      numberOfRows: this.props.numberOfRows
+    }
+  }
 
   componentDidMount() {
     this.processAll();
@@ -249,15 +262,32 @@ export default class FlipPhotos extends React.Component<{
       </div>
     );
   }
+
+  addRow = () => {
+    if(this.state.numberOfRows < this.maxNumberOfRows) {
+      this.setState({
+        numberOfRows: this.state.numberOfRows + 1
+      });
+    }
+  }
+  removeRow = () => {
+    if(this.state.numberOfRows > this.minNumberOfRows) {
+      this.setState({
+        numberOfRows: this.state.numberOfRows -1
+      });
+    }
+  }
   render() {
     if(! this.props.flipPhotos ) {
         return "";
     }
     return (
-      <div className="flipPhotos-container" >
+      <div className="flipPhotos-container" >       
         {this.addBackgroundPhoto()}
         <div id="spin-container" className="spin-container" ref={(element)=>{this.containerNode = element}}>
-          {this.renderRows(this.props.numberOfRows)}
+          <button title="Remove a row from the picture" className={this.state.numberOfRows <= this.minNumberOfRows ? "button remove-row not-active" : "button remove-row"} onClick={this.removeRow}>-</button>              
+          {this.renderRows(this.state.numberOfRows)}
+          <button title="Add a new row to the picture"  className={this.state.numberOfRows >= this.maxNumberOfRows ? "button add-row not-active" : "button add-row"} onClick={this.addRow}>+</button>
           <FontAwesome
             name="retweet"
             className="flipButton"
