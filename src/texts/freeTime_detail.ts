@@ -2,7 +2,7 @@ const detail = {
   icon:'thumb-tack',
   sentence: {
     image:'../assets/happy.jpeg',
-    startSentence:'I´am',
+    startSentence:'I am',
     endSentences:[
     /* I am */  'Jozef Lacko',
     /* I am */  'always doing my best',
