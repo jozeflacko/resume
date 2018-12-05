@@ -19,7 +19,7 @@ export default class FlipPhotos extends React.Component<{
   containerNode:any;
   flipInterval: any;
   
-  maxNumberOfRows = 10;
+  maxNumberOfRows = 5;
   minNumberOfRows = 2;
 
   constructor(props) {
