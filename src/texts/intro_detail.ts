@@ -9,7 +9,7 @@ const introDetail = {
     flipPhotosBottom:'../assets/flipPhotos/body.JPG',
     description: [
       `As a software developer, I like all programming languages, but my heart definitely belongs to JavaScript. 
-      It is my favorite since very beginning.`,
+      It is my favorite since the very beginning.`,
 
       `In general, I like to spend my free time learning and trying out
       whatever seems reasonable.  I would even say, that learning is my
