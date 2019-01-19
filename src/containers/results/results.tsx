@@ -11,19 +11,18 @@ import {
   fetchEducation,
   fetchSearchMessage,
   fetchSkills,
-  fetchFreeTime,
-/*  fetchContact, */
+  fetchFreeTime, 
   turnOffAnimation,
   setDetail
 }  from '../../actions';
 import SearchBar from '../../components/searchBar/searchBar';
-import Packman from '../../components/packman/packman';
 import Logo from '../../components/logo/logo';
 import Result from '../../components/result/result';
 import Detail from '../../components/detail/detail';
 import { ILink } from '../../texts/links';
 import RISearch from "../../reducers/interfaces/RISearch";
 import PreloadImages from '../../tools/preloadImages';
+import Contact from '../../components/contact/contact';
 
 
 interface Props extends React.Props<any> {
@@ -36,7 +35,6 @@ interface Props extends React.Props<any> {
   fetchSearchMessage: any;
   fetchSkills: any;
   fetchFreeTime: any;
-/*  fetchContact: any; */
   turnOffAnimation: any;
   setDetail: any;
 
@@ -52,7 +50,7 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
   constructor(props:Props) {
     super(props);
     this.state = {
-      isActive: false
+      isActive: false,
     };
   }
 
@@ -60,28 +58,26 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
   getTypeOfResume() {
     return this.resumeType;
   }
-  setTypeOfResume() {
-    if(this.resumeType === null) {
 
-      if(this.props.type.typeOfResume === "GOOGLE" || this.props.type.typeOfResume === "NORMAL") {
-        // is already set        
-        this.resumeType = this.props.type.typeOfResume;
-      } else {
-        this.resumeType = (window.location.pathname).indexOf("resumeforgoogle") > -1 ? "GOOGLE" : "NORMAL";
-        console.log('TYPE OF RESUME: '+ this.resumeType );
-        this.props.set4ReduxTypeOfResume( this.resumeType ); // MUST BE FIRST !!! because other redux states will depend on it
-      }
-    }
+  calcDate(date1,date2): string {
+    let diff = Math.floor(date1.getTime() - date2.getTime());
+    let day = 1000 * 60 * 60 * 24;
+
+    let days = Math.floor(diff/day);
+    let months = Math.floor(days/31);
+    let years = Math.floor(months/12);
+
+    let message: string = years.toString();
+    if(months - (years*12) >= 2) {
+      message += " and a half"; 
+    }     
+    return message + " years";
   }
-  isForGoogle() {
-    return this.getTypeOfResume() === 'GOOGLE';
-  }
+
 
   preloadImages = new PreloadImages();
 
-  componentDidMount() {
-    this.setTypeOfResume();
-    
+  componentDidMount() {    
     this.props.fetchLinks();
     this.props.fetchIntro();
     this.props.fetchWorkExperience();
@@ -89,7 +85,6 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
     this.props.fetchSearchMessage();
     this.props.fetchSkills();
     this.props.fetchFreeTime();
-  /*  this.props.fetchContact(); */
     this.props.turnOffAnimation(); // we never want here animation
   }
 
@@ -100,14 +95,6 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
     return this.props.information.links.map( (link: ILink, index: number) => {
       const priority = link.priority  ? 'priority-' + link.priority  : 'priority-high';
       const className = index === 0 ? priority +' active' : priority ; // only first can be active, other are external links
-
-      if(link.type === undefined) {
-        /* is ok show */
-      } else if(link.type !== undefined && link.type === "GOOGLE" && this.isForGoogle() === false) {
-        return ""; // content only for GOOGLE but this is a general page
-      } else if(link.type !== undefined && link.type === "NORMAL" && this.isForGoogle() === true) {
-        return ""; // content for general page
-      }  
 
       return (
         <a
@@ -170,22 +157,13 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
     );
   }
 
-  /*
-  <Result
-    result={contact}
-    isActive={this.props.information.detail === this.props.information.contact}
-    onClick={() => {this.props.setDetail(contact);  this.setActiveDetail();}}
-    onActiveClassName="blightyellow"
-  />
-  */
-
   render() {
     return (
       <div className="results">
         <div className="header">
 
           <div className="left" onClick={()=> {this.props.turnOffAnimation();}} >
-            <Logo game={false} isForGoogle={this.isForGoogle()}/>
+            <Logo game={false} />
           </div>
           <div className="right">
             <SearchBar search={this.props.search} />
@@ -194,16 +172,17 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
         </div>
         <div className="body">
           <div className="left">
-            <div className="info">This Web is done with React &amp; TypeScript</div>
+            <div className="info"><br/></div>
             {this.createMyLife()}
+            {<Contact/>}
           </div>
           <div className="right">
-            <Detail detail={this.props.information.detail} isActive={this.state.isActive} setUnactiveDetail={() => {this.setUnactiveDetail()}} isForGoogle={this.isForGoogle()}/>
+            <Detail detail={this.props.information.detail} isActive={this.state.isActive} setUnactiveDetail={() => {this.setUnactiveDetail()}}/>
           </div>
           <div className="clear"/>
         </div>
         <div className="footer">
-          <Packman/>
+          <span>www.jozeflacko.com</span>
         </div>
       </div>
     );
@@ -227,7 +206,6 @@ function mapDispatchToProps(dispatch: any) {
     fetchSearchMessage,
     fetchSkills,
     fetchFreeTime,
-  /*  fetchContact, */
     turnOffAnimation,
     setDetail,
     set4ReduxTypeOfResume,

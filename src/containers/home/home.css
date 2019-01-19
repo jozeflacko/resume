@@ -84,3 +84,43 @@
 .outer > .middle > .inner > .buttons.general > .button {
 
 }
+
+.whatsnew-container {
+  border:1px solid red;
+  box-sizing:border-box;
+  margin:auto;
+  margin-top:30px;
+  text-align:left;
+  position:fixed;
+  bottom:30px;
+  left:0px;
+  height:200px;
+}
+.whatsnew-container .whatsnew {
+  box-sizing:border-box;  
+  padding:0px;
+  overflow:auto hidden;
+  white-space:nowrap;
+  padding:0px 10px;
+}
+
+.whatsnew-container .whatsnew > li {
+  box-shadow:3px 3px 3px #DDD;
+  padding:10px;
+  display:inline-block;
+  height:100%;
+  width:200px;
+  height:150px;
+  margin-right:15px;
+  border:1px solid #EEE;
+  vertical-align: top;
+}
+.whatsnew-container .whatsnew > li:last-child {
+  margin-right:0px;
+}
+.whatsnew-container .whatsnew > li:hover {
+  background: #DDD;
+}
+.whatsnew-container .whatsnew > li:hover .page:empty {
+  display:none;
+}

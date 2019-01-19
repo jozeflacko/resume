@@ -5,7 +5,7 @@ export class Education implements IResult {
 
   private title: string = "Education";
   private subtitle: string = "Master of Business Informatics";
-  private description: string = "Development at home & University studies";/*`I sucessfully completed second level of university studies in the study programme of Business Informatics`;*/
+  private description: string = "University studies";/*`I sucessfully completed second level of university studies in the study programme of Business Informatics`;*/
 
   public getTitle(): string {
     return this.title;

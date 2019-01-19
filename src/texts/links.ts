@@ -20,32 +20,25 @@ export const Links: Array<ILink> = [
   },
   {
     name:'Docs to Print',
-    url:'https://docs.google.com/document/d/1_w972PQnwHwLr0fVTI3d4FHgWQlOS3dY6IM-i2dthyQ/edit?usp=sharing',
-    title:'Preview my resume',
-    type:"GOOGLE"
-  },
-  {
-    name:'Docs to Print',
     url:'https://docs.google.com/document/d/1ziyzLe4hYWHTWB0FO-tyUCO03MHA_l2HxIR3RPoARcM/edit?usp=sharing',
-    title:'Preview my resume',
-    type:"NORMAL"
+    title:'Preview my Google Docs Resume'
   },
   {
-    name:'Github',
+    name:'GitHub',
     url:'https://github.com/opam',
-    title:'git push origin master',
+    title:'Go and open my GitHub',
+    priority: 'low',
+  },
+  {
+    name:'Twitter',
+    url:'https://twitter.com/jlacko27',
+    title:'Whats new on Twitter?',
     priority: 'low',
   },
   {
     name:'LinkedIn',
     url:'https://www.linkedin.com/in/jozeflacko/',
-    title:'LinkedIn',
-    priority: 'low',
-  },
-  {
-    name:'Facebook',
-    url:'https://www.facebook.com/jozef.lacko.33',
-    title:'Facebook',
+    title:'Go and check my LinkedIn',
     priority: 'low',
   }
 ];

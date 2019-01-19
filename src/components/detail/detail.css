@@ -153,8 +153,12 @@
 .detail > .content > .items > .item > .myHead > .subname {
   font-weight: bold;
 }
-.detail > .content > .items > .item > .myHead > .place {
-
+.detail > .content > .items > .item > .myHead > .www {
+  color:#4d88ed;
+  text-decoration:none;
+}
+.detail > .content > .items > .item > .myHead > .www:hover {
+  color:red;  
 }
 .detail > .content > .items > .item > .logos {
   position:absolute;
@@ -256,7 +260,20 @@
 }
 .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet {
   margin-bottom:10px;
+  display:block;
+  text-decoration: none;
+  color:black;
+  cursor:default;
 }
+.detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet.can-click {
+  cursor: pointer;
+}
+.detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet.can-click:hover {
+  color:rgb(247, 11, 11);
+}
+.detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet.can-click > .label {
+  cursor: pointer;
+} 
 .detail > .content > .bulletgroups > .groups > .group > .bullets > .bullet > .label {
   font-weight:bold;
   margin-right:5px;

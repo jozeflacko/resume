@@ -8,7 +8,6 @@ interface Props extends React.Props<any> {
   game: boolean;
   // just when game is false
   onSmallMovePostfix?: boolean;
-  isForGoogle:boolean;
 }
 
 export default class Logo extends React.Component<Props, {}> {
@@ -17,6 +16,7 @@ export default class Logo extends React.Component<Props, {}> {
     if(this.props.game)
       return <Game />
 
+   /*
     if(this.props.isForGoogle === false) {
       return (
         <Link
@@ -27,11 +27,12 @@ export default class Logo extends React.Component<Props, {}> {
         </Link>
       );
     }
+    */
 
     const className = this.props.onSmallMovePostfix === false ? "logo" : "logo onSmallMovePostfix";
     return (
       <Link
-        to={'/resumeforgoogle'}
+        to={'/'}
         className={className}
       >
         <span className="g one">G</span>

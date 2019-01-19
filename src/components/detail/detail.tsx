@@ -4,61 +4,41 @@ import './detail_mobile.css';
 import './alive.css';
 import * as FontAwesome from 'react-fontawesome';
 import Sentence from '../sentence/sentence';
-//import SkillsTetris from '../../components/skillsTetris/skillsTetris';
-import Rocket from '../rocket/rocket';
 import Hero from '../hero/hero';
 import KidWithABaloon from './kidWithABaloon/kidWithABaloon';
-/*import CoolIcon from '../coolIcon/coolIcon';*/
 import CoolLine from '../coolLine/coolLine';
 import FlipPhotos from '../flipPhotos/flipPhotos';
+import Helper from '../../helper/helper';
 
 interface Props extends React.Props<any> {
   detail: any;
   isActive: boolean;
   setUnactiveDetail: any;
-  isForGoogle:any;
 }
 
 export default class Detail extends React.Component<Props, {}> {
   processDetail() {
-    const { photo, flipPhotos, flipPhotosBackground, flipPhotosBottom, animation, sentence, bottomPhoto, description, descriptionExtension, items, itemsFunny, bulletgroups } = this.props.detail.getDetail();
+    const { photo, flipPhotos, flipPhotosBackground, flipPhotosBottom, sentence, bottomPhoto, description, items, itemsFunny, bulletgroups } = this.props.detail.getDetail();
     return (
       <div className="content">
         {this.processHero(photo)}
         {this.processFlipPhotos(flipPhotos, flipPhotosBackground, flipPhotosBottom)}
-        <div className="photo">{this.processPhoto(photo)}</div>
+        <div className="photo">{Helper.processPhoto(photo)}</div>
         {this.processSentence(sentence)}
-        <div className="description">{this.processDescription(description)} {this.processDescriptionExtension(descriptionExtension)}</div>
+        <div className="description">{this.processDescription(description)}</div>
         <div className="items">
           {this.processItemsFunny(itemsFunny)}
           {this.processItems(items)}
         </div>
         {this.processBulletsgroups(bulletgroups)}
-        {this.processPhoto(bottomPhoto, 'bottom-photo')}
-        {this.processAnimation(animation)}
+        {Helper.processPhoto(bottomPhoto, 'bottom-photo')}
       </div>
     );
-  }
-
-  processAnimation(animation:string) {
-    if(animation === 'rocket')
-      return <Rocket/>
-    return "";
   }
 
   processFlipPhotos(flipPhotos:Array<string>, flipPhotosBackground:string, flipPhotosBottom:string){
     return <FlipPhotos flipPhotos={flipPhotos} flipPhotosBackground={flipPhotosBackground} flipPhotosBottom={flipPhotosBottom} numberOfRows={2}/>;
   }
-
-  processPhoto(photo: string, className = 'my-photo') {
-    if (! photo)
-      return "";
-
-    return (
-        <img src={photo} key={photo} className={className}/>
-    );
-  }
-
   processHero(photo: string) {
     if (! photo)
       return "";
@@ -67,7 +47,7 @@ export default class Detail extends React.Component<Props, {}> {
 
   processLogos(logos: Array<string>) {
     return logos ? logos.map((logo) => {
-      return this.processPhoto(logo); // key is rendered in process photo
+      return Helper.processPhoto(logo); // key is rendered in process photo
     }) : "";
   }
 
@@ -78,9 +58,9 @@ export default class Detail extends React.Component<Props, {}> {
   }
 
   processDescriptionExtension(descriptionExtension?: Array<String>) {  
-      return descriptionExtension && this.props.isForGoogle === true ? descriptionExtension.map((paragraf:string, index:number) => {
+      return descriptionExtension.map((paragraf:string, index:number) => {
         return (<p key={"key_extension_"+index}>{paragraf}</p>);
-      }) : "";
+      });
   }
 
   processBulletsgroups(bulletgroups: any) {
@@ -106,37 +86,20 @@ export default class Detail extends React.Component<Props, {}> {
     }) : "";
   }
 
-  processBullets(bullets: Array<{key: string, picture: 'string', label: string, value: string, bubbles: Array<{value: string, size: number}>}>) {
+  processBullets(bullets: Array<{picture: 'string', link?: string, phoneLink?: string; label: string, value: string, bubbles: Array<{value: string, size: number}>}>) {
     return bullets.map((bullet, index) => {
-      const key = bullet.key ? bullet.key : 'key'+index;
+      const key = bullet.label ? bullet.label : 'key'+index;
+      const onClick = bullet.link ? () => { window.open(bullet.link) } : () => {};
+      const href = bullet.phoneLink ? bullet.phoneLink : "javascript:void(0);";
+      const className = bullet.link || bullet.phoneLink  ? "bullet can-click" : "bullet";
       return (
-        <div key={key} className="bullet">
-          {this.processIconAndLabel(bullet)}
+        <a key={key} className={className} onClick={onClick} href={href} title={bullet.label+": "+bullet.value}>
+          {Helper.processIconAndLabel(bullet)}
           <span className="value">{bullet.value}</span>
           {this.processBubbless(bullet.bubbles)}
-        </div>
+        </a>
       );
     });
-  }
-
-  processIconAndLabel(bullet:any) {
-    if(bullet.picture) {
-      return (
-        <label className="label">
-          {this.processPhoto(bullet.picture)}
-          {bullet.label}
-        </label>
-      );
-    } else if(bullet.label || bullet.icon) {
-      const icon = bullet.icon || "circle-thin";
-      const className = bullet.className && bullet.className != '' ? 'icon cblue '+bullet.className : 'icon cblue';
-      return (
-        <label className="label">
-          <FontAwesome name={icon} className={className}/>
-          {bullet.label}
-        </label>
-      );
-    }  else return "";
   }
 
   processBubbless(bubbles: Array<{value: string, size: number}>) {
@@ -181,11 +144,18 @@ export default class Detail extends React.Component<Props, {}> {
     }
   }
 
+  processWWW(www) {
+    if(www === undefined) {
+      return "";
+    }
+    return <a className="www" title={"Click to open "+www} href={"http://"+www}>{this.printValue(www)}       </a>
+  }
+
   processItems(items: any, addClassName?:string) {
     const className = addClassName === undefined ? "item" : addClassName + " item";
 
     return items ? items.map((item: any, index: number) => {
-      const { name, subname, place, from, to, from2, to2, description, notes, logos } = item;
+      const { name, subname, place, from, to, from2, to2, description, notes, logos, www } = item;
       return (
         <div className={className} key={"key"+index}>
           {this.generateTimeRange(from, to)}
@@ -194,6 +164,7 @@ export default class Detail extends React.Component<Props, {}> {
             <div className="name cblue" >{this.printValue(name)}        </div>
 
             <div className="subname"    >{this.printValue(subname)}     </div>
+            {this.processWWW(www)}
             <div className="place"      >{this.printValue(place)}       </div>
           </div>
           <div className="logos">
@@ -246,12 +217,11 @@ export default class Detail extends React.Component<Props, {}> {
   processSentence(sentence:{
     image:string,
     startSentence:string,
-    endSentences:Array<string>,
-    endSentencesGoogle:Array<string>,
+    endSentences:Array<string>
   }) {
     if(sentence === undefined)
       return "";
-    return (<Sentence image={sentence.image} startSentence={sentence.startSentence} endSentences={this.props.isForGoogle ? sentence.endSentencesGoogle : sentence.endSentences} />);
+    return (<Sentence image={sentence.image} startSentence={sentence.startSentence} endSentences={sentence.endSentences} />);
   }
 
   render() {

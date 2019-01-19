@@ -1,0 +1,65 @@
+.contact {
+  border-top:1px dashed #eee;
+  padding-top:20px;
+  margin-top:20px;
+}
+.contact > * {
+  display:block;
+}
+
+.contact > * {
+  margin-bottom:10px;
+  display:block;
+  text-decoration: none;
+  color:black;
+  cursor:default;
+}
+.contact > *.can-click {
+  cursor: pointer;
+}
+.contact > *.can-click:hover {
+  color:rgb(247, 11, 11);
+}
+.contact > *.can-click > .label {
+  cursor: pointer;
+} 
+.contact > * > .label {
+  font-weight:bold;
+  margin-right:5px;
+  display:inline;
+  white-space:nowrap;
+}
+.contact > * > .label > .icon {
+  margin-right: 10px;
+  display: inline;
+  font-size: 30px;
+  width: 45px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  top: 3px;
+  -webkit-filter: grayscale(10%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(10%);
+  opacity:.7;
+}
+.contact > *:nth-child(1) > .label > .icon {
+  color:#9400D3;
+}
+.contact > *:nth-child(2) > .label > .icon {
+  color:#4B0082;
+}
+.contact > *:nth-child(3) > .label > .icon {
+  color:#0000FF;
+}
+.contact > *:nth-child(4) > .label > .icon {
+  color:#00e000;
+}
+.contact > *:nth-child(5) > .label > .icon {
+  color:#d0d000;
+}
+.contact > *:nth-child(6) > .label > .icon {
+  color:#FF7F00;
+}
+.contact > *:nth-child(7) > .label > .icon {
+  color:#FF0000;
+}

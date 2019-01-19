@@ -15,16 +15,15 @@ import { Education } from '../texts/education';
 import { Links } from '../texts/links';
 import { Skills } from '../texts/skills';
 import { FreeTime } from '../texts/freeTime';
-import { Contact } from '../texts/contact';
 import Search from '../texts/search';
 
 /** On initial load will fetch message which will be inserted into
  *  the search bar.
  */
-export function fetchSearchMessage(isForGoogle:boolean) {
+export function fetchSearchMessage() {
   return {
     type: FETCH_SEARCH_MESSAGE,
-    payload: new Search(isForGoogle),
+    payload: new Search(),
   };
 }
 export function set4ReduxTypeOfResume(typeOfResume) {
@@ -80,13 +79,6 @@ export function fetchFreeTime() {
   return {
     type: FETCH_FREE_TIME,
     payload: new FreeTime(),
-  };
-}
-
-export function fetchContact() {
-  return {
-    type: FETCH_CONTACT,
-    payload: new Contact(),
   };
 }
 

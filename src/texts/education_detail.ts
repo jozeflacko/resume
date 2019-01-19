@@ -1,6 +1,6 @@
 const detail = {
     icon:'graduation-cap',
-    /*animation:'rocket',*/
+    /*
     itemsFunny: [
       {
         name: 'UDEMY\'s learning platform',
@@ -46,6 +46,7 @@ const detail = {
         ]
       }
     ],
+    */
     items: [
       {
         name: 'Master of Business Informatics',
@@ -58,7 +59,7 @@ const detail = {
         acquirement of theoretical and practical knowledge in the field of
         design and development business enterprise systems and on database
         systems analysis.`,
-
+        www:'www.tuke.sk',
         notes: `Master Thesis: “Implementation of a software system for
         experimental analysis of methods for aggregation of opinions using
         Adaboost”`
@@ -74,7 +75,7 @@ const detail = {
         acquirement of knowledge in the field of computer network management,
         data analysis, business economy, design of business enterprise systems
         and programming.`,
-
+        www:'www.tuke.sk',
         notes: `Master Thesis: "Design and realization of Music Box". The main aim
         of the bachelor thesis was to create a musical machine based on a set
         of liquid-filled bottles controlled by a computer LabJack interface.`

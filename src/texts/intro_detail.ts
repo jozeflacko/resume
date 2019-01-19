@@ -1,3 +1,5 @@
+//import contact from './contact';
+
 const introDetail = {
     flipPhotos:[
       '../assets/flipPhotos/1.JPG',
@@ -28,27 +30,13 @@ const introDetail = {
       `I consider myself as a very happy and active person. I love life,
       people, and especially my family and I absolutely admire honesty.`,
     ],
-    descriptionExtension: [
-      `At the end, I would like to mention, that working in Google was always my dream.
-      I would be delighted to join this huge family to prove my
-      personal and professional qualities. It is a step in life, that I would like to take. `
-    ],
     bulletgroups: [
       {
         key:'contact',
         bullets: [
-          {
-            bullets:[
-              { label:'Full name', icon:"user", value:'Jozef Lacko' },
-              { label:'Born', icon:"birthday-cake", value:'27 January 1989' },
-              { label:'Nationality', icon:"globe", value:'Slovak, EU' },
-              { label:'Current address', icon:"map-marker", value:'Vienna, Austria' },
-              { label:'Marital status', icon:"smile-o", value:'Married' },
-              { label:'Email', icon:"envelope", value:'jlacko27@gmail.com' },
-              { label:'Phone', icon:"phone", value:'+421902092669' },
-              { label:'LinkedIn ', icon:"linkedin", value:'linkedin.com/in/jozeflacko' },
-            ]
-          }
+          /*{
+            bullets:contact
+          }*/
         ]
       }
     ]

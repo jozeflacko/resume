@@ -9,6 +9,7 @@ import { bindActionCreators } from 'redux';
 import { fetchSearchMessage, turnOffAnimation, set4ReduxTypeOfResume } from '../../actions';
 import RISearch from "../../reducers/interfaces/RISearch";
 import PreloadImages from '../../tools/preloadImages';
+//import { WhatsNew } from '../../texts/whatsNew';
 
 interface Props extends React.Props<any> {
   fetchSearchMessage: any; // from redux
@@ -22,7 +23,15 @@ export type HistoryContext = {
   push: Function
 }
 
-class Home extends React.Component<Props, { forGoogle:true }> {
+
+class Home extends React.Component<Props> {
+
+  //private whatsNew: WhatsNew;
+
+  constructor(props: Props) {
+    super(props);
+    //this.whatsNew = new WhatsNew();
+  }
 
   /* preload images for other part of the app,
    * to have smooth experience */
@@ -32,83 +41,72 @@ class Home extends React.Component<Props, { forGoogle:true }> {
   getTypeOfResume() {
     return this.resumeType;
   }
-  setTypeOfResume() {
-    if(this.resumeType === null) {
-      this.resumeType = (window.location.pathname).indexOf("resumeforgoogle") > -1 ? "GOOGLE" : "NORMAL";
-      console.log('TYPE OF RESUME: '+ this.resumeType );
-      this.props.set4ReduxTypeOfResume( this.resumeType ); // MUST BE FIRST !!! because other redux states will depend on it
-    }
-  }
-  isForGoogle() {
-    return this.getTypeOfResume() === 'GOOGLE';
-  }
-
-
   componentDidMount() {   
-    this.setTypeOfResume();
-    this.props.fetchSearchMessage( this.isForGoogle() );
+    this.props.fetchSearchMessage();
   }
 
   getDetailsLink() {
-    return this.isForGoogle() ? '/resumeforgoogle/details' : '/resume/details'
+    return '/details';
   }
 
-  processFooter()  {
-    if(!this.isForGoogle()) {
-      return (
-        <div className="text general"/>        
-      )
-    }
-    
+  processFooter()  {    
     return (
       <div className="text">
           <span className="left">Ok</span>
-          <span className="middle"><Logo game={false} onSmallMovePostfix={false} isForGoogle={this.isForGoogle()} /></span>
+          <span className="middle"><Logo game={false} onSmallMovePostfix={false} /></span>
           <span className="right"> let's have fun!</span>
       </div>
     );
   }
 
-  processButtons() {
-    if(this.isForGoogle() === false) {
-      return (
-        <div className="buttons general" onClick={()=> {this.props.turnOffAnimation();}} >
-          <a
-            href="https://docs.google.com/document/d/1ziyzLe4hYWHTWB0FO-tyUCO03MHA_l2HxIR3RPoARcM/edit?usp=sharing"            
-            className="button i-feel-lucky"
-            target="_blank"
-          >
-            Show Docs Resume
-          </a>
-          <Link
-            to={this.getDetailsLink()}
-            className="button active blink"
-            title="Click here to get to know me better!"
-          >
-            Go get to know me
-          </Link>
-        </div>
-      )
-    }
-    
+  processButtons() {    
     return (
       <div className="buttons" onClick={()=> {this.props.turnOffAnimation();}} >
-          <Link
-            to={this.getDetailsLink()}
+          <a
+            href="https://github.com/opam"
+            target="_blank"
             className="button"
             title="Click here to get to know me better!"
           >
-            Search for Jozef
-          </Link>
+            Open GitHub
+          </a>
           <Link
             title="Click here to get to know me better!"
             to={this.getDetailsLink()}
             className="button i-feel-lucky active blink"
           >
-            I am feeling lucky
+            Open Resume
           </Link>
         </div>
     );
+  }
+
+  renderWhatsNew = () => {
+    return "";
+    /*
+    const newthings = this.whatsNew.get();
+    
+    return (
+      <div className="whatsnew-container">
+        <div className="title">What´s new?</div>
+        <ul className="whatsnew">
+          
+          {
+            newthings.map((whats, index)=>{
+              return (
+                <li className="whatnew-item" key={whats.name} onClick={()=>{window.open(whats.github)}}>
+                  <div className="name">{whats.name}</div>
+                  <div className="description">{whats.description}</div>
+                  <div className="created">{whats.created}</div>
+                  <div className="page">{whats.page}</div>                
+                </li>
+              )
+            })
+          }        
+        </ul>
+      </div>
+    )
+    */
   }
 
   render() {
@@ -116,9 +114,10 @@ class Home extends React.Component<Props, { forGoogle:true }> {
       <div className="outer">
           <div className="middle">
             <div className="inner">
-              <Logo game={true} isForGoogle={this.isForGoogle()}/>
+              <Logo game={true}/>
               <SearchBar search={this.props.search} />
               {this.processButtons()}
+              {this.renderWhatsNew()}
               {this.processFooter()}             
             </div>
           </div>
@@ -144,4 +143,3 @@ function mapDispatchToProps(dispatch: any) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
-//export default connect<any, any, Props>(mapStateToProps, mapDispatchToProps)(Home);
