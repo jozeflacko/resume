@@ -10,7 +10,7 @@ const introDetail = {
     flipPhotosBackground:'../assets/flipPhotos/head.JPG',
     flipPhotosBottom:'../assets/flipPhotos/body.JPG',
     description: [
-      `Hi there! I am a Full-Stack Developer strongly concentrated on buiding Web Applications using JavaScript, TypeScript and Java.
+      `Hi there! I am a Full-Stack Developer strongly concentrated on building Web Applications using JavaScript, TypeScript and Java.
       I have also experience with C with Arduino boards, Fortran with parallel computation and
       C# with collective intelligence. I am always open to something new. `,
 
