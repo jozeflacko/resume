@@ -23,6 +23,9 @@
   .results > .header > .right > .links > a.priority-low {
     display:none;
   }
+  .results > .header > .right > .search-bar {
+    display:none;
+  }
   .results > .body > .left {
     float:initial;
     width:100%;

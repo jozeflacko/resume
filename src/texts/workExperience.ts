@@ -5,7 +5,7 @@ const Detail = {
     items: [
       {
         name: 'Web Software Engineer',
-        subname: 'Österreichische Lotterien GmbH',
+        subname: 'Österreichische Lotterien',
         place: 'Vienna, Austria',
         from: 'January 2019',
         to: 'Present',
@@ -18,7 +18,7 @@ const Detail = {
       },
       {
         name: 'Web Software Engineer',
-        subname: 'Workflow EDV GmbH',
+        subname: 'Workflow EDV',
         place: 'Vienna, Austria',
         from: 'May 2016',
         to: 'December 2018',
@@ -42,7 +42,7 @@ const Detail = {
       },
       {
         name: 'Web Software Engineer - Internship',
-        subname: 'Workflow EDV GmbH',
+        subname: 'Workflow EDV',
         place: 'Vienna, Austria',
         from: 'June 2015',
         to: 'April 2016',
