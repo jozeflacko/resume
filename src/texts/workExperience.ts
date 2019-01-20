@@ -10,7 +10,7 @@ const Detail = {
         from: 'January 2019',
         to: 'Present',
         logos:['../assets/logos/osterreichische_lotterien.png'],
-        description: `Agile Developer`,
+        description: `Agile Developer. `,
         www:'www.lotterien.at',
 
         notes: `Technologies: JavaScript, Typescript, React,
@@ -20,45 +20,22 @@ const Detail = {
         name: 'Web Software Engineer',
         subname: 'Workflow EDV',
         place: 'Vienna, Austria',
-        from: 'May 2016',
+        from: 'June 2015',
         to: 'December 2018',
         logos:['../assets/logos/workflow.png'],
-        description: `I work as a developer on an enterprise web application,
+        description: `I was working as a developer on an enterprise web application,
         focusing mostly on time management, travel management, and personnel
-        management. My main responsibilities are implementing responsive skin
-        and improving the user experience of the app by transferring back-event
-        driven events into the scripts run by the browsers. I write reusable
-        components, JavaScript modules, java rest services and page specific
-        CSS. I work in a small team of 6 people and we follow Scrum process.
-        My work also includes creating new actions and workflows in the
-        application, supporting trainees with JavaScript development,
-        taking care of morning builds, fixing broken unit
-        tests, and making regular app releases.`,
+        management. In the company I started as a full-time trainee and switched to regular contract after 10 months.
+        My main responsibilities were building and maintaning mainly JavaScript part of the application, 
+        implementing responsive skin and improving the user experience. I wrote reusable
+        components, modules and css. My work also included supporting trainees with development,
+        participating on recruiting new team members and making regular app releases. In a small agile team I was 
+        also highly involved into the Java development.`,
         www:'www.workflow.at',
 
         notes: `Technologies: JavaScript, Ajax, Jquery library,
         Html, Css, Xslt, Java, Maven, Spring framework, JUnit Test Framework,
-        Eclipse IDE, SVN, Vue, Git, TypeScript`
-      },
-      {
-        name: 'Web Software Engineer - Internship',
-        subname: 'Workflow EDV',
-        place: 'Vienna, Austria',
-        from: 'June 2015',
-        to: 'April 2016',
-        logos:['../assets/logos/workflow.png'],
-        description: `As a trainee, I was a full-valued team member developing
-        a Java enterprise web application. After a short introduction period,
-        I was implementing new Java services, jobs, JUnit tests, and new
-        actions. Later my tasks were changed to be more concentrated on
-        JavaScript development. I focused on different reusable functionalities
-        for application menu, responsive tables, trees, forms, dialogs and
-        etc.`,
-        www:'www.workflow.at',
-
-        notes: `Technologies: JavaScript, Ajax, Jquery,
-        Html, Css, Xslt, Java, Maven, Spring framework, JUnit Test Framework,
-        Eclipse IDE`
+        Eclipse IDE, SVN, Vue, Git, TypeScript, Jira, Confluence`
       },
       {
         name: 'Software Engineer - Internship',
