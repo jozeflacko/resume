@@ -23,7 +23,7 @@ export const Links: Array<ILink> = [
     url:'https://docs.google.com/document/d/1ziyzLe4hYWHTWB0FO-tyUCO03MHA_l2HxIR3RPoARcM/edit?usp=sharing',
     title:'Preview my Google Docs Resume'
   },
-  {
+  /*{
     name:'GitHub',
     url:'https://github.com/opam',
     title:'Go and open my GitHub',
@@ -40,5 +40,5 @@ export const Links: Array<ILink> = [
     url:'https://www.linkedin.com/in/jozeflacko/',
     title:'Go and check my LinkedIn',
     priority: 'low',
-  }
+  }*/
 ];

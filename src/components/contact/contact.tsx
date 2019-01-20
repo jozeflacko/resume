@@ -32,8 +32,9 @@ export default class Contact extends React.Component<{},State> {
             return contacts.map((contact:any, index)=>{                
                 const key = contact.label ? contact.label : 'key'+index;
                 const onClick = contact.link ? () => { window.open(contact.link) } : () => {};
-                const href = contact.phoneLink ? contact.phoneLink : "javascript:void(0);";
-                const className = contact.link || contact.phoneLink  ? "bullet can-click" : "bullet";
+                let href = contact.phoneLink ? contact.phoneLink : "javascript:void(0);";
+                    href = contact.mailLink ? "mailto:"+contact.mailLink : href;
+                const className = contact.link || contact.phoneLink || contact.mailLink ? "bullet can-click" : "bullet";
                 
                 return (
                     <a key={key} className={className} onClick={onClick} href={href} title={contact.label+": "+contact.value}>

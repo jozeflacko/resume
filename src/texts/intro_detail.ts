@@ -10,8 +10,9 @@ const introDetail = {
     flipPhotosBackground:'../assets/flipPhotos/head.JPG',
     flipPhotosBottom:'../assets/flipPhotos/body.JPG',
     description: [
-      `As a software developer, I like all programming languages, but my heart definitely belongs to JavaScript. 
-      It is my favorite since the very beginning.`,
+      `Hi there! I am a Full-Stack Developer strongly concentrated on buiding Web Applications using JavaScript, TypeScript and Java.
+      I have also experience with C with Arduino boards, Fortran with parallel computation and
+      C# with collective intelligence. I am always open to something new. `,
 
       `In general, I like to spend my free time learning and trying out
       whatever seems reasonable.  I would even say, that learning is my
@@ -19,7 +20,7 @@ const introDetail = {
       responsive web apps and even I used to built gadgets with Arduino boards. When
       I look back in time, I see a pattern behind me. I prefer simple and
       clean solutions and the usefulness of the product is always my number
-      one priority.`,
+      one priority. Currently I keep my head bussy with with Machine learning and Neural networks with JavaScript`,
 
       `Among my personality traits, there is one, that I consider very special.
       It is a passion, or let me say some ability to ignite myself for a good

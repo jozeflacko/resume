@@ -128,8 +128,8 @@ export class WorkExperience implements IResult {
   
   
   private title: string = "Work experience";
-  private subtitle: string = this.getWorkExperienceSentence();
-  private description: string = "What has been going on in the last years";
+  private subtitle: string = "What has been going on in the last years";
+  private description: string = this.getWorkExperienceSentence();
   private detail: any;
   
   constructor() {
@@ -145,7 +145,7 @@ export class WorkExperience implements IResult {
     let years = Math.floor(months/12);
   
     let message: string = years.toString();
-    if(months - (years*12) >= 2) {
+    if(months - (years*12) >= 5) {
       message += ".5"; 
     }     
     return message;
@@ -153,7 +153,7 @@ export class WorkExperience implements IResult {
 
   private getWorkExperienceSentence() {
     const c = this.calcDate(new Date(), new Date(2014,7,1));
-    return `${c} years of an experience as a developer`;
+    return `${c} years of an experience as a software engineer`;
   }
 
   public getTitle(): string {

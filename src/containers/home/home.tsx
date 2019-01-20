@@ -46,15 +46,15 @@ class Home extends React.Component<Props> {
   }
 
   getDetailsLink() {
-    return '/details';
+    return '/resume';
   }
 
   processFooter()  {    
     return (
       <div className="text">
-          <span className="left">Ok</span>
-          <span className="middle"><Logo game={false} onSmallMovePostfix={false} /></span>
-          <span className="right"> let's have fun!</span>
+          <span className="left"/>
+          <span className="middle"/>
+          <span className="right"/>
       </div>
     );
   }
@@ -68,7 +68,7 @@ class Home extends React.Component<Props> {
             className="button"
             title="Click here to get to know me better!"
           >
-            Open GitHub
+            Go to GitHub
           </a>
           <Link
             title="Click here to get to know me better!"

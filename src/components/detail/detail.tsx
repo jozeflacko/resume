@@ -92,8 +92,9 @@ export default class Detail extends React.Component<Props, {}> {
       const onClick = bullet.link ? () => { window.open(bullet.link) } : () => {};
       const href = bullet.phoneLink ? bullet.phoneLink : "javascript:void(0);";
       const className = bullet.link || bullet.phoneLink  ? "bullet can-click" : "bullet";
+      const title = bullet.label && bullet.value ? bullet.label+": "+bullet.value : "";
       return (
-        <a key={key} className={className} onClick={onClick} href={href} title={bullet.label+": "+bullet.value}>
+        <a key={key} className={className} onClick={onClick} href={href} title={title}>
           {Helper.processIconAndLabel(bullet)}
           <span className="value">{bullet.value}</span>
           {this.processBubbless(bullet.bubbles)}

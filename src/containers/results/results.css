@@ -69,7 +69,7 @@
 .results > .body .right {
   overflow:hidden;
   padding-right:10px;
-  max-width:800px;
+  max-width:1000px;
 }
 .results > .body .clear {
   clear:both;

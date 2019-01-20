@@ -133,7 +133,7 @@ export default class KidWithABaloon extends React.Component<{
     this.line.style.display = 'none';
     setTimeout( ()=> {
       this.baloon.className = this.baloon.className + ' flyAway';
-      this.kidPlaceholder.className = this.kidPlaceholder.className + ' waveHand';
+      this.kidPlaceholder.className = this.kidPlaceholder.className + ' waveHand noclickhere';
       this.baloon.style.top =  '-500px';
       this.baloon.style.left = '-500px';
       this.baloon.style.opacity = '0';
@@ -302,7 +302,7 @@ export default class KidWithABaloon extends React.Component<{
           <div className="baloon" ref={(elem) => {this.baloon = elem}}>
             <div
               className="heart-container"
-              onClick={()=>{ this.flyBaloonAway() }}
+              onClick={()=>{ this.flyBaloonAway(); }}
             >
               <div className="heart">
                 {this.props.name}

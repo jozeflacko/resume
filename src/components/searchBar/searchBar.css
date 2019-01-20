@@ -5,6 +5,7 @@
   position:relative;
   margin:auto;
   overflow:hidden;
+  min-width: 500px;
 }
 .search-bar > .search {
   min-height:12px;

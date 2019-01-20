@@ -4,6 +4,7 @@
     padding:0px;
     box-sizing:border-box;
     max-width:450px;
+    min-width: 0px !important;
   }
   .search-bar > .search {
     width:initial;
