@@ -18,6 +18,7 @@ class App extends React.Component {
         <BrowserRouter>
           <div>
             <Switch>              
+              <Route path={"/resumeforgoogle"} component={Home} /> {/*legacy*/}
               <Route path={Links.DETAILS} component={Results}/>
               <Route path={Links.INDEX} component={Home} />
             </Switch>
