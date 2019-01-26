@@ -1,6 +1,6 @@
 class Links {
   public static INDEX: string = "/";  
-  public static DETAILS: string = "/resume";
+  public static CONTENT: string = "/:-)";
 }
 
 export default Links;

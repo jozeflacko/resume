@@ -54,11 +54,6 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
     };
   }
 
-  resumeType:string|null = null;
-  getTypeOfResume() {
-    return this.resumeType;
-  }
-
   calcDate(date1,date2): string {
     let diff = Math.floor(date1.getTime() - date2.getTime());
     let day = 1000 * 60 * 60 * 24;
@@ -74,6 +69,17 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
     return message + " years";
   }
 
+  navigateToCorrectSection = () => {
+    this.navigateToResult();    
+  }
+
+  
+
+  private setValueIntoAddressbar(name) {
+    name =  name ? "#" + name : "";
+    history.replaceState(null, "Jozef Lacko", location.pathname + name);
+  }
+
 
   preloadImages = new PreloadImages();
 
@@ -86,6 +92,14 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
     this.props.fetchSkills();
     this.props.fetchFreeTime();
     this.props.turnOffAnimation(); // we never want here animation
+    this.navigateToCorrectSection();
+
+    const navigateToCorrectSection = this.navigateToCorrectSection; 
+    window.onload = () => {
+      navigateToCorrectSection();
+    }
+    
+    
   }
 
   createLinks() {
@@ -118,39 +132,88 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
     this.props.setDetail(null);
   }
 
+  navigateToResult = (name?:string) => {
+    const { experience, education, intro, skills, freeTime} = this.props.information;
+
+    const takenFromHash = name === undefined;
+    if(takenFromHash) {
+      name = location.hash;
+    }
+
+
+    if(intro === undefined) {
+      return; // too soon
+    } else {  
+        let strippedName = name;
+        if(strippedName.indexOf('#') > -1) {
+          strippedName = strippedName.replace('#','');
+          strippedName = (strippedName.split(":_"))[0]; 
+        }
+
+        let detail: any = null;
+        switch(strippedName) {
+          case "introduction":
+            detail = intro;
+            break;
+          case "experience":
+            detail = experience;
+            break;
+          case "education":
+            detail = education;
+            break;
+          case "skills":
+            detail = skills;
+            break;
+          case "what'snew":
+            detail = freeTime;
+            break;
+          default:
+            detail = intro;
+            name = "introduction";
+            break;
+        }
+        console.log(detail)
+        this.props.setDetail(detail); 
+        this.setActiveDetail(); 
+        if(takenFromHash === false ) {
+          this.setValueIntoAddressbar(name);
+        }
+    }
+  }
+
   createMyLife() {
-    const { experience, education, intro, skills, freeTime /*, contact */} = this.props.information;
+    const { experience, education, intro, skills, freeTime} = this.props.information;
 
     return (
       <div>
         <Result
           result={intro}
           isActive={this.props.information.detail === this.props.information.intro}
-          onClick={() => {this.props.setDetail(intro);  this.setActiveDetail();}}
+          onClick={() => {this.navigateToResult("introduction"); }}
           onActiveClassName="blightblue"
         />
         <Result
           result={experience}
           isActive={this.props.information.detail === this.props.information.experience}
-          onClick={() => {this.props.setDetail(experience); this.setActiveDetail();}}
+          onClick={() => {this.navigateToResult("experience");}}
           onActiveClassName="blightred"
         />
         <Result
           result={education}
           isActive={this.props.information.detail === this.props.information.education}
-          onClick={() => {this.props.setDetail(education); this.setActiveDetail();}}
+          onClick={() => {this.navigateToResult("education");}}
           onActiveClassName="blightyellow"
         />
         <Result
           result={skills}
           isActive={this.props.information.detail === this.props.information.skills}
-          onClick={() => {this.props.setDetail(skills); this.setActiveDetail();}}
+          onClick={() => {this.navigateToResult("skills");}}
           onActiveClassName="blightblue"
         />
         <Result
           result={freeTime}
           isActive={this.props.information.detail === this.props.information.freeTime}
-          onClick={() => {this.props.setDetail(freeTime);  this.setActiveDetail();}}
+          onClick={() => {this.navigateToResult("what'snew");}}
           onActiveClassName="blightgreen"
         />
       </div>

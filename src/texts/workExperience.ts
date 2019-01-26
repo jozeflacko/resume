@@ -23,14 +23,7 @@ const Detail = {
         from: 'June 2015',
         to: 'December 2018',
         logos:['../assets/logos/workflow.png'],
-        description: `I was working as a developer on an enterprise web application,
-        focusing mostly on time management, travel management, and personnel
-        management. In the company I started as a full-time trainee and switched to regular contract after 10 months.
-        My main responsibilities were building and maintaining mainly JavaScript part of the application, 
-        implementing responsive skin and improving the user experience. I wrote reusable
-        components, modules and css. My work also included supporting trainees with development,
-        participating on recruiting new team members and making regular app releases. In a small agile team I was 
-        also highly involved into the Java development.`,
+        description: `I was working as a developer on an enterprise web application, focusing mostly on time management, travel management, and personnel management. In the company I started as a full-time trainee and switched to regular contract after 10 months. My main responsibilities were building and maintaining mainly JavaScript part of the application, implementing responsive skin and improving the user experience. I wrote reusable components, modules and css. My work also included supporting trainees with development, participating on recruiting new team members and making regular app releases. In a small agile team I was also highly involved into the Java development.`,
         www:'www.workflow.at',
 
         notes: `Technologies: JavaScript, Ajax, Jquery library,
@@ -44,16 +37,7 @@ const Detail = {
         from: 'September 2014',
         to: 'October 2014',
         logos:['../assets/logos/unitokyo.jpg'],
-        description: `With the help of IAESTE (International Association for
-        the Exchange of Students for Technical Experience), I was successfully
-        accepted for a 10 weeks internship at University of Tokyo, Japan.
-        I did a research aimed to effectiveness of parallel computation of
-        multiplication sparse matrices for which I was programming mainly in
-        Fortran programming language.
-
-        I would like to mention, that this internship was my first experience
-        abroad and a great opportunity to experience other cultures,
-        for which I am absolutely thankful.`,
+        description: `With the help of IAESTE (International Association for the Exchange of Students for Technical Experience), I was successfully accepted for a 10 weeks internship at University of Tokyo, Japan. I did a research aimed to effectiveness of parallel computation of multiplication sparse matrices for which I was programming mainly in Fortran programming language. I would like to mention, that this internship was my first experience abroad and a great opportunity to experience other cultures, for which I am absolutely thankful.`,
         www:"www.iaeste.com",
         notes: `Technologies: C, Fortran 77, Eclipse IDE`
       },
@@ -66,18 +50,7 @@ const Detail = {
         from2: 'April 2015',
         to2: 'May  2015',
         logos:['../assets/logos/tu.png','../assets/logos/uss.png'],
-        description: `During my university studies, I was working on 3rd party
-        projects at my Alma mater. Our client was one of the subsidiaries of
-        the United States Steel Corporation placed in Slovakia. In a team of
-        7 people, we implemented 2 ASP.Net Razor enterprise web applications
-        responsible for managing production of an iron ore.
-
-        We were fully responsible for communication with the client, including
-        to inform them of our work progress by engaging them in weekly meetings.
-        My main responsibility in this project was front-end development.
-
-        Both projects were successfully finished and given to the client on time.
-        `,
+        description: `During my university studies, I was working on 3rd party projects at my Alma mater. Our client was one of the subsidiaries of the United States Steel Corporation placed in Slovakia. In a team of 7 people, we implemented 2 ASP.Net Razor enterprise web applications responsible for managing production of an iron ore. We were fully responsible for communication with the client, including to inform them of our work progress by engaging them in weekly meetings. My main responsibility in this project was front-end development. Both projects were successfully finished and given to the client on time. `,
         www:'www.tuke.sk',
         notes: `Technologies: JavaScript, Ajax, Jquery library,
         HTML, CSS, C#, ASP.NET Razor markup language, Visual Studio IDE`
@@ -89,11 +62,7 @@ const Detail = {
         from: 'January 2014',
         to: 'March 2014',
         logos:['../assets/logos/icos.png'],
-        description: `As a tester, I was participating on a final development
-        stage of a national project about electronic documents for tax returns
-        lasting 3 months. My main responsibilities were to test web tax forms,
-        validate JavaScript calculations, XML documents and document all found
-        issues. I was collaborating with a team of 10 people.`,
+        description: `As a tester, I was participating on a final development stage of a national project about electronic documents for tax returns lasting 3 months. My main responsibilities were to test web tax forms, validate JavaScript calculations, XML documents and document all found issues. I was collaborating with a team of 10 people.`,
         www:'www.icos.sk',
         notes: `Technologies: JavaScript, XML`
       }

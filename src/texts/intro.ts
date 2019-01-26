@@ -5,7 +5,7 @@ export class Intro implements IResult {
 
   private title: string = "Jozef Lacko";
   private subtitle: string = "Brief introduction";
-  private description: string = "Full-Stack Developer strongly concentrated on buiding Web Applications using JavaScript, TypeScript and Java";
+  private description: string = "Full-Stack Developer strongly concentrated on building Web Applications using JavaScript, TypeScript and Java";
 
   public getTitle(): string {
     return this.title;

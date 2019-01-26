@@ -109,8 +109,12 @@
 }
 .detail > .content > .items > .item {
   margin-bottom: 50px;
-  padding-bottom:50px;
-  position:relative;
+  padding-bottom: 50px;
+  position: relative;
+  -webkit-transition: outline-color .5s;
+  -o-transition: outline-color .5s;
+  transition: outline-color .5s;
+  outline-color: transparent;
 }
 .detail > .content > .items > .item.funny {
   background: #fffdf7;
@@ -143,12 +147,22 @@
 .detail > .content > .items > .item.funny .to {
   display:none;
 }
+
 .detail > .content > .items > .item > .myHead {
   text-align: right;
   margin-bottom: 10px;
 }
 .detail > .content > .items > .item > .myHead > .name {
   font-size: larger;
+  transition: font-size .2s;
+}
+.detail > .content > .items > .item.currently-visible {
+  outline: 20px dashed #ffe5e5;
+  outline-offset: 15px;
+}
+.detail > .content > .items > .item.currently-visible > .myHead > .name {
+  font-size: xx-large !important;
+  color:red !important;
 }
 .detail > .content > .items > .item > .myHead > .subname {
   font-weight: bold;
@@ -172,6 +186,19 @@
 .detail > .content > .items > .item > .myBody {
 
 }
+.detail > .content > .items > .item > .myBody > .item-image {
+  border: 1px solid #eee;
+  width: 460px;
+  height: 320px;
+  border-radius: 0px;
+  overflow: hidden;
+  margin: 40px auto 0px auto;
+  -webkit-box-shadow: 3px 3px 3px #DDD;
+  box-shadow: 3px 3px 20px #aeaeae;
+ }
+ .detail > .content > .items > .item > .myBody > .item-image > img {
+   height:100%;
+ }
 .detail > .content > .items > .item > .myBody > .description {
   text-align: justify;
   /*text-indent: 50px;*/

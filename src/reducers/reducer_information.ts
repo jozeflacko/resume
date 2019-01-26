@@ -9,7 +9,7 @@ export default function (state = {}, action: ActionI) {
     case FETCH_LINKS:
       return {...state, links: action.payload };
     case FETCH_INTRO:
-      return {...state, intro: action.payload, detail: action.payload };
+      return {...state, intro: action.payload };
     case FETCH_EXPERIENCE:
       return {...state, experience: action.payload };
     case FETCH_EDUCATION:

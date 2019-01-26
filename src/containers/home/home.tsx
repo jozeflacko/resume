@@ -9,6 +9,7 @@ import { bindActionCreators } from 'redux';
 import { fetchSearchMessage, turnOffAnimation, set4ReduxTypeOfResume } from '../../actions';
 import RISearch from "../../reducers/interfaces/RISearch";
 import PreloadImages from '../../tools/preloadImages';
+import Links from '../../links/links';
 //import { WhatsNew } from '../../texts/whatsNew';
 
 interface Props extends React.Props<any> {
@@ -37,16 +38,12 @@ class Home extends React.Component<Props> {
    * to have smooth experience */
   preloadedImages = new PreloadImages();
 
-  resumeType:string|null = null;
-  getTypeOfResume() {
-    return this.resumeType;
-  }
   componentDidMount() {   
     this.props.fetchSearchMessage();
   }
 
-  getDetailsLink() {
-    return '/resume';
+  getContentLink() {
+    return Links.CONTENT + "#introduction";
   }
 
   processFooter()  {    
@@ -72,7 +69,7 @@ class Home extends React.Component<Props> {
           </a>
           <Link
             title="Click here to get to know me better!"
-            to={this.getDetailsLink()}
+            to={this.getContentLink()}
             className="button i-feel-lucky active blink"
           >
             Open Resume

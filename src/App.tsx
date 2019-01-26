@@ -19,7 +19,7 @@ class App extends React.Component {
           <div>
             <Switch>              
               <Route path={"/resumeforgoogle"} component={Home} /> {/*legacy*/}
-              <Route path={Links.DETAILS} component={Results}/>
+              <Route path={Links.CONTENT} component={Results}/>
               <Route path={Links.INDEX} component={Home} />
             </Switch>
           </div>
