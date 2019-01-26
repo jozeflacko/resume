@@ -140,8 +140,19 @@ export default class Detail extends React.Component<Props, {}> {
     if (from !== undefined && to !== undefined) {
       return (
         <div className="timerange">
-          <div className="from"       >{this.printValue(from)}        </div>
-          <div className="to"         >{this.printValue(to)}          </div>
+          <div className="from">{this.printValue(from)}</div>
+          <div className="to">{this.printValue(to)}</div>
+        </div>
+      )
+    } else {
+      return "";
+    }
+  }
+  generateDate(date: string) {
+    if (date !== undefined) {
+      return (
+        <div className="timerange">
+          <div className="date">{this.printValue(date)}</div>
         </div>
       )
     } else {
@@ -156,7 +167,7 @@ export default class Detail extends React.Component<Props, {}> {
     return (
       <div className="item-image">
         <img 
-          src={src ? src : "https://pbs.twimg.com/profile_images/900338165113815045/aA0Wx0uR_400x400.jpg"} 
+          src={src ? src : "./public/assets/default_src.jpg"} 
           alt={name} 
           title={name}
         />
@@ -170,7 +181,18 @@ export default class Detail extends React.Component<Props, {}> {
     }
     return (
       <a className="www" title={"Click to open " + www} href={"http://" + www}>
+        <FontAwesome name="info-circle" />
         {this.printValue(www)}
+      </a>
+    )
+  }
+  processGithub(github) {
+    if (github === undefined) {
+      return "";
+    }
+    return (
+      <a className="github button" title={"Click to open Github"} href={github}>
+        <FontAwesome name="github" />Open Github
       </a>
     )
   }
@@ -180,7 +202,7 @@ export default class Detail extends React.Component<Props, {}> {
 
   isThisCurrentSubSection(subsectionName) {
     const subsection = (location.hash).split(":_")[1];
-    return subsectionName === subsection;
+    return subsectionName === subsection && subsection !== undefined;
   }
 
   scrollToItem() {
@@ -263,29 +285,34 @@ export default class Detail extends React.Component<Props, {}> {
     let classNameAbstract = addClassName === undefined ? "item" : addClassName + " item";
 
     return items ? items.map((item: any, index: number) => {
-      const { name, subname, place, from, to, from2, to2, description, notes, logos, www, id, image } = item;
+      const { name, subname, place, from, to, from2, to2, description, notes, logos, www, id, image, github, date } = item;
 
       const className = this.isThisCurrentSubSection(id) ? classNameAbstract + " " + "currently-visible" : classNameAbstract;
 
       return (
         <div className={className} key={"key" + index}>
+          {this.generateDate(date)}
           {this.generateTimeRange(from, to)}
           {this.generateTimeRange(from2, to2)}
           <div className="myHead">
             <div className="name cblue viewport-mark" id={id ? id : ""}>{this.printValue(name)}        </div>
 
             <div className="subname"    >{this.printValue(subname)}     </div>
-            {this.processWWW(www)}
-            <div className="place"      >{this.printValue(place)}       </div>
+            <div className="place"      >{this.printValue(place)}       </div>           
           </div>
           <div className="logos">
             {this.processLogos(logos)}
           </div>
-          <div className="myBody">
+          <div className="myBody">            
             <div className="description">{this.printValue(description)} </div>
             {this.processSimpleList(item.list)}
             <div className="notes">{this.printValue(notes)}</div>
             {this.processImage(image, name)}
+     
+            <div className="url-buttons">              
+              {this.processWWW(www)}
+              {this.processGithub(github)}
+            </div>
           </div>
         </div>
       );

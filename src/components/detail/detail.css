@@ -133,6 +133,21 @@
   position:absolute;
   top:-17px;
 }
+.detail > .content > .items > .item > .timerange > .date{
+  position: relative;
+  -webkit-transform: rotate(-7deg);
+  -ms-transform: rotate(-7deg);
+  transform: rotate(-7deg);
+  font-size: 23px;
+  top: -6px;
+  left: -60px;
+  display: inline-block;
+  color: #373636;
+  background: #ffe5e5;
+  padding: 10px 15px;
+  -webkit-box-shadow: 3px 3px 10px #a4a4a4;
+  box-shadow: 3px 3px 10px #a4a4a4;
+}
 .detail > .content > .items > .item > .timerange > .from {
   display: inline-block;
 }
@@ -167,11 +182,30 @@
 .detail > .content > .items > .item > .myHead > .subname {
   font-weight: bold;
 }
-.detail > .content > .items > .item > .myHead > .www {
-  color:#4d88ed;
-  text-decoration:none;
+.detail > .content > .items > .item .url-buttons {
+  text-align: center;
+  margin-top: 50px;
 }
-.detail > .content > .items > .item > .myHead > .www:hover {
+.detail > .content > .items > .item .url-buttons > .www,
+.detail > .content > .items > .item .url-buttons > .github {
+  color: #4d88ed;
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid #DDD;
+  width: auto;
+  padding: 6px;
+  background: #fafafa;
+  color: #777;
+}
+.detail > .content > .items > .item .url-buttons > .www + .github {
+  margin-left:15px;
+}
+.detail > .content > .items > .item  .url-buttons > .www > .fa,
+.detail > .content > .items > .item  .url-buttons > .github > .fa {
+  margin-right:5px;
+}
+.detail > .content > .items > .item .url-buttons > .www:hover,
+.detail > .content > .items > .item .url-buttons > .github:hover {
   color:red;  
 }
 .detail > .content > .items > .item > .logos {
@@ -187,17 +221,21 @@
 
 }
 .detail > .content > .items > .item > .myBody > .item-image {
-  border: 1px solid #eee;
   width: 460px;
   height: 320px;
   border-radius: 0px;
   overflow: hidden;
   margin: 40px auto 0px auto;
   -webkit-box-shadow: 3px 3px 3px #DDD;
-  box-shadow: 3px 3px 20px #aeaeae;
+  box-shadow: 10px 10px 20px #a7a7a7;
  }
  .detail > .content > .items > .item > .myBody > .item-image > img {
-   height:100%;
+    min-height: 100%;
+    margin: auto;
+    transform: rotate(-3deg);
+    position: relative;
+    top: -20px;
+    left: -20px;
  }
 .detail > .content > .items > .item > .myBody > .description {
   text-align: justify;
