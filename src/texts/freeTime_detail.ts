@@ -3,7 +3,7 @@ const detail = {
   items: [
     {
       id:"synchronous-pause-in-javascript",
-      image:"../assets/default_src.jpg",
+      image:"../assets/images/sync-pause.jpg",
       name: "You are a tricky one, you synchronous pause in JavaScript",     
       date: 'January 2019',
       github:'https://github.com/opam/wait-till-condition',
@@ -17,7 +17,7 @@ const detail = {
       name: '3..2..1.Starting with Machine Learning!',
       github: 'https://github.com/opam/AI.perceptron_demo',      
       date: 'January 2019',
-      image:"../assets/default_src.jpg",
+      image:"../assets/images/perceptron.jpg",
       description: `
       So I have finally decided to take a look at Machine Learning. 
       My very first Neural Networks project works. 
@@ -30,7 +30,7 @@ const detail = {
       id:"let's-draw-with-css",
       name: "Let's draw with css!",
       github: 'https://github.com/opam/flower',
-      image:"../assets/default_src.jpg",
+      image:"../assets/images/css-image.jpg",
       date: 'May 2017',
       description: `I was at a #WeAreDeveloper conference and got a little motivated to draw my own css picture.
       Power of css is getting my amazed from day to day!`,
@@ -42,7 +42,7 @@ const detail = {
       name: 'I have made a timer for our Stand-Ups',
       github: 'https://github.com/opam/meeting-timer',
       date: 'October 2018', 
-      image:"../assets/default_src.jpg",
+      image:"../assets/images/meeting-timer.jpg",
       description: `After many many times struggling with very long Stand-Ups I have finally decided to make a little
       counter for us to measure who is from the group the biggest talker :).`,
       www:'timer.jozeflacko.com',
@@ -53,7 +53,7 @@ const detail = {
       name: 'Layout for an app done with Jquery',
       github: 'https://github.com/opam/app-layout',
       date: 'Jul 2017',
-      image:"../assets/default_src.jpg",
+      image:"../assets/images/layout-app.jpg",
       description: `Go and check out my demo layout. It has a user menu on the left side and a very
       nice system menu on the top. User menu is on mobile possible to open with a finger slide`,
       www:'www.rawgit.com/opam/BaseApp/master/index.html',
@@ -64,7 +64,7 @@ const detail = {
       name: 'HaHa! Snake game will be always the best',
       github: 'https://github.com/opam/snake-game',
       date: 'February 2017',
-      image:"../assets/default_src.jpg",
+      image:"../assets/images/snake.jpg",
       description: `To get better in JavaScript I decided to build a JavaScript game using prototypes. 
       I enjoyed so much building this game. I even added some extra features like a countdown to make it even more fun`,
       www:'cdn.rawgit.com/opam/JavascriptSnakeGame/2aec356c/snakegame.html',
@@ -75,7 +75,7 @@ const detail = {
       name: 'Demo how to synchronize rows between 3 columns when rows in all columns have different length',
       github: 'https://github.com/opam/synchronize-column-cells',
       date: 'September 2010',
-      image:"../assets/default_src.jpg",
+      image:"../assets/images/sync-columns.jpg",
       description: `This could be  when buidling complex mobile application with multiple viewpoints.
       Notice when you click into 1 column (into some row), matching  rows in other 2 columns will get aligned.`,
       www:'cdn.rawgit.com/opam/w5-demo-swipe-between-zoom-levels/69682065/src/index.html',
@@ -86,7 +86,7 @@ const detail = {
       name: 'Managing dependencies in multimodule project with Lerna',
       github: 'https://github.com/opam/lerna-demo',
       date: 'December 2018',
-      image:"../assets/default_src.jpg",
+      image:"../assets/images/lerna.jpg",
       description: `This is a demo project where I setup lerna plugin for managing dependencies in multimodule project. 
       Why I would need something like this? To get rid of duplications, to keep main dependecies on top level and to correctly 
       inject modules into another modules.`,
@@ -97,7 +97,7 @@ const detail = {
       name: 'How to test Typescript, Axios, Classes, Dependencies with Jest?',
       date: 'December 2018',
       github: "https://github.com/opam/jest-testing",
-      image:"../assets/default_src.jpg",
+      image:"../assets/images/jest.jpg",
       description: `So I did my homework and really sat down on something very important.
       Dealing with code is important, but when I do something a little bit more than just for fun, then 
       it should be also tested. And Jest library is for this perfect. In this project I wrote test for
