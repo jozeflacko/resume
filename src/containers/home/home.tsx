@@ -10,7 +10,6 @@ import { fetchSearchMessage, turnOffAnimation, set4ReduxTypeOfResume } from '../
 import RISearch from "../../reducers/interfaces/RISearch";
 import PreloadImages from '../../tools/preloadImages';
 import Links from '../../links/links';
-//import { WhatsNew } from '../../texts/whatsNew';
 
 interface Props extends React.Props<any> {
   fetchSearchMessage: any; // from redux
@@ -65,6 +64,7 @@ class Home extends React.Component<Props> {
             className="button"
             title="Click here to get to know me better!"
           >
+    
             Go to GitHub
           </a>
           <Link
@@ -72,38 +72,11 @@ class Home extends React.Component<Props> {
             to={this.getContentLink()}
             className="button i-feel-lucky active blink"
           >
+    
             Open Resume
           </Link>
         </div>
     );
-  }
-
-  renderWhatsNew = () => {
-    return "";
-    /*
-    const newthings = this.whatsNew.get();
-    
-    return (
-      <div className="whatsnew-container">
-        <div className="title">What´s new?</div>
-        <ul className="whatsnew">
-          
-          {
-            newthings.map((whats, index)=>{
-              return (
-                <li className="whatnew-item" key={whats.name} onClick={()=>{window.open(whats.github)}}>
-                  <div className="name">{whats.name}</div>
-                  <div className="description">{whats.description}</div>
-                  <div className="created">{whats.created}</div>
-                  <div className="page">{whats.page}</div>                
-                </li>
-              )
-            })
-          }        
-        </ul>
-      </div>
-    )
-    */
   }
 
   render() {
@@ -114,7 +87,6 @@ class Home extends React.Component<Props> {
               <Logo game={true}/>
               <SearchBar search={this.props.search} />
               {this.processButtons()}
-              {this.renderWhatsNew()}
               {this.processFooter()}             
             </div>
           </div>

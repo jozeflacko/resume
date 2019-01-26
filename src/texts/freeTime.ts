@@ -3,7 +3,7 @@ import detail from './freeTime_detail';
 
 export class FreeTime implements IResult {
 
-  private title: string = "#What´s new";
+  private title: string = "#What´s new?";
   private subtitle: string = "Here I share all my projects and links I find interesting";
   private description: string = ``;
 
