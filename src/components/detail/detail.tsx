@@ -9,6 +9,8 @@ import KidWithABaloon from './kidWithABaloon/kidWithABaloon';
 import CoolLine from '../coolLine/coolLine';
 import FlipPhotos from '../flipPhotos/flipPhotos';
 import Helper from '../../helper/helper';
+import * as ViewportObserver from '../../utils/ViewportObserver';
+import * as AddressBarUtils from '../../utils/AddressBarUtils';
 
 interface Props extends React.Props<any> {
   detail: any;
@@ -36,9 +38,37 @@ export default class Detail extends React.Component<Props, {}> {
     );
   }
 
-  componentDidMount() {
-    this.installViewportListener();
+  componentDidMount() {    
+    this.handleViewportListener();
   }
+  componentWillUnmount() {   
+    ViewportObserver.uninstallViewportListener();
+  }
+  componentDidUpdate() {
+    this.handleViewportListener();
+  }
+
+  handleViewportListener = () => {
+    if(this.props.detail && this.props.detail.shouldSetActiveViewportListener() === true) {
+      this.installViewportListener();
+      ViewportObserver.scrollToItemVisibleViewportItem();
+    } else if(this.props.detail) {
+      ViewportObserver.uninstallViewportListener();
+    }
+  }
+  installViewportListener = () => {
+    ViewportObserver.installViewportListener(
+      "viewport-mark", 
+      "item", 
+      (el:any) => {
+        if(el) {
+          AddressBarUtils.setSubsection(el.getAttribute("id"));  
+        }
+      }
+    );
+  }
+
+
 
   processFlipPhotos(flipPhotos: Array<string>, flipPhotosBackground: string, flipPhotosBottom: string) {
     return <FlipPhotos flipPhotos={flipPhotos} flipPhotosBackground={flipPhotosBackground} flipPhotosBottom={flipPhotosBottom} numberOfRows={2} />;
@@ -197,97 +227,31 @@ export default class Detail extends React.Component<Props, {}> {
     )
   }
 
-  oldName: string = "";
   urlPrefix: string = "";
-
-  isThisCurrentSubSection(subsectionName) {
-    const subsection = (location.hash).split(":_")[1];
-    return subsectionName === subsection && subsection !== undefined;
-  }
-
-  scrollToItem() {
-    let els:any = document.getElementsByClassName("currently-visible");
-    if(els && els[0]) {
-      let el = els[0];
-      let top = el.offsetTop;
-      while (el.offsetParent) {
-        el = el.offsetParent;
-        top += el.offsetTop;      
-      }
-
-      window.scroll({
-        top: top - 50,      
-        behavior: 'smooth'
-      });
-    }    
-  }
-
-  whatIsInViewport = () => {
-    let els: any = document.getElementsByClassName("viewport-mark");
-    let inViewport: any = null;
-
-    const CURRENT = "currently-visible";
-
-    if (els !== null || els !== undefined || els.length > 0) {
-
-      for (let i = 0; i < els.length; i++) {
-        var el = els[i];
-
-        var top = el.offsetTop;
-        var left = el.offsetLeft;
-        var width = el.offsetWidth;
-        var height = el.offsetHeight;
-
-        while (el.offsetParent) {
-          el = el.offsetParent;
-          top += el.offsetTop;
-          left += el.offsetLeft;
-        }
-
-        const result = (
-          top < (window.pageYOffset + window.innerHeight) &&
-          left < (window.pageXOffset + window.innerWidth) &&
-          (top + height) > window.pageYOffset &&
-          (left + width) > window.pageXOffset
-        );
-
-        if (result === true && inViewport === null) {
-          inViewport = els[i];
-        }
-      }
-
-      if (inViewport) {
-        const name = inViewport.getAttribute("id");
-        if (name !== this.oldName) {
-          this.oldName = name;
-          console.log(name);
-
-          const old = document.getElementsByClassName(CURRENT);
-          if (old && old[0]) {
-            old[0].classList.remove(CURRENT);
-          }
-          inViewport.closest(".item").classList.add(CURRENT);
-
-          history.replaceState(null, null, "#what'snew:_" + name);
-        }
-      } else {
-        /* nothing */
-      }
-    }
-  }
-
-  installViewportListener() {
-    const what = () => { this.whatIsInViewport() };
-    window.addEventListener("scroll", what);
-  }
 
   processItems(items: any, addClassName?: string) {
     let classNameAbstract = addClassName === undefined ? "item" : addClassName + " item";
 
     return items ? items.map((item: any, index: number) => {
-      const { name, subname, place, from, to, from2, to2, description, notes, logos, www, id, image, github, date } = item;
+      const { 
+        name, 
+        subname, 
+        place, 
+        from, 
+        to, 
+        from2, 
+        to2, 
+        description, 
+        notes, 
+        logos, 
+        www, 
+        id, 
+        image, 
+        github, 
+        date 
+      } = item;
 
-      const className = this.isThisCurrentSubSection(id) ? classNameAbstract + " " + "currently-visible" : classNameAbstract;
+      const className = AddressBarUtils.isThisCurrentSubSection(id) ? classNameAbstract+" "+ViewportObserver.getCurrentItemClass() : classNameAbstract;
 
       return (
         <div className={className} key={"key" + index}>
@@ -363,6 +327,8 @@ export default class Detail extends React.Component<Props, {}> {
     return (<Sentence image={sentence.image} startSentence={sentence.startSentence} endSentences={sentence.endSentences} />);
   }
 
+
+
   render() {
     if (!this.props.detail)
       return "";
@@ -385,7 +351,6 @@ export default class Detail extends React.Component<Props, {}> {
         </div>
         <CoolLine animated={false} />
         {this.processDetail()}
-        {this.scrollToItem()}
       </div>
     );
 

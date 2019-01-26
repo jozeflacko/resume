@@ -77,6 +77,10 @@ export class WorkExperience implements IResult {
   private subtitle: string = "What has been going on in the last years";
   private description: string = this.getWorkExperienceSentence();
   private detail: any;
+
+  public shouldSetActiveViewportListener() {
+    return false;
+  }
   
   constructor() {
     this.detail = Detail;

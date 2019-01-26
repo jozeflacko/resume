@@ -7,6 +7,10 @@ export class Skills implements IResult {
   private subtitle: string = "In love with JavaScript";
   private description: string = "Assertive, Teamplayer, Friendly";
 
+  public shouldSetActiveViewportListener() {
+    return false;
+  }
+
   public getTitle(): string {
     return this.title;
   }

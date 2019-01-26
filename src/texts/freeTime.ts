@@ -11,6 +11,10 @@ export class FreeTime implements IResult {
     return this.title;
   }
 
+  public shouldSetActiveViewportListener() {
+    return true;
+  }
+
   public getSubtitle(): string {
     return this.subtitle;
   }

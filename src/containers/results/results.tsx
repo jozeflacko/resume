@@ -23,6 +23,7 @@ import { ILink } from '../../texts/links';
 import RISearch from "../../reducers/interfaces/RISearch";
 import PreloadImages from '../../tools/preloadImages';
 import Contact from '../../components/contact/contact';
+import * as AddressBarUtils from '../../utils/AddressBarUtils';
 
 
 interface Props extends React.Props<any> {
@@ -76,8 +77,7 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
   
 
   private setValueIntoAddressbar(name) {
-    name =  name ? "#" + name : "";
-    history.replaceState(null, "Jozef Lacko", location.pathname + name);
+    AddressBarUtils.setSection(name);
   }
 
 
@@ -172,7 +172,7 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
             name = "introduction";
             break;
         }
-        console.log(detail)
+
         this.props.setDetail(detail); 
         this.setActiveDetail(); 
         if(takenFromHash === false ) {
