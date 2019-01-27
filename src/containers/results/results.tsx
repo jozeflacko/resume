@@ -245,7 +245,7 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
           <div className="clear"/>
         </div>
         <div className="footer">
-          <span>www.jozeflacko.com</span>
+          <span>This web is under long term development</span>
         </div>
       </div>
     );

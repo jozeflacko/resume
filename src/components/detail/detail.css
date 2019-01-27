@@ -59,7 +59,7 @@
   color: #4885ed;
 }
 .detail > .content {
-  padding:30px;
+  padding:30px 0px;
   background:white;
 }
 .detail > .content > .photo {
@@ -90,6 +90,7 @@
 .detail > .content > .description {
   text-align: justify;
   display:inline-block;
+  padding:0px 60px;
 }
 .detail > .content > .description:empty {
   display:none;
@@ -109,12 +110,14 @@
 }
 .detail > .content > .items > .item {
   margin-bottom: 50px;
-  padding-bottom: 50px;
+  padding: 20px 20px 20px 20px;
   position: relative;
   -webkit-transition: outline-color .5s;
   -o-transition: outline-color .5s;
   transition: outline-color .5s;
   outline-color: transparent;
+  border: 20px dashed transparent;
+  transition: all .5s;
 }
 .detail > .content > .items > .item.funny {
   background: #fffdf7;
@@ -123,8 +126,13 @@
   margin-left:-15px;
   margin-right:-15px;
 }
-.detail > .content > .items > .item:not(:last-child){
-  border-bottom:1px solid #EEE;
+.detail > .content > .items > .item:not(:last-child)::after{
+  content:"";
+  height:1px;
+  width:100%;
+  background:#DDD;
+  display:block;
+  
 }
 .detail > .content > .items > .item > .timerange {
   font-weight: bold;
@@ -134,13 +142,13 @@
   top:-17px;
 }
 .detail > .content > .items > .item > .timerange > .date{
-  position: relative;
+  position: absolute;
   -webkit-transform: rotate(-7deg);
   -ms-transform: rotate(-7deg);
   transform: rotate(-7deg);
   font-size: 23px;
   top: -6px;
-  left: -60px;
+  left: -48px;
   display: inline-block;
   color: #373636;
   background: #ffe5e5;
@@ -169,14 +177,12 @@
 }
 .detail > .content > .items > .item > .myHead > .name {
   font-size: larger;
-  transition: font-size .2s;
+  font-size: xx-large;
 }
 .detail > .content > .items > .item.currently-visible {
-  outline: 20px dashed #ffe5e5;
-  outline-offset: 15px;
+  border-color:#ffe5e5;
 }
-.detail > .content > .items > .item.currently-visible > .myHead > .name {
-  font-size: xx-large !important;
+.detail > .content > .items > .item.currently-visible > .myHead > .name {  
   color:red !important;
 }
 .detail > .content > .items > .item > .myHead > .subname {
@@ -184,7 +190,8 @@
 }
 .detail > .content > .items > .item .url-buttons {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 .detail > .content > .items > .item .url-buttons > .www,
 .detail > .content > .items > .item .url-buttons > .github {
@@ -209,9 +216,9 @@
   color:red;  
 }
 .detail > .content > .items > .item > .logos {
-  position:absolute;
-  left:0px;
-  top:30px;
+  position: absolute;
+  left: 15px;
+  top: 50px;
 }
 .detail > .content > .items > .item > .logos > img {
   height:50px;
@@ -278,6 +285,8 @@
   border-bottom: 1px solid #ececec;
   padding-bottom: 20px;
   margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .detail > .content > .bulletgroups:last-child {
   border-bottom: none;
@@ -299,7 +308,7 @@
 
 }
 .detail > .content > .bulletgroups > .groups > .group {
-  padding:20px;
+  padding:20px 30px;
   margin-bottom:20px;
 }
 .detail > .content > .bulletgroups > .groups > .group:last-child {

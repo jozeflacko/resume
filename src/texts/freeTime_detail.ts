@@ -4,7 +4,7 @@ const detail = {
     {
       id:"synchronous-pause-in-javascript",
       image:"../assets/images/sync-pause.jpg",
-      name: "You are a tricky one, you synchronous pause in JavaScript",     
+      name: "Synchronous pause in JavaScript",     
       date: 'January 2019',
       github:'https://github.com/opam/wait-till-condition',
       description: `Did you eved stumble on how to make sleep your javascript code?
@@ -14,7 +14,7 @@ const detail = {
     },
     {
       id:"starting-with-neural-networks",
-      name: '3..2..1.Starting with Machine Learning!',
+      name: 'Starting with Machine Learning!',
       github: 'https://github.com/opam/AI.perceptron_demo',      
       date: 'January 2019',
       image:"../assets/images/perceptron.jpg",
@@ -39,7 +39,7 @@ const detail = {
     },
     {
       id:"i-made-a-timer-for-our-standups",
-      name: 'I have made a timer for our Stand-Ups',
+      name: 'I have made a timer for Stand-Ups',
       github: 'https://github.com/opam/meeting-timer',
       date: 'October 2018', 
       image:"../assets/images/meeting-timer.jpg",
@@ -61,7 +61,7 @@ const detail = {
     },
     {
       id:"smake-game",
-      name: 'HaHa! Snake game will be always the best',
+      name: 'Snake game will be always the best',
       github: 'https://github.com/opam/snake-game',
       date: 'February 2017',
       image:"../assets/images/snake.jpg",
@@ -72,7 +72,7 @@ const detail = {
     },
     {
       id:"synchronize-column-cells",
-      name: 'Demo how to synchronize rows between 3 columns when rows in all columns have different length',
+      name: 'Synchronize rows in columns with different length',
       github: 'https://github.com/opam/synchronize-column-cells',
       date: 'September 2010',
       image:"../assets/images/sync-columns.jpg",
@@ -83,7 +83,7 @@ const detail = {
     },
     {
       id:"managing-dependencies-in-multimodule-project",
-      name: 'Managing dependencies in multimodule project with Lerna',
+      name: 'Handle dependencies in multimodule project',
       github: 'https://github.com/opam/lerna-demo',
       date: 'December 2018',
       image:"../assets/images/lerna.jpg",
@@ -94,7 +94,7 @@ const detail = {
     },
     {
       id:"jest-testing",
-      name: 'How to test Typescript, Axios, Classes, Dependencies with Jest?',
+      name: 'How to test Typescript with Jest?',
       date: 'December 2018',
       github: "https://github.com/opam/jest-testing",
       image:"../assets/images/jest.jpg",
