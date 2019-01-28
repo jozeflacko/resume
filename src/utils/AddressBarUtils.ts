@@ -20,7 +20,7 @@ export const getSectionWithoutSubsection = (withoutHash:boolean = false) => {
     if (section === "" || section === null || section === undefined) {
         return null;
     } else {
-        if(section.indexOf(sectionDivider) > -1) {
+        if(withoutHash === true && section.indexOf(sectionDivider) > -1) {
             section = section.replace(sectionDivider,'');
         }
         
