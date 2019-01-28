@@ -1,5 +1,5 @@
-const sectionDivider = "#";
-const subsectionDivider = ":_";
+export const sectionDivider = "#";
+export const subsectionDivider = ":_";
 
 export const setSubsection = (name) => {
     history.replaceState(null, null, "#what'snew:_" + name);
@@ -11,6 +11,15 @@ const getSubsection = () => {
         return null;
     } else {
         return subsection;
+    }
+}
+
+export const getSectionWithoutSubsection = () => {
+    const section = (location.hash).split(subsectionDivider)[0];
+    if (section === "" || section === null || section === undefined) {
+        return null;
+    } else {
+        return section;
     }
 }
 

@@ -1,0 +1,11 @@
+
+.share-component { 
+    cursor:pointer;
+}
+.share-component .fa {
+    margin-right:5px;
+}
+.share-component .link-holder {
+    position:fixed;
+    left:-200000px;
+}

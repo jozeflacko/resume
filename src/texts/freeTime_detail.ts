@@ -34,7 +34,7 @@ const detail = {
       date: 'May 2017',
       description: `I was at a #WeAreDeveloper conference and got a little motivated to draw my own css picture.
       Power of css is getting my amazed from day to day!`,
-      www:'www.rawgit.com/opam/CssPicture/master/index.html',
+      www:'css-flower.jozeflacko.com',
       notes: `html, css, flower`
     },
     {
@@ -56,7 +56,7 @@ const detail = {
       image:"../assets/images/layout-app.jpg",
       description: `Go and check out my demo layout. It has a user menu on the left side and a very
       nice system menu on the top. User menu is on mobile possible to open with a finger slide`,
-      www:'www.rawgit.com/opam/BaseApp/master/index.html',
+      www:'app-layout.jozeflacko.com',
       notes: `JavaScript, Jquery, Hammer library`
     },
     {
@@ -67,7 +67,7 @@ const detail = {
       image:"../assets/images/snake.jpg",
       description: `To get better in JavaScript I decided to build a JavaScript game using prototypes. 
       I enjoyed so much building this game. I even added some extra features like a countdown to make it even more fun`,
-      www:'cdn.rawgit.com/opam/JavascriptSnakeGame/2aec356c/snakegame.html',
+      www:'snake.jozeflacko.com',
       notes: `JavaScript, Css, JavaScript prototypes`
     },
     {
@@ -78,7 +78,7 @@ const detail = {
       image:"../assets/images/sync-columns.jpg",
       description: `This could be  when buidling complex mobile application with multiple viewpoints.
       Notice when you click into 1 column (into some row), matching  rows in other 2 columns will get aligned.`,
-      www:'cdn.rawgit.com/opam/w5-demo-swipe-between-zoom-levels/69682065/src/index.html',
+      www:'synchronize-column-cells.jozeflacko.com',
       notes: `Javascript, Mobile`
     },
     {

@@ -142,20 +142,9 @@
   top:-17px;
 }
 .detail > .content > .items > .item > .timerange > .date{
-  position: absolute;
-  -webkit-transform: rotate(-7deg);
-  -ms-transform: rotate(-7deg);
-  transform: rotate(-7deg);
-  font-size: 23px;
-  top: -6px;
-  left: -48px;
-  display: inline-block;
-  color: #373636;
-  background: #ffe5e5;
-  padding: 10px 15px;
-  -webkit-box-shadow: 3px 3px 10px #a4a4a4;
-  box-shadow: 3px 3px 10px #a4a4a4;
+
 }
+
 .detail > .content > .items > .item > .timerange > .from {
   display: inline-block;
 }
@@ -193,6 +182,7 @@
   margin-top: 40px;
   margin-bottom: 40px;
 }
+.detail > .content > .items > .item .url-buttons > .share-component,
 .detail > .content > .items > .item .url-buttons > .www,
 .detail > .content > .items > .item .url-buttons > .github {
   color: #4d88ed;
@@ -204,13 +194,28 @@
   background: #fafafa;
   color: #777;
 }
-.detail > .content > .items > .item .url-buttons > .www + .github {
-  margin-left:15px;
+.detail > .content > .items > .item .url-buttons > .share-component {
+  color:black;
+  background:white;
 }
+.detail > .content > .items > .item .url-buttons > .www {
+  color:black;
+  background:white;
+}
+.detail > .content > .items > .item .url-buttons > .github {
+  color:black;
+  background:white;
+}
+.detail > .content > .items > .item .url-buttons > .share-component + .www,
+.detail > .content > .items > .item .url-buttons > .www + .github {
+  margin-left:5px;
+}
+.detail > .content > .items > .item .url-buttons > .share-component > .fa,
 .detail > .content > .items > .item  .url-buttons > .www > .fa,
 .detail > .content > .items > .item  .url-buttons > .github > .fa {
   margin-right:5px;
 }
+.detail > .content > .items > .item .url-buttons > .share-component:hover,
 .detail > .content > .items > .item .url-buttons > .www:hover,
 .detail > .content > .items > .item .url-buttons > .github:hover {
   color:red;  
@@ -225,8 +230,9 @@
   padding-right:10px;
 }
 .detail > .content > .items > .item > .myBody {
-
+  position:relative;
 }
+
 .detail > .content > .items > .item > .myBody > .item-image {
   width: 460px;
   height: 320px;
@@ -248,6 +254,7 @@
   text-align: justify;
   /*text-indent: 50px;*/
 }
+
 .detail > .content > .items > .item > .myBody > ul.simple-list {
 
 }

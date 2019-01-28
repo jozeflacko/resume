@@ -27,8 +27,6 @@ export default class KidWithABaloon extends React.Component<{
       this.calculatePositionForAKid(this.baloon, this.kidPlaceholder);
     }
 
-    console.log('resize event');
-
     // on end of resize
     this.isResizing = true;
     clearTimeout(this.resizeTimer);
@@ -216,7 +214,6 @@ export default class KidWithABaloon extends React.Component<{
     }
     let current:number = parseInt(currentNumber,10);
     const r = isNaN(current) ? '0px' : (current - 10)+'px';
-    console.log(r);
     return r;
   }
 

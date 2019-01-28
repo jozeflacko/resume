@@ -3,6 +3,8 @@ let isInstalled: boolean = false;
 let classNameForWhichToSearch: string = null;
 let callbackOnMatch: (el: any) => void = null;
 let classNameOfPerentElementOnWhichToSetCurrentClass: string = null;
+let desktopScrollElement: any = null;
+let mobileScrollElement: any = null;
 let oldName: string = "";
 
 export const getCurrentItemClass = () => {
@@ -11,36 +13,36 @@ export const getCurrentItemClass = () => {
 
 export const whatIsInViewport = () => {
    
+    const scrollElement = isDesktop() ? desktopScrollElement : mobileScrollElement;
+
+    if(!scrollElement) {
+        return;
+    }
+
     if(classNameForWhichToSearch === null) {
         return;
     }
 
     let els: HTMLCollectionOf<any> = document.getElementsByClassName(classNameForWhichToSearch);
-    let inViewport: any = null;
-
-   
+    let inViewport: any = null;   
 
     if (els !== null || els !== undefined || els.length > 0) {
 
       for (let i = 0; i < els.length; i++) {
         var el = els[i];
 
-        var top = el.offsetTop;
-        var left = el.offsetLeft;
-        var width = el.offsetWidth;
+        var top = el.offsetTop;     
+  
         var height = el.offsetHeight;
 
         while (el.offsetParent) {
           el = el.offsetParent;
-          top += el.offsetTop;
-          left += el.offsetLeft;
+          top += el.offsetTop;         
         }
 
         const result = (
-          top < (window.pageYOffset + window.innerHeight) &&
-          left < (window.pageXOffset + window.innerWidth) &&
-          (top + height) > window.pageYOffset &&
-          (left + width) > window.pageXOffset
+          top < (scrollElement.pageYOffset + scrollElement.innerHeight) &&
+          (top + height) > scrollElement.pageYOffset
         );
 
         if (result === true && inViewport === null) {
@@ -65,10 +67,25 @@ export const whatIsInViewport = () => {
   function addCurrentClass(element, parentElementClassWhereToSetClassCurrent) {
     element.closest("."+parentElementClassWhereToSetClassCurrent).classList.add(getCurrentItemClass());
   }
+
   function removeCurrentClass() {
     const old = document.getElementsByClassName(getCurrentItemClass());
     if (old && old[0]) {
       old[0].classList.remove(getCurrentItemClass());
+    }
+  }
+
+  function isDesktop() {
+    return (getWidth() >=1024);
+    
+    function getWidth() {
+      return Math.max(
+        document.body.scrollWidth,
+        document.documentElement.scrollWidth,
+        document.body.offsetWidth,
+        document.documentElement.offsetWidth,
+        document.documentElement.clientWidth
+      );
     }
   }
 
@@ -78,15 +95,23 @@ export const whatIsInViewport = () => {
   export const installViewportListener = (
       _classNameForWhichToSearch: string, 
       _classNameOfPerentElementOnWhichToSetCurrentClass: string,
-      _callbackOnMatch: (el:any)=>void
+      _callbackOnMatch: (el:any)=>void,
+      _desktopScrollElement: any,
+      _mobileScrollElement: any
     ) => {   
     if(isInstalled === false) {
       classNameForWhichToSearch = _classNameForWhichToSearch;
       classNameOfPerentElementOnWhichToSetCurrentClass = _classNameOfPerentElementOnWhichToSetCurrentClass;
       callbackOnMatch = _callbackOnMatch;
-      window.addEventListener("scroll", whatIsInViewport);
+      desktopScrollElement = _desktopScrollElement;
+      mobileScrollElement = _mobileScrollElement;
+
+      if(desktopScrollElement)
+        desktopScrollElement.addEventListener("scroll", whatIsInViewport);      
+      if(mobileScrollElement)
+        mobileScrollElement.addEventListener("scroll", whatIsInViewport);
+     
       isInstalled = true;
-      console.log("installViewportListener");
     }
   }
 
@@ -94,12 +119,16 @@ export const whatIsInViewport = () => {
     if(isInstalled === true) {
       classNameForWhichToSearch = null;
       classNameOfPerentElementOnWhichToSetCurrentClass = null;
-      callbackOnMatch = null;
-      window.removeEventListener("scroll", this.whatIsInViewport);
+      callbackOnMatch = null;      
+
+      if(desktopScrollElement)
+        desktopScrollElement.removeEventListener("scroll", this.whatIsInViewport);
+      if(mobileScrollElement)
+        mobileScrollElement.removeEventListener("scroll", this.whatIsInViewport);       
+     
       oldName = "";
       isInstalled = false;
       removeCurrentClass();
-      console.log("uninstallViewportListener");
     }
   }
 
@@ -112,9 +141,17 @@ export const whatIsInViewport = () => {
         el = el.offsetParent;
         top += el.offsetTop;      
       }
-      window.scroll({
-        top: top - 50,      
-        behavior: 'smooth'
-      });
+      if(isDesktop()) {
+        if(desktopScrollElement)
+          desktopScrollElement.scroll({
+            top: top - 50,      
+          });
+      } else {
+        if(mobileScrollElement)
+          mobileScrollElement.scroll({
+            top: top - 50,      
+          });
+      }
+      
     }    
   }

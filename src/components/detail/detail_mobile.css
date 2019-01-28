@@ -34,6 +34,13 @@
   .detail > .content > .bottom-photo {
     display:none;
   }
+  .detail > .content > .items > .item {
+    border: 0px dashed transparent !important;
+    position:relative;
+  }
+  .detail > .content > .items > .item > .share-component {
+    left: -30px;
+  }
 
 }
 @media screen and (max-width: 500px) {
@@ -57,6 +64,7 @@
   }
   .detail > .content > .items {
     padding:0px;
+
   }
   .detail > .content > .items > .item {
     padding-bottom:30px;

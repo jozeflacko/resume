@@ -11,6 +11,7 @@ import FlipPhotos from '../flipPhotos/flipPhotos';
 import Helper from '../../helper/helper';
 import * as ViewportObserver from '../../utils/ViewportObserver';
 import * as AddressBarUtils from '../../utils/AddressBarUtils';
+import Share from '../share/share';
 
 interface Props extends React.Props<any> {
   detail: any;
@@ -64,7 +65,9 @@ export default class Detail extends React.Component<Props, {}> {
         if(el) {
           AddressBarUtils.setSubsection(el.getAttribute("id"));  
         }
-      }
+      },
+      window, // big screen
+      document.getElementsByClassName('detail')[0] // small screen
     );
   }
 
@@ -211,7 +214,7 @@ export default class Detail extends React.Component<Props, {}> {
     }
     return (
       <a className="www" title={"Click to open " + www} href={"http://" + www}>
-        <FontAwesome name="info-circle" />
+        <FontAwesome name="paper-plane-o" />
         {this.printValue(www)}
       </a>
     )
@@ -222,9 +225,16 @@ export default class Detail extends React.Component<Props, {}> {
     }
     return (
       <a className="github button" title={"Click to open Github"} href={github}>
-        <FontAwesome name="github" />Open Github
+        <FontAwesome name="github" />Github
       </a>
     )
+  }
+
+  getShareUrl(id) {    
+    if(!id) {
+      return null;
+    }
+    return location.origin + location.pathname + AddressBarUtils.getSectionWithoutSubsection() +":_"+id;
   }
 
   urlPrefix: string = "";
@@ -254,13 +264,15 @@ export default class Detail extends React.Component<Props, {}> {
       const className = AddressBarUtils.isThisCurrentSubSection(id) ? classNameAbstract+" "+ViewportObserver.getCurrentItemClass() : classNameAbstract;
 
       return (
-        <div className={className} key={"key" + index}>
+        <div className={className} key={"key" + index}>              
           {this.generateDate(date)}
           {this.generateTimeRange(from, to)}
           {this.generateTimeRange(from2, to2)}
+          
           <div className="myHead">
+            
             <div className="name cblue viewport-mark" id={id ? id : ""}>{this.printValue(name)}        </div>
-
+          
             <div className="subname"    >{this.printValue(subname)}     </div>
             <div className="place"      >{this.printValue(place)}       </div>           
           </div>
@@ -272,10 +284,10 @@ export default class Detail extends React.Component<Props, {}> {
             {this.processSimpleList(item.list)}
             <div className="notes">{this.printValue(notes)}</div>
             {this.processImage(image, name)}
-     
             <div className="url-buttons">              
+              <Share url={this.getShareUrl(id)} id={id}/>  
               {this.processWWW(www)}
-              {this.processGithub(github)}
+              {this.processGithub(github)}          
             </div>
           </div>
         </div>
