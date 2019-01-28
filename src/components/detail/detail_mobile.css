@@ -41,7 +41,9 @@
   .detail > .content > .items > .item > .share-component {
     left: -30px;
   }
-
+  .detail > .content > .items > .item > .logos {
+    display:none;
+  }
 }
 @media screen and (max-width: 500px) {
   .detail.active {

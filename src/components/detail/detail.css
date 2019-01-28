@@ -136,6 +136,10 @@
 }
 .detail > .content > .items > .item > .timerange {
   font-weight: bold;
+  font-size: 20px;
+  /* color: #4885ed; */
+  /* border-bottom: 1px solid #DDD; */
+  /* text-align: right; */
 }
 .detail > .content > .items > .item > .timerange + .timerange {
   position:absolute;
@@ -163,6 +167,7 @@
 .detail > .content > .items > .item > .myHead {
   text-align: right;
   margin-bottom: 10px;
+
 }
 .detail > .content > .items > .item > .myHead > .name {
   font-size: larger;
@@ -175,7 +180,7 @@
   color:red !important;
 }
 .detail > .content > .items > .item > .myHead > .subname {
-  font-weight: bold;
+  font-size: 20px;
 }
 .detail > .content > .items > .item .url-buttons {
   text-align: center;
@@ -223,7 +228,7 @@
 .detail > .content > .items > .item > .logos {
   position: absolute;
   left: 15px;
-  top: 90px;
+  top: 60px;
 }
 .detail > .content > .items > .item > .logos > img {
   height:50px;
