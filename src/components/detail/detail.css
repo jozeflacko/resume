@@ -206,8 +206,8 @@
   color:black;
   background:white;
 }
-.detail > .content > .items > .item .url-buttons > .share-component + .www,
-.detail > .content > .items > .item .url-buttons > .www + .github {
+.detail > .content > .items > .item .url-buttons > .share-component + *,
+.detail > .content > .items > .item .url-buttons > .www + * {
   margin-left:5px;
 }
 .detail > .content > .items > .item .url-buttons > .share-component > .fa,
@@ -223,7 +223,7 @@
 .detail > .content > .items > .item > .logos {
   position: absolute;
   left: 15px;
-  top: 50px;
+  top: 90px;
 }
 .detail > .content > .items > .item > .logos > img {
   height:50px;
@@ -234,8 +234,8 @@
 }
 
 .detail > .content > .items > .item > .myBody > .item-image {
-  width: 460px;
-  height: 320px;
+  max-width: 460px;
+  max-height: 320px;
   border-radius: 0px;
   overflow: hidden;
   margin: 40px auto 0px auto;

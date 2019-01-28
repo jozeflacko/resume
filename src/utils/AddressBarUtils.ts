@@ -2,7 +2,7 @@ export const sectionDivider = "#";
 export const subsectionDivider = ":_";
 
 export const setSubsection = (name) => {
-    history.replaceState(null, null, "#what'snew:_" + name);
+    history.replaceState(null, null, "#what'snew:_" + name); // todo FIX
 }
 
 const getSubsection = () => {
@@ -14,11 +14,16 @@ const getSubsection = () => {
     }
 }
 
-export const getSectionWithoutSubsection = () => {
-    const section = (location.hash).split(subsectionDivider)[0];
+
+export const getSectionWithoutSubsection = (withoutHash:boolean = false) => {
+    let section = (location.hash).split(subsectionDivider)[0];
     if (section === "" || section === null || section === undefined) {
         return null;
     } else {
+        if(section.indexOf(sectionDivider) > -1) {
+            section = section.replace(sectionDivider,'');
+        }
+        
         return section;
     }
 }
@@ -28,6 +33,12 @@ export const isThisCurrentSubSection = (name) => {
 }
 
 export const setSection = (name) => {
-    name =  name ? sectionDivider + name : sectionDivider;
-    history.replaceState(null, null, location.pathname + name);
+    if(typeof name === 'string') {        
+        name =  name ? sectionDivider + name : sectionDivider;
+        history.replaceState(null, null, location.pathname + name);
+    }
+}
+
+export const removeSubSectionAndKeesSection = () => {
+    setSection(getSectionWithoutSubsection(true));
 }

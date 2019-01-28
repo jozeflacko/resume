@@ -208,14 +208,14 @@ export default class Detail extends React.Component<Props, {}> {
     )
   }
 
-  processWWW(www) {
+  processWWW(www, text) {
     if (www === undefined) {
       return "";
     }
     return (
-      <a className="www" title={"Click to open " + www} href={"http://" + www}>
+      <a className="www" title={"Click to open " + www} href={"http://" + www} target="_blank">
         <FontAwesome name="paper-plane-o" />
-        {this.printValue(www)}
+        {this.printValue(text)}
       </a>
     )
   }
@@ -224,7 +224,7 @@ export default class Detail extends React.Component<Props, {}> {
       return "";
     }
     return (
-      <a className="github button" title={"Click to open Github"} href={github}>
+      <a className="github button" title={"Click to open Github"} href={github} target="_blank">
         <FontAwesome name="github" />Github
       </a>
     )
@@ -286,7 +286,7 @@ export default class Detail extends React.Component<Props, {}> {
             {this.processImage(image, name)}
             <div className="url-buttons">              
               <Share url={this.getShareUrl(id)} id={id}/>  
-              {this.processWWW(www)}
+              {this.processWWW(www, github ? "Try Out" : www)}
               {this.processGithub(github)}          
             </div>
           </div>

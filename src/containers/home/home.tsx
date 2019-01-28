@@ -73,7 +73,7 @@ class Home extends React.Component<Props> {
             className="button i-feel-lucky active blink"
           >
     
-            Open Resume
+            Let's explore this Web
           </Link>
         </div>
     );

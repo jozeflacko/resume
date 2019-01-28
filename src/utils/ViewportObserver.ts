@@ -6,6 +6,7 @@ let classNameOfPerentElementOnWhichToSetCurrentClass: string = null;
 let desktopScrollElement: any = null;
 let mobileScrollElement: any = null;
 let oldName: string = "";
+import * as AddressBarUtils from './AddressBarUtils';
 
 export const getCurrentItemClass = () => {
     return "currently-visible";
@@ -14,6 +15,10 @@ export const getCurrentItemClass = () => {
 export const whatIsInViewport = () => {
    
     const scrollElement = isDesktop() ? desktopScrollElement : mobileScrollElement;
+
+    if(isDesktop() === false) {
+      AddressBarUtils.removeSubSectionAndKeesSection(); // TODO MOVE OUT
+    }
 
     if(!scrollElement) {
         return;
