@@ -127,6 +127,13 @@ export const whatIsInViewport = () => {
     }
   }
 
+  function doScroll(onWhat, howMuch) { 
+      onWhat.scroll({top: howMuch});
+      onWhat.scrollTo(undefined,howMuch); // EDGE support
+  }
+  
+
+
   export const scrollToItemVisibleViewportItem = () => {
     let els:any = document.getElementsByClassName(getCurrentItemClass());
     if(els && els[0]) {
@@ -136,17 +143,6 @@ export const whatIsInViewport = () => {
         el = el.offsetParent;
         top += el.offsetTop;      
       }
-      if(isDesktop()) {
-        if(desktopScrollElement)
-          desktopScrollElement.scroll({
-            top: top - 50,      
-          });
-      } else {
-        if(mobileScrollElement)
-          mobileScrollElement.scroll({
-            top: top - 50,      
-          });
-      }
-      
+      doScroll(isDesktop() ? desktopScrollElement: mobileScrollElement, top - 50);
     }    
   }

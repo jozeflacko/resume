@@ -1,5 +1,5 @@
 export function isDesktop() {
-  return (getWidth() >=1024);
+  return (getWidth() > 980);
   
   function getWidth() {
     return Math.max(
