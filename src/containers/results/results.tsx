@@ -3,6 +3,7 @@ import './results.css';
 import './results_mobile.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import {isDesktop} from '../../utils/BrowserUtils';
 import {
   set4ReduxTypeOfResume,
   fetchLinks,
@@ -93,7 +94,7 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
     await this.props.fetchEducation();
     await this.props.fetchSkills();
     await this.props.fetchFreeTime();
-    
+
     this.navigateToCorrectSection();    
   }
 
@@ -216,7 +217,20 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
     );
   }
 
+  resolveBodyScrollWhenMobile = () => {
+    
+    
+    if(this.state.isActive && isDesktop() === false) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  }
+
   render() {
+    
+    {this.resolveBodyScrollWhenMobile()}
+    
     return (
       <div className="results">
         <div className="header">

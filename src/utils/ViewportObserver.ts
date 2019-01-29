@@ -1,3 +1,5 @@
+import {isDesktop} from './BrowserUtils';
+
 let isInstalled: boolean = false;
 
 let classNameForWhichToSearch: string = null;
@@ -80,19 +82,7 @@ export const whatIsInViewport = () => {
     }
   }
 
-  function isDesktop() {
-    return (getWidth() >=1024);
-    
-    function getWidth() {
-      return Math.max(
-        document.body.scrollWidth,
-        document.documentElement.scrollWidth,
-        document.body.offsetWidth,
-        document.documentElement.offsetWidth,
-        document.documentElement.clientWidth
-      );
-    }
-  }
+
 
   /**
    * To be able to use it all elements on which will be this class must have a unique ID! attribute
