@@ -6,7 +6,7 @@ import SearchBar from '../../components/searchBar/searchBar';
 import Logo from '../../components/logo/logo';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchSearchMessage, turnOffAnimation, set4ReduxTypeOfResume } from '../../actions';
+import { fetchSearchMessage, turnOffAnimation, set4ReduxTypeOfResume, setDetail } from '../../actions';
 import RISearch from "../../reducers/interfaces/RISearch";
 import PreloadImages from '../../tools/preloadImages';
 import Links from '../../links/links';
@@ -17,6 +17,7 @@ interface Props extends React.Props<any> {
   search: RISearch;   // from redux
   set4ReduxTypeOfResume: any; // from redux
   type: any;
+  setDetail: any;
 }
 
 export type HistoryContext = {
@@ -108,6 +109,7 @@ function mapDispatchToProps(dispatch: any) {
       fetchSearchMessage,
       turnOffAnimation,
       set4ReduxTypeOfResume,
+      setDetail,
   }, dispatch);
 }
 

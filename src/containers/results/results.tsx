@@ -83,23 +83,18 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
 
   preloadImages = new PreloadImages();
 
-  componentDidMount() {    
-    this.props.fetchLinks();
-    this.props.fetchIntro();
-    this.props.fetchWorkExperience();
-    this.props.fetchEducation();
-    this.props.fetchSearchMessage();
-    this.props.fetchSkills();
-    this.props.fetchFreeTime();
+  async componentDidMount() {    
+    this.props.fetchSearchMessage(); // for this we do not have to wait
     this.props.turnOffAnimation(); // we never want here animation
-    this.navigateToCorrectSection();
-
-    const navigateToCorrectSection = this.navigateToCorrectSection; 
-    window.onload = () => {
-      navigateToCorrectSection();
-    }
     
+    await this.props.fetchLinks();
+    await this.props.fetchIntro();
+    await this.props.fetchWorkExperience();
+    await this.props.fetchEducation();
+    await this.props.fetchSkills();
+    await this.props.fetchFreeTime();
     
+    this.navigateToCorrectSection();    
   }
 
   createLinks() {
@@ -142,7 +137,8 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
 
 
     if(intro === undefined) {
-      return; // too soon
+      // in this case we came here for the first time from home!
+      return;
     } else {  
         let strippedName = name;
         if(strippedName.indexOf('#') > -1) {
