@@ -3,9 +3,9 @@ import detail from './skills_detail';
 
 export class Skills implements IResult {
 
-  private title: string = "Skill and Proficiency";
-  private subtitle: string = "In love with JavaScript";
-  private description: string = "Assertive, Teamplayer, Friendly";
+  private title: string = "Skills and Proficiency";
+  private subtitle: string = "Loading...";
+  private description: string = `Listening is a master skill for personal and professional greatness. (Robin S. Sharma)`;
 
   public shouldSetActiveViewportListener() {
     return false;

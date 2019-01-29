@@ -7,7 +7,7 @@ const detail = {
       bullets: [
         {
           subtitle:'Hard skills',
-          description:`These are my hard software skills what I learnt or am still learning`,
+          description:`I believe that everything is learnable and possible, but it will never be awesome without one's spark.`,
           bullets:[
             {
               key:'JS',
@@ -53,14 +53,14 @@ const detail = {
         },
         {
           subtitle:'Soft skills',
-          description:`These are my soft skills that I was born with`,
+          description:`I consider myself as a very happy and active person`,
           bullets:[
-            { key:'sskil1', label:'', icon:'users', value:'Team player' },
-            { key:'sskil2', label:'', icon:'comments-o', value:'Communicative' },
-            { key:'sskil3', label:'', icon:'leanpub', value:'Self learning' },
-            { key:'sskil4', label:'', icon:'briefcase', value:'Responsible' },
-            { key:'sskil5', label:'', icon:'thumb-tack', value:'Honest' },
-            { key:'sskil6', label:'', icon:'heart', value:'Assertive', className:"alive cred"  }
+            { key:'sskil1', label:'', icon:'heart', value:'Assertive', className:"alive cred"  },
+            { key:'sskil2', label:'', icon:'thumb-tack', value:'Honest' },
+            { key:'sskil3', label:'', icon:'users', value:'Team player' },
+            { key:'sskil4', label:'', icon:'comments-o', value:'Communicative' },
+            { key:'sskil6', label:'', icon:'leanpub', value:'Self learning' },
+            { key:'sskil5', label:'', icon:'briefcase', value:'Responsible' },
           ]
         }
       ]
@@ -70,7 +70,7 @@ const detail = {
       title:'Languages',
       bullets: [
         {
-          description:`I know few languages`,
+          description:``,
           bullets:[
             { picture:'../assets/flags/Slovakia.png', label:'Slovak', value:'Native' },
             { picture:'../assets/flags/United-Kingdom.png', label:'English', value:'Advanced' },

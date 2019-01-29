@@ -3,9 +3,9 @@ import detail from './freeTime_detail';
 
 export class FreeTime implements IResult {
 
-  private title: string = "#What´s new?";
-  private subtitle: string = "Here I share all my projects and links I find interesting";
-  private description: string = ``;
+  private title: string = "What´s new?";
+  private subtitle: string = "Everything what is worth to share";
+  private description: string = `Projects, demos, links, articles and many other interesting ideas`;
 
   public getTitle(): string {
     return this.title;

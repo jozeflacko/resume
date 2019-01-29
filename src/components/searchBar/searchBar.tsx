@@ -45,8 +45,7 @@ export default class SearchBar extends React.Component<Props, {}> {
 
     return (
       <div className="search-bar">
-        <div className="buttons">
-          <FontAwesome name="microphone" className="search-mic"/>
+        <div className="buttons">        
           <FontAwesome name="search" className="search-magnifier"/>
         </div>
         <div

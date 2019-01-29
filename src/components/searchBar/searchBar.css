@@ -29,14 +29,6 @@
   background:white;
   padding:0 10px;
 }
-.search-bar > .buttons > .search-mic {
-  color: #BBB;
-  position:relative;
-  font-size: 17px;
-  cursor:default;
-  height:20px;
-  vertical-align:bottom;
-}
 .search-bar > .buttons > .search-magnifier {
   color:#4885ed;
   margin-left:20px;
@@ -44,7 +36,7 @@
   top:-2px;
   font-size: 20px;
   cursor:default;
-  display:none;
+  display:inline-block;
   height:20px;
   vertical-align:bottom;
 }

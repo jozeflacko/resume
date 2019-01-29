@@ -10,7 +10,7 @@ const Detail = {
         from: 'January 2019',
         to: 'Present',
         logos:['../assets/logos/osterreichische_lotterien.png'],
-        description: `Agile Developer. `,
+        description: `I started at Austrian Lotteries as Agile Developer. Currently, we are in process of shaping my responsibilities.`,
         www:'www.lotterien.at',
 
         notes: `Technologies: JavaScript, Typescript, React,

@@ -20,7 +20,7 @@ const introDetail = {
       responsive web apps and even I used to built gadgets with Arduino boards. When
       I look back in time, I see a pattern behind me. I prefer simple and
       clean solutions and the usefulness of the product is always my number
-      one priority. Currently I keep my head bussy with with Machine learning and Neural networks with JavaScript`,
+      one priority. Currently I keep my head busy with with Machine learning and Neural Networks`,
 
       `Among my personality traits, there is one, that I consider very special.
       It is a passion, or let me say some ability to ignite myself for a good

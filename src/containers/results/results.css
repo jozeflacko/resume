@@ -31,9 +31,6 @@ body.no-scroll {
 .results > .header > .right > .search-bar {
   margin:0px;
 }
-.results > .header > .right > .search-bar > .buttons > .search-magnifier {
-  display:inline-block;
-}
 .results > .header > .right > .links {
   white-space:nowrap;
 }

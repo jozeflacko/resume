@@ -2,12 +2,23 @@ const detail = {
   icon:'thumb-tack',
   items: [
     {
+      id:"let's-draw-with-css",
+      name: "Let's draw with css!",
+      github: 'https://github.com/opam/flower',
+      image:"../assets/images/css-image.jpg",
+      date: 'May 2017',
+      description: `I was at a #WeAreDeveloper conference and got a little motivated to draw my own css picture.
+      Power of css is getting my amazed from day to day!`,
+      www:'css-flower.jozeflacko.com',
+      notes: `html, css, flower`
+    },
+    {
       id:"synchronous-pause-in-javascript",
       image:"../assets/images/sync-pause.jpg",
       name: "Synchronous pause in JavaScript",     
       date: 'January 2019',
       github:'https://github.com/opam/wait-till-condition',
-      description: `Did you eved stumble on how to make sleep your javascript code?
+      description: `Did you ever stumble on how to make sleep your javascript code?
       There are many ways how to solve this issue and in this simple demo I wrote 2 that I find useful. So go and check it!`,
       www:'synchronous-pause.jozeflacko.com',
       notes: `Javascript, Pause, Sleep(Wait) Till Condition`
@@ -25,17 +36,6 @@ const detail = {
       `,
       www:'perceptron-demo.jozeflacko.com',
       notes: `React, Typescript, Javascript, Perceptrong, MachineLearning, Neutral Netrorks`
-    },
-    {
-      id:"let's-draw-with-css",
-      name: "Let's draw with css!",
-      github: 'https://github.com/opam/flower',
-      image:"../assets/images/css-image.jpg",
-      date: 'May 2017',
-      description: `I was at a #WeAreDeveloper conference and got a little motivated to draw my own css picture.
-      Power of css is getting my amazed from day to day!`,
-      www:'css-flower.jozeflacko.com',
-      notes: `html, css, flower`
     },
     {
       id:"i-made-a-timer-for-our-standups",
