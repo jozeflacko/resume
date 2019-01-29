@@ -4,6 +4,7 @@ import './results_mobile.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {isDesktop} from '../../utils/BrowserUtils';
+import Debounce from 'lodash.debounce';
 import {
   set4ReduxTypeOfResume,
   fetchLinks,
@@ -96,6 +97,12 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
     await this.props.fetchFreeTime();
 
     this.navigateToCorrectSection();    
+
+    window.addEventListener('resize', this.debouncedResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.debouncedResize);
   }
 
   createLinks() {
@@ -217,15 +224,17 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
     );
   }
 
-  resolveBodyScrollWhenMobile = () => {
-    
-    
+  resolveBodyScrollWhenMobile = () => {   
     if(this.state.isActive && isDesktop() === false) {
       document.body.classList.add("no-scroll");
     } else {
       document.body.classList.remove("no-scroll");
     }
   }
+
+  debouncedResize = Debounce(()=>{
+    this.resolveBodyScrollWhenMobile();
+  }, 300); 
 
   render() {
     
