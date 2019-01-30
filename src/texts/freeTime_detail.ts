@@ -2,16 +2,43 @@ const detail = {
   icon:'thumb-tack',
   items: [
     {
-      id:"let's-draw-with-css",
-      name: "Let's draw with css!",
-      github: 'https://github.com/opam/flower',
-      image:"../assets/images/css-image.jpg",
-      date: 'May 2017',
-      description: `I was at a #WeAreDeveloper conference and got a little motivated to draw my own css picture.
-      Power of css is getting my amazed from day to day!`,
-      www:'css-flower.jozeflacko.com',
-      notes: `html, css, flower`
+      id:"perceptron-demo",
+      name: 'Starting with Machine Learning!',
+      github: 'https://github.com/opam/AI.perceptron_demo',      
+      image:"../assets/images/perceptron.jpg",
+      description: `
+      So I have finally decided to take a look at Machine Learning. 
+      My very first Neural Networks project works.  
+      Check out this demo written in Typescript and see whether a point is above or below a random line.
+      This app is hosted at heroku cloud platform and it can take up to 10 seconds to wake up this page :)
+      `,
+      www:'perceptron-demo.jozeflacko.com',
+      notes: `TypeScript, JavaScript, Perceptron, Machine Learning, Neutral Netrorks`
     },
+    {
+      id:"flower-css",
+      name: "Flower made with Css",
+      github: 'https://github.com/opam/flower',
+      image:"../assets/images/css-image.jpg",      
+      description: `The possibilities of drawing in css do not stop me astonishing. 
+      That's why I decided to draw a small picture of a flower. This small animation is dedicated to my wife.
+      Inspiration to draw a picture in css came from the presentation of Eva Lettner at the WeAreDevelopers conference 2017
+      This app is hosted at heroku cloud platform and it can take up to 10 seconds to wake up this page :)`,
+      www:'flower-css.jozeflacko.com',
+      notes: `Html, Css, Flower`
+    },  
+    {
+      id:"snake-game",
+      name: 'Snake likes the prototypes',
+      github: 'https://github.com/opam/snake-game',
+      image:"../assets/images/snake.jpg",
+      description: `To get better in JavaScript I decided to build a game using prototypes. 
+      I enjoyed building this game so much. 
+      This app is hosted at heroku cloud platform and it can take up to 10 seconds to wake up this page :)`,
+      www:'snake.jozeflacko.com',
+      notes: `JavaScript, Css, JavaScript Prototypes`
+    },
+  /*
     {
       id:"synchronous-pause-in-javascript",
       image:"../assets/images/sync-pause.jpg",
@@ -22,20 +49,6 @@ const detail = {
       There are many ways how to solve this issue and in this simple demo I wrote 2 that I find useful. So go and check it!`,
       www:'synchronous-pause.jozeflacko.com',
       notes: `Javascript, Pause, Sleep(Wait) Till Condition`
-    },
-    {
-      id:"starting-with-neural-networks",
-      name: 'Starting with Machine Learning!',
-      github: 'https://github.com/opam/AI.perceptron_demo',      
-      date: 'January 2019',
-      image:"../assets/images/perceptron.jpg",
-      description: `
-      So I have finally decided to take a look at Machine Learning. 
-      My very first Neural Networks project works. 
-      Check out this demo written with react and typescript and see whether a point is above or below a random line.
-      `,
-      www:'perceptron-demo.jozeflacko.com',
-      notes: `React, Typescript, Javascript, Perceptrong, MachineLearning, Neutral Netrorks`
     },
     {
       id:"i-made-a-timer-for-our-standups",
@@ -58,17 +71,6 @@ const detail = {
       nice system menu on the top. User menu is on mobile possible to open with a finger slide`,
       www:'app-layout.jozeflacko.com',
       notes: `JavaScript, Jquery, Hammer library`
-    },
-    {
-      id:"smake-game",
-      name: 'Snake game will be always the best',
-      github: 'https://github.com/opam/snake-game',
-      date: 'February 2017',
-      image:"../assets/images/snake.jpg",
-      description: `To get better in JavaScript I decided to build a JavaScript game using prototypes. 
-      I enjoyed so much building this game. I even added some extra features like a countdown to make it even more fun`,
-      www:'snake.jozeflacko.com',
-      notes: `JavaScript, Css, JavaScript prototypes`
     },
     {
       id:"synchronize-column-cells",
@@ -103,7 +105,9 @@ const detail = {
       it should be also tested. And Jest library is for this perfect. In this project I wrote test for
       everything what I thougt I would need as a Typescript developer`,
       notes: `React, Typescript, Jest`
-    },    
+    },   
+    
+  */
   ],
   
 };

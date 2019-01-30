@@ -23,7 +23,7 @@ const Detail = {
         from: 'June 2015',
         to: 'December 2018',
         logos:['../assets/logos/workflow.png'],
-        description: `I was working as a developer on an enterprise web application, focusing mostly on time management, travel management, and personnel management. In the company I started as a full-time trainee and switched to regular contract after 10 months. My main responsibilities were building and maintaining mainly JavaScript part of the application, implementing responsive skin and improving the user experience. I wrote reusable components, modules and css. My work also included supporting trainees with development, participating on recruiting new team members and making regular app releases. In a small agile team I was also highly involved into the Java development.`,
+        description: `I was working as a developer on an enterprise web application, focusing mostly on time management, travel management, and personnel management. In the company, I started as a full-time trainee and switched to regular contract after 10 months. My main responsibilities were building and maintaining mainly JavaScript part of the application, implementing responsive skin and improving the user experience. I wrote reusable components, modules and css. My work also included supporting trainees with development, participating on recruiting new team members and making regular app releases. In a small agile team I was also highly involved into the Java development.`,
         www:'www.workflow.at',
 
         notes: `Technologies: JavaScript, Ajax, Jquery library,

@@ -4,7 +4,7 @@ export default class Search implements ISearch {
 
   constructor() {}
 
-  private searchMessage: string = "Hi, I am Jozef and welcome to my Web!";
+  private searchMessage: string = "Hi, I am Jozef. Welcome to my Web!";
 
   getMessage() {
     return this.searchMessage;
