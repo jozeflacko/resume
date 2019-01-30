@@ -16,6 +16,17 @@ const detail = {
       notes: `TypeScript, JavaScript, Perceptron, Machine Learning, Neutral Netrorks`
     },
     {
+      id:"snake-game",
+      name: 'Snake likes prototypes',
+      github: 'https://github.com/opam/snake-game',
+      image:"../assets/images/snake.jpg",
+      description: `To get better in JavaScript I decided to build a game using prototypes. 
+      I enjoyed building this game so much. 
+      This app is hosted at heroku cloud platform and it can take up to 10 seconds to wake up this page :)`,
+      www:'snake.jozeflacko.com',
+      notes: `JavaScript, Css, JavaScript Prototypes`
+    },
+    {
       id:"flower-css",
       name: "Flower made with Css",
       github: 'https://github.com/opam/flower',
@@ -27,17 +38,6 @@ const detail = {
       www:'flower-css.jozeflacko.com',
       notes: `Html, Css, Flower`
     },  
-    {
-      id:"snake-game",
-      name: 'Snake likes the prototypes',
-      github: 'https://github.com/opam/snake-game',
-      image:"../assets/images/snake.jpg",
-      description: `To get better in JavaScript I decided to build a game using prototypes. 
-      I enjoyed building this game so much. 
-      This app is hosted at heroku cloud platform and it can take up to 10 seconds to wake up this page :)`,
-      www:'snake.jozeflacko.com',
-      notes: `JavaScript, Css, JavaScript Prototypes`
-    },
   /*
     {
       id:"synchronous-pause-in-javascript",
