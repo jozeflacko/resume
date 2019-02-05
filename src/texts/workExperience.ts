@@ -12,7 +12,7 @@ const Detail = {
         logos:['../assets/logos/osterreichische_lotterien.png'],
         description: `I started at Austrian Lotteries as Agile Developer. Currently, we are in process of shaping my responsibilities.`,
         www:'www.lotterien.at',
-
+        
         notes: `Technologies: JavaScript, Typescript, React,
         Html, Css, Java, Maven, Spring framework, JUnit Test Framework, Mercurial`
       },
@@ -25,7 +25,14 @@ const Detail = {
         logos:['../assets/logos/workflow.png'],
         description: `I was working as a developer on an enterprise web application, focusing mostly on time management, travel management, and personnel management. In the company, I started as a full-time trainee and switched to regular contract after 10 months. My main responsibilities were building and maintaining mainly JavaScript part of the application, implementing responsive skin and improving the user experience. I wrote reusable components, modules and css. My work also included supporting trainees with development, participating on recruiting new team members and making regular app releases. In a small agile team I was also highly involved into the Java development.`,
         www:'www.workflow.at',
-
+        links: [
+          {
+            icon:"certificate",
+            text:'Certificate of employment',
+            www:`../assets/certificates/certificate_of_employment_workflow.pdf`,
+            color:'green'
+          }
+        ],
         notes: `Technologies: JavaScript, Ajax, Jquery library,
         Html, Css, Xslt, Java, Maven, Spring framework, JUnit Test Framework,
         Eclipse IDE, SVN, Vue, Git, TypeScript, Jira, Confluence`

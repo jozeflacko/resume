@@ -99,12 +99,10 @@ export const whatIsInViewport = () => {
       classNameOfPerentElementOnWhichToSetCurrentClass = _classNameOfPerentElementOnWhichToSetCurrentClass;
       callbackOnMatch = _callbackOnMatch;
       desktopScrollElement = _desktopScrollElement;
-      mobileScrollElement = _mobileScrollElement;
+      mobileScrollElement = _mobileScrollElement; // we will not listen to scroll. only scroll when we load some link
 
       if(desktopScrollElement)
         desktopScrollElement.addEventListener("scroll", whatIsInViewport);      
-      if(mobileScrollElement)
-        mobileScrollElement.addEventListener("scroll", whatIsInViewport);
      
       isInstalled = true;
     }
@@ -117,9 +115,7 @@ export const whatIsInViewport = () => {
       callbackOnMatch = null;      
 
       if(desktopScrollElement)
-        desktopScrollElement.removeEventListener("scroll", this.whatIsInViewport);
-      if(mobileScrollElement)
-        mobileScrollElement.removeEventListener("scroll", this.whatIsInViewport);       
+        desktopScrollElement.removeEventListener("scroll", this.whatIsInViewport);     
      
       oldName = "";
       isInstalled = false;

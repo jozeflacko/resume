@@ -208,16 +208,31 @@ export default class Detail extends React.Component<Props, {}> {
     )
   }
 
-  processWWW(www, text) {
+  processWWW(www, text, icon?:string, color?:string) {
     if (www === undefined) {
       return "";
     }
+
+    const link = www.indexOf('../assets') > -1 ? www : "http://" + www;
+    const style:any={};
+
+    if(color) {
+      style.color = color;
+    }
+
     return (
-      <a className="www" title={"Click to open " + www} href={"http://" + www} target="_blank">
-        <FontAwesome name="paper-plane-o" />
+      <a key={link} style={style} className="www" title={"Click to open " + text} href={link} target="_blank">
+        <FontAwesome name={icon === undefined ? "paper-plane-o" : icon} />
         {this.printValue(text)}
       </a>
     )
+  }
+  processLinks(links: {www: string, text: string, icon:string, color: string }[]) {
+    if(links) {
+      return links.map(link => {
+        return this.processWWW(link.www, link.text, link.icon, link.color);
+      });
+    }
   }
   processGithub(github) {
     if (github === undefined) {
@@ -255,6 +270,7 @@ export default class Detail extends React.Component<Props, {}> {
         notes, 
         logos, 
         www, 
+        links,
         id, 
         image, 
         github, 
@@ -287,6 +303,7 @@ export default class Detail extends React.Component<Props, {}> {
             <div className="url-buttons">              
               <Share url={this.getShareUrl(id)} id={id}/>  
               {this.processWWW(www, github ? "Try Out" : www)}
+              {this.processLinks(links)}
               {this.processGithub(github)}          
             </div>
           </div>

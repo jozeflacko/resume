@@ -25,7 +25,12 @@ export default class Share extends React.Component<Props, {}> {
 
     onClick = (id) => {        
         this.copyToClipboard(id, (el)=>{
-            swal("Great!", "You just sucessfully copied link into your clipBoard!", "success");
+            swal({
+                title: "Great!",
+                text: "You just sucessfully copied link into your clipBoard!",
+                timer: 2000,
+                icon:"success"
+            });
         });   
     }
 
