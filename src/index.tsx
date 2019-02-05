@@ -4,9 +4,16 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import './funny.css';
+import {get} from './utils/HttpClient';
 
 ReactDOM.render(
   <App />,
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();
+
+// ping heroku links
+get('http://perceptron-demo.jozeflacko.com/');
+get('http://snake.jozeflacko.com/');
+get('http://flower-css.jozeflacko.com/');
+get('http://hangman.jozeflacko.com/');
