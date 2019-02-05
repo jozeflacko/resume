@@ -2,6 +2,26 @@ const detail = {
   icon:'thumb-tack',
   items: [
     {
+      date:'February 2nd, 2019',
+      id:"workflow-certificate",
+      name: 'Hard work does not go unnoticed',   
+      description: `
+          I recently changed my job and I just received a certificate from a previous employement. 
+          After reading it, I was pleasantly surprised. 
+          I always gave my heart to everything I did, and this letter confirms that my effort has been 
+          seen and the hard work is really paying off. 
+          It was the perfect experience in a Workflow company.
+          I'd like to share this letter with you!
+      `,
+      links:[
+        {
+          text:"Certificate of employment",
+          www:`../assets/certificates/certificate_of_employment_workflow.pdf`,
+          icon:'certificate'
+        }
+      ]
+    },
+    {
       id:"perceptron-demo",
       name: 'Starting with Machine Learning!',
       github: 'https://github.com/opam/AI.perceptron_demo',      

@@ -30,7 +30,7 @@ const Detail = {
             icon:"certificate",
             text:'Certificate of employment',
             www:`../assets/certificates/certificate_of_employment_workflow.pdf`,
-            color:'green'
+            color:'#4885ed'
           }
         ],
         notes: `Technologies: JavaScript, Ajax, Jquery library,

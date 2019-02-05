@@ -174,7 +174,7 @@
   font-size: xx-large;
 }
 .detail > .content > .items > .item.currently-visible {
-  border-color:#ffe5e5;
+  border-color:#f8f8f8;
 }
 .detail > .content > .items > .item.currently-visible > .myHead > .name {  
   color:red !important;

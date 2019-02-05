@@ -73,7 +73,7 @@ export default class FlipPhotos extends React.Component<{
     this.flipInterval = setInterval(() => {
       // loop flip
       this.flipRandomImage();
-    }, miliseconfsTimeout.toFixed());
+    }, Number(miliseconfsTimeout.toFixed()));
   }
 
   flipRandomImage(flipAll = false) {
