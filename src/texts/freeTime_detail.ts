@@ -2,7 +2,7 @@ const detail = {
   icon:'thumb-tack',
   items: [
     {
-      date:'February 2nd, 2019',
+      date:'February 6th, 2019',
       id:"workflow-certificate",
       name: 'Hard work does not go unnoticed',   
       description: `
@@ -10,9 +10,10 @@ const detail = {
           After reading it, I was pleasantly surprised. 
           I always gave my heart to everything I did, and this letter confirms that my effort has been 
           seen and the hard work is really paying off. 
-          It was the perfect experience in a Workflow company.
           I'd like to share this letter with you!
       `,
+      notes: `Click the lower button "Certificate of employment" to open the certificate`,
+      image:'../assets/images/workflow.jpg',
       links:[
         {
           text:"Certificate of employment",
