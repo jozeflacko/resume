@@ -56,6 +56,9 @@
   .detail.active {
 
   }
+  .detail > .general > .subtitle {
+    display:none;
+  }
   .detail.active .back-button {
     right:-5px;
     top:-5px;
@@ -83,6 +86,9 @@
     padding-bottom:30px;
     margin-bottom:30px;
   }
+  .detail > .content > .items > .item > .myHead > .name {
+    font-size:20px;
+  }
   .detail > .content > .items > .item > .logos {
     position:initial;
     margin-bottom:10px;
@@ -94,9 +100,14 @@
   .detail > .content > .items > .item > .logos:empty {
     display:none;
   }
+  .detail > .content > .items > .item > .myHead > .subname {
+    font-size:16px;
+  }
+  
   .detail > .content > .items > .item > .timerange {
     text-align:right;
     font-weight:normal;
+    font-size:16px;
   }
   .detail > .content > .items > .item > .timerange + .timerange {
     right:0px;
@@ -116,6 +127,7 @@
   .detail > .content > .bulletgroups > .groups > .group > .description {
     text-align:center;
     margin-bottom:0px;
+    display:none;
   }
   .detail > .content > .bulletgroups > .groups > .group > .bullets {
     margin-top:0px;
