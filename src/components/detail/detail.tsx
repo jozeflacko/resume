@@ -213,7 +213,7 @@ export default class Detail extends React.Component<Props, {}> {
       return "";
     }
 
-    const link = www.indexOf('../assets') > -1 ? www : "http://" + www;
+    const link = www.indexOf('../assets') > -1 ? www : (www.indexOf("http") < 0 ? "http://" + www : www);
     const style:any={};
 
     if(color) {

@@ -14,6 +14,6 @@ registerServiceWorker();
 
 // ping heroku links
 get('http://perceptron-demo.jozeflacko.com/');
-get('http://snake.jozeflacko.com/');
+get('https://snake-game-javascript.herokuapp.com/');
 get('http://flower-css.jozeflacko.com/');
 get('http://hangman.jozeflacko.com/');

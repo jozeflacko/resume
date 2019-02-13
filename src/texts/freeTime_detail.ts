@@ -44,7 +44,7 @@ const detail = {
       description: `To get better in JavaScript I decided to build a game using prototypes. 
       I enjoyed building this game so much. 
       This app is hosted at heroku cloud platform and it can take up to 10 seconds to wake up this page :)`,
-      www:'snake.jozeflacko.com',
+      www:'https://snake-game-javascript.herokuapp.com/',
       notes: `JavaScript, Css, JavaScript Prototypes`
     },
     {
