@@ -34,7 +34,7 @@ const detail = {
       This app is hosted at heroku cloud platform and it can take up to 10 seconds to wake up this page :)
       `,
       www:'perceptron-demo.jozeflacko.com',
-      notes: `TypeScript, JavaScript, Perceptron, Machine Learning, Neural Netrorks`
+      notes: `TypeScript, JavaScript, Perceptron, Machine Learning, Neural Networks`
     },
     {
       id:"snake-game",
