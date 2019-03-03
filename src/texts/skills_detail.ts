@@ -74,10 +74,9 @@ const detail = {
           bullets:[
             { picture:'../assets/flags/Slovakia.png', label:'Slovak', value:'Native' },
             { picture:'../assets/flags/United-Kingdom.png', label:'English', value:'Advanced' },
-            { picture:'../assets/flags/Czech.png', label:'Czech', value:'Advanced' },
             { picture:'../assets/flags/Germany.png', label:'German', value:'Intermediate' },
-            { picture:'../assets/flags/Hungary.png', label:'Hungarian', value:'Intermediate' },
-            { picture:'../assets/flags/Russia.png', label:'Russian', value:'Beginner' }
+            { picture:'../assets/flags/Russia.png', label:'Russian', value:'Intermediate' },
+            { picture:'../assets/flags/Hungary.png', label:'Hungarian', value:'Beginner' },
           ]
         }
       ]
