@@ -20,7 +20,7 @@ export const Links: Array<ILink> = [
   },
   {
     name:'Docs to Print',
-    url:'https://docs.google.com/document/d/1ziyzLe4hYWHTWB0FO-tyUCO03MHA_l2HxIR3RPoARcM/edit?usp=sharing',
+    url:'https://drive.google.com/open?id=14LYgHpDHqbICLIP2PR2bUVdlP2QYOa_xBrMAM9U05ec',
     title:'Preview my Google Docs Resume'
   },
   /*{
