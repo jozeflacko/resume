@@ -35,13 +35,19 @@ const Detail = {
         innovative technology and solution quality in the categories of functional scope,
         usability and intuitive handling. In the links below you can find my certificate of emloyment.
         `,
-        www:'www.workflow.at',
+        /*www:'www.workflow.at',*/
         links: [
           {
             icon:"certificate",
             text:'Certificate of employment',
             www:`../assets/certificates/certificate_of_employment_workflow.pdf`,
             color:'#4885ed'
+          },
+          {
+            icon:"trophy",
+            text:'Technology Excellence Award',
+            www:`https://www.workflow.at/en/technology-excellence-award-in-the-time-and-attendance-category/`,
+            color:''
           }
         ],
         notes: `Technologies: JavaScript, Ajax, Jquery library,

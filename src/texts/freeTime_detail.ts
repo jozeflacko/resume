@@ -6,7 +6,8 @@ const detail = {
       name: 'Play snake with no hands!',
       github: 'https://github.com/opam/snake-game',
       image:"../assets/images/snake.jpg",
-      description: `I took my old javascript game snake and I rebuit it to move with the snake just by tracking face. How cool is that? :)`,
+      description: `I took my old javascript "Snake" game and I have rebuit it, that I can move the snake just by tracking face. 
+      It is still in development but how cool is that? :)`,
       www:'https://snake-game-javascript.herokuapp.com/',
       notes: `JavaScript`
     },
@@ -60,7 +61,7 @@ const detail = {
     {
       id:"under-construction",
       name: "",    
-      description: 'More articles from my older projects will come soon :)',
+      description: 'More articles from my older projects will come soon... :)',
     },  
   /*
     {
