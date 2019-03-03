@@ -2,6 +2,15 @@ const detail = {
   icon:'thumb-tack',
   items: [
     {
+      id:"snake-game",
+      name: 'Play snake with no hands!',
+      github: 'https://github.com/opam/snake-game',
+      image:"../assets/images/snake.jpg",
+      description: `I took my old javascript game snake and I rebuit it to move with the snake just by tracking face. How cool is that? :)`,
+      www:'https://snake-game-javascript.herokuapp.com/',
+      notes: `JavaScript`
+    },
+    {
       date:'February 6th, 2019',
       id:"workflow-certificate",
       name: 'Hard work does not go unnoticed',   
@@ -37,17 +46,6 @@ const detail = {
       notes: `TypeScript, JavaScript, Perceptron, Machine Learning, Neural Networks`
     },
     {
-      id:"snake-game",
-      name: 'Snake likes prototypes',
-      github: 'https://github.com/opam/snake-game',
-      image:"../assets/images/snake.jpg",
-      description: `To get better in JavaScript I decided to build a game using prototypes. 
-      I enjoyed building this game so much. 
-      This app is hosted at heroku cloud platform and it can take up to 10 seconds to wake up this page :)`,
-      www:'https://snake-game-javascript.herokuapp.com/',
-      notes: `JavaScript, Css, JavaScript Prototypes`
-    },
-    {
       id:"flower-css",
       name: "Flower made with Css",
       github: 'https://github.com/opam/flower',
@@ -58,6 +56,11 @@ const detail = {
       This app is hosted at heroku cloud platform and it can take up to 10 seconds to wake up this page :)`,
       www:'flower-css.jozeflacko.com',
       notes: `Html, Css, Flower`
+    },  
+    {
+      id:"under-construction",
+      name: "",    
+      description: 'More articles from my older projects will come soon :)',
     },  
   /*
     {

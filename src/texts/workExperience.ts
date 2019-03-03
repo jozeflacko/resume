@@ -10,11 +10,12 @@ const Detail = {
         from: 'January 2019',
         to: 'Present',
         logos:['../assets/logos/osterreichische_lotterien.png'],
-        description: `I started at Austrian Lotteries as Agile Developer. Currently, we are in process of shaping my responsibilities.`,
+        description: `I started at Austrian Lotteries as a agile TypeScript and React Developer.
+        Currently, we are in process of shaping my responsibilities.`,
         www:'www.lotterien.at',
         
-        notes: `Technologies: JavaScript, Typescript, React,
-        Html, Css, Java, Maven, Spring framework, JUnit Test Framework, Mercurial`
+        notes: `Technologies: JavaScript, TypeScript, React, Jest
+        Html, Css, Java, Maven, Spring, JUnit, Mercurial`
       },
       {
         name: 'Web Software Engineer',
@@ -23,7 +24,17 @@ const Detail = {
         from: 'June 2015',
         to: 'December 2018',
         logos:['../assets/logos/workflow.png'],
-        description: `I was working as a developer on an enterprise web application, focusing mostly on time management, travel management, and personnel management. In the company, I started as a full-time trainee and switched to regular contract after 10 months. My main responsibilities were building and maintaining mainly JavaScript part of the application, implementing responsive skin and improving the user experience. I wrote reusable components, modules and css. My work also included supporting trainees with development, participating on recruiting new team members and making regular app releases. In a small agile team I was also highly involved into the Java development.`,
+        description: `I was a major Frontend developer on an enterprise web application, focusing
+        mostly on time, travel and personnel management. I worked with technologies
+        including JavaScript, Css, Html, Xslt, Xml, Java, Spring, Maven, BPMN
+        Workflows. My main responsibilities were the development of the responsive
+        skin of our progressive web app and significantly improving the user experience.
+        Product contained 350+ Uls which needed a lot of analytical and design skills. In
+        the company I started as a full-time trainee and switched to regular contract
+        after 10 months. The Company won “Technology Excellence Award 2019” for
+        innovative technology and solution quality in the categories of functional scope,
+        usability and intuitive handling. In the links below you can find my certificate of emloyement.
+        `,
         www:'www.workflow.at',
         links: [
           {
@@ -44,7 +55,10 @@ const Detail = {
         from: 'September 2014',
         to: 'October 2014',
         logos:['../assets/logos/unitokyo.jpg'],
-        description: `With the help of IAESTE (International Association for the Exchange of Students for Technical Experience), I was successfully accepted for a 10 weeks internship at University of Tokyo, Japan. I did a research aimed to effectiveness of parallel computation of multiplication sparse matrices for which I was programming mainly in Fortran programming language. I would like to mention, that this internship was my first experience abroad and a great opportunity to experience other cultures, for which I am absolutely thankful.`,
+        description: `With the help of IAESTE (International Association for the Exchange of Students for Technical Experience), 
+        I was accepted for a 10 weeks internship at University of Tokyo in Japan. Internship was aimed to effectiveness of parallel 
+        computation with Fortran programming language. It was my first experience abroad and a great opportunity to experience 
+        other cultures, for which I am absolutely thankful.`,
         www:"www.iaeste.com",
         notes: `Technologies: C, Fortran 77, Eclipse IDE`
       },
@@ -57,10 +71,13 @@ const Detail = {
         from2: 'April 2015',
         to2: 'May  2015',
         logos:['../assets/logos/tu.png','../assets/logos/uss.png'],
-        description: `During my university studies, I was working on 3rd party projects at my Alma mater. Our client was one of the subsidiaries of the United States Steel Corporation placed in Slovakia. In a team of 7 people, we implemented 2 ASP.Net Razor enterprise web applications responsible for managing production of an iron ore. We were fully responsible for communication with the client, including to inform them of our work progress by engaging them in weekly meetings. My main responsibility in this project was front-end development. Both projects were successfully finished and given to the client on time. `,
+        description: `I have been selected from among more than 200 students to work on the
+        university projects. Our client was one of the subsidiaries of the United States
+        Steel Corporation placed in Slovakia. In a team of 7 people, we implemented C#
+        ASP.Net Razor enterprise web applications responsible for managing
+        production of an iron ore. My main responsibility was Frontend development.`,
         www:'www.tuke.sk',
-        notes: `Technologies: JavaScript, Ajax, Jquery library,
-        HTML, CSS, C#, ASP.NET Razor markup language, Visual Studio IDE`
+        notes: `Technologies: JavaScript, Jquery, HTML, CSS, C#, ASP.NET Razor markup language, Visual Studio IDE`
       },
       {
         name: 'Web Software Tester',

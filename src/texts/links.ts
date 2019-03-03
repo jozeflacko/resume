@@ -19,26 +19,8 @@ export const Links: Array<ILink> = [
 
   },
   {
-    name:'Docs to Print',
-    url:'https://drive.google.com/open?id=14LYgHpDHqbICLIP2PR2bUVdlP2QYOa_xBrMAM9U05ec',
-    title:'Preview my Google Docs Resume'
+    name:'Download Resume',
+    url:'../assets/pdf/Resume_Jozef_Lacko_2019.pdf',
+    title:'Download Resume as PDF'
   },
-  /*{
-    name:'GitHub',
-    url:'https://github.com/opam',
-    title:'Go and open my GitHub',
-    priority: 'low',
-  },
-  {
-    name:'Twitter',
-    url:'https://twitter.com/jlacko27',
-    title:'Whats new on Twitter?',
-    priority: 'low',
-  },
-  {
-    name:'LinkedIn',
-    url:'https://www.linkedin.com/in/jozeflacko/',
-    title:'Go and check my LinkedIn',
-    priority: 'low',
-  }*/
 ];
