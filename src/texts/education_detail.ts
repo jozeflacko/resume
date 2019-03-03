@@ -18,12 +18,12 @@ const detail = {
     */
     items: [
       {
-        name: 'Master of Business Informatics',
+        name: 'Master of Engineering in Business Informatics',
         subname: 'Technical University of Kosice',
         place: 'Slovakia',
         from: 'September 2013',
         to: 'May 2015',
-        logos:['../assets/logos/tu.png'],
+        /*logos:['../assets/logos/tu.png'],*/
         description: `My engineer degree study programme was focused on the acquirement of theoretical and 
         practical knowledge in the field of design and development business enterprise systems and 
         on database systems analysis. My overall classification of the qualification was 89.9%`,
@@ -41,12 +41,12 @@ const detail = {
         ],
       },
       {
-        name: 'Bachelor of Business Informatics',
+        name: 'Bachelor of Engineering in Business Informatics',
         subname: 'Technical University of Kosice',
         place: 'Slovakia',
         from: 'September 2010',
         to: 'June 2013',
-        logos:['../assets/logos/tu.png'],
+        /*logos:['../assets/logos/tu.png'],*/
         description: `My bachelor degree study programme was focused on the acquirement of 
         knowledge in the field of computer network management, data analysis, business economy, 
         design of business enterprise systems and programming. My overall classification of the qualification was 84.9%`,
