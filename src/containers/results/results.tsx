@@ -262,10 +262,7 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
             <Detail detail={this.props.information.detail} isActive={this.state.isActive} setUnactiveDetail={() => {this.setUnactiveDetail()}}/>
           </div>
           <div className="clear"/>
-        </div>
-        <div className="footer">
-          <span>This web is under long term development</span>
-        </div>
+        </div>        
       </div>
     );
   }
