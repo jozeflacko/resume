@@ -24,7 +24,7 @@ const Detail = {
         from: 'June 2015',
         to: 'December 2018',
         logos:['../assets/logos/workflow.png'],
-        description: `I was a major Frontend developer on an enterprise web application, focusing
+        description: `I was a major Frontend developer of an enterprise web application, focusing
         mostly on time, travel and personnel management. I worked with technologies
         including JavaScript, Css, Html, Xslt, Xml, Java, Spring, Maven, BPMN
         Workflows. My main responsibilities were the development of the responsive
@@ -33,7 +33,7 @@ const Detail = {
         the company I started as a full-time trainee and switched to regular contract
         after 10 months. The Company won “Technology Excellence Award 2019” for
         innovative technology and solution quality in the categories of functional scope,
-        usability and intuitive handling. In the links below you can find my certificate of emloyement.
+        usability and intuitive handling. In the links below you can find my certificate of emloyment.
         `,
         www:'www.workflow.at',
         links: [
@@ -79,7 +79,7 @@ const Detail = {
         www:'www.tuke.sk',
         notes: `Technologies: JavaScript, Jquery, HTML, CSS, C#, ASP.NET Razor markup language, Visual Studio IDE`
       },
-      {
+      /*{
         name: 'Web Software Tester',
         subname: 'Icos, a.s',
         place: 'Kosice, Slovakia',
@@ -89,7 +89,7 @@ const Detail = {
         description: `As a tester, I was participating on a final development stage of a national project about electronic documents for tax returns lasting 3 months. My main responsibilities were to test web tax forms, validate JavaScript calculations, XML documents and document all found issues. I was collaborating with a team of 10 people.`,
         www:'www.icos.sk',
         notes: `Technologies: JavaScript, XML`
-      }
+      }*/
     ]
 };
 
