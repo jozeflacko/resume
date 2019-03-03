@@ -24,7 +24,7 @@ const Detail = {
         from: 'June 2015',
         to: 'December 2018',
         logos:['../assets/logos/workflow.png'],
-        description: `I was a major Frontend developer of an enterprise web application, focusing
+        description: `I was the major Frontend developer of the enterprise web application, focusing
         mostly on time, travel and personnel management. I worked with technologies
         including JavaScript, Css, Html, Xslt, Xml, Java, Spring, Maven, BPMN
         Workflows. My main responsibilities were the development of the responsive
