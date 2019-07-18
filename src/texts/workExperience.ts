@@ -107,7 +107,7 @@ export class WorkExperience implements IResult {
   
   private title: string = "Work experience";
   private subtitle: string = "What has been going on in the last years";
-  private description: string = this.getWorkExperienceSentence();
+  private description: string = "I just started a new challenge at Austrian Lotteries as a React/TypeScript developer"//this.getWorkExperienceSentence();
   private detail: any;
 
   public shouldSetActiveViewportListener() {
@@ -117,7 +117,7 @@ export class WorkExperience implements IResult {
   constructor() {
     this.detail = Detail;
   }
-  
+  /*
   private calcDate(date1,date2): string {
     let diff = Math.floor(date1.getTime() - date2.getTime());
     let day = 1000 * 60 * 60 * 24;
@@ -131,13 +131,13 @@ export class WorkExperience implements IResult {
       message += ".5"; 
     }     
     return message;
-  }
-
+  }*/
+/*
   private getWorkExperienceSentence() {
     const c = this.calcDate(new Date(), new Date(2014,7,1));
     return `${c} years of an experience as a software engineer`;
   }
-
+*/
   public getTitle(): string {
     return this.title;
   }
