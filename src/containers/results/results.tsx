@@ -186,7 +186,7 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
   }
 
   createMyLife() {
-    const { experience, education, intro, skills, freeTime} = this.props.information;
+    const { experience, education, intro, skills, /*freeTime*/} = this.props.information;
 
     return (
       <div>
@@ -214,12 +214,13 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
           onClick={() => {this.navigateToResult("skills");}}
           onActiveClassName="blightblue"
         />
+        {/*
         <Result
           result={freeTime}
           isActive={this.props.information.detail === this.props.information.freeTime}
           onClick={() => {this.navigateToResult("what'snew");}}
           onActiveClassName="blightgreen"
-        />
+        />*/}
       </div>
     );
   }

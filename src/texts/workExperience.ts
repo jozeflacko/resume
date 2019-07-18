@@ -10,8 +10,10 @@ const Detail = {
         from: 'January 2019',
         to: 'Present',
         logos:['../assets/logos/osterreichische_lotterien.png'],
-        description: `I started at Austrian Lotteries as a agile TypeScript and React Developer.
-        Currently, we are in process of shaping my responsibilities.`,
+        description: `I work at Austrian Lotteries as a React/TypeScript developer in a small team of
+        7 people. My main role is to design and build web-front-end with the latest
+        tech-stack. I define concepts and build Apis for layouting, validation, testing and
+        other. This is my first fully german speaking job.`,
         www:'www.lotterien.at',
         
         notes: `Technologies: JavaScript, TypeScript, React, Jest
