@@ -21,7 +21,6 @@ const detail = {
       notes: `JavaScript`
     },
     {
-      date:'February 6th, 2019',
       id:"workflow-certificate",
       name: 'Hard work does not go unnoticed',
       description: `
