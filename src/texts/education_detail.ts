@@ -2,9 +2,9 @@ const detail = {
     icon:'graduation-cap',
     items: [
       {
-        name: 'Master of Engineering in Business Informatics',
-        subname: 'Technical University of Kosice',
-        place: 'Slovakia',
+        name: 'Master of Engineering',
+        subname: 'Study program: Business Informatics',
+        place: 'Technical University of Kosice, Slovakia',
         from: 'September 2013',
         to: 'May 2015',
         logos:['../assets/logos/tu.png'],
@@ -25,9 +25,9 @@ const detail = {
         ],
       },
       {
-        name: 'Bachelor of Engineering in Business Informatics',
-        subname: 'Technical University of Kosice',
-        place: 'Slovakia',
+        name: 'Bachelor of Engineering',
+        subname: 'Study program: Business Informatics',
+        place: 'Technical University of Kosice, Slovakia',
         from: 'September 2010',
         to: 'June 2013',
         /*logos:['../assets/logos/tu.png'],*/
