@@ -1,21 +1,5 @@
 const detail = {
     icon:'graduation-cap',
-    /*
-    itemsFunny: [
-      {
-        name: 'UDEMY\'s learning platform',
-        subname: '',
-        description: `I consider learning an awesome hobby which keeps me occupied a lot.`
-        notes: `What did you learn yesterday?`,
-        list:[
-          {
-            name:'Typescript Masterclass',
-            link:'../assets/certificates/typescript.pdf'
-          },          
-        ]
-      }
-    ],
-    */
     items: [
       {
         name: 'Master of Engineering in Business Informatics',
@@ -23,7 +7,7 @@ const detail = {
         place: 'Slovakia',
         from: 'September 2013',
         to: 'May 2015',
-        /*logos:['../assets/logos/tu.png'],*/
+        logos:['../assets/logos/tu.png'],
         description: `My engineer degree study programme was focused on the acquirement of theoretical and 
         practical knowledge in the field of design and development business enterprise systems and 
         on database systems analysis. My overall classification of the qualification was 89.9%`,

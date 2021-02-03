@@ -4,7 +4,7 @@ import detail from './education_detail';
 export class Education implements IResult {
 
   private title: string = "Education";
-  private subtitle: string = "Master of Business Informatics";
+  private subtitle: string = "Master of Engineering in Business Informatics";
   private description: string = "Completed second level of university studies in the study programme of Business Informatics";
 
   public shouldSetActiveViewportListener() {

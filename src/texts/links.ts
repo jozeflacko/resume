@@ -20,7 +20,7 @@ export const Links: Array<ILink> = [
   },
   {
     name:'Download Resume',
-    url:'../assets/pdf/Resume_Jozef_Lacko_2019.pdf',
+    url:'../assets/pdf/Jozef_Lacko_English_Deutsch.pdf',
     title:'Download Resume as PDF'
   },
 ];

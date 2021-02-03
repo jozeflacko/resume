@@ -12,12 +12,15 @@ const detail = {
             {
               key:'JS',
               bubbles: [
-                { value: "MVP", size: 5 },
                 { value: "MVC", size: 5 },
+                { value: "Jira", size: 5 },
+                { value: "Confluence", size: 5 },
                 { value: "TSLint", size: 5 },
                 { value: "Node.js", size: 4 },
                 { value: "Atom", size: 4 },
                 { value: "Redux", size: 4 },
+                { value: "Jenkins", size: 4 },
+                { value: "Hudson", size: 4 },
                 { value: "Ajax", size: 3 },
                 { value: "REST", size: 3 },
                 { value: "Bootstrap", size: 3 },
@@ -39,14 +42,18 @@ const detail = {
                 { value: "SQL and NoSQL", size: 4 },
                 { value: "Spring framework", size: 4 },
                 { value: "XML", size: 4 },
+                { value: "OpenApi", size: 4 },
                 { value: "UML", size: 4 },
                 { value: "GIT", size: 4 },
                 { value: "XSL", size: 5 },
                 { value: "Maven", size: 5 },
+                { value: "OpenShift", size: 5 },
                 { value: "Arduino", size: 5 },
                 { value: "SVG", size: 5 },
                 { value: "Docker", size: 5 },
+                { value: "linux", size: 5 },
                 { value: "C", size: 5 },
+                { value: "IntelliJ IDEA", size: 5 },
               ]
             },
           ]
@@ -74,7 +81,7 @@ const detail = {
           bullets:[
             { picture:'../assets/flags/Slovakia.png', label:'Slovak', value:'Native' },
             { picture:'../assets/flags/United-Kingdom.png', label:'English', value:'Advanced' },
-            { picture:'../assets/flags/Germany.png', label:'German', value:'Intermediate' },
+            { picture:'../assets/flags/Germany.png', label:'German', value:'Advanced' },
             { picture:'../assets/flags/Russia.png', label:'Russian', value:'Intermediate' },
             { picture:'../assets/flags/Hungary.png', label:'Hungarian', value:'Beginner' },
           ]
