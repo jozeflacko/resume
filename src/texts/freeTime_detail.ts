@@ -2,6 +2,20 @@ const detail = {
   icon:'thumb-tack',
   items: [
     {
+      id:"w2dayStatistics",
+      name: 'Statistics for lotteries ',
+      description: `This is one of the projects I was working on at Österreichische Lotterien`,
+      www: 'https://www.win2day.at/lotterie/lotto/lotto-statistik-details',
+      notes: `JavaScript`
+    },
+    {
+      id:"personalwolke",
+      name: 'Time recording app at Workflow EDV',
+      description: `Here you can get a small idea what I was doing at company Workflow EDV`,
+      video: 'https://www.youtube.com/embed/5rKIz42DqGU',
+      notes: `JavaScript`
+    },
+    {
       id:"hangman",
       name: 'Play hangman in a address bar',
       github: 'https://github.com/opam/hangman-in-the-address-bar',

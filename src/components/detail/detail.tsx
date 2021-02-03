@@ -39,10 +39,10 @@ export default class Detail extends React.Component<Props, {}> {
     );
   }
 
-  componentDidMount() {    
+  componentDidMount() {
     this.handleViewportListener();
   }
-  componentWillUnmount() {   
+  componentWillUnmount() {
     ViewportObserver.uninstallViewportListener();
   }
   componentDidUpdate() {
@@ -59,11 +59,11 @@ export default class Detail extends React.Component<Props, {}> {
   }
   installViewportListener = () => {
     ViewportObserver.installViewportListener(
-      "viewport-mark", 
-      "item", 
+      "viewport-mark",
+      "item",
       (el:any) => {
         if(el) {
-          AddressBarUtils.setSubsection(el.getAttribute("id"));  
+          AddressBarUtils.setSubsection(el.getAttribute("id"));
         }
       },
       window, // big screen
@@ -199,13 +199,32 @@ export default class Detail extends React.Component<Props, {}> {
     }
     return (
       <div className="item-image">
-        <img 
-          src={src ? src : "./public/assets/default_src.jpg"} 
-          alt={name} 
+        <img
+          src={src ? src : "./public/assets/default_src.jpg"}
+          alt={name}
           title={name}
         />
       </div>
     )
+  }
+
+  processVideo(src?: string) {
+    if (src === undefined) {
+      return "";
+    }
+
+    return (
+        <iframe
+            width="640"
+            height="480"
+            src={src}
+            frameBorder="0"
+            allowFullScreen={true}
+            style={{ margin: 'auto'}}
+        >
+          video
+        </iframe>
+    );
   }
 
   processWWW(www, text, icon?:string, color?:string) {
@@ -245,7 +264,7 @@ export default class Detail extends React.Component<Props, {}> {
     )
   }
 
-  getShareUrl(id) {    
+  getShareUrl(id) {
     if(!id) {
       return null;
     }
@@ -258,53 +277,55 @@ export default class Detail extends React.Component<Props, {}> {
     let classNameAbstract = addClassName === undefined ? "item" : addClassName + " item";
 
     return items ? items.map((item: any, index: number) => {
-      const { 
-        name, 
-        subname, 
-        place, 
-        from, 
-        to, 
-        from2, 
-        to2, 
-        description, 
-        notes, 
-        logos, 
-        www, 
+      const {
+        name,
+        subname,
+        place,
+        from,
+        to,
+        from2,
+        to2,
+        description,
+        notes,
+        logos,
+        www,
         links,
-        id, 
-        image, 
-        github, 
-        date 
+        id,
+        image,
+        github,
+        date,
+        video,
       } = item;
 
       const className = AddressBarUtils.isThisCurrentSubSection(id) ? classNameAbstract+" "+ViewportObserver.getCurrentItemClass() : classNameAbstract;
 
       return (
-        <div className={className} key={"key" + index}>              
+        <div className={className} key={"key" + index}>
           {this.generateDate(date)}
           {this.generateTimeRange(from, to)}
           {this.generateTimeRange(from2, to2)}
-          
+
           <div className="myHead">
-            
+
             <div className="name cblue viewport-mark" id={id ? id : ""}>{this.printValue(name)}        </div>
-          
+
             <div className="subname"    >{this.printValue(subname)}     </div>
-            <div className="place"      >{this.printValue(place)}       </div>           
+            <div className="place"      >{this.printValue(place)}       </div>
           </div>
           <div className="logos">
             {this.processLogos(logos)}
           </div>
-          <div className="myBody">            
+          <div className="myBody">
             <div className="description">{this.printValue(description)} </div>
             {this.processSimpleList(item.list)}
             <div className="notes">{this.printValue(notes)}</div>
             {this.processImage(image, name)}
-            <div className="url-buttons">              
-              <Share url={this.getShareUrl(id)} id={id}/>  
-              {this.processWWW(www, github ? "Try Out" : www)}
+            {this.processVideo(video)}
+            <div className="url-buttons">
+              <Share url={this.getShareUrl(id)} id={id}/>
+              {this.processWWW(www, "Open")}
               {this.processLinks(links)}
-              {this.processGithub(github)}          
+              {this.processGithub(github)}
             </div>
           </div>
         </div>
