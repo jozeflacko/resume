@@ -4,7 +4,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import './funny.css';
-//import {get} from './utils/HttpClient';
+import {get} from './utils/HttpClient';
 
 ReactDOM.render(
   <App />,
@@ -12,10 +12,9 @@ ReactDOM.render(
 );
 registerServiceWorker();
 
-/*
+
 // ping heroku links
-get('http://perceptron-demo.jozeflacko.com/');
+get('https://ai-perceptron-demo.herokuapp.com/');
 get('https://snake-game-javascript.herokuapp.com/');
-get('http://flower-css.jozeflacko.com/');
-get('http://hangman.jozeflacko.com/');
-*/
+get('https://flower-css.herokuapp.com/');
+get('https://hangman-in-the-address-bar.herokuapp.com/');
