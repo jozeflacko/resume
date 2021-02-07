@@ -13,7 +13,7 @@ import {
   fetchEducation,
   fetchSearchMessage,
   fetchSkills,
-  fetchFreeTime, 
+  //fetchFreeTime,
   turnOffAnimation,
   setDetail
 }  from '../../actions';
@@ -94,7 +94,7 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
     await this.props.fetchWorkExperience();
     await this.props.fetchEducation();
     await this.props.fetchSkills();
-    await this.props.fetchFreeTime();
+    //await this.props.fetchFreeTime();
 
     this.navigateToCorrectSection();    
 
@@ -186,7 +186,7 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
   }
 
   createMyLife() {
-    const { experience, education, intro, skills, freeTime} = this.props.information;
+    const { experience, education, intro, skills, /*freeTime*/} = this.props.information;
 
     return (
       <div>
@@ -214,13 +214,12 @@ class Results extends React.Component<Props, { isActive:boolean }>  {
           onClick={() => {this.navigateToResult("skills");}}
           onActiveClassName="blightblue"
         />
-        {
-        <Result
+        {/*<Result
           result={freeTime}
           isActive={this.props.information.detail === this.props.information.freeTime}
           onClick={() => {this.navigateToResult("what'snew");}}
           onActiveClassName="blightgreen"
-        />}
+        />*/}
       </div>
     );
   }
@@ -285,7 +284,7 @@ function mapDispatchToProps(dispatch: any) {
     fetchEducation,
     fetchSearchMessage,
     fetchSkills,
-    fetchFreeTime,
+    //fetchFreeTime,
     turnOffAnimation,
     setDetail,
     set4ReduxTypeOfResume,

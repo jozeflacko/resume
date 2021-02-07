@@ -60,7 +60,7 @@ class Home extends React.Component<Props> {
     return (
       <div className="buttons" onClick={()=> {this.props.turnOffAnimation();}} >
           <a
-            href="https://github.com/opam"
+            href="https://github.com/jozeflacko"
             target="_blank"
             className="button"
             title="Click here to get to know me better!"
