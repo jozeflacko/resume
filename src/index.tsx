@@ -12,9 +12,10 @@ ReactDOM.render(
 );
 registerServiceWorker();
 
-
+/*
 // ping heroku links
 get('https://ai-perceptron-demo.herokuapp.com/');
 get('https://snake-game-javascript.herokuapp.com/');
 get('https://flower-css.herokuapp.com/');
 get('https://hangman-in-the-address-bar.herokuapp.com/');
+*/
