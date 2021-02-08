@@ -4,7 +4,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import './funny.css';
-import {get} from './utils/HttpClient';
+//import {get} from './utils/HttpClient';
 
 ReactDOM.render(
   <App />,
