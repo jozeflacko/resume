@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "main": "build/index",
+  "homepage" : "http://jozeflacko.github.io",
   "dependencies": {
     "@types/react-fontawesome": "^1.6.1",
     "@types/react-redux": "^5.0.14",
@@ -22,8 +23,11 @@
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
+    "build:github": "npm run build && npm run __copyFromBuildIndexIntoRoot && npm run __updatePathsInIndexFileToPointToBuildDirectory",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "__copyFromBuildIndexIntoRoot": "mv build/index.html ./index.html",
+    "__updatePathsInIndexFileToPointToBuildDirectory": "node updatePathsInIndexFileToPointToBuildDirectory.js"
   },
   "devDependencies": {
     "@types/jest": "^21.1.10",
