@@ -24,13 +24,13 @@
     "start": "react-scripts-ts start",
     "start:express": "node server.js",
     "build": "react-scripts-ts build",
-    "setup:github": "npm run __copyFromBuildIndexIntoRoot && npm run __updatePathsInIndexFileToPointToBuildDirectory",
+    "build:github": "npm run build && npm run __copyFromBuildIndexIntoRoot && npm run __updatePathsInIndexFileToPointToBuildDirectory",
     "push_page": "git push origin `git subtree split --prefix build master`:gh-pages --force",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "push:githubpage":"npm run build && git subtree push --prefix build origin gh-pages",
     "__copyEverythingFromBuildIntoRoot": "cp -a ./build/. .",
-    "__copyFromBuildIndexIntoRoot": "mv build/index.html ./index.html",
+    "__copyFromBuildIndexIntoRoot": "cp ./build/index.html ./index.html",
     "__updatePathsInIndexFileToPointToBuildDirectory": "node updatePathsInIndexFileToPointToBuildDirectory.js"
   },
   "devDependencies": {
