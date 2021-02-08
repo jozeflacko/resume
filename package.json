@@ -23,11 +23,9 @@
   "scripts": {
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
-    "build:github": "npm run build && npm run __copyFromBuildIndexIntoRoot && npm run __updatePathsInIndexFileToPointToBuildDirectory",
+    "push_page": "git push origin `git subtree split --prefix build master`:gh-pages --force",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
-    "__copyFromBuildIndexIntoRoot": "mv build/index.html ./index.html",
-    "__updatePathsInIndexFileToPointToBuildDirectory": "node updatePathsInIndexFileToPointToBuildDirectory.js"
   },
   "devDependencies": {
     "@types/jest": "^21.1.10",
