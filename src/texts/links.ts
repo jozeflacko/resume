@@ -14,7 +14,8 @@ export const Links: Array<ILink> = [
   },
   {
     name:'Download Resume',
-    url:'../assets/pdf/Jozef_Lacko_English_Deutsch.pdf',
+    // view only link to drive
+    url:'https://docs.google.com/document/d/14LYgHpDHqbICLIP2PR2bUVdlP2QYOa_xBrMAM9U05ec/edit?usp=sharing',
     title:'Download Resume as PDF'
   },
 ];
