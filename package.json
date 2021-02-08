@@ -24,7 +24,7 @@
     "start": "react-scripts-ts start",
     "start:express": "node server.js",
     "build": "react-scripts-ts build",
-    "build:github": "npm run build && __copyFromBuildIndexIntoRoot && __updatePathsInIndexFileToPointToBuildDirectory",
+    "setup:github": "npm run __copyFromBuildIndexIntoRoot && npm run __updatePathsInIndexFileToPointToBuildDirectory",
     "push_page": "git push origin `git subtree split --prefix build master`:gh-pages --force",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
