@@ -14,7 +14,6 @@ const getSubsection = () => {
     }
 }
 
-
 export const getSectionWithoutSubsection = (withoutHash:boolean = false) => {
     let section = (location.hash).split(subsectionDivider)[0];
     if (section === "" || section === null || section === undefined) {

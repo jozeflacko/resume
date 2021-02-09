@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {BrowserRouter, Route, HashRouter} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import * as promiseMiddleware from 'redux-promise';
@@ -16,14 +16,10 @@ class App extends React.Component {
         return (
             <Provider store={createReduxStoreWithMiddleware(reducers)}>
                 <BrowserRouter>
-                    <div>
-                        <HashRouter>
-                            <div>
-                                <Route path={Links.CONTENT} component={Results}/>
-                                <Route path={Links.INDEX} exact={true} component={Home}/>
-                            </div>
-                        </HashRouter>
-                    </div>
+                    <Switch>
+                        <Route path={Links.CONTENT} component={Results}/>
+                        <Route path={Links.INDEX} exact={true} component={Home}/>
+                    </Switch>
                 </BrowserRouter>
             </Provider>
         );
