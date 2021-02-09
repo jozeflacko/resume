@@ -7,7 +7,7 @@
 /coverage
 
 # production
-#unignored due to github pages --> /build
+/build
 
 # misc
 .DS_Store

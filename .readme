@@ -1,2 +1,0 @@
-to publish to github pages run this command:
-git subtree push --prefix build origin gh-pages
