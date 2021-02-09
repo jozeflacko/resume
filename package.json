@@ -23,12 +23,12 @@
   "scripts": {
     "start": "react-scripts-ts start",
     "start:express": "node server.js",
-    "build": "react-scripts-ts build && npm run __moveBuildToDocs",
+    "build": "react-scripts-ts build",
     "build:github": "npm run build && npm run __moveBuildToDocs",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "push:githubpage": "npm run build && git subtree push --prefix build origin gh-pages",
-    "__moveBuildToDocs": "mv build docs"
+    "__moveBuildToDocs": "rm -rf docs && mv ./build ./docs"
   },
   "devDependencies": {
     "@types/jest": "^21.1.10",
