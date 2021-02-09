@@ -1,5 +1,2 @@
-Because I am hosting this app on github.io
-I must do strange things:
-
-- build directory is not ignored and is pushed into repo
-- index.html and assets are moved outside from build directory
+to publish to github pages run this command:
+git subtree push --prefix build origin gh-pages
