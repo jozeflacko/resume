@@ -23,7 +23,7 @@ export default class Helper {
         } else return "";
     }
 
-    static processPhoto(photo: string, className = 'my-photo') {
+    static processPhoto(photo?: string, className = 'my-photo') {
         return !photo ? "" : (
             <img src={photo} key={photo} className={className}/>
         );

@@ -12,9 +12,11 @@ import Helper from '../../helper/helper';
 import * as ViewportObserver from '../../utils/ViewportObserver';
 import * as AddressBarUtils from '../../utils/AddressBarUtils';
 import Share from '../share/share';
+import IResult from "../../interfaces/IResult";
+import {ISentence} from "../../interfaces";
 
 interface Props {
-    detail: any;
+    detail: IResult;
     isActive: boolean;
     setNotActiveDetail: () => void;
     onNextClick: () => void;
@@ -33,7 +35,7 @@ export default class Detail extends React.Component<Props> {
             description,
             items,
             itemsFunny,
-            bulletgroups
+            bulletGroups,
         } = this.props.detail.getDetail();
 
         return (
@@ -47,7 +49,7 @@ export default class Detail extends React.Component<Props> {
                     {this.processItemsFunny(itemsFunny)}
                     {this.processItems(items)}
                 </div>
-                {this.processBulletsgroups(bulletgroups)}
+                {this.processBulletsgroups(bulletGroups)}
                 {Helper.processPhoto(bottomPhoto, 'bottom-photo')}
                 <div className="buttons">
                     <div
@@ -97,7 +99,7 @@ export default class Detail extends React.Component<Props> {
     }
 
 
-    processFlipPhotos(flipPhotos: Array<string>, flipPhotosBackground: string, flipPhotosBottom: string) {
+    processFlipPhotos(flipPhotos?: Array<string>, flipPhotosBackground?: string, flipPhotosBottom?: string) {
         return (
             <FlipPhotos
                 flipPhotos={flipPhotos}
@@ -108,7 +110,7 @@ export default class Detail extends React.Component<Props> {
         );
     }
 
-    processHero(photo: string) {
+    processHero(photo?: string) {
         return !photo ? "" : (<Hero photo={photo}/>);
     }
 
@@ -116,7 +118,7 @@ export default class Detail extends React.Component<Props> {
         return logos ? logos.map((logo) => Helper.processPhoto(logo)) : "";
     }
 
-    processDescription(description: Array<String>) {
+    processDescription(description?: Array<String>) {
         return description ? description.map((text: string, index: number) => {
             return (<p key={"key" + index}>{text}</p>);
         }) : "";
@@ -406,11 +408,7 @@ export default class Detail extends React.Component<Props> {
             return <FontAwesome name={this.props.detail.getDetail().icon}/>
     }
 
-    processSentence(sentence: {
-        image: string,
-        startSentence: string,
-        endSentences: Array<string>
-    }) {
+    processSentence(sentence?: ISentence) {
         if (sentence === undefined)
             return "";
         return (
@@ -441,9 +439,9 @@ export default class Detail extends React.Component<Props> {
                 />
                 <div className={myClassName}>
                     <div className="title">
-                        {this.props.detail.title}
+                        {this.props.detail.getTitle()}
                     </div>
-                    <div className="subtitle">{this.props.detail.subtitle}</div>
+                    <div className="subtitle">{this.props.detail.getSubtitle()}</div>
                 </div>
                 <CoolLine animated={false}/>
                 {this.processDetail()}

@@ -22,10 +22,11 @@ import Logo from '../../components/logo/logo';
 import Result from '../../components/result/result';
 import Detail from '../../components/detail/detail';
 import {INavigation} from '../../texts/navigations';
-import RISearch from "../../interfaces/IRSearch";
+import IRSearch from "../../interfaces/IRSearch";
 import PreloadImages from '../../tools/preloadImages';
 import Contact from '../../components/contact/contact';
 import * as AddressBarUtils from '../../utils/AddressBarUtils';
+import {IDetail, IType} from "../../interfaces";
 
 
 interface Props {
@@ -41,11 +42,10 @@ interface Props {
     turnOffAnimation: any;
     setDetail: any;
 
-    search: RISearch;   // from redux
+    search: IRSearch;   // from redux
     information: any; // from redux
-    detail: any; // from redux
-
-    type: any;
+    detail: IDetail; // from redux
+    type: IType;
 }
 
 interface State {
@@ -53,6 +53,8 @@ interface State {
 }
 
 class Results extends React.Component<Props, State> {
+
+    readonly RESIZE_EVENT = 'resize';
 
     constructor(props: Props) {
         super(props);
@@ -99,11 +101,11 @@ class Results extends React.Component<Props, State> {
 
         this.navigateToCorrectSection();
 
-        window.addEventListener('resize', this.debouncedResize);
+        window.addEventListener(this.RESIZE_EVENT, this.debouncedResize);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('resize', this.debouncedResize);
+        window.removeEventListener(this.RESIZE_EVENT, this.debouncedResize);
     }
 
     createLinks() {

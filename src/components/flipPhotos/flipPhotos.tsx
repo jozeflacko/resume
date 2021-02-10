@@ -7,7 +7,7 @@ import * as FontAwesome from 'react-fontawesome';
 interface Props {
     flipPhotosBackground?: string;
     flipPhotosBottom?: string,
-    flipPhotos: Array<string>;
+    flipPhotos?: Array<string>;
     numberOfRows: number;
 }
 
@@ -175,8 +175,11 @@ export default class FlipPhotos extends React.Component<Props, State> {
 
     getRandomImage() {
         const srcs = this.props.flipPhotos;
-        const index = this.getRandomInt(0, srcs.length);
-        return srcs[index];
+        if (srcs) {
+            const index = this.getRandomInt(0, srcs.length);
+            return srcs[index];
+        }
+        return null;
     }
 
     getRandomIntOtherThan(min: number, max: number, otherThan?: number): number {
@@ -249,7 +252,7 @@ export default class FlipPhotos extends React.Component<Props, State> {
 
     renderRow(numberOfRow: number): any {
         const src = this.getRandomImage(); // on new render will be set random image
-        return (
+        return src == null ? "" : (
             <div className={`spin-row row${numberOfRow}`} key={'row-' + numberOfRow}>
                 <div className="card">
                     <div className="content">
