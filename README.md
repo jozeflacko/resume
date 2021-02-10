@@ -2,4 +2,4 @@
 
 ## My personal Web Resume written in Javascript using React, Typescript, Redux 
 
-It contains a simle game and some info about me.
+It contains a simple game and some info about me.

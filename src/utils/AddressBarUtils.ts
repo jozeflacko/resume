@@ -1,43 +1,33 @@
 export const sectionDivider = "#";
 export const subsectionDivider = ":_";
 
-export const setSubsection = (name) => {
-    history.replaceState(null, null, "#what'snew:_" + name); // todo FIX
+export const setSubsection = (name: string) => {
+    history.replaceState(null, '', "#what'snew:_" + name);
 }
 
 const getSubsection = () => {
     const subsection = (location.hash).split(subsectionDivider)[1];
-    if (subsection === "" || subsection === null || subsection === undefined) {
-        return null;
-    } else {
-        return subsection;
-    }
+    return (subsection === "" || subsection === null || subsection === undefined) ? null : subsection;
 }
 
-export const getSectionWithoutSubsection = (withoutHash:boolean = false) => {
+export const getSectionWithoutSubsection = (withoutHash: boolean = false) => {
     let section = (location.hash).split(subsectionDivider)[0];
-    if (section === "" || section === null || section === undefined) {
+    if (section === "" || section == null) {
         return null;
-    } else {
-        if(withoutHash === true && section.indexOf(sectionDivider) > -1) {
-            section = section.replace(sectionDivider,'');
-        }
-        
-        return section;
     }
+    if (withoutHash === true && section.indexOf(sectionDivider) > -1) {
+        return section.replace(sectionDivider, '');
+    }
+    return section;
 }
 
-export const isThisCurrentSubSection = (name) => {
-    return name === getSubsection() && name !== null && name !== undefined;
-}
+export const isThisCurrentSubSection = (name: string) => name === getSubsection() && name != null;
 
-export const setSection = (name) => {
-    if(typeof name === 'string') {        
-        name =  name ? sectionDivider + name : sectionDivider;
-        history.replaceState(null, null, location.pathname + name);
-    }
+export const setSection = (name: string | null) => {
+    name = name ? sectionDivider + name : sectionDivider;
+    history.replaceState(null, '', location.pathname + name);
 }
 
 export const removeSubSectionAndKeesSection = () => {
-    setSection(getSectionWithoutSubsection(true));
-}
+    setSection(getSectionWithoutSubsection(true))
+};

@@ -11,7 +11,7 @@ import Links from './links/links';
 
 const createReduxStoreWithMiddleware = applyMiddleware(promiseMiddleware)(createStore);
 
-class App extends React.Component {
+export default class App extends React.Component {
     render() {
         return (
             <Provider store={createReduxStoreWithMiddleware(reducers)}>
@@ -25,5 +25,3 @@ class App extends React.Component {
         );
     }
 }
-
-export default App;

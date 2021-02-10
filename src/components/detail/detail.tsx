@@ -114,7 +114,7 @@ export default class Detail extends React.Component<Props, {}> {
     }
 
     processDescriptionExtension(descriptionExtension?: Array<String>) {
-        return descriptionExtension.map((paragraf: string, index: number) => {
+        return descriptionExtension && descriptionExtension.map((paragraf: string, index: number) => {
             return (<p key={"key_extension_" + index}>{paragraf}</p>);
         });
     }
@@ -324,6 +324,8 @@ export default class Detail extends React.Component<Props, {}> {
 
             const className = AddressBarUtils.isThisCurrentSubSection(id) ? classNameAbstract + " " + ViewportObserver.getCurrentItemClass() : classNameAbstract;
 
+            const shareUrl = this.getShareUrl(id);
+
             return (
                 <div className={className} key={"key" + index}>
                     {this.generateDate(date)}
@@ -350,7 +352,7 @@ export default class Detail extends React.Component<Props, {}> {
                         {this.processImage(image, name)}
                         {this.processVideo(video)}
                         <div className="url-buttons">
-                            <Share url={this.getShareUrl(id)} id={id}/>
+                            {shareUrl != null && <Share url={shareUrl} id={id}/>}
                             {this.processWWW(www, "Open")}
                             {this.processLinks(links)}
                             {this.processGithub(github)}

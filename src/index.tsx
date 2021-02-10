@@ -6,10 +6,8 @@ import './index.css';
 import './funny.css';
 //import {get} from './utils/HttpClient';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root') as HTMLElement
-);
+ReactDOM.render(<App/>, document.getElementById('root') as HTMLElement);
+
 registerServiceWorker();
 
 /*
@@ -19,3 +17,5 @@ get('https://snake-game-javascript.herokuapp.com/');
 get('https://flower-css.herokuapp.com/');
 get('https://hangman-in-the-address-bar.herokuapp.com/');
 */
+
+
