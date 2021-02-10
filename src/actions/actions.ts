@@ -1,9 +1,9 @@
 import IResult from "../interfaces/IResult";
-
+import IAction from '../interfaces/IAction';
 import {Intro} from '../texts/intro';
 import {WorkExperience} from '../texts/workExperience';
 import {Education} from '../texts/education';
-import {ILink, Links} from '../texts/links';
+import {INavigation, Navigations} from '../texts/navigations';
 import {Skills} from '../texts/skills';
 import {FreeTime} from '../texts/freeTime';
 import Search from '../texts/search';
@@ -20,94 +20,73 @@ export const FETCH_FREE_TIME = 'fetch_free_time';
 export const FETCH_CONTACT = 'fetch_contact';
 export const SET_DETAIL = 'set_detail';
 
-const type = {
-    [GET_TYPE_OF_RESUME]: GET_TYPE_OF_RESUME,
-    [FETCH_SEARCH_MESSAGE]: FETCH_SEARCH_MESSAGE,
-    [TURN_OFF_ANIMATION]: TURN_OFF_ANIMATION,
-    [FETCH_LINKS]: FETCH_LINKS,
-    [FETCH_INTRO]: FETCH_INTRO,
-    [FETCH_EXPERIENCE]: FETCH_EXPERIENCE,
-    [FETCH_EDUCATION]: FETCH_EDUCATION,
-    [FETCH_SKILLS]: FETCH_SKILLS,
-    [FETCH_FREE_TIME]: FETCH_FREE_TIME,
-    [FETCH_CONTACT]: FETCH_CONTACT,
-    [SET_DETAIL]: SET_DETAIL,
-}
-
-type Type = keyof typeof type;
-
-export interface Action<T> {
-    type: Type;
-    payload: T;
-}
-
 /** On initial load will fetch message which will be inserted into
  *  the search bar.
  */
-export function fetchSearchMessage(): Action<Search> {
+export function fetchSearchMessage(): IAction<Search> {
     return {
         type: FETCH_SEARCH_MESSAGE,
         payload: new Search(),
     };
 }
 
-export function set4ReduxTypeOfResume(typeOfResume: string): Action<string> {
+export function set4ReduxTypeOfResume(typeOfResume: string): IAction<string> {
     return {
         type: GET_TYPE_OF_RESUME,
         payload: typeOfResume,
     };
 }
 
-export function turnOffAnimation(): Action<boolean> {
+export function turnOffAnimation(): IAction<boolean> {
     return {
         type: TURN_OFF_ANIMATION,
         payload: true,
     };
 }
 
-export function fetchLinks(): Action<Array<ILink>> {
+export function fetchLinks(): IAction<Array<INavigation>> {
     return {
         type: FETCH_LINKS,
-        payload: Links,
+        payload: Navigations,
     };
 }
 
-export function fetchIntro(): Action<IResult> {
+export function fetchIntro(): IAction<IResult> {
     return {
         type: FETCH_INTRO,
         payload: new Intro(),
     };
 }
 
-export function fetchWorkExperience(): Action<IResult> {
+export function fetchWorkExperience(): IAction<IResult> {
     return {
         type: FETCH_EXPERIENCE,
         payload: new WorkExperience(),
     };
 }
 
-export function fetchEducation(): Action<IResult> {
+export function fetchEducation(): IAction<IResult> {
     return {
         type: FETCH_EDUCATION,
         payload: new Education(),
     };
 }
 
-export function fetchSkills(): Action<IResult> {
+export function fetchSkills(): IAction<IResult> {
     return {
         type: FETCH_SKILLS,
         payload: new Skills(),
     };
 }
 
-export function fetchFreeTime(): Action<IResult> {
+export function fetchFreeTime(): IAction<IResult> {
     return {
         type: FETCH_FREE_TIME,
         payload: new FreeTime(),
     };
 }
 
-export function setDetail<T>(payload: T): Action<T> {
+export function setDetail<T>(payload: T): IAction<T> {
     return {
         type: SET_DETAIL,
         payload: payload,

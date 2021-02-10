@@ -21,14 +21,14 @@ import SearchBar from '../../components/searchBar/searchBar';
 import Logo from '../../components/logo/logo';
 import Result from '../../components/result/result';
 import Detail from '../../components/detail/detail';
-import {ILink} from '../../texts/links';
-import RISearch from "../../reducers/interfaces/RISearch";
+import {INavigation} from '../../texts/navigations';
+import RISearch from "../../interfaces/IRSearch";
 import PreloadImages from '../../tools/preloadImages';
 import Contact from '../../components/contact/contact';
 import * as AddressBarUtils from '../../utils/AddressBarUtils';
 
 
-interface Props extends React.Props<any> {
+interface Props {
     set4ReduxTypeOfResume: any; // from redux
     fetchLinks: any;
     fetchIntro: any;
@@ -48,7 +48,11 @@ interface Props extends React.Props<any> {
     type: any;
 }
 
-class Results extends React.Component<Props, { isActive: boolean }> {
+interface State {
+    isActive: boolean;
+}
+
+class Results extends React.Component<Props, State> {
 
     constructor(props: Props) {
         super(props);
@@ -81,7 +85,6 @@ class Results extends React.Component<Props, { isActive: boolean }> {
         AddressBarUtils.setSection(name);
     }
 
-
     preloadImages = new PreloadImages();
 
     async componentDidMount() {
@@ -93,7 +96,6 @@ class Results extends React.Component<Props, { isActive: boolean }> {
         await this.props.fetchWorkExperience();
         await this.props.fetchEducation();
         await this.props.fetchSkills();
-        //await this.props.fetchFreeTime();
 
         this.navigateToCorrectSection();
 
@@ -108,7 +110,7 @@ class Results extends React.Component<Props, { isActive: boolean }> {
         if (!this.props.information.links)
             return "Loading ...";
 
-        return this.props.information.links.map((link: ILink, index: number) => {
+        return this.props.information.links.map((link: INavigation, index: number) => {
             const priority = link.priority ? 'priority-' + link.priority : 'priority-high';
             const className = index === 0 ? priority + ' active' : priority; // only first can be active, other are external links
 
@@ -130,12 +132,11 @@ class Results extends React.Component<Props, { isActive: boolean }> {
         this.setState({isActive: true});
     }
 
-    setUnactiveDetail = () => {
+    setNotActiveDetail = () => {
         this.setState({isActive: false});
         this.props.setDetail(null);
     }
 
-    // todo remove strings!
     getNextResult = () => {
         const current = this.getCurrentResultNameFromAddressBar();
         switch (current) {
@@ -157,7 +158,7 @@ class Results extends React.Component<Props, { isActive: boolean }> {
     navigateToNextResult = () => {
         const next = this.getNextResult();
         if (next == null) {
-            this.setUnactiveDetail();
+            this.setNotActiveDetail();
         } else {
             this.navigateToResult(next);
         }
@@ -179,14 +180,12 @@ class Results extends React.Component<Props, { isActive: boolean }> {
             name = location.hash;
         }
         if (intro === undefined) {
-            // in this case we came here for the first time from home!
-            return;
+            return; // in this case we came here for the first time from home!
         } else {
             const strippedName = this.getCurrentResultNameFromAddressBar(name);
 
-            let detail: any = null;
+            let detail;
 
-            // todo remove strings!
             switch (strippedName) {
                 case "introduction":
                     detail = intro;
@@ -264,16 +263,10 @@ class Results extends React.Component<Props, { isActive: boolean }> {
         }
     }
 
-    debouncedResize = Debounce(() => {
-        this.resolveBodyScrollWhenMobile();
-    }, 300);
+    debouncedResize = Debounce(() => this.resolveBodyScrollWhenMobile(), 300);
 
     render() {
-
-        {
-            this.resolveBodyScrollWhenMobile()
-        }
-
+        {this.resolveBodyScrollWhenMobile()}
         return (
             <div className="results">
                 <div className="header">
@@ -295,7 +288,7 @@ class Results extends React.Component<Props, { isActive: boolean }> {
                         <Detail
                             detail={this.props.information.detail}
                             isActive={this.state.isActive}
-                            setNotActiveDetail={this.setUnactiveDetail}
+                            setNotActiveDetail={this.setNotActiveDetail}
                             onNextClick={this.navigateToNextResult}
                         />
                     </div>

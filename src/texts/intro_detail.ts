@@ -1,6 +1,8 @@
+import IDetail from "../interfaces/IDetail";
+
 const yearsExperience = new Date().getFullYear() - new Date('2014').getFullYear() + (new Date().getMonth() > 7 ? 0 : -1);
 
-const introDetail = {
+const introDetail: IDetail = {
     flipPhotos: [
         '../assets/flipPhotos/1.JPG',
         '../assets/flipPhotos/2.JPG',

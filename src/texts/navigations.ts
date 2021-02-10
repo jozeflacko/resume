@@ -1,4 +1,4 @@
-export interface ILink {
+export interface INavigation {
   name:string;
   url:string;
   title:string;
@@ -6,7 +6,7 @@ export interface ILink {
   type?:string
 }
 
-export const Links: Array<ILink> = [
+export const Navigations: Array<INavigation> = [
   {
     name:'Search',
     url:'',

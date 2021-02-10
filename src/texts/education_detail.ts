@@ -1,4 +1,6 @@
-const detail = {
+import IDetail from "../interfaces/IDetail";
+
+const detail: IDetail = {
     icon:'graduation-cap',
     items: [
       {

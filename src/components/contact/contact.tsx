@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Helper from '../../helper/helper';
-import contacts from '../../texts/contact';
+import contacts from '../../texts/contacts';
 import './contact.css';
 
 interface IContact {

@@ -2,7 +2,7 @@ import * as FontAwesome from 'react-fontawesome';
 import * as React from 'react';
 import './searchBar.css';
 import './searchBar_mobile.css';
-import RISearch from '../../reducers/interfaces/RISearch';
+import RISearch from '../../interfaces/IRSearch';
 
 interface Props {
     search: RISearch;
