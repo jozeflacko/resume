@@ -4,24 +4,23 @@ import './result_mobile.css';
 import IResult from '../../interfaces/IResult';
 import CoolLine from '../coolLine/coolLine';
 
-interface Props extends React.Props<any> {
+interface Props {
     result: IResult;
     isActive: boolean;
-    onClick: any;
+    onClick: (event: any) => void;
     onActiveClassName: string;
 }
 
 export default class Result extends React.Component<Props, {}> {
 
     processOnActiveCoolLine() {
-        if (this.props.isActive)
-            return <CoolLine animated={true}/>
-        else return "";
+        return this.props.isActive ? <CoolLine animated={true}/> : "";
     }
 
     render() {
-        if (!this.props.result)
+        if (!this.props.result) {
             return "Loading ...";
+        }
 
         const result = this.props.result;
         const myClassName = this.props.isActive ? "result active " + this.props.onActiveClassName : "result";

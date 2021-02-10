@@ -3,9 +3,14 @@ import './hero.css';
 import './hero_mobile.css';
 /*import * as FontAwesome from 'react-fontawesome';*/
 
-export default class Hero extends React.Component<{
+interface Props {
   photo:string;
-}, {}> {
+}
+
+/*
+    Not using here 4 now
+ */
+export default class Hero extends React.Component<Props> {
   render() {
     if(! this.props.photo || this.props.photo==="") {
         return "";
@@ -32,8 +37,6 @@ export default class Hero extends React.Component<{
         </div>
       </div>
     );
-
     */
-
   }
 }
