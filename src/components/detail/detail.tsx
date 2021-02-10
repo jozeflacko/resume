@@ -13,16 +13,29 @@ import * as ViewportObserver from '../../utils/ViewportObserver';
 import * as AddressBarUtils from '../../utils/AddressBarUtils';
 import Share from '../share/share';
 
-interface Props extends React.Props<any> {
+interface Props {
     detail: any;
     isActive: boolean;
-    setUnactiveDetail: any;
+    setNotActiveDetail: () => void;
     onNextClick: () => void;
 }
 
-export default class Detail extends React.Component<Props, {}> {
+export default class Detail extends React.Component<Props> {
+
     processDetail() {
-        const {photo, flipPhotos, flipPhotosBackground, flipPhotosBottom, sentence, bottomPhoto, description, items, itemsFunny, bulletgroups} = this.props.detail.getDetail();
+        const {
+            photo,
+            flipPhotos,
+            flipPhotosBackground,
+            flipPhotosBottom,
+            sentence,
+            bottomPhoto,
+            description,
+            items,
+            itemsFunny,
+            bulletgroups
+        } = this.props.detail.getDetail();
+
         return (
             <div className="content">
                 {this.processHero(photo)}
@@ -96,36 +109,32 @@ export default class Detail extends React.Component<Props, {}> {
     }
 
     processHero(photo: string) {
-        if (!photo)
-            return "";
-        return (<Hero photo={photo}/>);
+        return !photo ? "" : (<Hero photo={photo}/>);
     }
 
     processLogos(logos: Array<string>) {
-        return logos ? logos.map((logo) => {
-            return Helper.processPhoto(logo); // key is rendered in process photo
-        }) : "";
+        return logos ? logos.map((logo) => Helper.processPhoto(logo)) : "";
     }
 
     processDescription(description: Array<String>) {
-        return description ? description.map((paragraf: string, index: number) => {
-            return (<p key={"key" + index}>{paragraf}</p>);
+        return description ? description.map((text: string, index: number) => {
+            return (<p key={"key" + index}>{text}</p>);
         }) : "";
     }
 
     processDescriptionExtension(descriptionExtension?: Array<String>) {
-        return descriptionExtension && descriptionExtension.map((paragraf: string, index: number) => {
-            return (<p key={"key_extension_" + index}>{paragraf}</p>);
+        return descriptionExtension && descriptionExtension.map((text: string, index: number) => {
+            return (<p key={"key_extension_" + index}>{text}</p>);
         });
     }
 
-    processBulletsgroups(bulletgroups: any) {
-        return bulletgroups ? bulletgroups.map((bulletgroup: any) => {
+    processBulletsgroups(bulletGroups: any) {
+        return bulletGroups ? bulletGroups.map((group) => {
             return (
-                <div key={bulletgroup.key} className="bulletgroups">
-                    <div className="title">{bulletgroup.title}</div>
+                <div key={group.key} className="bulletgroups">
+                    <div className="title">{group.title}</div>
                     <div className="groups">
-                        {bulletgroup.bullets.map((group: { subtitle: string, description: string, bullets?: any, bubbless?: any }, index: number) => {
+                        {group.bullets.map((group: { subtitle: string, description: string, bullets?: any, bubbless?: any }, index: number) => {
                             return (
                                 <div key={"key" + index} className="group">
                                     <div className="subtitle cblue">{group.subtitle}</div>
@@ -245,7 +254,7 @@ export default class Detail extends React.Component<Props, {}> {
                 allowFullScreen={true}
                 style={{margin: 'auto'}}
             >
-                video
+                Video loading...
             </iframe>
         );
     }
@@ -427,7 +436,7 @@ export default class Detail extends React.Component<Props, {}> {
                     name="times-circle"
                     className="back-button cred"
                     onClick={() => {
-                        this.props.setUnactiveDetail()
+                        this.props.setNotActiveDetail()
                     }}
                 />
                 <div className={myClassName}>

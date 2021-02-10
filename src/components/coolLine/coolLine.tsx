@@ -1,19 +1,21 @@
 import * as React from 'react';
 import './coolLine.css';
 
-export default class CoolLine extends React.Component<{
-  animated?:boolean
-},{}> {
-  render() {
-    const animated = this.props.animated === true ? true : false;
-    const className = animated ? "coolLine-container animated" : "coolLine-container";
+interface Props {
+    animated?: boolean;
+}
 
-    return (
-      <div className={className}>
-        <div className='wave -one'/>
-        <div className='wave -two'/>
-        <div className='wave -three'/>
-      </div>
-    );
-  }
+export default class CoolLine extends React.Component<Props> {
+    render() {
+        const animated = this.props.animated === true;
+        const className = animated ? "coolLine-container animated" : "coolLine-container";
+
+        return (
+            <div className={className}>
+                <div className='wave -one'/>
+                <div className='wave -two'/>
+                <div className='wave -three'/>
+            </div>
+        );
+    }
 }

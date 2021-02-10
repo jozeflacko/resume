@@ -295,7 +295,7 @@ class Results extends React.Component<Props, { isActive: boolean }> {
                         <Detail
                             detail={this.props.information.detail}
                             isActive={this.state.isActive}
-                            setUnactiveDetail={this.setUnactiveDetail}
+                            setNotActiveDetail={this.setUnactiveDetail}
                             onNextClick={this.navigateToNextResult}
                         />
                     </div>
