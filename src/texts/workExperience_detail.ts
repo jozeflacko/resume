@@ -21,7 +21,7 @@ export const detail = {
             logos: ['../assets/logos/workflow.png'],
             description: `I was the major Frontend developer of the enterprise web application, focusing mostly on time, travel and personnel management. My main responsibilities were the development of the responsive skin of our progressive web app and significantly improving the user experience. Product contained 350+ Uls which needed a lot of analytical and design skills. In the company I started as a full-time trainee and switched to a regular contract after 10 months. The Company won “Technology Excellence Award 2019” for innovative technology and solution quality in the categories of functional scope, usability and intuitive handling.`,
             www:'www.workflow.at',
-            links: [
+            /*links: [
                 {
                     icon: "certificate",
                     text: 'Certificate of employment',
@@ -34,7 +34,7 @@ export const detail = {
                     www: `https://www.workflow.at/en/technology-excellence-award-in-the-time-and-attendance-category/`,
                     color: ''
                 }
-            ],
+            ],*/
             notes: `Technologies & Tools: NodeJs, Npm, Lerna, Typescript, JavaScript, React, Jquery, Bootstrap,  Xslt, Xml, BPMN Workflows, Jest, Java, Maven, Spring, Rest API, SQL, Subversion, Hudson, Jira, Confluence, Scrum
 `
         },

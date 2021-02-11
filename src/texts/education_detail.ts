@@ -17,14 +17,14 @@ const detail: IDetail = {
         notes: `Master Thesis: “Implementation of a software system for
         experimental analysis of methods for aggregation of opinions using
         Adaboost”`,
-        links: [
+        /*links: [
           {
             icon:"graduation-cap",
             text:'Diploma',
             www:`../assets/pdf/Lacko_Jozef_Diplom_Master_Slovak_English.pdf`,
             color:'#4885ed'
           }
-        ],
+        ],*/
       },
       {
         name: 'Bachelor of Engineering',
@@ -39,14 +39,14 @@ const detail: IDetail = {
         www:'www.tuke.sk',
         notes: `Master Thesis: "Design and realization of Music Box". The main aim of the bachelor 
         thesis was to create a musical machine based on a set of liquid-filled bottles controlled by a computer LabJack interface.`,
-        links: [
+        /*links: [
           {
             icon:"graduation-cap",
             text:'Diploma',
             www:`../assets/pdf/Lacko_Jozef_Diplom_Bachelor_Slovak_English.pdf`,
             color:'#4885ed'
           }
-        ],
+        ],*/
       }
     ]
 };
