@@ -1,4 +1,5 @@
 import IResult from '../interfaces/IResult';
+import {IDetail} from "../interfaces";
 
 const Detail = {
     icon: 'smile-o',
@@ -79,11 +80,14 @@ const Detail = {
 
 export class WorkExperience implements IResult {
 
-
     private title: string = "Work experience";
     private subtitle: string = "What has been going on in the last years";
     private description: string = "I just started a new challenge at Austrian Lotteries as a React/TypeScript developer"//this.getWorkExperienceSentence();
-    private detail: any;
+    private detail: IDetail;
+
+    public getName() {
+        return "experience";
+    }
 
     public shouldSetActiveViewportListener() {
         return false;

@@ -16,7 +16,7 @@ import IResult from "../../interfaces/IResult";
 import {ISentence} from "../../interfaces";
 
 interface Props {
-    detail: IResult;
+    result: IResult;
     isActive: boolean;
     setNotActiveDetail: () => void;
     onNextClick: () => void;
@@ -36,7 +36,7 @@ export default class Detail extends React.Component<Props> {
             items,
             itemsFunny,
             bulletGroups,
-        } = this.props.detail.getDetail();
+        } = this.props.result.getDetail();
 
         return (
             <div className="content">
@@ -77,10 +77,10 @@ export default class Detail extends React.Component<Props> {
     }
 
     handleViewportListener = () => {
-        if (this.props.detail && this.props.detail.shouldSetActiveViewportListener() === true) {
+        if (this.props.result && this.props.result.shouldSetActiveViewportListener() === true) {
             this.installViewportListener();
             ViewportObserver.scrollToItemVisibleViewportItem();
-        } else if (this.props.detail) {
+        } else if (this.props.result) {
             ViewportObserver.uninstallViewportListener();
         }
     }
@@ -402,10 +402,10 @@ export default class Detail extends React.Component<Props> {
     }
 
     renderIcon(iconName: string | undefined) {
-        if (iconName === undefined)
+        if (iconName == null)
             return "";
         else
-            return <FontAwesome name={this.props.detail.getDetail().icon}/>
+            return <FontAwesome name={iconName}/>
     }
 
     processSentence(sentence?: ISentence) {
@@ -422,10 +422,10 @@ export default class Detail extends React.Component<Props> {
 
 
     render() {
-        if (!this.props.detail)
+        if (!this.props.result)
             return "";
 
-        const myClassName = "general " + this.props.detail.getBackground();
+        const myClassName = "general " + this.props.result.getBackground();
         const containerClass = this.props.isActive ? "detail active " : "detail";
 
         return (
@@ -439,9 +439,9 @@ export default class Detail extends React.Component<Props> {
                 />
                 <div className={myClassName}>
                     <div className="title">
-                        {this.props.detail.getTitle()}
+                        {this.props.result.getTitle()}
                     </div>
-                    <div className="subtitle">{this.props.detail.getSubtitle()}</div>
+                    <div className="subtitle">{this.props.result.getSubtitle()}</div>
                 </div>
                 <CoolLine animated={false}/>
                 {this.processDetail()}

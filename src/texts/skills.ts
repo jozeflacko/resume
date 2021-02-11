@@ -7,6 +7,10 @@ export class Skills implements IResult {
   private subtitle: string = "Always in progress";
   private description: string = `Listening is a master skill for personal and professional greatness. (Robin S. Sharma)`;
 
+  public getName() {
+    return "skills";
+  }
+
   public shouldSetActiveViewportListener() {
     return false;
   }

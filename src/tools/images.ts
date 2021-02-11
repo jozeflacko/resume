@@ -1,4 +1,4 @@
-class PreloadImages {
+class Images {
 
   private srcs = [
     '../assets/flipPhotos/head.JPG',
@@ -13,7 +13,7 @@ class PreloadImages {
 
   private images = Array();
 
-  private preloadImages():void {
+  public preloadImages():void {
     for(let src of this.srcs) {
       this.preloadImage(src);
     }
@@ -25,10 +25,10 @@ class PreloadImages {
     this.images.push(img);
   }
   constructor() {
-      this.preloadImages();
+
   }
   public getImages() {
     return this.images;
   }
 }
-export default PreloadImages;
+export default Images;

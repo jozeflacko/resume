@@ -2,10 +2,10 @@ import * as FontAwesome from 'react-fontawesome';
 import * as React from 'react';
 import './searchBar.css';
 import './searchBar_mobile.css';
-import RISearch from '../../interfaces/IRSearch';
 
 interface Props {
-    search: RISearch;
+    message: string;
+    animate: boolean;
 }
 
 export default class SearchBar extends React.Component<Props> {
@@ -16,7 +16,7 @@ export default class SearchBar extends React.Component<Props> {
 
         nodeInput.innerHTML = "";
 
-        const {message, animate} = this.props.search;
+        const {message, animate} = this.props;
 
         if (message !== null && nodeInput !== null) {
             if (animate === false) {
@@ -36,7 +36,7 @@ export default class SearchBar extends React.Component<Props> {
     }
 
     render() {
-        if (!this.props.search.message) {
+        if (!this.props.message) {
             return "Loading...";
         }
         return (

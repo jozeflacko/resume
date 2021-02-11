@@ -7,6 +7,10 @@ export class FreeTime implements IResult {
   private subtitle: string = "Everything what is worth to share";
   private description: string = `Projects, demos, links, articles and many other interesting ideas`;
 
+  public getName() {
+    return "freetime";
+  }
+
   public getTitle(): string {
     return this.title;
   }

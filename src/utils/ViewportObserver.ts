@@ -109,8 +109,13 @@ export const uninstallViewportListener = () => {
         classNameOfParentElementOnWhichToSetCurrentClass = null;
         callbackOnMatch = null;
 
-        if (desktopScrollElement) {
-            desktopScrollElement.removeEventListener("scroll", this.whatIsInViewport);
+        // FIXME: dirty hack: getting compilation error: object possibly undefined
+        const whatIsViewport = (this as any).whatIsInViewport;
+
+        if(whatIsViewport != null) {
+            if(desktopScrollElement != null) {
+                desktopScrollElement.removeEventListener("scroll", whatIsViewport);
+            }
         }
 
         oldName = "";

@@ -7,6 +7,10 @@ export class Education implements IResult {
   private subtitle: string = "Master of Engineering in Business Informatics";
   private description: string = "Completed second level of university studies in the study programme of Business Informatics";
 
+  public getName() {
+    return "education";
+  }
+
   public shouldSetActiveViewportListener() {
     return false;
   }

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './share.css';
 import * as FontAwesome from 'react-fontawesome';
-import swal from 'sweetalert';
+const swal = require('sweetalert');
 
 interface Props {
     url: string;

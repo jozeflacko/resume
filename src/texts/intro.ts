@@ -7,6 +7,10 @@ export class Intro implements IResult {
   private subtitle: string = "Brief introduction";
   private description: string = "Full-Stack Developer strongly concentrated on building Web Applications using JavaScript, TypeScript and Java";
 
+  public getName() {
+    return "intro";
+  }
+
   public shouldSetActiveViewportListener() {
     return false;
   }
