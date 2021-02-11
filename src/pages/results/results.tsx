@@ -2,7 +2,6 @@ import * as React from 'react';
 import './results.css';
 import './results_mobile.css';
 import {isDesktop} from '../../utils/BrowserUtils';
-import Debounce from 'lodash.debounce';
 import SearchBar from '../../components/searchBar/searchBar';
 import Logo from '../../components/logo/logo';
 import Result from '../../components/result/result';
@@ -199,10 +198,9 @@ function getCurrentResultNameFromAddressBar(strippedName = location.hash) {
 }
 
 function useOnResize(cb: () => void) {
-    const debouncedResize = Debounce(() => cb(), 300);
     React.useEffect(() => {
         cb();
-        window.addEventListener('resize', debouncedResize);
-        return () => window.removeEventListener('resize', debouncedResize);
+        window.addEventListener('resize', cb);
+        return () => window.removeEventListener('resize', cb);
     }, []);
 }
