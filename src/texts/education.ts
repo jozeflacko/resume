@@ -3,35 +3,31 @@ import detail from './education_detail';
 
 export class Education implements IResult {
 
-  private title: string = "Education";
-  private subtitle: string = "Master of Engineering in Business Informatics";
-  private description: string = "Completed second level of university studies in the study programme of Business Informatics";
+    public getName() {
+        return "education";
+    }
 
-  public getName() {
-    return "education";
-  }
+    public getTitle(): string {
+        return "Education";
+    }
 
-  public shouldSetActiveViewportListener() {
-    return false;
-  }
+    public getSubtitle(): string {
+        return "Master of Engineering in Business Informatics";
+    }
 
-  public getTitle(): string {
-    return this.title;
-  }
+    public getDescription(): string {
+        return "Completed second level of university studies in the study programme of Business Informatics";
+    }
 
-  public getSubtitle(): string {
-    return this.subtitle;
-  }
+    public getDetail() {
+        return detail;
+    }
 
-  public getDescription(): string {
-    return this.description;
-  }
+    public getBackground() {
+        return "blightyellow";
+    }
 
-  public getDetail() {
-    return detail;
-  }
-
-  public getBackground() {
-    return "blightyellow";
-  }
+    public shouldSetActiveViewportListener() {
+        return false;
+    }
 }

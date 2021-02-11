@@ -3,28 +3,20 @@ import detail from './intro_detail';
 
 export class Intro implements IResult {
 
-  private title: string = "Jozef Lacko";
-  private subtitle: string = "Brief introduction";
-  private description: string = "Full-Stack Developer strongly concentrated on building Web Applications using JavaScript, TypeScript and Java";
-
   public getName() {
     return "intro";
   }
 
-  public shouldSetActiveViewportListener() {
-    return false;
-  }
-
   public getTitle(): string {
-    return this.title;
+    return "Jozef Lacko";
   }
 
   public getSubtitle(): string {
-    return this.subtitle;
+    return "Brief introduction";
   }
 
   public getDescription(): string {
-    return this.description;
+    return "Full-Stack Developer strongly concentrated on building Web Applications using JavaScript, TypeScript and Java";
   }
 
   public getDetail() {
@@ -33,5 +25,9 @@ export class Intro implements IResult {
 
   public getBackground() {
     return "blightblue";
+  }
+
+  public shouldSetActiveViewportListener() {
+    return false;
   }
 }
