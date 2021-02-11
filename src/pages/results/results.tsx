@@ -11,38 +11,30 @@ import {INavigation} from '../../texts/navigations';
 import Images from '../../tools/images';
 import Contact from '../../components/contact/contact';
 import * as AddressBarUtils from '../../utils/AddressBarUtils';
-import {useGlobal} from "../../context/global";
+import state from "../../state";
 import IResult from "../../interfaces/IResult";
 
 export default function Results() {
 
-    const global = useGlobal();
-
-    const search = global.getSearch(false);
-    const navigations = global.getNavigations();
-    const intro = global.getIntro();
-    const workExperience = global.getWorkExperience();
-    const education = global.getEducation();
-    const skills = global.getSkills();
+    const search = state.useSearch();
+    const navigations = state.useNavigations();
+    const intro = state.useIntro();
+    const workExperience = state.useWorkExperience();
+    const education = state.useEducation();
+    const skills = state.useSkills();
 
     const [activeResult, setActiveResult] = React.useState<IResult | null>(null);
-
-    function setValueIntoAddressbar(name) {
-        AddressBarUtils.setSection(name);
-    }
-
-    const debouncedResize = Debounce(() => resolveBodyScrollWhenMobile(), 300);
 
     React.useEffect(() => {
         new Images().preloadImages();
         navigateToResult();
-
-        window.addEventListener('resize', debouncedResize);
-
-        return () => {
-            window.removeEventListener('resize', debouncedResize);
-        };
     }, []);
+
+    useOnResize(() => addScrollClassOnMobile(activeResult != null));
+
+    function setValueIntoAddressBar(name) {
+        AddressBarUtils.setSection(name);
+    }
 
     function createLinks() {
         return navigations.map((link: INavigation, index: number) => {
@@ -102,28 +94,28 @@ export default function Results() {
             let result;
 
             switch (strippedName) {
-                case "introduction":
+                case intro.getName():
                     result = intro;
                     break;
-                case "experience":
+                case workExperience.getName():
                     result = workExperience;
                     break;
-                case "education":
+                case education.getName():
                     result = education;
                     break;
-                case "skills":
+                case skills.getName():
                     result = skills;
                     break;
                 default:
                     result = intro;
-                    name = "introduction";
+                    name = intro.getName();
                     break;
             }
 
             setActiveResult(result);
 
             if (takenFromHash === false) {
-                setValueIntoAddressbar(name);
+                setValueIntoAddressBar(name);
             }
         }
     }
@@ -158,12 +150,6 @@ export default function Results() {
             </div>
         );
     }
-
-    function resolveBodyScrollWhenMobile() {
-        addScrollClassOnMobile(activeResult != null);
-    }
-
-    resolveBodyScrollWhenMobile();
 
     return (
         <div className="results">
@@ -210,4 +196,13 @@ function getCurrentResultNameFromAddressBar(strippedName = location.hash) {
         strippedName = (strippedName.split(":_"))[0];
     }
     return strippedName;
+}
+
+function useOnResize(cb: () => void) {
+    const debouncedResize = Debounce(() => cb(), 300);
+    React.useEffect(() => {
+        cb();
+        window.addEventListener('resize', debouncedResize);
+        return () => window.removeEventListener('resize', debouncedResize);
+    }, []);
 }

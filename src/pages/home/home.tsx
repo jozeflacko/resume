@@ -6,7 +6,7 @@ import SearchBar from '../../components/searchBar/searchBar';
 import Logo from '../../components/logo/logo';
 import Images from '../../tools/images';
 import Links from '../../links/links';
-import {useGlobal} from "../../context/global";
+import state from "../../state";
 
 export interface HistoryContext {
     push: () => void;
@@ -14,13 +14,11 @@ export interface HistoryContext {
 
 export default function Home() {
 
-    const global = useGlobal();
-
     React.useEffect(() => {
         new Images().preloadImages();
     }, []);
 
-    const search = global.getSearch();
+    const search = state.useSearch();
 
     const getContentLink = () => Links.CONTENT + "#introduction"
 

@@ -5,10 +5,6 @@ export default class Search implements ISearch {
 
     private animate: boolean;
 
-    constructor(animate?: boolean) {
-        this.animate = animate || true;
-    }
-
     getMessage() {
         return this.searchMessage;
     }
