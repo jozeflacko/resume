@@ -8,7 +8,7 @@ import Logo from '../../components/logo/logo';
 import Result from '../../components/result/result';
 import Detail from '../../components/detail/detail';
 import {INavigation} from '../../texts/navigations';
-import Images from '../../tools/images';
+import Images from '../../helper/images';
 import Contact from '../../components/contact/contact';
 import * as AddressBarUtils from '../../utils/AddressBarUtils';
 import state from "../../state";

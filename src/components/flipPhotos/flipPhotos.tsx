@@ -34,18 +34,18 @@ export default class FlipPhotos extends React.Component<Props, State> {
     }
 
     componentDidMount() {
-        this.processAll();
+        this.renderAll();
     }
 
     componentDidUpdate() {
-        this.processAll();
+        this.renderAll();
     }
 
     componentWillUnmount() {
-        this.processAll();
+        this.renderAll();
     }
 
-    processAll() {
+    renderAll() {
         if (this.containerNode) {
             this.setDimensions(this.containerNode);
             this.startFlip(this.containerNode);

@@ -4,7 +4,7 @@ import './home.css';
 import './home_mobile.css';
 import SearchBar from '../../components/searchBar/searchBar';
 import Logo from '../../components/logo/logo';
-import Images from '../../tools/images';
+import Images from '../../helper/images';
 import Links from '../../links/links';
 import state from "../../state";
 
@@ -22,7 +22,7 @@ export default function Home() {
 
     const getContentLink = () => Links.CONTENT + "#introduction"
 
-    const processFooter = () => {
+    const renderFooter = () => {
         return (
             <div className="text">
                 <span className="left"/>
@@ -32,7 +32,7 @@ export default function Home() {
         );
     }
 
-    function processButtons() {
+    function renderButtons() {
         return (
             <div className="buttons" onClick={() => search.setIsAnimated(false)}>
                 <a
@@ -60,8 +60,8 @@ export default function Home() {
                 <div className="inner">
                     <Logo game={true}/>
                     <SearchBar message={search.getMessage()} animate={search.isAnimated()}/>
-                    {processButtons()}
-                    {processFooter()}
+                    {renderButtons()}
+                    {renderFooter()}
                 </div>
             </div>
         </div>

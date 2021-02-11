@@ -13,7 +13,7 @@ interface Props {
 
 export default class Result extends React.Component<Props, {}> {
 
-    processOnActiveCoolLine() {
+    renderOnActiveCoolLine() {
         return this.props.isActive ? <CoolLine animated={true}/> : "";
     }
 
@@ -30,7 +30,7 @@ export default class Result extends React.Component<Props, {}> {
                 <div className="title cblue">{result.getTitle()}</div>
                 <div className="subtitle">{result.getSubtitle()}</div>
                 <div className="description">{result.getDescription()}</div>
-                {this.processOnActiveCoolLine()}
+                {this.renderOnActiveCoolLine()}
             </div>
         );
     }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Helper from '../../helper/helper';
+import IconAndPhoto from '../../helper/iconAndPhoto';
 import contacts from '../../texts/contacts';
 import './contact.css';
 
@@ -40,7 +40,7 @@ export default class Contact extends React.Component<{}, State> {
                         href={href}
                         title={contact.label + ": " + contact.value}
                     >
-                        {Helper.processIconAndLabel(contact)}
+                        {IconAndPhoto.renderIconAndLabel(contact)}
                         <span className="value">{contact.value}</span>
                     </a>
                 );

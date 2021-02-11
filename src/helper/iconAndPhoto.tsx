@@ -1,13 +1,14 @@
 import * as React from 'react';
 import * as FontAwesome from 'react-fontawesome';
+import {IInnerBullet} from "../interfaces";
 
-export default class Helper {
+export default class IconAndPhoto {
 
-    static processIconAndLabel(bullet: any) {
+    static renderIconAndLabel(bullet: IInnerBullet) {
         if (bullet.picture) {
             return (
                 <label className="label">
-                    {Helper.processPhoto(bullet.picture)}
+                    {IconAndPhoto.renderPhoto(bullet.picture)}
                     {bullet.label}
                 </label>
             );
@@ -23,7 +24,7 @@ export default class Helper {
         } else return "";
     }
 
-    static processPhoto(photo?: string, className = 'my-photo') {
+    static renderPhoto(photo?: string, className = 'my-photo') {
         return !photo ? "" : (
             <img src={photo} key={photo} className={className}/>
         );

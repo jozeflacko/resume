@@ -8,12 +8,12 @@ import Hero from '../hero/hero';
 import KidWithABaloon from './kidWithABaloon/kidWithABaloon';
 import CoolLine from '../coolLine/coolLine';
 import FlipPhotos from '../flipPhotos/flipPhotos';
-import Helper from '../../helper/helper';
+import IconAndPhoto from '../../helper/iconAndPhoto';
 import * as ViewportObserver from '../../utils/ViewportObserver';
 import * as AddressBarUtils from '../../utils/AddressBarUtils';
 import Share from '../share/share';
 import IResult from "../../interfaces/IResult";
-import {ISentence} from "../../interfaces";
+import {IBulletGroup, IContact, IInnerBullet, ISentence} from "../../interfaces";
 
 interface Props {
     result: IResult;
@@ -24,7 +24,7 @@ interface Props {
 
 export default class Detail extends React.Component<Props> {
 
-    processDetail() {
+    renderDetail() {
         const {
             photo,
             flipPhotos,
@@ -40,17 +40,17 @@ export default class Detail extends React.Component<Props> {
 
         return (
             <div className="content">
-                {this.processHero(photo)}
-                {this.processFlipPhotos(flipPhotos, flipPhotosBackground, flipPhotosBottom)}
-                <div className="photo">{Helper.processPhoto(photo)}</div>
-                {this.processSentence(sentence)}
-                <div className="description">{this.processDescription(description)}</div>
+                {this.renderHero(photo)}
+                {this.renderFlipPhotos(flipPhotos, flipPhotosBackground, flipPhotosBottom)}
+                <div className="photo">{IconAndPhoto.renderPhoto(photo)}</div>
+                {this.renderSentence(sentence)}
+                <div className="description">{this.renderDescription(description)}</div>
                 <div className="items">
-                    {this.processItemsFunny(itemsFunny)}
-                    {this.processItems(items)}
+                    {this.renderItemsFunny(itemsFunny)}
+                    {this.renderItems(items)}
                 </div>
-                {this.processBulletsgroups(bulletGroups)}
-                {Helper.processPhoto(bottomPhoto, 'bottom-photo')}
+                {this.renderBulletGroups(bulletGroups)}
+                {IconAndPhoto.renderPhoto(bottomPhoto, 'bottom-photo')}
                 <div className="buttons">
                     <div
                         title={"Next"}
@@ -99,7 +99,7 @@ export default class Detail extends React.Component<Props> {
     }
 
 
-    processFlipPhotos(flipPhotos?: Array<string>, flipPhotosBackground?: string, flipPhotosBottom?: string) {
+    renderFlipPhotos(flipPhotos?: Array<string>, flipPhotosBackground?: string, flipPhotosBottom?: string) {
         return (
             <FlipPhotos
                 flipPhotos={flipPhotos}
@@ -110,39 +110,39 @@ export default class Detail extends React.Component<Props> {
         );
     }
 
-    processHero(photo?: string) {
+    renderHero(photo?: string) {
         return !photo ? "" : (<Hero photo={photo}/>);
     }
 
-    processLogos(logos: Array<string>) {
-        return logos ? logos.map((logo) => Helper.processPhoto(logo)) : "";
+    renderLogos(logos: Array<string>) {
+        return logos ? logos.map((logo) => IconAndPhoto.renderPhoto(logo)) : "";
     }
 
-    processDescription(description?: Array<String>) {
+    renderDescription(description?: Array<String>) {
         return description ? description.map((text: string, index: number) => {
             return (<p key={"key" + index}>{text}</p>);
         }) : "";
     }
 
-    processDescriptionExtension(descriptionExtension?: Array<String>) {
+    renderDescriptionExtension(descriptionExtension?: Array<String>) {
         return descriptionExtension && descriptionExtension.map((text: string, index: number) => {
             return (<p key={"key_extension_" + index}>{text}</p>);
         });
     }
 
-    processBulletsgroups(bulletGroups: any) {
-        return bulletGroups ? bulletGroups.map((group) => {
+    renderBulletGroups(bulletGroups?: IBulletGroup[]) {
+        return bulletGroups && Array.isArray(bulletGroups) ? bulletGroups.map((bulletGroup) => {
             return (
-                <div key={group.key} className="bulletgroups">
-                    <div className="title">{group.title}</div>
+                <div key={bulletGroup.key} className="bulletgroups">
+                    <div className="title">{bulletGroup.title}</div>
                     <div className="groups">
-                        {group.bullets.map((group: { subtitle: string, description: string, bullets?: any, bubbless?: any }, index: number) => {
+                        {bulletGroup.bullets.map((bullet, index) => {
                             return (
                                 <div key={"key" + index} className="group">
-                                    <div className="subtitle cblue">{group.subtitle}</div>
-                                    <div className="description">{group.description}</div>
+                                    <div className="subtitle cblue">{bullet.subtitle}</div>
+                                    <div className="description">{bullet.description}</div>
                                     <div className="bullets">
-                                        {this.processBullets(group.bullets)}
+                                        {bullet.bullets && this.renderBullets(bullet.bullets)}
                                     </div>
                                 </div>
                             )
@@ -153,8 +153,13 @@ export default class Detail extends React.Component<Props> {
         }) : "";
     }
 
-    processBullets(bullets: Array<{ picture: 'string', link?: string, phoneLink?: string; label: string, value: string, bubbles: Array<{ value: string, size: number }> }>) {
-        return bullets.map((bullet, index) => {
+    // FIXME
+    renderBullets(bullets: (IInnerBullet[] | IContact[])) {
+        if (!Array.isArray(bullets)) {
+            return <></>;
+        }
+
+        return (bullets as any).map((bullet, index) => {
             const key = bullet.label ? bullet.label : 'key' + index;
             const onClick = bullet.link ? () => {
                 window.open(bullet.link)
@@ -165,15 +170,15 @@ export default class Detail extends React.Component<Props> {
             const title = bullet.label && bullet.value ? bullet.label + ": " + bullet.value : "";
             return (
                 <a key={key} className={className} onClick={onClick} href={href} title={title}>
-                    {Helper.processIconAndLabel(bullet)}
+                    {IconAndPhoto.renderIconAndLabel(bullet)}
                     <span className="value">{bullet.value}</span>
-                    {this.processBubbless(bullet.bubbles)}
+                    {this.renderBubbless(bullet.bubbles)}
                 </a>
             );
         });
     }
 
-    processBubbless(bubbles: Array<{ value: string, size: number }>) {
+    renderBubbless(bubbles: Array<{ value: string, size: number }>) {
         if (!bubbles)
             return "";
 
@@ -198,8 +203,8 @@ export default class Detail extends React.Component<Props> {
         );
     }
 
-    processItemsFunny(itemsFunny: any): void {
-        return this.processItems(itemsFunny, "funny");
+    renderItemsFunny(itemsFunny: any): void {
+        return this.renderItems(itemsFunny, "funny");
     }
 
     generateTimeRange(from: string, to: string) {
@@ -227,7 +232,7 @@ export default class Detail extends React.Component<Props> {
         }
     }
 
-    processImage(src, name) {
+    renderImage(src, name) {
         if (src === undefined) {
             return "";
         }
@@ -242,7 +247,7 @@ export default class Detail extends React.Component<Props> {
         )
     }
 
-    processVideo(src?: string) {
+    renderVideo(src?: string) {
         if (src === undefined) {
             return "";
         }
@@ -261,7 +266,7 @@ export default class Detail extends React.Component<Props> {
         );
     }
 
-    processWWW(www, text, icon?: string, color?: string) {
+    renderWWW(www, text, icon?: string, color?: string) {
         if (www === undefined) {
             return "";
         }
@@ -281,15 +286,15 @@ export default class Detail extends React.Component<Props> {
         )
     }
 
-    processLinks(links: { www: string, text: string, icon: string, color: string }[]) {
+    renderLinks(links: { www: string, text: string, icon: string, color: string }[]) {
         if (links) {
             return links.map(link => {
-                return this.processWWW(link.www, link.text, link.icon, link.color);
+                return this.renderWWW(link.www, link.text, link.icon, link.color);
             });
         }
     }
 
-    processGithub(github) {
+    renderGithub(github) {
         if (github === undefined) {
             return "";
         }
@@ -309,7 +314,7 @@ export default class Detail extends React.Component<Props> {
 
     urlPrefix: string = "";
 
-    processItems(items: any, addClassName?: string) {
+    renderItems(items: any, addClassName?: string) {
         let classNameAbstract = addClassName === undefined ? "item" : addClassName + " item";
 
         return items ? items.map((item: any, index: number) => {
@@ -354,19 +359,19 @@ export default class Detail extends React.Component<Props> {
                         <div className="place">{this.printValue(place)}</div>
                     </div>
                     <div className="logos">
-                        {this.processLogos(logos)}
+                        {this.renderLogos(logos)}
                     </div>
                     <div className="myBody">
                         <div className="description">{this.printValue(description)} </div>
-                        {this.processSimpleList(item.list)}
+                        {this.renderSimpleList(item.list)}
                         <div className="notes">{this.printValue(notes)}</div>
-                        {this.processImage(image, name)}
-                        {this.processVideo(video)}
+                        {this.renderImage(image, name)}
+                        {this.renderVideo(video)}
                         <div className="url-buttons">
                             {shareUrl != null && <Share url={shareUrl} id={id}/>}
-                            {this.processWWW(www, "Open")}
-                            {this.processLinks(links)}
-                            {this.processGithub(github)}
+                            {this.renderWWW(www, "Open")}
+                            {this.renderLinks(links)}
+                            {this.renderGithub(github)}
                         </div>
                     </div>
                 </div>
@@ -374,7 +379,7 @@ export default class Detail extends React.Component<Props> {
         }) : "";
     }
 
-    processSimpleList(list: Array<{ name: string, link: string }>) {
+    renderSimpleList(list: Array<{ name: string, link: string }>) {
         if (list === undefined || list.length < 1)
             return "";
         return <ul className="simple-list">{printLi()}</ul>;
@@ -408,7 +413,7 @@ export default class Detail extends React.Component<Props> {
             return <FontAwesome name={iconName}/>
     }
 
-    processSentence(sentence?: ISentence) {
+    renderSentence(sentence?: ISentence) {
         if (sentence === undefined)
             return "";
         return (
@@ -444,7 +449,7 @@ export default class Detail extends React.Component<Props> {
                     <div className="subtitle">{this.props.result.getSubtitle()}</div>
                 </div>
                 <CoolLine animated={false}/>
-                {this.processDetail()}
+                {this.renderDetail()}
             </div>
         );
 

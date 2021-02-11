@@ -107,7 +107,7 @@ export default class Game extends React.Component {
         }
     }
 
-    processScore() {
+    renderScore() {
         switch (this.score) {
             case 5:
                 this.addMessage("My friends do not like clicks!");
@@ -136,7 +136,7 @@ export default class Game extends React.Component {
                     this.timer.reset();
                 }
 
-                this.processScore();
+                this.renderScore();
             } else if (event.target.className === THUMB_CLASS) {
                 const thumb = event.target;
                 thumb.className = "thumb fat";
